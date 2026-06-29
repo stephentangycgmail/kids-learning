@@ -4,993 +4,117 @@
   <meta charset="UTF-8" />
   <title>Dictation Practice</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Bootstrap CSS -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      background-color: #0f172a;
-      color: #f1f5f9;
-      overflow: hidden;
-    }
-
-    .main-wrapper {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      padding: 0 16px;
-    }
-
-    .page-header {
-      flex: 0 0 auto;
-      margin-top: 20px;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .back-btn {
-      border-radius: 6px;
-      font-weight: 500;
-      padding-left: 16px;
-      padding-right: 16px;
-      border-color: #38bdf8;
-      color: #38bdf8;
-    }
-    .back-btn:hover {
-      background-color: #38bdf8;
-      color: #000;
-    }
-
-    .tts-controls {
-      flex: 0 0 auto;
-      background-color: #1e293b;
-      border-radius: 8px;
-      padding: 20px 20px;
-      margin-bottom: 12px;
-      border: 1px solid #334155;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-      z-index: 10;
-    }
-
-    .sentence-list-wrapper {
-      flex: 1 1 auto;
-      overflow-y: auto;
-      padding-bottom: 60px;
-    }
-
-    .sentence-card {
-      background-color: #1e293b;
-      border-radius: 16px;
-      padding: 16px 18px;
-      margin-bottom: 12px;
-      border: 1px solid #334155;
-    }
-
-    .sentence-title {
-      font-weight: 600;
-      margin-bottom: 6px;
-      color: #94a3b8;
-      font-size: 0.9rem;
-    }
-
-    .sentence-body {
-      font-size: 1.35rem;
-      line-height: 1.8;
-      color: #f8fafc;
-    }
-
-    .sentence-body.sentence-hidden {
-      filter: blur(8px);
-      user-select: none;
-    }
-
-    .sentence-cn {
-      font-size: 1rem;
-      color: #cbd5e1;
-      background-color: #334155;
-      padding: 8px 12px;
-      margin-top: 5px;
-      border-radius: 8px;
-    }
-
-    .word-token {
-      display: inline-block;
-      padding: 0 2px;
-      margin: 0 1px;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.15s ease;
-    }
-
-    .word-token:hover {
-      background-color: #38bdf8;
-      color: #0f172a;
-    }
-
-    .word-token.active {
-      background-color: #facc15;
-      box-shadow: 0 0 0 2px #ca8a04 inset;
-      color: #000;
-    }
-
-    .mode-btn {
-      color: #ffffff !important;
-      border: 1px solid #94a3b8 !important;
-      background-color: rgba(255,255,255,0.05);
-    }
-
-    .mode-btn:hover {
-      background-color: rgba(255,255,255,0.18) !important;
-      color: #ffffff !important;
-    }
-
-    .mode-btn.active {
-      background-color: #3b82f6 !important;
-      border-color: #3b82f6 !important;
-      color: #ffffff !important;
-    }
-
-    #vocab-popup {
-      position: fixed;
-      max-width: 260px;
-      background-color: #020617;
-      border-radius: 12px;
-      border: 1px solid #facc15;
-      padding: 10px 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.7);
-      z-index: 9999;
-      font-size: 0.9rem;
-      display: none;
-    }
-
-    #vocab-popup .vocab-title {
-      color: #facc15;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    #vocab-popup .vocab-label {
-      color: #e5e7eb;
-      font-size: 0.8rem;
-      margin-top: 2px;
-    }
-
-    #vocab-popup .vocab-usage {
-      color: #e5e7eb;
-      margin-top: 2px;
-    }
-
-    #vocab-popup .vocab-tenses {
-      color: #cbd5e1;
-      margin-top: 4px;
-      white-space: pre-line;
-      font-size: 0.8rem;
-    }
+    html, body { height:100%; margin:0; background-color:#0f172a; color:#f1f5f9; overflow:hidden; }
+    .main-wrapper { height:100vh; display:flex; flex-direction:column; padding:0 16px; }
+    .page-header { flex:0 0 auto; margin-top:20px; margin-bottom:16px; display:flex; align-items:center; justify-content:space-between; }
+    .back-btn { border-radius:6px; font-weight:500; padding-left:16px; padding-right:16px; border-color:#38bdf8; color:#38bdf8; }
+    .back-btn:hover { background-color:#38bdf8; color:#000; }
+    .tts-controls { flex:0 0 auto; background-color:#1e293b; border-radius:8px; padding:20px; margin-bottom:12px; border:1px solid #334155; box-shadow:0 2px 4px rgba(0,0,0,0.2); z-index:10; }
+    .sentence-list-wrapper { flex:1 1 auto; overflow-y:auto; padding-bottom:60px; }
+    .sentence-card { background-color:#1e293b; border-radius:16px; padding:16px 18px; margin-bottom:12px; border:1px solid #334155; }
+    .sentence-title { font-weight:600; margin-bottom:6px; color:#94a3b8; font-size:0.9rem; }
+    .sentence-body { font-size:1.35rem; line-height:1.8; color:#f8fafc; }
+    .sentence-body.sentence-hidden { filter:blur(8px); user-select:none; }
+    .sentence-cn { font-size:1rem; color:#cbd5e1; background-color:#334155; padding:8px 12px; margin-top:5px; border-radius:8px; }
+    .word-token { display:inline-block; padding:0 2px; margin:0 1px; border-radius:4px; cursor:pointer; transition:background-color 0.15s ease; }
+    .word-token:hover { background-color:#38bdf8; color:#0f172a; }
+    .word-token.active { background-color:#facc15; box-shadow:0 0 0 2px #ca8a04 inset; color:#000; }
+    .mode-btn { color:#fff !important; border:1px solid #94a3b8 !important; background-color:rgba(255,255,255,0.05); }
+    .mode-btn:hover { background-color:rgba(255,255,255,0.18) !important; color:#fff !important; }
+    .mode-btn.active { background-color:#3b82f6 !important; border-color:#3b82f6 !important; color:#fff !important; }
+    #vocab-popup { position:fixed; max-width:260px; background-color:#020617; border-radius:12px; border:1px solid #facc15; padding:10px 12px; box-shadow:0 4px 12px rgba(0,0,0,0.7); z-index:9999; font-size:0.9rem; display:none; }
+    #vocab-popup .vocab-title { color:#facc15; font-weight:600; margin-bottom:4px; }
+    #vocab-popup .vocab-label { color:#e5e7eb; font-size:0.8rem; margin-top:2px; }
+    #vocab-popup .vocab-usage { color:#e5e7eb; margin-top:2px; }
+    #vocab-popup .vocab-tenses { color:#cbd5e1; margin-top:4px; white-space:pre-line; font-size:0.8rem; }
   </style>
 </head>
-
 <body>
 <div class="main-wrapper">
-
-  <!-- Header -->
   <header class="page-header">
     <a href="eng.html" class="btn btn-outline-primary btn-sm back-btn">← Menu</a>
-
     <h1 class="h4 mb-0 text-light">Dictation Practice</h1>
-
     <div class="d-flex align-items-center gap-2">
       <label class="text-light mb-0" style="font-size:0.9rem;">Dictation:</label>
-      <select id="dictationSelect" class="form-select form-select-sm" style="width:auto;">
-        <option value="">Loading...</option>
-      </select>
+      <select id="dictationSelect" class="form-select form-select-sm" style="width:auto;"><option value="">Loading...</option></select>
     </div>
   </header>
 
-  <!-- Controls -->
   <section class="tts-controls">
     <div class="d-flex flex-column gap-3">
-
-      <!-- show / hide -->
       <div class="d-flex flex-wrap gap-2">
-        <button class="btn btn-primary btn-sm" onclick="showAllSentences()">
-          👀 Show All
-        </button>
-
-        <button class="btn btn-secondary btn-sm" onclick="hideAllSentences()">
-          🙈 Hide All
-        </button>
+        <button class="btn btn-primary btn-sm" onclick="showAllSentences()">👀 Show All</button>
+        <button class="btn btn-secondary btn-sm" onclick="hideAllSentences()">🙈 Hide All</button>
       </div>
-
-      <!-- modes -->
       <div class="d-flex flex-wrap align-items-center gap-3 mt-1">
         <span class="text-light">Reading Mode:</span>
-
         <div class="btn-group btn-group-sm">
-          <button id="mode-natural" class="btn mode-btn"
-                  onclick="setReadMode('natural')">
-            Natural
-          </button>
-          <button id="mode-fast" class="btn mode-btn"
-                  onclick="setReadMode('fast')">
-            Fast
-          </button>
-          <button id="mode-learning" class="btn mode-btn"
-                  onclick="setReadMode('learning')">
-            Learning
-          </button>
+          <button id="mode-natural" class="btn mode-btn" onclick="setReadMode('natural')">Natural</button>
+          <button id="mode-fast" class="btn mode-btn" onclick="setReadMode('fast')">Fast</button>
+          <button id="mode-learning" class="btn mode-btn" onclick="setReadMode('learning')">Learning</button>
         </div>
       </div>
-
-      <!-- sliders -->
       <div class="row mt-2">
         <div class="col-6">
-          <span class="text-light">Speed:
-            <span id="speedValue">1.0x</span>
-          </span>
-          <input type="range" id="speedSlider" class="form-range"
-                 min="0.4" max="2.0" value="1.0" step="0.1">
+          <span class="text-light">Speed: <span id="speedValue">1.0x</span></span>
+          <input type="range" id="speedSlider" class="form-range" min="0.4" max="2.0" value="1.0" step="0.1">
         </div>
-
         <div class="col-6">
-          <span class="text-light">Pause between tokens:
-            <span id="pauseValue">0 ms</span>
-          </span>
-          <input type="range" id="pauseSlider" class="form-range"
-                 min="0" max="800" value="0">
+          <span class="text-light">Pause between tokens: <span id="pauseValue">0 ms</span></span>
+          <input type="range" id="pauseSlider" class="form-range" min="0" max="800" value="0">
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- Sentences -->
   <section class="sentence-list-wrapper">
-    <div id="sentencesContainer">
-      <div class="text-center text-muted mt-5">
-        <div class="spinner-border text-primary"></div>
-        <div class="mt-2">Loading...</div>
-      </div>
-    </div>
+    <div id="sentencesContainer"><div class="text-center text-muted mt-5"><div class="spinner-border text-primary"></div><div class="mt-2">Loading...</div></div></div>
   </section>
-
 </div>
 
-<!-- vocab popup -->
 <div id="vocab-popup">
-  <div class="vocab-title"></div>
-  <div class="vocab-label"></div>
-  <div class="vocab-usage"></div>
-  <div class="vocab-tenses"></div>
+  <div class="vocab-title"></div><div class="vocab-label"></div><div class="vocab-usage"></div><div class="vocab-tenses"></div>
 </div>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 <script>
-let isIOS = false;
-let isAndroid = false;
-let platformRateAdjust = 1.0;
-
-(function detectPlatform() {
-  const ua = navigator.userAgent || navigator.vendor || window.opera;
-  isAndroid = /Android/i.test(ua);
-  isIOS     = /iPhone|iPad|iPod/i.test(ua);
-
-  if (isAndroid) platformRateAdjust = 0.8;
-  else if (isIOS) platformRateAdjust = 0.35;
-  else platformRateAdjust = 1.0;
-})();
-
-const isTouchDevice =
-  "ontouchstart" in window || navigator.maxTouchPoints > 0;
-
-const punctuationMap = {
-  "!": "exclamation mark",
-  "?": "question mark",
-  ".": "full stop",
-  ",": "comma",
-  ":": "colon",
-  ";": "semicolon",
-  "'": "apostrophe",
-  "\"": "quote"
-};
-
-function splitIntoTokens(sentence) {
-  if (!sentence) return [];
-  // support straight ' and curly ’
-  return sentence.match(/[A-Za-z’']+|[^A-Za-z’'\s]+/g) || [];
-}
-
-
-function mergeTitlePunctuation(tokens) {
-  const titles = new Set(["Mr", "Mrs", "Ms", "Dr"]);
-  const out = [];
-
-  for (let i = 0; i < tokens.length; i++) {
-    const t = tokens[i];
-    const next = tokens[i + 1];
-
-    if (titles.has(t) && (next === "." || next === ",")) {
-      out.push(t + next);
-      i++;
-      continue;
-    }
-
-    out.push(t);
-  }
-
-  return out;
-}
-
-let sentences = [];
-let vocabAI = {};
-
-let availableVoices = [];
-let currentMode = "natural";
-let speechRate = 1.0;
-let wordPauseMs = 0;
-
-let isPlaying = false;
-let currentSentenceIndex = null;
-let currentWordIndex = 0;
-let naturalWordIndex = -1;
-
-let resumeSentenceIndex = null;
-let resumeWordIndex = 0;
-
-let ttsTimer = null;
-let currentUtterance = null;
-let playbackGeneration = 0;
-
-let vocabPopupEl = null;
-let playButtons = [];
-
-function ensureVocabPopup() {
-  if (vocabPopupEl) return vocabPopupEl;
-  vocabPopupEl = document.getElementById("vocab-popup");
-  return vocabPopupEl;
-}
-
-function showWordUsage(token, targetEl) {
-  const popup = ensureVocabPopup();
-  if (!popup || !vocabAI) return;
-
-const key = token
-  .toLowerCase()
-  .replace(/\u2019/g, "'")                 // ’ -> '
-  .replace(/^[^a-z0-9']+|[^a-z0-9']+$/g, ""); // trim non-word edges
-
-const info = vocabAI[key];
-
-  if (!info) {
-    hideWordUsage();
-    return;
-  }
-
-  const titleEl  = popup.querySelector(".vocab-title");
-  const labelEl  = popup.querySelector(".vocab-label");
-  const usageEl  = popup.querySelector(".vocab-usage");
-  const tensesEl = popup.querySelector(".vocab-tenses");
-
-  titleEl.textContent = info.cn || key;
-  if (info.usage) {
-    labelEl.textContent = "Example:";
-    usageEl.textContent = info.usage;
-  } else {
-    labelEl.textContent = "";
-    usageEl.textContent = "";
-  }
-  tensesEl.textContent = info.tenses || "";
-
-  popup.style.visibility = "hidden";
-  popup.style.display = "block";
-
-  const rect = targetEl.getBoundingClientRect();
-  const popupRect = popup.getBoundingClientRect();
-
-  let top = rect.top - popupRect.height - 8;
-  let left = rect.left + (rect.width - popupRect.width) / 2;
-
-  const margin = 8;
-  if (top < margin) top = rect.bottom + 8;
-  if (left < margin) left = margin;
-  const maxLeft = window.innerWidth - popupRect.width - margin;
-  if (left > maxLeft) left = maxLeft;
-
-  popup.style.position = "fixed";
-  popup.style.top = top + "px";
-  popup.style.left = left + "px";
-  popup.style.visibility = "visible";
-}
-
-function hideWordUsage() {
-  const popup = ensureVocabPopup();
-  if (!popup) return;
-  popup.style.display = "none";
-}
-
-async function loadVocabAI() {
-  try {
-    const res = await fetch("/static/data/vocab_ai.json");
-    if (!res.ok) throw new Error("HTTP " + res.status);
-    vocabAI = await res.json();
-  } catch (err) {
-    console.error("Failed to load vocab_ai.json:", err);
-    vocabAI = {};
-  }
-}
-
-function initVoices() {
-  if (!window.speechSynthesis) return;
-  const synth = window.speechSynthesis;
-
-  function loadVoices() {
-    availableVoices = synth.getVoices() || [];
-  }
-  loadVoices();
-
-  if (synth.onvoiceschanged !== undefined) {
-    synth.onvoiceschanged = loadVoices;
-  }
-}
-
-function setReadMode(mode) {
-  currentMode = mode;
-
-  const btnNatural  = document.getElementById("mode-natural");
-  const btnFast     = document.getElementById("mode-fast");
-  const btnLearning = document.getElementById("mode-learning");
-
-  [btnNatural, btnFast, btnLearning].forEach(btn => {
-    btn.classList.remove("active");
-  });
-
-  if (mode === "natural") {
-    btnNatural.classList.add("active");
-    speechRate = 1.0;
-    wordPauseMs = 0;
-  } else if (mode === "fast") {
-    btnFast.classList.add("active");
-    speechRate = 1.2;
-    wordPauseMs = 80;
-  } else {
-    btnLearning.classList.add("active");
-    speechRate = 0.8;
-    wordPauseMs = 250;
-  }
-
-  const speedSlider = document.getElementById("speedSlider");
-  const pauseSlider = document.getElementById("pauseSlider");
-  const speedValue  = document.getElementById("speedValue");
-  const pauseValue  = document.getElementById("pauseValue");
-
-  if (speedSlider) speedSlider.value = speechRate;
-  if (pauseSlider) pauseSlider.value = wordPauseMs;
-  if (speedValue)  speedValue.innerText = speechRate.toFixed(1) + "x";
-  if (pauseValue)  pauseValue.innerText = wordPauseMs + " ms";
-}
-
-function speakOneToken(token, callback) {
-  if (!window.speechSynthesis) {
-    if (callback) callback();
-    return;
-  }
-
-  let textToSpeak = punctuationMap[token] || token;
-
-  // Titles: avoid spelling out letters and avoid reading punctuation for merged title tokens
-  if (/^(Mrs|Mr|Ms|Dr)[\.,]$/i.test(token)) {
-    textToSpeak = token.replace(".", "").replace(",", "");
-  } else if (/^Mrs$/i.test(token)) {
-    textToSpeak = "Mrs";
-  } else if (/^Mr$/i.test(token)) {
-    textToSpeak = "Mr";
-  } else if (/^Ms$/i.test(token)) {
-    textToSpeak = "Ms";
-  } else if (/^Dr$/i.test(token)) {
-    textToSpeak = "Dr";
-  }
-
-  if (isIOS && token === "I") {
-    textToSpeak = "I.";
-  }
-
-  const utter = new SpeechSynthesisUtterance(textToSpeak);
-  utter.rate = speechRate * platformRateAdjust;
-  utter.lang = "en-US";
-
-  const enVoice = availableVoices.find(v => v.lang.toLowerCase().startsWith("en"))
-                || availableVoices[0];
-  if (enVoice) utter.voice = enVoice;
-
-  utter.onend = () => {
-    if (callback) callback();
-  };
-  utter.onerror = () => {
-    if (callback) callback();
-  };
-
-  window.speechSynthesis.speak(utter);
-}
-
-function clearAllHighlights() {
-  document.querySelectorAll(".word-token.active").forEach(el => {
-    el.classList.remove("active");
-  });
-}
-
-function setActiveWord(sentenceIndex, wordIndex) {
-  const spanList = document.querySelectorAll(
-    `.sentence-body[data-sentence-index="${sentenceIndex}"] .word-token`
-  );
-  spanList.forEach((sp, idx) => {
-    if (idx === wordIndex) sp.classList.add("active");
-    else sp.classList.remove("active");
-  });
-}
-
-function highlightNaturalWord(sentenceIndex, wordOrder) {
-  const container = document.querySelector(
-    `.sentence-body[data-sentence-index="${sentenceIndex}"]`
-  );
-  if (!container) return;
-
-  const spans = container.querySelectorAll(".word-token");
-  spans.forEach(sp => sp.classList.remove("active"));
-
-  const target = container.querySelector(`.word-token[data-word-order="${wordOrder}"]`);
-  if (target) target.classList.add("active");
-}
-
-function setAllPlayButtonsStopped() {
-  playButtons.forEach(btn => {
-    if (!btn) return;
-    btn.textContent = "Play";
-    btn.dataset.state = "stopped";
-  });
-}
-
-function setPlayButtonPlaying(index) {
-  playButtons.forEach((btn, i) => {
-    if (!btn) return;
-    if (i === index) {
-      btn.textContent = "Pause";
-      btn.dataset.state = "playing";
-    } else {
-      btn.textContent = "Play";
-      btn.dataset.state = "stopped";
-    }
-  });
-}
-
-function playSentenceNatural(index) {
-  const item = sentences[index];
-  if (!item || !window.speechSynthesis) return;
-
-  stopEverything(false);
-
-  const text = item.full || "";
-  if (!text.trim()) return;
-
-  isPlaying = true;
-  currentSentenceIndex = index;
-  naturalWordIndex = -1;
-
-  const utter = new SpeechSynthesisUtterance(text);
-  currentUtterance = utter;
-
-  utter.rate = speechRate * platformRateAdjust;
-  utter.lang = "en-US";
-
-  const enVoice = availableVoices.find(v => v.lang.toLowerCase().startsWith("en"))
-                || availableVoices[0];
-  if (enVoice) utter.voice = enVoice;
-
-  utter.onboundary = (event) => {
-    if (!isPlaying || currentSentenceIndex !== index) return;
-    if (event.name === "word") {
-      naturalWordIndex += 1;
-      highlightNaturalWord(index, naturalWordIndex);
-    }
-  };
-
-  utter.onend = () => {
-    isPlaying = false;
-    currentUtterance = null;
-    naturalWordIndex = -1;
-    clearAllHighlights();
-    setAllPlayButtonsStopped();
-  };
-
-  utter.onerror = () => {
-    isPlaying = false;
-    currentUtterance = null;
-    naturalWordIndex = -1;
-    clearAllHighlights();
-    setAllPlayButtonsStopped();
-  };
-
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(utter);
-}
-
-function playSentenceWordByWord(index, startIndex) {
-  const item = sentences[index];
-  if (!item || !window.speechSynthesis) return;
-
-  stopEverything(false);
-
-  const text = item.full || "";
-  if (!text.trim()) return;
-
-  let tokens = splitIntoTokens(text);
-  tokens = mergeTitlePunctuation(tokens);
-
-  const body = document.querySelector(
-    `.sentence-body[data-sentence-index="${index}"]`
-  );
-  if (!body) return;
-
-  const spans = body.querySelectorAll(".word-token");
-  if (!spans.length || !tokens.length) return;
-
-  let sIndex = parseInt(startIndex, 10);
-  if (isNaN(sIndex) || sIndex < 0 || sIndex >= tokens.length) {
-    sIndex = 0;
-  }
-
-  isPlaying = true;
-  currentSentenceIndex = index;
-  currentWordIndex = sIndex;
-  resumeSentenceIndex = index;
-  resumeWordIndex = sIndex;
-
-  const myGen = ++playbackGeneration;
-
-  function nextToken() {
-    if (myGen !== playbackGeneration) {
-      return;
-    }
-    if (!isPlaying || currentSentenceIndex !== index) {
-      clearAllHighlights();
-      return;
-    }
-    if (currentWordIndex >= tokens.length) {
-      isPlaying = false;
-      clearAllHighlights();
-      setAllPlayButtonsStopped();
-      return;
-    }
-
-    const token = tokens[currentWordIndex];
-
-    clearAllHighlights();
-    setActiveWord(index, currentWordIndex);
-
-    speakOneToken(token, () => {
-      if (myGen !== playbackGeneration) return;
-      currentWordIndex++;
-      resumeSentenceIndex = index;
-      resumeWordIndex = currentWordIndex;
-
-      if (!isPlaying) return;
-
-      if (wordPauseMs > 0) {
-        ttsTimer = setTimeout(nextToken, wordPauseMs);
-      } else {
-        nextToken();
-      }
-    });
-  }
-
-  nextToken();
-}
-
-function stopEverything(resetButtons = true) {
-  isPlaying = false;
-  currentSentenceIndex = null;
-  currentWordIndex = 0;
-  naturalWordIndex = -1;
-
-  playbackGeneration++;
-
-  if (ttsTimer) {
-    clearTimeout(ttsTimer);
-    ttsTimer = null;
-  }
-
-  if (window.speechSynthesis) {
-    window.speechSynthesis.cancel();
-  }
-
-  clearAllHighlights();
-  if (resetButtons) {
-    setAllPlayButtonsStopped();
-  }
-
-  hideWordUsage();
-}
-
-function handleWordClick(sentenceIndex, wordIndex, token) {
-  stopEverything(false);
-
-  currentSentenceIndex = sentenceIndex;
-  currentWordIndex = wordIndex;
-  resumeSentenceIndex = sentenceIndex;
-  resumeWordIndex = wordIndex;
-
-  clearAllHighlights();
-  setActiveWord(sentenceIndex, wordIndex);
-
-  speakOneToken(token, null);
-}
-
-function showAllSentences() {
-  document.querySelectorAll(".sentence-body").forEach(b => {
-    b.classList.remove("sentence-hidden");
-  });
-}
-
-function hideAllSentences() {
-  document.querySelectorAll(".sentence-body").forEach(b => {
-    b.classList.add("sentence-hidden");
-  });
-}
-
-async function initDictationSelector() {
-  const sel = document.getElementById("dictationSelect");
-  if (!sel) return;
-
-  try {
-    const res = await fetch("/list-dictation-files");
-    if (!res.ok) throw new Error("HTTP " + res.status);
-    const data = await res.json();
-
-    const files = Array.isArray(data.files) ? data.files : [];
-    sel.innerHTML = "";
-
-    if (!files.length) {
-      sel.innerHTML = '<option value="">No dictation files</option>';
-      const container = document.getElementById("sentencesContainer");
-      if (container) {
-        container.innerHTML =
-          '<div class="text-center text-muted mt-4">No dictation JSON files found.</div>';
-      }
-      return;
-    }
-
-    files.forEach(f => {
-      const opt = document.createElement("option");
-      opt.value = f;
-      opt.textContent = f.replace(".json", "");
-      sel.appendChild(opt);
-    });
-
-    sel.addEventListener("change", () => {
-      const file = sel.value;
-      if (file) loadDictation(file);
-    });
-
-    loadDictation(files[0]);
-  } catch (err) {
-    console.error("Failed to load dictation file list:", err);
-    sel.innerHTML = '<option value="">Failed to load</option>';
-    const container = document.getElementById("sentencesContainer");
-    if (container) {
-      container.innerHTML =
-        '<div class="text-center text-danger mt-4">Unable to load dictation file list.</div>';
-    }
-  }
-}
-
-async function loadDictation(file) {
-  const container = document.getElementById("sentencesContainer");
-  if (container) {
-    container.innerHTML =
-      '<div class="text-center text-muted mt-4">Loading ' +
-      file +
-      '...</div>';
-  }
-
-  stopEverything(true);
-  resumeSentenceIndex = null;
-  resumeWordIndex = 0;
-
-  try {
-    const res = await fetch("/static/data/" + encodeURIComponent(file));
-    if (!res.ok) throw new Error("HTTP " + res.status);
-    const data = await res.json();
-
-    sentences = Array.isArray(data.sentences) ? data.sentences : [];
-    renderSentences();
-  } catch (err) {
-    console.error("Failed to load dictation json:", err);
-    if (container) {
-      container.innerHTML =
-        '<div class="text-center text-danger mt-4">Failed to load ' +
-        file +
-        ".</div>";
-    }
-  }
-}
-
-function renderSentences() {
-  const container = document.getElementById("sentencesContainer");
-  if (!container) return;
-
-  container.innerHTML = "";
-  playButtons = [];
-
-  if (!sentences.length) {
-    container.innerHTML =
-      '<div class="text-center text-muted mt-4">This dictation file has no sentences.</div>';
-    return;
-  }
-
-  sentences.forEach((item, index) => {
-    const card = document.createElement("div");
-    card.className = "sentence-card";
-
-    const title = document.createElement("div");
-    title.className = "sentence-title";
-    title.textContent = "Sentence " + (index + 1);
-
-    const body = document.createElement("div");
-    body.className = "sentence-body sentence-hidden";
-    body.dataset.sentenceIndex = String(index);
-
-    const fullText = item.full || "";
-    const tokens = splitIntoTokens(fullText);
-    let wordOrder = 0;
-
-    tokens.forEach((token, tokenIndex) => {
-      const span = document.createElement("span");
-      span.className = "word-token";
-      span.textContent = token;
-
-      if (/[A-Za-z0-9]/.test(token)) {
-        span.dataset.wordOrder = String(wordOrder);
-        wordOrder += 1;
-      }
-
-      span.addEventListener("click", () => {
-        handleWordClick(index, tokenIndex, token);
-        showWordUsage(token, span);
-      });
-
-      span.addEventListener("mouseenter", () => {
-        if (!isTouchDevice) {
-          showWordUsage(token, span);
-        }
-      });
-
-      span.addEventListener("mouseleave", () => {
-        if (!isTouchDevice) {
-          hideWordUsage();
-        }
-      });
-
-      body.appendChild(span);
-      body.append(" ");
-    });
-
-    const cnDiv = document.createElement("div");
-    cnDiv.className = "sentence-cn";
-    cnDiv.textContent = item.cn || "";
-
-    const controls = document.createElement("div");
-    controls.className = "d-flex flex-wrap gap-2 mt-2";
-
-    const btnToggle = document.createElement("button");
-    btnToggle.className = "btn btn-secondary btn-sm";
-    btnToggle.textContent = "👀 Show sentence";
-    btnToggle.addEventListener("click", () => {
-      const hidden = body.classList.toggle("sentence-hidden");
-      btnToggle.textContent = hidden ? "👀 Show sentence" : "🙈 Hide sentence";
-    });
-
-    const btnPlay = document.createElement("button");
-    btnPlay.className = "btn btn-primary btn-sm";
-    btnPlay.textContent = "Play";
-    btnPlay.dataset.state = "stopped";
-    btnPlay.addEventListener("click", () => {
-      const state = btnPlay.dataset.state || "stopped";
-
-      if (state === "playing") {
-        stopEverything(true);
-        return;
-      }
-
-      if (currentMode === "natural") {
-        playSentenceNatural(index);
-      } else {
-        const startIndex =
-          resumeSentenceIndex === index ? resumeWordIndex : 0;
-        playSentenceWordByWord(index, startIndex);
-      }
-      setPlayButtonPlaying(index);
-    });
-
-    const btnStop = document.createElement("button");
-    btnStop.className = "btn btn-danger btn-sm";
-    btnStop.textContent = "Stop";
-    btnStop.addEventListener("click", () => {
-      stopEverything(true);
-    });
-
-    controls.appendChild(btnToggle);
-    controls.appendChild(btnPlay);
-    controls.appendChild(btnStop);
-
-    card.appendChild(title);
-    card.appendChild(body);
-    card.appendChild(cnDiv);
-    card.appendChild(controls);
-
-    container.appendChild(card);
-
-    playButtons[index] = btnPlay;
-  });
-}
-
-function setupPopupAutoHide() {
-  function handler(event) {
-    const popup = ensureVocabPopup();
-    if (!popup || popup.style.display === "none") return;
-
-    const target = event.target;
-    if (!target.closest(".word-token") && !target.closest("#vocab-popup")) {
-      hideWordUsage();
-    }
-  }
-
-  document.addEventListener("click", handler, true);
-  document.addEventListener("touchstart", handler, true);
-
-  document.addEventListener(
-    "scroll",
-    () => {
-      hideWordUsage();
-    },
-    true
-  );
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  initVoices();
-  loadVocabAI();
-
-  const speedSlider = document.getElementById("speedSlider");
-  const pauseSlider = document.getElementById("pauseSlider");
-  const speedValue  = document.getElementById("speedValue");
-  const pauseValue  = document.getElementById("pauseValue");
-
-  if (speedSlider && speedValue) {
-    speedSlider.addEventListener("input", () => {
-      speechRate = parseFloat(speedSlider.value) || 1.0;
-      speedValue.innerText = speechRate.toFixed(1) + "x";
-    });
-  }
-
-  if (pauseSlider && pauseValue) {
-    pauseSlider.addEventListener("input", () => {
-      wordPauseMs = parseInt(pauseSlider.value, 10) || 0;
-      pauseValue.innerText = wordPauseMs + " ms";
-    });
-  }
-
-  setReadMode("natural");
-  setupPopupAutoHide();
-  initDictationSelector();
-});
+const DICTATION_FILES = ["dictation01.json", "dictation02.json"];
+const DATA_DIR = "data";
+let isIOS = false, isAndroid = false, platformRateAdjust = 1.0;
+(function detectPlatform(){ const ua=navigator.userAgent||navigator.vendor||window.opera; isAndroid=/Android/i.test(ua); isIOS=/iPhone|iPad|iPod/i.test(ua); platformRateAdjust=isAndroid?0.8:(isIOS?0.35:1.0); })();
+const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+const punctuationMap = {"!":"exclamation mark", "?":"question mark", ".":"full stop", ",":"comma", ":":"colon", ";":"semicolon", "'":"apostrophe", "\"":"quote"};
+let sentences = [], vocabAI = {}, availableVoices = [], currentMode = "natural", speechRate = 1.0, wordPauseMs = 0;
+let isPlaying = false, currentSentenceIndex = null, currentWordIndex = 0, naturalWordIndex = -1;
+let resumeSentenceIndex = null, resumeWordIndex = 0, ttsTimer = null, currentUtterance = null, playbackGeneration = 0;
+let vocabPopupEl = null, playButtons = [];
+function splitIntoTokens(sentence){ return sentence ? (sentence.match(/[A-Za-z’']+|[^A-Za-z’'\s]+/g) || []) : []; }
+function mergeTitlePunctuation(tokens){ const titles=new Set(["Mr","Mrs","Ms","Dr"]), out=[]; for(let i=0;i<tokens.length;i++){ const t=tokens[i], next=tokens[i+1]; if(titles.has(t)&&(next==="."||next===",")){ out.push(t+next); i++; } else out.push(t); } return out; }
+function ensureVocabPopup(){ if(vocabPopupEl) return vocabPopupEl; vocabPopupEl=document.getElementById("vocab-popup"); return vocabPopupEl; }
+function showWordUsage(token,targetEl){ const popup=ensureVocabPopup(); if(!popup||!vocabAI) return; const key=token.toLowerCase().replace(/\u2019/g,"'").replace(/^[^a-z0-9']+|[^a-z0-9']+$/g,""); const info=vocabAI[key]; if(!info){ hideWordUsage(); return; } popup.querySelector(".vocab-title").textContent=info.cn||key; popup.querySelector(".vocab-label").textContent=info.usage?"Example:":""; popup.querySelector(".vocab-usage").textContent=info.usage||""; popup.querySelector(".vocab-tenses").textContent=info.tenses||""; popup.style.visibility="hidden"; popup.style.display="block"; const rect=targetEl.getBoundingClientRect(), pr=popup.getBoundingClientRect(), margin=8; let top=rect.top-pr.height-8, left=rect.left+(rect.width-pr.width)/2; if(top<margin) top=rect.bottom+8; if(left<margin) left=margin; const maxLeft=window.innerWidth-pr.width-margin; if(left>maxLeft) left=maxLeft; popup.style.top=top+"px"; popup.style.left=left+"px"; popup.style.visibility="visible"; }
+function hideWordUsage(){ const popup=ensureVocabPopup(); if(popup) popup.style.display="none"; }
+async function loadVocabAI(){ try{ const res=await fetch(DATA_DIR+"/vocab_ai.json"); if(!res.ok) throw new Error("HTTP "+res.status); vocabAI=await res.json(); }catch(err){ console.error("Failed to load vocab_ai.json:",err); vocabAI={}; } }
+function initVoices(){ if(!window.speechSynthesis) return; const synth=window.speechSynthesis; const loadVoices=()=>{ availableVoices=synth.getVoices()||[]; }; loadVoices(); if(synth.onvoiceschanged!==undefined) synth.onvoiceschanged=loadVoices; }
+function setReadMode(mode){ currentMode=mode; const btnNatural=document.getElementById("mode-natural"), btnFast=document.getElementById("mode-fast"), btnLearning=document.getElementById("mode-learning"); [btnNatural,btnFast,btnLearning].forEach(btn=>btn&&btn.classList.remove("active")); if(mode==="natural"){ btnNatural.classList.add("active"); speechRate=1.0; wordPauseMs=0; } else if(mode==="fast"){ btnFast.classList.add("active"); speechRate=1.2; wordPauseMs=80; } else { btnLearning.classList.add("active"); speechRate=0.8; wordPauseMs=250; } document.getElementById("speedSlider").value=speechRate; document.getElementById("pauseSlider").value=wordPauseMs; document.getElementById("speedValue").innerText=speechRate.toFixed(1)+"x"; document.getElementById("pauseValue").innerText=wordPauseMs+" ms"; }
+function speakOneToken(token,callback){ if(!window.speechSynthesis){ if(callback) callback(); return; } let textToSpeak=punctuationMap[token]||token; if(/^(Mrs|Mr|Ms|Dr)[\.,]$/i.test(token)) textToSpeak=token.replace(".","").replace(",",""); if(isIOS&&token==="I") textToSpeak="I."; const utter=new SpeechSynthesisUtterance(textToSpeak); utter.rate=speechRate*platformRateAdjust; utter.lang="en-US"; const enVoice=availableVoices.find(v=>v.lang.toLowerCase().startsWith("en"))||availableVoices[0]; if(enVoice) utter.voice=enVoice; utter.onend=()=>{ if(callback) callback(); }; utter.onerror=()=>{ if(callback) callback(); }; window.speechSynthesis.speak(utter); }
+function clearAllHighlights(){ document.querySelectorAll(".word-token.active").forEach(el=>el.classList.remove("active")); }
+function setActiveWord(sentenceIndex,wordIndex){ document.querySelectorAll(`.sentence-body[data-sentence-index="${sentenceIndex}"] .word-token`).forEach((sp,idx)=>{ sp.classList.toggle("active",idx===wordIndex); }); }
+function highlightNaturalWord(sentenceIndex,wordOrder){ const container=document.querySelector(`.sentence-body[data-sentence-index="${sentenceIndex}"]`); if(!container) return; container.querySelectorAll(".word-token").forEach(sp=>sp.classList.remove("active")); const target=container.querySelector(`.word-token[data-word-order="${wordOrder}"]`); if(target) target.classList.add("active"); }
+function setAllPlayButtonsStopped(){ playButtons.forEach(btn=>{ if(btn){ btn.textContent="Play"; btn.dataset.state="stopped"; }}); }
+function setPlayButtonPlaying(index){ playButtons.forEach((btn,i)=>{ if(!btn) return; btn.textContent=i===index?"Pause":"Play"; btn.dataset.state=i===index?"playing":"stopped"; }); }
+function playSentenceNatural(index){ const item=sentences[index]; if(!item||!window.speechSynthesis) return; stopEverything(false); const text=item.full||""; if(!text.trim()) return; isPlaying=true; currentSentenceIndex=index; naturalWordIndex=-1; const utter=new SpeechSynthesisUtterance(text); currentUtterance=utter; utter.rate=speechRate*platformRateAdjust; utter.lang="en-US"; const enVoice=availableVoices.find(v=>v.lang.toLowerCase().startsWith("en"))||availableVoices[0]; if(enVoice) utter.voice=enVoice; utter.onboundary=(event)=>{ if(isPlaying&&currentSentenceIndex===index&&event.name==="word") highlightNaturalWord(index,++naturalWordIndex); }; utter.onend=utter.onerror=()=>{ isPlaying=false; currentUtterance=null; naturalWordIndex=-1; clearAllHighlights(); setAllPlayButtonsStopped(); }; window.speechSynthesis.cancel(); window.speechSynthesis.speak(utter); }
+function playSentenceWordByWord(index,startIndex){ const item=sentences[index]; if(!item||!window.speechSynthesis) return; stopEverything(false); let tokens=mergeTitlePunctuation(splitIntoTokens(item.full||"")); if(!tokens.length) return; let sIndex=parseInt(startIndex,10); if(isNaN(sIndex)||sIndex<0||sIndex>=tokens.length) sIndex=0; isPlaying=true; currentSentenceIndex=index; currentWordIndex=sIndex; resumeSentenceIndex=index; resumeWordIndex=sIndex; const myGen=++playbackGeneration; function nextToken(){ if(myGen!==playbackGeneration) return; if(!isPlaying||currentSentenceIndex!==index){ clearAllHighlights(); return; } if(currentWordIndex>=tokens.length){ isPlaying=false; clearAllHighlights(); setAllPlayButtonsStopped(); return; } const token=tokens[currentWordIndex]; clearAllHighlights(); setActiveWord(index,currentWordIndex); speakOneToken(token,()=>{ if(myGen!==playbackGeneration) return; currentWordIndex++; resumeSentenceIndex=index; resumeWordIndex=currentWordIndex; if(!isPlaying) return; if(wordPauseMs>0) ttsTimer=setTimeout(nextToken,wordPauseMs); else nextToken(); }); } nextToken(); }
+function stopEverything(resetButtons=true){ isPlaying=false; currentSentenceIndex=null; currentWordIndex=0; naturalWordIndex=-1; playbackGeneration++; if(ttsTimer){ clearTimeout(ttsTimer); ttsTimer=null; } if(window.speechSynthesis) window.speechSynthesis.cancel(); clearAllHighlights(); if(resetButtons) setAllPlayButtonsStopped(); hideWordUsage(); }
+function handleWordClick(sentenceIndex,wordIndex,token){ stopEverything(false); currentSentenceIndex=sentenceIndex; currentWordIndex=wordIndex; resumeSentenceIndex=sentenceIndex; resumeWordIndex=wordIndex; clearAllHighlights(); setActiveWord(sentenceIndex,wordIndex); speakOneToken(token,null); }
+function showAllSentences(){ document.querySelectorAll(".sentence-body").forEach(b=>b.classList.remove("sentence-hidden")); }
+function hideAllSentences(){ document.querySelectorAll(".sentence-body").forEach(b=>b.classList.add("sentence-hidden")); }
+async function initDictationSelector(){ const sel=document.getElementById("dictationSelect"); if(!sel) return; sel.innerHTML=""; DICTATION_FILES.forEach(f=>{ const opt=document.createElement("option"); opt.value=f; opt.textContent=f.replace(".json",""); sel.appendChild(opt); }); sel.addEventListener("change",()=>{ if(sel.value) loadDictation(sel.value); }); loadDictation(DICTATION_FILES[0]); }
+async function loadDictation(file){ const container=document.getElementById("sentencesContainer"); container.innerHTML='<div class="text-center text-muted mt-4">Loading '+file+'...</div>'; stopEverything(true); resumeSentenceIndex=null; resumeWordIndex=0; try{ const res=await fetch(DATA_DIR+"/"+encodeURIComponent(file)); if(!res.ok) throw new Error("HTTP "+res.status); const data=await res.json(); sentences=Array.isArray(data.sentences)?data.sentences:[]; renderSentences(); }catch(err){ console.error("Failed to load dictation json:",err); container.innerHTML='<div class="text-center text-danger mt-4">Failed to load '+file+'.</div>'; } }
+function renderSentences(){ const container=document.getElementById("sentencesContainer"); container.innerHTML=""; playButtons=[]; if(!sentences.length){ container.innerHTML='<div class="text-center text-muted mt-4">This dictation file has no sentences.</div>'; return; } sentences.forEach((item,index)=>{ const card=document.createElement("div"); card.className="sentence-card"; const title=document.createElement("div"); title.className="sentence-title"; title.textContent="Sentence "+(index+1); const body=document.createElement("div"); body.className="sentence-body sentence-hidden"; body.dataset.sentenceIndex=String(index); splitIntoTokens(item.full||"").forEach((token,tokenIndex)=>{ const span=document.createElement("span"); span.className="word-token"; span.textContent=token; if(/[A-Za-z0-9]/.test(token)) span.dataset.wordOrder=String(tokenIndex); span.addEventListener("click",()=>{ handleWordClick(index,tokenIndex,token); showWordUsage(token,span); }); span.addEventListener("mouseenter",()=>{ if(!isTouchDevice) showWordUsage(token,span); }); span.addEventListener("mouseleave",()=>{ if(!isTouchDevice) hideWordUsage(); }); body.appendChild(span); body.append(" "); }); const cnDiv=document.createElement("div"); cnDiv.className="sentence-cn"; cnDiv.textContent=item.cn||""; const controls=document.createElement("div"); controls.className="d-flex flex-wrap gap-2 mt-2"; const btnToggle=document.createElement("button"); btnToggle.className="btn btn-secondary btn-sm"; btnToggle.textContent="👀 Show sentence"; btnToggle.addEventListener("click",()=>{ const hidden=body.classList.toggle("sentence-hidden"); btnToggle.textContent=hidden?"👀 Show sentence":"🙈 Hide sentence"; }); const btnPlay=document.createElement("button"); btnPlay.className="btn btn-primary btn-sm"; btnPlay.textContent="Play"; btnPlay.dataset.state="stopped"; btnPlay.addEventListener("click",()=>{ const state=btnPlay.dataset.state||"stopped"; if(state==="playing"){ stopEverything(true); return; } if(currentMode==="natural") playSentenceNatural(index); else playSentenceWordByWord(index,resumeSentenceIndex===index?resumeWordIndex:0); setPlayButtonPlaying(index); }); const btnStop=document.createElement("button"); btnStop.className="btn btn-danger btn-sm"; btnStop.textContent="Stop"; btnStop.addEventListener("click",()=>stopEverything(true)); controls.append(btnToggle,btnPlay,btnStop); card.append(title,body,cnDiv,controls); container.appendChild(card); playButtons[index]=btnPlay; }); }
+function setupPopupAutoHide(){ function handler(event){ const popup=ensureVocabPopup(); if(!popup||popup.style.display==="none") return; const target=event.target; if(!target.closest(".word-token")&&!target.closest("#vocab-popup")) hideWordUsage(); } document.addEventListener("click",handler,true); document.addEventListener("touchstart",handler,true); document.addEventListener("scroll",()=>hideWordUsage(),true); }
+document.addEventListener("DOMContentLoaded",()=>{ initVoices(); loadVocabAI(); const speedSlider=document.getElementById("speedSlider"), pauseSlider=document.getElementById("pauseSlider"), speedValue=document.getElementById("speedValue"), pauseValue=document.getElementById("pauseValue"); speedSlider.addEventListener("input",()=>{ speechRate=parseFloat(speedSlider.value)||1.0; speedValue.innerText=speechRate.toFixed(1)+"x"; }); pauseSlider.addEventListener("input",()=>{ wordPauseMs=parseInt(pauseSlider.value,10)||0; pauseValue.innerText=wordPauseMs+" ms"; }); setReadMode("natural"); setupPopupAutoHide(); initDictationSelector(); });
 </script>
 </body>
 </html>
