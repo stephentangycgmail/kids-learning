@@ -1,0 +1,11 @@
+{
+  "mode": "local_or_manual_json",
+  "notes": "Copy this file to config.json only if backend scripts need local settings. Do not commit real API keys or passwords.",
+  "azure_openai": {
+    "endpoint": "",
+    "api_key": "",
+    "api_version": "",
+    "deployment_gpt4": "",
+    "deployment_gpt4mini": ""
+  }
+}
