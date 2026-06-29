@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kids Learning - Subjects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #fce38a, #f38181);
+        }
+
+        .page-wrapper {
+            width: 100%;
+            max-width: 960px;
+            padding: 20px;
+        }
+
+        .card {
+            background: #ffffffee;
+            border-radius: 24px;
+            padding: 24px 20px 28px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(8px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            margin-top: 4px;
+            color: #666;
+        }
+
+        .subject-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 18px;
+        }
+
+        @media (min-width: 600px) {
+            .subject-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        .subject-card {
+            border-radius: 18px;
+            padding: 16px 14px;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+            color: #222;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition:
+                transform 0.15s ease-out,
+                box-shadow 0.15s ease-out,
+                background 0.15s ease-out;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.14);
+        }
+
+        .subject-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            background: #ffffffaa;
+        }
+
+        .subject-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .subject-desc {
+            font-size: 0.85rem;
+            color: #444;
+        }
+
+        .subject-chinese {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+        }
+
+        .subject-english {
+            background: linear-gradient(135deg, #c3f5ff, #a6c1ff);
+        }
+
+        .subject-math {
+            background: linear-gradient(135deg, #d4fc79, #96e6a1);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 18px;
+            font-size: 0.78rem;
+            color: #444;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="card">
+            <header class="header">
+                <div class="title">Kids Learning</div>
+                <div class="subtitle">
+                    Choose a subject to start learning.
+                </div>
+            </header>
+
+            <main>
+                <div class="subject-grid">
+                    <!-- Chinese -->
+                    <a href="/static/cn.html" class="subject-card subject-chinese">
+                        <div class="subject-icon">文</div>
+                        <div class="subject-name">Chinese</div>
+                        <div class="subject-desc">
+                            Vocabulary, reading and practice.
+                        </div>
+                    </a>
+
+                    <!-- English -->
+                    <a href="/static/eng.html" class="subject-card subject-english">
+                        <div class="subject-icon">A</div>
+                        <div class="subject-name">English</div>
+                        <div class="subject-desc">
+                            Words, sentences, grammar and AI teacher.
+                        </div>
+                    </a>
+
+                    <!-- Math -->
+                    <a href="/static/math.html" class="subject-card subject-math">
+                        <div class="subject-icon">123</div>
+                        <div class="subject-name">Math</div>
+                        <div class="subject-desc">
+                            Numbers, basic operations and quizzes.
+                        </div>
+                    </a>
+                </div>
+            </main>
+
+            <footer class="footer">
+                Kids Learning Demo · You can extend more subjects later.
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

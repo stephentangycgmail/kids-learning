@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>中文默書練習 Chinese Dictation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background-color: #0f172a;
+      color: #f1f5f9;
+      overflow: hidden;
+    }
+
+    .text-dark {
+      color: #f8f9fa !important;
+    }
+    .text-muted {
+      color: #cbd5e1 !important;
+    }
+
+    .main-wrapper {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 0 16px;
+    }
+
+    .page-header {
+      flex: 0 0 auto;
+      margin-top: 20px;
+      margin-bottom: 16px;
+      z-index: 10;
+    }
+
+    .back-btn {
+      border-radius: 6px;
+      font-weight: 500;
+      padding-left: 16px;
+      padding-right: 16px;
+      border-color: #38bdf8;
+      color: #38bdf8;
+    }
+    .back-btn:hover {
+      background-color: #38bdf8;
+      color: #000;
+    }
+
+    .controls-bar {
+      flex: 0 0 auto;
+      background-color: #1e293b;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 10px;
+      border: 1px solid #334155;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      font-size: 0.9rem;
+    }
+
+    .sentence-list-wrapper {
+      flex: 1 1 auto;
+      overflow-y: auto;
+      padding-bottom: 60px;
+    }
+
+    .sentence-card {
+      background-color: #1e293b;
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      border: 1px solid #334155;
+    }
+
+    .sentence-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
+    .sentence-body {
+      font-size: 1.4rem;
+      line-height: 1.9;
+      color: #f8fafc;
+      margin-bottom: 4px;
+    }
+
+    .sentence-body.sentence-hidden {
+      filter: blur(8px);
+      user-select: none;
+    }
+
+    .cn-token,
+    .cn-punct {
+      padding: 2px 1px;
+      border-radius: 4px;
+      transition: background-color 0.12s ease, color 0.12s ease;
+    }
+    .cn-token {
+      cursor: pointer;
+    }
+    .cn-token.hoverable:hover {
+      background-color: rgba(250, 204, 21, 0.25);
+    }
+    .cn-token.active-word {
+      background-color: #facc15;
+      color: #111827;
+    }
+    .cn-punct {
+      cursor: default;
+    }
+
+    .mode-btn {
+      min-width: 88px;
+    }
+    .mode-btn.active {
+      background-color: #0ea5e9;
+      border-color: #0ea5e9;
+      color: #0f172a;
+    }
+
+    @media (max-width: 768px) {
+      .controls-bar {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="main-wrapper">
+
+  <!-- Header -->
+  <header class="page-header d-flex align-items-center justify-content-between">
+    <a href="cn.html" class="btn btn-outline-primary btn-sm back-btn">
+      ← Menu
+    </a>
+
+    <h1 class="h5 mb-0 text-dark">中文默書練習 Chinese Dictation</h1>
+
+    <div class="d-flex align-items-center gap-2">
+      <label for="cnDictationSelect" class="form-label mb-0" style="font-size:0.9rem; color:#fff;">
+        檔案：
+      </label>
+      <select id="cnDictationSelect" class="form-select form-select-sm" style="width:auto;">
+      </select>
+    </div>
+  </header>
+
+  <!-- Controls -->
+  <section class="controls-bar">
+    <div class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3">
+      <div class="d-flex flex-wrap gap-2 align-items-center">
+        <button class="btn btn-success btn-sm" id="btnShowAll">
+          👀 全部顯示
+        </button>
+        <button class="btn btn-secondary btn-sm" id="btnHideAll">
+          🙈 全部隱藏
+        </button>
+        <span class="text-muted">
+          提示：先按「全部隱藏」，家長或老師讀句子，小朋友默書；要檢查答案時按單句的「顯示」或播放朗讀。
+        </span>
+      </div>
+
+      <div class="d-flex flex-wrap gap-2 align-items-center">
+        <span>朗讀模式：</span>
+        <button class="btn btn-outline-info btn-sm mode-btn active" id="btnModeNatural">
+          自然說話
+        </button>
+        <button class="btn btn-outline-info btn-sm mode-btn" id="btnModeFast">
+          快速朗讀
+        </button>
+
+        <span class="ms-2">語言：</span>
+        <select id="cnLangSelect" class="form-select form-select-sm" style="width:auto;">
+          <option value="yue">粵語</option>
+          <option value="zh">國語</option>
+        </select>
+      </div>
+    </div>
+    <div id="errorMessage" class="mt-2 text-danger" style="display:none;"></div>
+  </section>
+
+  <!-- Sentences -->
+  <section class="sentence-list-wrapper">
+    <div id="sentencesContainer" class="sentence-list-inner">
+      <div class="text-center mt-5 text-muted">
+        <div class="spinner-border text-primary" role="status"></div>
+        <div class="mt-2">正在載入內容...</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+></script>
+
+<script>
+  const DATA_DIR = "/static/data";
+  const DICTATION_BASES = ["cn_dictation01", "cn_dictation02", "cn_dictation03", "cn_dictation04"];
+
+  const selectEl      = document.getElementById("cnDictationSelect");
+  const containerEl   = document.getElementById("sentencesContainer");
+  const errorEl       = document.getElementById("errorMessage");
+  const btnShowAll    = document.getElementById("btnShowAll");
+  const btnHideAll    = document.getElementById("btnHideAll");
+  const btnModeNatural= document.getElementById("btnModeNatural");
+  const btnModeFast   = document.getElementById("btnModeFast");
+  const langSelect    = document.getElementById("cnLangSelect");
+
+  let cnSentences     = [];
+  let currentBaseName = DICTATION_BASES[0];
+  let currentMode     = "natural";
+  let currentLang     = langSelect.value;
+
+  let isPlaying       = false;
+  let isPaused        = false;
+  let currentUtterance= null;
+  let playingSentenceIdx = null;
+  const playState     = new Map();
+
+  const punctRegex = /[，。、！？：；「」『』（）…—\s]/;
+
+  const isIOS     = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  const isAndroid = /Android/.test(navigator.userAgent);
+
+  function platformRateAdjust(base) {
+    if (isIOS)     return base * 0.9;
+    if (isAndroid) return base * 1.05;
+    return base;
+  }
+
+  // ===== voices =====
+  let voices = [];
+  const voiceByLang = { yue: null, zh: null };
+
+  function loadVoices() {
+    voices = window.speechSynthesis.getVoices() || [];
+
+    const findVoice = pred => voices.find(pred) || null;
+
+    voiceByLang.yue =
+      findVoice(v => v.lang.toLowerCase().startsWith("zh-hk")) ||
+      findVoice(v => v.name.toLowerCase().includes("cantonese")) ||
+      findVoice(v => v.name.toLowerCase().includes("hong kong"));
+
+    voiceByLang.zh =
+      findVoice(v => v.lang.toLowerCase().startsWith("zh-cn")) ||
+      findVoice(v => v.lang.toLowerCase().startsWith("cmn"))   ||
+      findVoice(v => v.lang.toLowerCase().startsWith("zh-tw")) ||
+      findVoice(v => v.lang.toLowerCase().startsWith("zh"));
+
+    if (!voiceByLang.zh && voices.length > 0) {
+      voiceByLang.zh = voices[0];
+    }
+    if (!voiceByLang.yue) {
+      voiceByLang.yue = voiceByLang.zh;
+    }
+  }
+
+  if ("speechSynthesis" in window) {
+    loadVoices();
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+  }
+
+  function createUtterance(text) {
+    const utter = new SpeechSynthesisUtterance(text);
+    const voice = voiceByLang[currentLang] || voiceByLang.zh;
+
+    if (voice) {
+      utter.voice = voice;
+      utter.lang  = voice.lang;
+    } else {
+      utter.lang  = currentLang === "yue" ? "zh-HK" : "zh-CN";
+    }
+
+    const baseRate = currentMode === "natural" ? 0.95 : 1.3;
+    utter.rate   = platformRateAdjust(baseRate);
+    utter.pitch  = 1.0;
+    utter.volume = 1.0;
+
+    return utter;
+  }
+
+  function clearAllHighlights() {
+    document.querySelectorAll(".cn-token.active-word").forEach(el => {
+      el.classList.remove("active-word");
+    });
+  }
+
+  function resetAllPlayButtons() {
+    document.querySelectorAll(".cn-play-btn").forEach(btn => {
+      btn.textContent = "▶ 播放";
+      btn.dataset.state = "stopped";
+    });
+  }
+
+  function cancelSpeech(clearHighlight = true) {
+    isPlaying = false;
+    isPaused  = false;
+    playingSentenceIdx = null;
+    if (window.speechSynthesis) {
+      window.speechSynthesis.cancel();
+    }
+    currentUtterance = null;
+    if (clearHighlight) clearAllHighlights();
+    resetAllPlayButtons();
+  }
+
+  function tokenizeChinese(text) {
+    const tokens = [];
+    for (const ch of text) {
+      tokens.push({
+        text: ch,
+        isPunc: punctRegex.test(ch)
+      });
+    }
+    return tokens;
+  }
+
+  // ===== 點單字朗讀 =====
+  function speakSingleToken(bodyEl, tokenIndex) {
+    if (!("speechSynthesis" in window)) return;
+
+    const spans = Array.from(bodyEl.querySelectorAll(".cn-token, .cn-punct"));
+    const span  = spans[tokenIndex];
+    if (!span) return;
+
+    const isPunc = span.dataset.isPunc === "1";
+    if (isPunc) return;
+
+    const ch = span.textContent || "";
+    if (!ch.trim()) return;
+
+    cancelSpeech(true);
+    span.classList.add("active-word");
+
+    const utter = createUtterance(ch);
+    currentUtterance = utter;
+
+    utter.onend = () => { currentUtterance = null; };
+    utter.onerror = () => { currentUtterance = null; };
+
+    window.speechSynthesis.speak(utter);
+  }
+
+  // ===== 整句播放 / 暫停 / 繼續 =====
+  function playSentence(bodyEl, sentenceIdx, btnPlay) {
+    if (!("speechSynthesis" in window)) return;
+
+    // 同一句正在播 → 暫停 / 繼續
+    if (playingSentenceIdx === sentenceIdx) {
+      if (isPlaying && !isPaused) {
+        window.speechSynthesis.pause();
+        isPaused = true;
+        btnPlay.textContent = "▶ 繼續";
+        btnPlay.dataset.state = "paused";
+        return;
+      }
+      if (isPaused) {
+        window.speechSynthesis.resume();
+        isPaused = false;
+        btnPlay.textContent = "⏸ 暫停";
+        btnPlay.dataset.state = "playing";
+        return;
+      }
+    }
+
+    // ---- 開始新的朗讀 ----
+
+    const spans = Array.from(bodyEl.querySelectorAll(".cn-token, .cn-punct"));
+    if (!spans.length) return;
+
+    // 先找出目前亮字位置
+    let startIndex = 0;
+    const activeSpan = bodyEl.querySelector(".cn-token.active-word");
+    if (activeSpan && activeSpan.dataset.tokenIndex) {
+      startIndex = parseInt(activeSpan.dataset.tokenIndex, 10) || 0;
+    }
+
+    // 停止之前的朗讀（這一步會清掉舊的高亮，但 startIndex 已經記住）
+    cancelSpeech(true);
+    resetAllPlayButtons();
+
+    const state = { tokenIndex: startIndex };
+    playState.set(sentenceIdx, state);
+    isPlaying = true;
+    isPaused  = false;
+    playingSentenceIdx = sentenceIdx;
+
+    btnPlay.textContent = "⏸ 暫停";
+    btnPlay.dataset.state = "playing";
+
+    const step = () => {
+      if (!isPlaying || isPaused) return;
+
+      spans.forEach(s => s.classList.remove("active-word"));
+
+      if (state.tokenIndex >= spans.length) {
+        isPlaying = false;
+        playingSentenceIdx = null;
+        btnPlay.textContent = "▶ 播放";
+        btnPlay.dataset.state = "stopped";
+        return;
+      }
+
+      const span = spans[state.tokenIndex];
+      const isPunc = span.dataset.isPunc === "1";
+      const ch = span.textContent || "";
+
+      if (isPunc || !ch.trim()) {
+        state.tokenIndex += 1;
+        const gapSkip = currentMode === "fast" ? 90 : 140;
+        setTimeout(step, gapSkip);
+        return;
+      }
+
+      span.classList.add("active-word");
+
+      const utter = createUtterance(ch);
+      currentUtterance = utter;
+
+      utter.onend = () => {
+        if (isPaused) return;
+        state.tokenIndex += 1;
+        const gap = currentMode === "fast" ? 90 : 140;
+        setTimeout(step, gap);
+      };
+      utter.onerror = () => {
+        if (isPaused) return;
+        state.tokenIndex += 1;
+        const gap = currentMode === "fast" ? 90 : 140;
+        setTimeout(step, gap);
+      };
+
+      window.speechSynthesis.speak(utter);
+    };
+
+    step();
+  }
+
+  // ===== render sentences =====
+  function renderSentences() {
+    containerEl.innerHTML = "";
+    clearAllHighlights();
+    playState.clear();
+
+    if (!cnSentences.length) {
+      containerEl.innerHTML = `
+        <div class="text-center mt-5 text-muted">
+          目前沒有句子資料。
+        </div>
+      `;
+      return;
+    }
+
+    cnSentences.forEach((item, index) => {
+      const card  = document.createElement("div");
+      card.className = "sentence-card";
+
+      const title = document.createElement("div");
+      title.className = "sentence-title";
+      title.textContent = "句子 " + (index + 1);
+
+      const body  = document.createElement("div");
+      body.className = "sentence-body sentence-hidden";
+      body.dataset.index = String(index);
+
+      const tokens = tokenizeChinese(item.text || "");
+      tokens.forEach((tk, tokenIndex) => {
+        const span = document.createElement("span");
+        span.textContent = tk.text;
+        span.dataset.tokenIndex = String(tokenIndex);
+        span.dataset.isPunc = tk.isPunc ? "1" : "0";
+
+        if (tk.isPunc) {
+          span.className = "cn-punct";
+        } else {
+          span.className = "cn-token hoverable";
+          span.addEventListener("click", () => {
+            speakSingleToken(body, tokenIndex);
+          });
+        }
+        body.appendChild(span);
+      });
+
+      const controls = document.createElement("div");
+      controls.className = "mt-2 d-flex gap-2";
+
+      const btnToggle = document.createElement("button");
+      btnToggle.className = "btn btn-sm btn-secondary";
+      btnToggle.textContent = "👀 顯示句子";
+      btnToggle.dataset.hidden = "true";
+      btnToggle.addEventListener("click", () => {
+        const isHidden = body.classList.toggle("sentence-hidden");
+        btnToggle.textContent = isHidden ? "👀 顯示句子" : "🙈 隱藏句子";
+        btnToggle.dataset.hidden = isHidden ? "true" : "false";
+      });
+
+      const btnPlay = document.createElement("button");
+      btnPlay.className = "btn btn-sm btn-primary cn-play-btn";
+      btnPlay.textContent = "▶ 播放";
+      btnPlay.dataset.state = "stopped";
+      btnPlay.addEventListener("click", () => {
+        playSentence(body, index, btnPlay);
+      });
+
+      const btnStop = document.createElement("button");
+      btnStop.className = "btn btn-sm btn-danger";
+      btnStop.textContent = "■ 停止";
+      btnStop.addEventListener("click", () => {
+        cancelSpeech(true);
+        const state = playState.get(index);
+        if (state) state.tokenIndex = 0;
+        btnPlay.textContent = "▶ 播放";
+        btnPlay.dataset.state = "stopped";
+      });
+
+      controls.appendChild(btnToggle);
+      controls.appendChild(btnPlay);
+      controls.appendChild(btnStop);
+
+      card.appendChild(title);
+      card.appendChild(body);
+      card.appendChild(controls);
+
+      containerEl.appendChild(card);
+    });
+  }
+
+  function showAllSentences() {
+    document.querySelectorAll(".sentence-body").forEach(body => {
+      body.classList.remove("sentence-hidden");
+    });
+    document.querySelectorAll(".sentence-card button").forEach(btn => {
+      if (btn.dataset.hidden !== undefined) {
+        btn.textContent = "🙈 隱藏句子";
+        btn.dataset.hidden = "false";
+      }
+    });
+  }
+
+  function hideAllSentences() {
+    document.querySelectorAll(".sentence-body").forEach(body => {
+      body.classList.add("sentence-hidden");
+    });
+    document.querySelectorAll(".sentence-card button").forEach(btn => {
+      if (btn.dataset.hidden !== undefined) {
+        btn.textContent = "👀 顯示句子";
+        btn.dataset.hidden = "true";
+      }
+    });
+  }
+
+  async function loadCnSentences(baseName) {
+    clearAllHighlights();
+    playState.clear();
+    cancelSpeech(false);
+
+    const jsonFile = baseName.endsWith(".json") ? baseName : `${baseName}.json`;
+
+    containerEl.innerHTML = `
+      <div class="text-center mt-5 text-muted">
+        <div class="spinner-border text-primary" role="status"></div>
+        <div class="mt-2">正在載入 ${jsonFile}...</div>
+      </div>
+    `;
+    errorEl.style.display = "none";
+    errorEl.textContent = "";
+
+    try {
+      const res = await fetch(`${DATA_DIR}/${encodeURIComponent(jsonFile)}`);
+      if (!res.ok) throw new Error(res.statusText);
+
+      const data = await res.json();
+      cnSentences = Array.isArray(data.sentences) ? data.sentences : [];
+      renderSentences();
+    } catch (err) {
+      console.error("Load CN dictation error:", err);
+      containerEl.innerHTML = "";
+      errorEl.style.display = "block";
+      errorEl.textContent = `無法讀取 ${jsonFile}，請檢查檔案是否存在於 /static/data/。`;
+    }
+  }
+
+  function initSelector() {
+    selectEl.innerHTML = "";
+    DICTATION_BASES.forEach(base => {
+      const opt = document.createElement("option");
+      opt.value = base;
+      opt.textContent = base;
+      selectEl.appendChild(opt);
+    });
+    currentBaseName = DICTATION_BASES[0];
+    selectEl.value = currentBaseName;
+
+    selectEl.addEventListener("change", () => {
+      currentBaseName = selectEl.value;
+      loadCnSentences(currentBaseName);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initSelector();
+    loadCnSentences(currentBaseName);
+
+    btnShowAll.addEventListener("click", showAllSentences);
+    btnHideAll.addEventListener("click", hideAllSentences);
+
+    btnModeNatural.addEventListener("click", () => {
+      currentMode = "natural";
+      btnModeNatural.classList.add("active");
+      btnModeFast.classList.remove("active");
+    });
+
+    btnModeFast.addEventListener("click", () => {
+      currentMode = "fast";
+      btnModeFast.classList.add("active");
+      btnModeNatural.classList.remove("active");
+    });
+
+    langSelect.addEventListener("change", () => {
+      currentLang = langSelect.value;
+    });
+  });
+
+  window.addEventListener("beforeunload", () => {
+    cancelSpeech(false);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>Chinese Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<!-- 修改：背景改為深藍色 (bg-[#0f172a])，文字改為淺白 (text-slate-100) -->
+<body class="min-h-screen bg-[#0f172a] text-slate-100">
+
+  <!-- Back Button SHOULD BE HERE (outside main!) -->
+  <!-- 修改：按鈕改為深色背景、淺藍文字、深色邊框 -->
+  <a href="index.html"
+     class="fixed top-6 left-6 z-50 inline-flex items-center gap-2 rounded-full border border-slate-600 
+            bg-slate-800/80 px-4 py-2 text-sm font-medium text-sky-400 shadow-sm backdrop-blur 
+            hover:bg-slate-700 hover:text-white transition">
+    ← Back to Subjects（返回科目選單）
+  </a>
+  
+  <main class="flex min-h-screen items-center justify-center px-4 py-8">
+    <div class="w-full max-w-5xl">
+
+      <header class="mb-10 text-center">
+        <h1 class="text-3xl font-extrabold tracking-tight text-white">Chinese Learning</h1>
+        <!-- 修改：副標題文字改淺 (text-slate-300 / text-slate-400) -->
+        <p class="mt-3 text-sm text-slate-300">
+          Choose a Chinese learning activity.
+          <span class="block text-xs text-slate-400">（選擇一項中文學習活動）</span>
+        </p>
+      </header>
+
+      <!-- Cards -->
+      <div class="grid gap-6 md:grid-cols-2">
+
+        <!-- Chinese Dictation -->
+        <!-- 保持紅色漸層，因為是中文科目代表色，且文字本身已是白色 -->
+        <a href="cn_dictation.html"
+           class="group block rounded-3xl bg-gradient-to-r from-red-400 to-red-600 p-6 text-white shadow-xl hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-900/50 transition">
+          <div class="flex items-center gap-4">
+            <div class="flex h-14 w-14 justify-center items-center rounded-full bg-white/90 text-2xl text-red-600 shadow-inner">
+              🈷️
+            </div>
+            <div>
+              <h2 class="text-xl font-bold">Chinese Dictation</h2>
+              <p class="text-white/90 text-sm">
+                Hidden-sentence dictation practice.
+                <span class="block text-xs opacity-80">（遮句中文默書練習）</span>
+              </p>
+            </div>
+          </div>
+        </a>
+
+        <!-- More coming -->
+        <!-- 修改：虛線邊框改深色，文字改淺灰 -->
+        <div class="rounded-3xl border border-dashed border-slate-600 p-6 text-slate-400">
+          <h3 class="font-semibold mb-2">Coming Soon</h3>
+          <p class="text-sm">
+            Chinese vocabulary, reading comprehension, quizzes...
+            <span class="block text-xs opacity-80">（之後可加入中文生字、閱讀理解、小測驗等）</span>
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>

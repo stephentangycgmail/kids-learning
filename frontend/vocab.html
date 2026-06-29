@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vocabulary</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <button onclick="window.location.href='kids_menu.html'">Back to Menu</button>
+    <h1>Vocabulary</h1>
+  </header>
+
+  <main>
+    <ul id="vocab-list">
+      <!-- later fill from vocab.json -->
+    </ul>
+
+    <section id="vocab-ai">
+      <h3>Ask AI about this word</h3>
+      <div id="selected-word">No word selected</div>
+      <button id="btn-ask-word">Explain</button>
+      <div id="vocab-answer"></div>
+    </section>
+  </main>
+
+  <script src="js/common_api.js"></script>
+  <script src="js/vocab.js"></script>
+</body>
+</html>

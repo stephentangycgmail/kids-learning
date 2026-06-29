@@ -1,0 +1,386 @@
+[
+  {
+    "english": "I played soccer yesterday.",
+    "chinese": "我昨天踢了足球。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "yesterday"
+    ]
+  },
+  {
+    "english": "She watched TV last night.",
+    "chinese": "她昨晚看了電視。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last night"
+    ]
+  },
+  {
+    "english": "We visited grandma last week.",
+    "chinese": "我們上週拜訪了奶奶。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last week"
+    ]
+  },
+  {
+    "english": "He read a book last month.",
+    "chinese": "他上個月讀了一本書。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last month"
+    ]
+  },
+  {
+    "english": "They cleaned their room last year.",
+    "chinese": "他們去年打掃了房間。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last year"
+    ]
+  },
+  {
+    "english": "I ate breakfast two days ago.",
+    "chinese": "我兩天前吃了早餐。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "two days ago"
+    ]
+  },
+  {
+    "english": "She painted a picture a few days ago.",
+    "chinese": "她幾天前畫了一幅畫。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "a few days ago"
+    ]
+  },
+  {
+    "english": "We played games three years ago.",
+    "chinese": "我們三年前玩了遊戲。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "three years ago"
+    ]
+  },
+  {
+    "english": "He helped his friend yesterday.",
+    "chinese": "他昨天幫助了他的朋友。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "yesterday"
+    ]
+  },
+  {
+    "english": "They studied English last night.",
+    "chinese": "他們昨晚學習了英語。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last night"
+    ]
+  },
+  {
+    "english": "I cleaned the house last week.",
+    "chinese": "我上週打掃了房子。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last week"
+    ]
+  },
+  {
+    "english": "She cooked dinner last month.",
+    "chinese": "她上個月做了晚餐。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last month"
+    ]
+  },
+  {
+    "english": "We visited the park last year.",
+    "chinese": "我們去年去了公園。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last year"
+    ]
+  },
+  {
+    "english": "He finished his homework two days ago.",
+    "chinese": "他兩天前完成了作業。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "two days ago"
+    ]
+  },
+  {
+    "english": "I watched a movie a few days ago.",
+    "chinese": "我幾天前看了一部電影。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "a few days ago"
+    ]
+  },
+  {
+    "english": "They played basketball three years ago.",
+    "chinese": "他們三年前打了籃球。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "three years ago"
+    ]
+  },
+  {
+    "english": "She danced at the party yesterday.",
+    "chinese": "她昨天在派對上跳舞了。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "yesterday"
+    ]
+  },
+  {
+    "english": "We listened to music last night.",
+    "chinese": "我們昨晚聽了音樂。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last night"
+    ]
+  },
+  {
+    "english": "He visited his uncle last week.",
+    "chinese": "他上週拜訪了他的叔叔。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last week"
+    ]
+  },
+  {
+    "english": "I helped my mom last month.",
+    "chinese": "我上個月幫助了媽媽。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last month"
+    ]
+  },
+  {
+    "english": "They played outside last year.",
+    "chinese": "他們去年在外面玩了。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last year"
+    ]
+  },
+  {
+    "english": "She cleaned her desk two days ago.",
+    "chinese": "她兩天前清理了書桌。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "two days ago"
+    ]
+  },
+  {
+    "english": "We ate lunch a few days ago.",
+    "chinese": "我們幾天前吃了午餐。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "a few days ago"
+    ]
+  },
+  {
+    "english": "He drew a cat three years ago.",
+    "chinese": "他三年前畫了一隻貓。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "three years ago"
+    ]
+  },
+  {
+    "english": "I walked to school yesterday.",
+    "chinese": "我昨天走路去學校。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "yesterday"
+    ]
+  },
+  {
+    "english": "She sang a song last night.",
+    "chinese": "她昨晚唱了一首歌。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last night"
+    ]
+  },
+  {
+    "english": "They cleaned the garden last week.",
+    "chinese": "他們上週打掃了花園。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last week"
+    ]
+  },
+  {
+    "english": "We played chess last month.",
+    "chinese": "我們上個月下了棋。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last month"
+    ]
+  },
+  {
+    "english": "He visited the zoo last year.",
+    "chinese": "他去年參觀了動物園。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last year"
+    ]
+  },
+  {
+    "english": "I wrote a letter two days ago.",
+    "chinese": "我兩天前寫了一封信。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "two days ago"
+    ]
+  },
+  {
+    "english": "She baked a cake a few days ago.",
+    "chinese": "她幾天前烤了一個蛋糕。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "a few days ago"
+    ]
+  },
+  {
+    "english": "They visited the museum three years ago.",
+    "chinese": "他們三年前參觀了博物館。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "three years ago"
+    ]
+  },
+  {
+    "english": "We watched cartoons yesterday.",
+    "chinese": "我們昨天看了卡通。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "yesterday"
+    ]
+  },
+  {
+    "english": "He played the piano last night.",
+    "chinese": "他昨晚彈了鋼琴。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last night"
+    ]
+  },
+  {
+    "english": "I helped my dad last week.",
+    "chinese": "我上週幫助了爸爸。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last week"
+    ]
+  },
+  {
+    "english": "She drew a flower last month.",
+    "chinese": "她上個月畫了一朵花。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last month"
+    ]
+  },
+  {
+    "english": "They cleaned the classroom last year.",
+    "chinese": "他們去年打掃了教室。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last year"
+    ]
+  },
+  {
+    "english": "We played tag two days ago.",
+    "chinese": "我們兩天前玩了捉迷藏。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "two days ago"
+    ]
+  },
+  {
+    "english": "He watched birds a few days ago.",
+    "chinese": "他幾天前觀察了鳥。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "a few days ago"
+    ]
+  },
+  {
+    "english": "I visited the library three years ago.",
+    "chinese": "我三年前去了圖書館。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "three years ago"
+    ]
+  },
+  {
+    "english": "She helped me yesterday.",
+    "chinese": "她昨天幫助了我。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "yesterday"
+    ]
+  },
+  {
+    "english": "We ate ice cream last night.",
+    "chinese": "我們昨晚吃了冰淇淋。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last night"
+    ]
+  },
+  {
+    "english": "He played football last week.",
+    "chinese": "他上週踢了足球。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last week"
+    ]
+  },
+  {
+    "english": "I cleaned my room last month.",
+    "chinese": "我上個月打掃了我的房間。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last month"
+    ]
+  },
+  {
+    "english": "They visited the farm last year.",
+    "chinese": "他們去年參觀了農場。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "last year"
+    ]
+  },
+  {
+    "english": "She danced two days ago.",
+    "chinese": "她兩天前跳了舞。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "two days ago"
+    ]
+  },
+  {
+    "english": "We played cards a few days ago.",
+    "chinese": "我們幾天前玩了紙牌。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "a few days ago"
+    ]
+  },
+  {
+    "english": "He visited the beach three years ago.",
+    "chinese": "他三年前去了海灘。",
+    "reason_cn": "用作表示已完成的過去動作。",
+    "time_keywords": [
+      "three years ago"
+    ]
+  }
+]

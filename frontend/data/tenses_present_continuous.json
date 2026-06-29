@@ -1,0 +1,378 @@
+[
+  {
+    "english": "I am reading a book right now.",
+    "chinese": "我現在正在讀書。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "right now"
+    ]
+  },
+  {
+    "english": "She is drawing a picture at the moment.",
+    "chinese": "她此刻正在畫畫。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "at the moment"
+    ]
+  },
+  {
+    "english": "They are playing football today.",
+    "chinese": "他們今天正在踢足球。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "today"
+    ]
+  },
+  {
+    "english": "My brother is doing his homework now.",
+    "chinese": "我哥哥現在正在做作業。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "now"
+    ]
+  },
+  {
+    "english": "We are watching a movie this evening.",
+    "chinese": "我們今晚正在看電影。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "this evening"
+    ]
+  },
+  {
+    "english": "Mom is cooking dinner at this moment.",
+    "chinese": "媽媽此刻正在做晚飯。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "at this moment"
+    ]
+  },
+  {
+    "english": "The teacher is explaining the lesson right now.",
+    "chinese": "老師現在正在講課。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "right now"
+    ]
+  },
+  {
+    "english": "We are cleaning the classroom this week.",
+    "chinese": "我們這週正在打掃教室。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "this week"
+    ]
+  },
+  {
+    "english": "Dad is fixing the car at the moment.",
+    "chinese": "爸爸此刻正在修理汽車。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "at the moment"
+    ]
+  },
+  {
+    "english": "I am learning to swim right now.",
+    "chinese": "我現在正在學游泳。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "right now"
+    ]
+  },
+  {
+    "english": "She is singing a song this evening.",
+    "chinese": "她今晚正在唱歌。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "this evening"
+    ]
+  },
+  {
+    "english": "They are building a sandcastle at this moment.",
+    "chinese": "他們此刻正在堆沙堡。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "at this moment"
+    ]
+  },
+  {
+    "english": "We are planting flowers today.",
+    "chinese": "我們今天正在種花。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "today"
+    ]
+  },
+  {
+    "english": "My sister is dancing right now.",
+    "chinese": "我妹妹現在正在跳舞。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "right now"
+    ]
+  },
+  {
+    "english": "The kids are playing games at the moment.",
+    "chinese": "孩子們此刻正在玩遊戲。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "at the moment"
+    ]
+  },
+  {
+    "english": "I am writing a letter currently.",
+    "chinese": "我目前正在寫信。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "currently"
+    ]
+  },
+  {
+    "english": "Dad is reading the newspaper this week.",
+    "chinese": "爸爸這週正在看報紙。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "this week"
+    ]
+  },
+  {
+    "english": "We are having lunch right now.",
+    "chinese": "我們現在正在吃午飯。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "right now"
+    ]
+  },
+  {
+    "english": "She is practicing the piano at this moment.",
+    "chinese": "她此刻正在練鋼琴。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "at this moment"
+    ]
+  },
+  {
+    "english": "The dog is barking currently.",
+    "chinese": "狗目前正在叫。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "currently"
+    ]
+  },
+  {
+    "english": "I am eating breakfast now.",
+    "chinese": "我現在正在吃早餐。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "now"
+    ]
+  },
+  {
+    "english": "They are swimming this week.",
+    "chinese": "他們這週正在游泳。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "this week"
+    ]
+  },
+  {
+    "english": "Mom is talking on the phone right now.",
+    "chinese": "媽媽現在正在講電話。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "right now"
+    ]
+  },
+  {
+    "english": "We are cleaning our room at the moment.",
+    "chinese": "我們此刻正在打掃房間。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "at the moment"
+    ]
+  },
+  {
+    "english": "The birds are singing this morning.",
+    "chinese": "鳥兒今天早上正在唱歌。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "today"
+    ]
+  },
+  {
+    "english": "I am drawing a cat right now.",
+    "chinese": "我現在正在畫一隻貓。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "right now"
+    ]
+  },
+  {
+    "english": "She is cooking dinner this evening.",
+    "chinese": "她今晚正在做晚飯。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "this evening"
+    ]
+  },
+  {
+    "english": "They are watching TV at this moment.",
+    "chinese": "他們此刻正在看電視。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "at this moment"
+    ]
+  },
+  {
+    "english": "I am studying English right now.",
+    "chinese": "我現在正在學英語。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "right now"
+    ]
+  },
+  {
+    "english": "Dad is fixing the bike currently.",
+    "chinese": "爸爸目前正在修自行車。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "currently"
+    ]
+  },
+  {
+    "english": "We are planting trees this week.",
+    "chinese": "我們這週正在種樹。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "this week"
+    ]
+  },
+  {
+    "english": "The children are playing outside now.",
+    "chinese": "孩子們現在正在外面玩。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "now"
+    ]
+  },
+  {
+    "english": "Mom is washing clothes at the moment.",
+    "chinese": "媽媽此刻正在洗衣服。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "at the moment"
+    ]
+  },
+  {
+    "english": "I am listening to music right now.",
+    "chinese": "我現在正在聽音樂。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "right now"
+    ]
+  },
+  {
+    "english": "She is reading a storybook this evening.",
+    "chinese": "她今晚正在讀故事書。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "this evening"
+    ]
+  },
+  {
+    "english": "They are cleaning the park currently.",
+    "chinese": "他們目前正在清理公園。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "currently"
+    ]
+  },
+  {
+    "english": "We are having a picnic today.",
+    "chinese": "我們今天正在野餐。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "today"
+    ]
+  },
+  {
+    "english": "Dad is reading a book right now.",
+    "chinese": "爸爸現在正在讀書。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "right now"
+    ]
+  },
+  {
+    "english": "I am drawing a house at this moment.",
+    "chinese": "我此刻正在畫房子。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "at this moment"
+    ]
+  },
+  {
+    "english": "She is playing the guitar this week.",
+    "chinese": "她這週正在彈吉他。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "this week"
+    ]
+  },
+  {
+    "english": "The boys are running now.",
+    "chinese": "男孩們現在正在跑步。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "now"
+    ]
+  },
+  {
+    "english": "We are baking cookies this evening.",
+    "chinese": "我們今晚正在烤餅乾。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "this evening"
+    ]
+  },
+  {
+    "english": "Mom is talking to the neighbor right now.",
+    "chinese": "媽媽現在正在和鄰居說話。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "right now"
+    ]
+  },
+  {
+    "english": "I am cleaning my desk currently.",
+    "chinese": "我目前正在清理我的書桌。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "currently"
+    ]
+  },
+  {
+    "english": "They are playing chess at the moment.",
+    "chinese": "他們此刻正在下棋。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "at the moment"
+    ]
+  },
+  {
+    "english": "We are watching birds today.",
+    "chinese": "我們今天正在觀察鳥兒。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "today"
+    ]
+  },
+  {
+    "english": "Dad is cooking breakfast right now.",
+    "chinese": "爸爸現在正在做早餐。",
+    "reason_cn": "用作表示正在發生或暫時進行中的動作。",
+    "time_keywords": [
+      "right now"
+    ]
+  }
+]

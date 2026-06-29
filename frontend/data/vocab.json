@@ -1,0 +1,23 @@
+{
+  "apple": {
+    "word": "蘋果",
+    "pos": "noun",
+    "meaning_zh": "A round fruit with red or green skin and crunchy white flesh inside, that grows on the apple tree.",
+    "example_en": "I ate an apple for lunch today. It was very juicy and sweet.",
+    "example_zh": "今天我吃了一塊蘋果。那條蘋果非常清楚，好甜."
+  },
+  "banana": {
+    "word": "芒果",
+    "pos": "N",
+    "meaning_zh": "A tropical fruit with a yellow skin and sweet flesh.",
+    "example_en": "The banana is my favorite snack after school.",
+    "example_zh": "我最喜歡的墊飯是芒果。"
+  },
+  "tiger": {
+    "word": "獅子",
+    "pos": "noun",
+    "meaning_zh": "A large carnivorous feline with a yellowish coat marked by dark brown or black stripes.",
+    "example_en": "The tiger is the largest cat species and can be found in Asia's forests.",
+    "example_zh": "獅子是亞洲森林中最大的貓類，它通常在森林里存活。"
+  }
+}

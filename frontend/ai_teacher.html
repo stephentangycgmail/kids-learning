@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ask AI Teacher</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <button onclick="window.location.href='kids_menu.html'">Back to Menu</button>
+    <h1>Ask AI Teacher</h1>
+  </header>
+
+  <main>
+    <textarea id="question" rows="3"
+      placeholder="Speak or type in Cantonese or English..."></textarea>
+    <button id="btn-send">Ask</button>
+
+    <div id="chat-area"></div>
+  </main>
+
+  <script src="js/common_api.js"></script>
+  <script src="js/ai_teacher.js"></script>
+</body>
+</html>

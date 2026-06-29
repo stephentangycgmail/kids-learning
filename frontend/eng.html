@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kids English Learning</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Styles -->
+  <style>
+    .cn-desc {
+      font-size: 0.78rem;
+      opacity: 0.92;
+      display: block;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+
+<!-- 修改：背景改為深藍色 (bg-[#0f172a])，文字改為淺灰白 (text-slate-100) -->
+<body class="bg-[#0f172a] text-slate-100">
+
+  <!-- Back to subjects -->
+  <!-- 修改：按鈕改為深色背景、藍色文字、深色邊框 -->
+  <a href="index.html"
+     class="absolute top-6 left-6 inline-flex items-center gap-2 rounded-full border border-slate-600 
+            bg-slate-800/80 px-4 py-2 text-sm font-medium text-sky-400 shadow-sm backdrop-blur 
+            hover:bg-slate-700 hover:text-white transition">
+    ← Back to Subjects（返回科目選單）
+  </a>
+
+  <header class="px-6 pt-6 pb-2 text-center">
+    <!-- 修改：標籤改為深藍底淺藍字 -->
+    <div class="inline-block rounded-full bg-blue-900 px-3 py-1 text-sm font-medium text-blue-200">
+      Primary 3–4 English
+    </div>
+
+    <h1 class="mt-4 text-3xl font-extrabold text-white">Kids English Learning</h1>
+    <!-- 修改：副標題文字改淺 -->
+    <p class="mt-2 text-slate-300">
+      Choose a learning mode to start today’s English adventure!
+    </p>
+  </header>
+
+  <!-- Main content -->
+  <main class="mx-auto mt-8 max-w-6xl px-6">
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Vocabulary -->
+      <a href="eng.html"
+         class="group block h-full select-none rounded-3xl bg-gradient-to-r from-sky-400 to-sky-600 p-5 shadow-xl text-white transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-sky-900/50">
+        <div class="flex items-center gap-4">
+          <div class="flex h-14 w-14 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-3xl shadow-inner">📚</div>
+          <div>
+            <h2 class="text-xl font-bold">Vocabulary</h2>
+            <p class="text-white/90">
+              Learn new words with pictures, sound and Chinese meanings.
+              <span class="cn-desc">（生字教學：包含圖片、發音、中文解釋。）</span>
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Sentences -->
+      <a href="sentences.html"
+         class="group block h-full select-none rounded-3xl bg-gradient-to-r from-fuchsia-500 to-pink-500 p-5 shadow-xl text-white transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-900/50">
+        <div class="flex items-center gap-4">
+          <div class="flex h-14 w-14 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-3xl shadow-inner">✏️</div>
+          <div>
+            <h2 class="text-xl font-bold">Sentences</h2>
+            <p class="text-white/90">
+              Example sentences and usage of vocabulary.
+              <span class="cn-desc">（例句練習：示範如何在句子中使用新生字。）</span>
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <!-- 點書：句子練習 -->
+      <!-- TODO: 若檔名不同，請把 href 改成實際檔名 -->
+      <a href="dictation_practice.html"
+         class="group block h-full select-none rounded-3xl bg-gradient-to-r from-emerald-500 to-teal-500 p-5 shadow-xl text-white transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-teal-900/50">
+        <div class="flex items-center gap-4">
+          <div class="flex h-14 w-14 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-3xl shadow-inner">📖</div>
+          <div>
+            <h2 class="text-xl font-bold">點書：句子練習</h2>
+            <p class="text-white/90">
+              Practice sentences from your textbook with audio.
+              <span class="cn-desc">（點書句子練習：配合課本句子做重溫與朗讀訓練。）</span>
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Grammar -->
+      <a href="grammar.html"
+         class="group block h-full select-none rounded-3xl bg-gradient-to-r from-green-500 to-green-400 p-5 shadow-xl text-white transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-900/50">
+        <div class="flex items-center gap-4">
+          <div class="flex h-14 w-14 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-3xl shadow-inner">📘</div>
+          <div>
+            <h2 class="text-xl font-bold">Grammar</h2>
+            <p class="text-white/90">
+              Simple grammar explanations with examples.
+              <span class="cn-desc">（文法教學：簡單易明的文法規則與例子。）</span>
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Usage -->
+      <a href="usage.html"
+         class="group block h-full select-none rounded-3xl bg-gradient-to-r from-orange-500 to-orange-400 p-5 shadow-xl text-white transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-orange-900/50">
+        <div class="flex items-center gap-4">
+          <div class="flex h-14 w-14 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-3xl shadow-inner">💬</div>
+          <div>
+            <h2 class="text-xl font-bold">Usage</h2>
+            <p class="text-white/90">
+              Learn daily-life English expressions.
+              <span class="cn-desc">（用法講解：日常生活情境中的常用英語表達。）</span>
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Quiz -->
+      <a href="quiz.html"
+         class="group block h-full select-none rounded-3xl bg-gradient-to-r from-slate-700 to-slate-600 p-5 shadow-xl text-white transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/50">
+        <div class="flex items-center gap-4">
+          <div class="flex h-14 w-14 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-3xl shadow-inner">🎯</div>
+          <div>
+            <h2 class="text-xl font-bold">Quiz</h2>
+            <p class="text-white/90">
+              Play quizzes to review vocabulary and grammar.
+              <span class="cn-desc">（小測驗：用遊戲方式複習生字與文法。）</span>
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Ask AI Teacher -->
+      <a href="ai_teacher.html"
+         class="group block h-full select-none rounded-3xl bg-gradient-to-r from-indigo-500 to-indigo-600 p-5 shadow-xl text-white transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-900/50">
+        <div class="flex items-center gap-4">
+          <div class="flex h-14 w-14 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-3xl shadow-inner">🤖</div>
+          <div>
+            <h2 class="text-xl font-bold">Ask AI Teacher</h2>
+            <p class="text-white/90">
+              Talk to AI in Chinese and ask English questions.
+              <span class="cn-desc">（AI老師：小朋友可用中文發問，AI 會用英文 + 中文解釋回答。）</span>
+            </p>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- 修改：底部提示文字改淺 -->
+    <p class="mt-10 text-center text-sm text-slate-400">
+      Remember: Start with Vocabulary, then try Sentences, 點書練習 or Quiz to review.
+    </p>
+
+  </main>
+</body>
+</html>

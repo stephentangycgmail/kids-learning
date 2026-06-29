@@ -1,0 +1,1122 @@
+{
+  "all": {
+    "cn": "全部",
+    "usage": "All the children are playing outside.",
+    "tenses": "POS: determiner 限定詞"
+  },
+  "and": {
+    "cn": "和、與",
+    "usage": "I like apples and bananas.",
+    "tenses": "POS: other 其它"
+  },
+  "at": {
+    "cn": "在…裡",
+    "usage": "The cat is at the door.",
+    "tenses": "POS: preposition 介詞"
+  },
+  "beef": {
+    "cn": "牛肉",
+    "usage": "I like to eat beef for dinner.",
+    "tenses": "POS: noun 名詞\nplural 複數 : beefs"
+  },
+  "bite": {
+    "cn": "咬",
+    "usage": "The dog can bite if it is scared.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : bite / bites\npast 過去式 : bit\nprogressive 進行式 : biting\nperfect 完成式 : have bitten / has bitten"
+  },
+  "bland": {
+    "cn": "平淡的，無味的",
+    "usage": "The soup tastes bland without salt.",
+    "tenses": "POS: adjective 形容詞"
+  },
+  "curry": {
+    "cn": "咖哩（一種香料或菜式）",
+    "usage": "I like to eat chicken curry for dinner.",
+    "tenses": "POS: noun 名詞\nplural 複數 : curries"
+  },
+  "do": {
+    "cn": "做",
+    "usage": "I do my homework every day.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : do / does\npast 過去式 : did\nprogressive 進行式 : doing\nperfect 完成式 : have done / has done"
+  },
+  "dumplings": {
+    "cn": "餃子",
+    "usage": "I like to eat dumplings for dinner.",
+    "tenses": "POS: noun 名詞\nplural 複數 : dumplings"
+  },
+  "had": {
+    "cn": "有（過去式）",
+    "usage": "I had a big lunch yesterday.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : have / has\npast 過去式 : had\nprogressive 進行式 : having\nperfect 完成式 : have had / has had"
+  },
+  "hear": {
+    "cn": "聽見",
+    "usage": "I can hear birds singing outside.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : hear / hears\npast 過去式 : heard\nprogressive 進行式 : hearing\nperfect 完成式 : have heard / has heard"
+  },
+  "i": {
+    "cn": "我（第一人稱代詞）",
+    "usage": "I like to play with my friends.",
+    "tenses": "POS: pronoun 代名詞"
+  },
+  "in": {
+    "cn": "在…裡",
+    "usage": "The cat is in the box.",
+    "tenses": "POS: preposition 介詞"
+  },
+  "it": {
+    "cn": "它（指代物品、動物或事情）",
+    "usage": "It is raining outside.",
+    "tenses": "POS: pronoun 代名詞"
+  },
+  "life": {
+    "cn": "生命；生活",
+    "usage": "Life is full of surprises.",
+    "tenses": "POS: noun 名詞\nplural 複數 : lives"
+  },
+  "like": {
+    "cn": "喜歡",
+    "usage": "I like to play outside.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : like / likes\npast 過去式 : liked\nprogressive 進行式 : liking\nperfect 完成式 : have liked / has liked"
+  },
+  "m": {
+    "cn": "米字母",
+    "usage": "The letter M is the 13th letter of the alphabet.",
+    "tenses": "POS: other 其它"
+  },
+  "macaroni": {
+    "cn": "通心粉",
+    "usage": "I like to eat macaroni with cheese.",
+    "tenses": "POS: noun 名詞\nplural 複數 : macaronis"
+  },
+  "make": {
+    "cn": "製造，做",
+    "usage": "I like to make cookies with my mom.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : make / makes\npast 過去式 : made\nprogressive 進行式 : making\nperfect 完成式 : have made / has made"
+  },
+  "me": {
+    "cn": "我（受格）",
+    "usage": "He gave me a gift.",
+    "tenses": "POS: pronoun 代名詞"
+  },
+  "mushrooms": {
+    "cn": "蘑菇",
+    "usage": "I like to eat mushrooms in my soup.",
+    "tenses": "POS: noun 名詞\nplural 複數 : mushrooms"
+  },
+  "my": {
+    "cn": "我的",
+    "usage": "This is my book.",
+    "tenses": "POS: determiner 限定詞"
+  },
+  "noodles": {
+    "cn": "麵條",
+    "usage": "I like to eat noodles for lunch.",
+    "tenses": "POS: noun 名詞\nplural 複數 : noodles"
+  },
+  "not": {
+    "cn": "不是，不",
+    "usage": "I am not tired.",
+    "tenses": "POS: other 其它"
+  },
+  "of": {
+    "cn": "的（表示屬於或關係）",
+    "usage": "The cover of the book is blue.",
+    "tenses": "POS: preposition 介詞"
+  },
+  "one": {
+    "cn": "一個",
+    "usage": "One apple is enough for me.",
+    "tenses": "POS: determiner 限定詞"
+  },
+  "only": {
+    "cn": "只有",
+    "usage": "I only have one apple.",
+    "tenses": "POS: adverb 副詞"
+  },
+  "salty": {
+    "cn": "有鹽味的",
+    "usage": "The soup tastes salty.",
+    "tenses": "POS: adjective 形容詞"
+  },
+  "some": {
+    "cn": "一些",
+    "usage": "I have some apples.",
+    "tenses": "POS: determiner 限定詞"
+  },
+  "sorry": {
+    "cn": "對不起",
+    "usage": "I am sorry for being late.",
+    "tenses": "POS: adjective 形容詞"
+  },
+  "spicy": {
+    "cn": "辣的",
+    "usage": "The spicy food made my mouth burn.",
+    "tenses": "POS: adjective 形容詞"
+  },
+  "tasted": {
+    "cn": "嘗味",
+    "usage": "I tasted the soup and it was delicious.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : taste / tastes\npast 過去式 : tasted\nprogressive 進行式 : tasting\nperfect 完成式 : have tasted / has tasted"
+  },
+  "that": {
+    "cn": "那個",
+    "usage": "That is my book.",
+    "tenses": "POS: determiner 限定詞"
+  },
+  "the": {
+    "cn": "這個（定冠詞）",
+    "usage": "The cat is sleeping.",
+    "tenses": "POS: article 冠詞"
+  },
+  "they": {
+    "cn": "他們",
+    "usage": "They are playing in the park.",
+    "tenses": "POS: pronoun 代名詞"
+  },
+  "to": {
+    "cn": "向、到、給",
+    "usage": "I am going to the park.",
+    "tenses": "POS: preposition 介詞"
+  },
+  "too": {
+    "cn": "太，過於",
+    "usage": "It is too hot today.",
+    "tenses": "POS: adverb 副詞"
+  },
+  "want": {
+    "cn": "想要",
+    "usage": "I want a new toy.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : want / wants\npast 過去式 : wanted\nprogressive 進行式 : wanting\nperfect 完成式 : have wanted / has wanted"
+  },
+  "was": {
+    "cn": "是（過去式）",
+    "usage": "She was happy yesterday.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : am / is / are\npast 過去式 : was / were\nprogressive 進行式 : being\nperfect 完成式 : have been / has been"
+  },
+  "water": {
+    "cn": "水",
+    "usage": "I drink water every day.",
+    "tenses": "POS: noun 名詞\nplural 複數 : waters"
+  },
+  "were": {
+    "cn": "是（過去式）",
+    "usage": "They were happy yesterday.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : am / is / are\npast 過去式 : was / were\nprogressive 進行式 : being\nperfect 完成式 : have been / has been"
+  },
+  "with": {
+    "cn": "和、跟、用（表示關係或工具）",
+    "usage": "I went to the park with my friend.",
+    "tenses": "POS: preposition 介詞"
+  },
+  "worst": {
+    "cn": "最壞的",
+    "usage": "This is the worst day ever.",
+    "tenses": "POS: adjective 形容詞"
+  },
+  "you": {
+    "cn": "你（代詞）",
+    "usage": "You are my friend.",
+    "tenses": "POS: pronoun 代名詞"
+  },
+  "salad": {
+    "cn": "沙律，一種用生菜和其他蔬菜做的食物",
+    "usage": "I like to eat salad for lunch.",
+    "tenses": "POS: noun 名詞\nplural 複數 : salads"
+  },
+  "which": {
+    "cn": "哪一個",
+    "usage": "Which book do you want to read?",
+    "tenses": "POS: wh-word 疑問詞"
+  },
+  "would": {
+    "cn": "會（表示假設或禮貌）",
+    "usage": "I would like some water, please.",
+    "tenses": "POS: auxiliary verb 助動詞"
+  },
+  "a": {
+    "cn": "一（用於表示單數名詞）",
+    "usage": "I have a book.",
+    "tenses": "POS: article 冠詞"
+  },
+  "good": {
+    "cn": "好的；好心的",
+    "usage": "She is a good friend.",
+    "tenses": "POS: adjective 形容詞\n原級 : good\n比較級 : better\n最高級 : best"
+  },
+  "idea": {
+    "cn": "主意，想法",
+    "usage": "I have a good idea for our project.",
+    "tenses": "POS: noun 名詞\nplural 複數 : ideas"
+  },
+  "is": {
+    "cn": "是（用於現在時，表示「是」的意思）",
+    "usage": "She is my friend.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : is\npast 過去式 : was\nprogressive 進行式 : being\nperfect 完成式 : has been"
+  },
+  "or": {
+    "cn": "或者（用來連接兩個選項）",
+    "usage": "Do you want tea or coffee?",
+    "tenses": "POS: other 其他詞性"
+  },
+  "this": {
+    "cn": "這個",
+    "usage": "This is my book.",
+    "tenses": "POS: determiner 限定詞"
+  },
+  "an": {
+    "cn": "一個（用於母音開頭的單詞前）",
+    "usage": "I saw an apple on the table.",
+    "tenses": "POS: article 冠詞"
+  },
+  "blocks": {
+    "cn": "積木；積木塊",
+    "usage": "The children play with colorful blocks.",
+    "tenses": "POS: noun 名詞\nplural 複數 : blocks"
+  },
+  "collected": {
+    "cn": "收集的",
+    "usage": "She collected stamps from different countries.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : collect, collects\npast 過去式 : collected\nprogressive 進行式 : collecting\nperfect 完成式 : have collected"
+  },
+  "emperor": {
+    "cn": "皇帝",
+    "usage": "The emperor ruled the country long ago.",
+    "tenses": "POS: noun 名詞\nplural 複數 : emperors"
+  },
+  "first": {
+    "cn": "第一的，最初的",
+    "usage": "She won first place in the race.",
+    "tenses": "POS: adjective 形容詞\n原級 : first\n比較級 : firster\n最高級 : firstest"
+  },
+  "fresh": {
+    "cn": "新鮮的",
+    "usage": "The fruit is fresh and tasty.",
+    "tenses": "POS: adjective 形容詞\n原級 : fresh\n比較級 : fresher\n最高級 : freshest"
+  },
+  "fridge": {
+    "cn": "雪櫃",
+    "usage": "The milk is in the fridge.",
+    "tenses": "POS: noun 名詞\nplural 複數 : fridges"
+  },
+  "from": {
+    "cn": "從，來自",
+    "usage": "She is from Hong Kong.",
+    "tenses": "POS: preposition 介詞"
+  },
+  "fruit": {
+    "cn": "水果",
+    "usage": "I like to eat fruit every day.",
+    "tenses": "POS: noun 名詞\nplural 複數 : fruits"
+  },
+  "history": {
+    "cn": "歷史",
+    "usage": "We learn about history at school.",
+    "tenses": "POS: noun 名詞\nplural 複數 : histories"
+  },
+  "huge": {
+    "cn": "巨大的",
+    "usage": "The elephant is huge.",
+    "tenses": "POS: adjective 形容詞\n原級 : huge\n比較級 : hugeer\n最高級 : hugeest"
+  },
+  "ice": {
+    "cn": "冰",
+    "usage": "The ice is very cold.",
+    "tenses": "POS: noun 名詞\nplural 複數 : ices"
+  },
+  "keep": {
+    "cn": "保持，繼續",
+    "usage": "Please keep your room clean.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : keep, keeps\npast 過去式 : kept\nprogressive 進行式 : keeping\nperfect 完成式 : have kept"
+  },
+  "meat": {
+    "cn": "肉類",
+    "usage": "I like to eat meat for dinner.",
+    "tenses": "POS: noun 名詞\nplural 複數 : meats"
+  },
+  "mountains": {
+    "cn": "山脈",
+    "usage": "We hiked in the mountains last weekend.",
+    "tenses": "POS: noun 名詞\nplural 複數 : mountains"
+  },
+  "mrs": {
+    "cn": "太太（尊稱）",
+    "usage": "Mrs. Lee is my teacher.",
+    "tenses": "POS: other 其他詞性"
+  },
+  "nobody": {
+    "cn": "沒有人",
+    "usage": "Nobody is in the classroom now.",
+    "tenses": "POS: pronoun 代名詞"
+  },
+  "on": {
+    "cn": "在…上面",
+    "usage": "The book is on the table.",
+    "tenses": "POS: preposition 介詞"
+  },
+  "palace": {
+    "cn": "宮殿",
+    "usage": "The king lives in a big palace.",
+    "tenses": "POS: noun 名詞\nplural 複數 : palaces"
+  },
+  "put": {
+    "cn": "放置",
+    "usage": "Please put the book on the table.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : put, puts\npast 過去式 : put\nprogressive 進行式 : putting\nperfect 完成式 : have put"
+  },
+  "room": {
+    "cn": "房間；空間",
+    "usage": "There is a big room in my house.",
+    "tenses": "POS: noun 名詞\nplural 複數 : rooms"
+  },
+  "s": {
+    "cn": "字母S",
+    "usage": "The letter s is the 19th letter of the alphabet.",
+    "tenses": "POS: other 其他詞性"
+  },
+  "salt": {
+    "cn": "鹽",
+    "usage": "Please add some salt to the soup.",
+    "tenses": "POS: noun 名詞\nplural 複數 : salts"
+  },
+  "servants": {
+    "cn": "僕人，傭人",
+    "usage": "The servants help clean the big house.",
+    "tenses": "POS: noun 名詞\nplural 複數 : servants"
+  },
+  "she": {
+    "cn": "她（用來指代女性）",
+    "usage": "She is my best friend.",
+    "tenses": "POS: pronoun 代名詞"
+  },
+  "them": {
+    "cn": "他們（受格代詞）",
+    "usage": "I gave the books to them.",
+    "tenses": "POS: pronoun 代名詞"
+  },
+  "there": {
+    "cn": "那裡；表示存在",
+    "usage": "There is a cat on the roof.",
+    "tenses": "POS: adverb 副詞"
+  },
+  "told": {
+    "cn": "告訴（tell 的過去式）",
+    "usage": "She told me a funny story.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : tell, tells\npast 過去式 : told\nprogressive 進行式 : telling\nperfect 完成式 : have told"
+  },
+  "vegetable": {
+    "cn": "蔬菜",
+    "usage": "I like to eat fresh vegetables.",
+    "tenses": "POS: noun 名詞\nplural 複數 : vegetables"
+  },
+  "vegetables": {
+    "cn": "蔬菜",
+    "usage": "I like to eat fresh vegetables.",
+    "tenses": "POS: noun 名詞\nplural 複數 : vegetables"
+  },
+  "wang": {
+    "cn": "王（姓氏）",
+    "usage": "Mr. Wang is my teacher.",
+    "tenses": "POS: noun 名詞\nplural 複數 : Wangs"
+  },
+  "amazing": {
+    "cn": "令人驚嘆的",
+    "usage": "The magic show was amazing.",
+    "tenses": "POS: adjective 形容詞\n原級 : amazing\n比較級 : amazinger\n最高級 : amazingest"
+  },
+  "anne": {
+    "cn": "安妮（人名）",
+    "usage": "Anne is my best friend.",
+    "tenses": "POS: other 其他詞性"
+  },
+  "became": {
+    "cn": "變成（be 的過去式）",
+    "usage": "She became a doctor last year.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : become\npast 過去式 : became\nprogressive 進行式 : becoming\nperfect 完成式 : have/has become"
+  },
+  "blind": {
+    "cn": "失明的；看不見的",
+    "usage": "The blind man uses a cane to walk.",
+    "tenses": "POS: adjective 形容詞\n原級 : blind\n比較級 : blinder\n最高級 : blindest"
+  },
+  "by": {
+    "cn": "由；靠近；在…旁邊",
+    "usage": "The book was written by my teacher.",
+    "tenses": "POS: preposition 介詞"
+  },
+  "college": {
+    "cn": "大學",
+    "usage": "She studies at a college in Hong Kong.",
+    "tenses": "POS: noun 名詞\nplural 複數 : colleges"
+  },
+  "could": {
+    "cn": "能夠（過去或禮貌用法）",
+    "usage": "Could you help me with my homework?",
+    "tenses": "POS: auxiliary verb 助動詞"
+  },
+  "couldn't": {
+    "cn": "助動詞「can not」的過去式否定形式",
+    "usage": "I couldn't go to school yesterday.",
+    "tenses": "POS: auxiliary verb 助動詞"
+  },
+  "deaf": {
+    "cn": "聾的，聽不到聲音的",
+    "usage": "My uncle is deaf and uses sign language.",
+    "tenses": "POS: adjective 形容詞\n原級 : deaf\n比較級 : deafer\n最高級 : deafest"
+  },
+  "end": {
+    "cn": "結束，末尾",
+    "usage": "The movie will end at 9 p.m.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : end, ends\npast 過去式 : ended\nprogressive 進行式 : ending\nperfect 完成式 : have ended"
+  },
+  "finish": {
+    "cn": "完成",
+    "usage": "I finish my homework before dinner.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : finish, finishes\npast 過去式 : finished\nprogressive 進行式 : finishing\nperfect 完成式 : have finished"
+  },
+  "hands": {
+    "cn": "手（複數）",
+    "usage": "She washed her hands before dinner.",
+    "tenses": "POS: noun 名詞\nplural 複數 : hands"
+  },
+  "helen": {
+    "cn": "海倫（人名）",
+    "usage": "Helen is my best friend.",
+    "tenses": "POS: other 其他詞性"
+  },
+  "her": {
+    "cn": "她的（用作所有格代詞）",
+    "usage": "This is her book.",
+    "tenses": "POS: pronoun 代名詞"
+  },
+  "keller": {
+    "cn": "地窖，地下室",
+    "usage": "The vegetables are stored in the keller.",
+    "tenses": "POS: noun 名詞\nplural 複數 : kellers"
+  },
+  "months": {
+    "cn": "月份",
+    "usage": "There are twelve months in a year.",
+    "tenses": "POS: noun 名詞\nplural 複數 : months"
+  },
+  "nineteen": {
+    "cn": "十九",
+    "usage": "She is nineteen years old.",
+    "tenses": "POS: determiner 限定詞"
+  },
+  "old": {
+    "cn": "舊的；年老的",
+    "usage": "My old bike is still useful.",
+    "tenses": "POS: adjective 形容詞\n原級 : old\n比較級 : older\n最高級 : oldest"
+  },
+  "person": {
+    "cn": "人，個人",
+    "usage": "There is one person in the room.",
+    "tenses": "POS: noun 名詞\nplural 複數 : people"
+  },
+  "see": {
+    "cn": "看見",
+    "usage": "I see a bird in the tree.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : see, sees\npast 過去式 : saw\nprogressive 進行式 : seeing\nperfect 完成式 : have/has seen"
+  },
+  "spell": {
+    "cn": "拼寫",
+    "usage": "Can you spell your name?",
+    "tenses": "POS: verb 動詞\npresent 現在式 : spell, spells\npast 過去式 : spelled\nprogressive 進行式 : spelling\nperfect 完成式 : have spelled"
+  },
+  "taught": {
+    "cn": "教導（teach 的過去式）",
+    "usage": "She taught me how to swim.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : teach, teaches\npast 過去式 : taught\nprogressive 進行式 : teaching\nperfect 完成式 : have/has taught"
+  },
+  "teacher": {
+    "cn": "老師",
+    "usage": "The teacher helps us learn English.",
+    "tenses": "POS: noun 名詞\nplural 複數 : teachers"
+  },
+  "things": {
+    "cn": "東西，物品",
+    "usage": "I have many things in my bag.",
+    "tenses": "POS: noun 名詞\nplural 複數 : things"
+  },
+  "three": {
+    "cn": "三（數字）",
+    "usage": "I have three apples.",
+    "tenses": "POS: determiner 限定詞"
+  },
+  "when": {
+    "cn": "何時，幾時",
+    "usage": "When is your birthday?",
+    "tenses": "POS: wh-word 疑問詞"
+  },
+  "words": {
+    "cn": "字詞，單字（複數）",
+    "usage": "She reads many words every day.",
+    "tenses": "POS: noun 名詞\nplural 複數 : words"
+  },
+  "writer": {
+    "cn": "作家，寫作的人",
+    "usage": "She is a famous writer of children's books.",
+    "tenses": "POS: noun 名詞\nplural 複數 : writers"
+  },
+  "writing": {
+    "cn": "寫作；書寫",
+    "usage": "She enjoys writing stories in her notebook.",
+    "tenses": "POS: noun 名詞"
+  },
+  "emperors": {
+    "cn": "皇帝（複數）",
+    "usage": "The emperors ruled the country long ago.",
+    "tenses": "POS: noun 名詞\nplural 複數 : emperors"
+  },
+  "after": {
+    "cn": "在…之後；在…後面",
+    "usage": "We will play after lunch.",
+    "tenses": "POS: preposition 介詞"
+  },
+  "arrived": {
+    "cn": "到達（過去式）",
+    "usage": "She arrived at school early today.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : arrive / arrives\npast 過去式 : arrived\nprogressive 進行式 : arriving\nperfect 完成式 : have/has arrived"
+  },
+  "behind": {
+    "cn": "在…後面",
+    "usage": "The cat is behind the sofa.",
+    "tenses": "POS: preposition 介詞"
+  },
+  "but": {
+    "cn": "但是",
+    "usage": "I like apples, but I don't like bananas.",
+    "tenses": ""
+  },
+  "convenience": {
+    "cn": "方便，便利",
+    "usage": "The convenience store is open 24 hours.",
+    "tenses": "POS: noun 名詞\nplural 複數 : conveniences"
+  },
+  "couldn": {
+    "cn": "（助動詞 can 的過去式，用於表示過去的能力或請求）",
+    "usage": "She said she couldn go to the party.",
+    "tenses": "POS: auxiliary verb 助動詞"
+  },
+  "decided": {
+    "cn": "決定了",
+    "usage": "She decided to go to the park.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : decide, decides\npast 過去式 : decided\nprogressive 進行式 : deciding\nperfect 完成式 : have decided"
+  },
+  "fifty": {
+    "cn": "五十",
+    "usage": "She has fifty apples.",
+    "tenses": "POS: determiner 限定詞"
+  },
+  "he": {
+    "cn": "他（用來指代男性）",
+    "usage": "He is my friend.",
+    "tenses": "POS: pronoun 代名詞"
+  },
+  "heritage": {
+    "cn": "遺產，傳統",
+    "usage": "Our culture is part of our heritage.",
+    "tenses": "POS: noun 名詞\nplural 複數 : heritages"
+  },
+  "him": {
+    "cn": "他（受格代詞）",
+    "usage": "I gave him a book.",
+    "tenses": "POS: pronoun 代名詞"
+  },
+  "his": {
+    "cn": "他的（用來表示某人的東西）",
+    "usage": "This is his book.",
+    "tenses": "POS: determiner 限定詞"
+  },
+  "hong": {
+    "cn": "香港（地名）",
+    "usage": "Hong Kong is a big city.",
+    "tenses": "POS: noun 名詞"
+  },
+  "jerry": {
+    "cn": "人名（傑瑞）",
+    "usage": "Jerry is my best friend.",
+    "tenses": "POS: other 其他詞性"
+  },
+  "kong": {
+    "cn": "（無此英文詞彙，請確認拼寫）",
+    "usage": "This word is not recognized in English.",
+    "tenses": "POS: other 其他詞性"
+  },
+  "later": {
+    "cn": "稍後，之後",
+    "usage": "I will call you later.",
+    "tenses": "POS: adverb 副詞"
+  },
+  "leo": {
+    "cn": "獅子（名字或動物名）",
+    "usage": "Leo is my friend's pet lion.",
+    "tenses": "POS: noun 名詞\nplural 複數 : Leos"
+  },
+  "minutes": {
+    "cn": "分鐘",
+    "usage": "The movie is 90 minutes long.",
+    "tenses": "POS: noun 名詞\nplural 複數 : minutes"
+  },
+  "museum": {
+    "cn": "博物館",
+    "usage": "We visited the museum to see the dinosaur bones.",
+    "tenses": "POS: noun 名詞\nplural 複數 : museums"
+  },
+  "noticed": {
+    "cn": "注意到",
+    "usage": "I noticed a bird in the tree.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : notice, notices\npast 過去式 : noticed\nprogressive 進行式 : noticing\nperfect 完成式 : have noticed"
+  },
+  "place": {
+    "cn": "地方；放置",
+    "usage": "Please place the book on the table.",
+    "tenses": "POS: noun 名詞\nplural 複數 : places"
+  },
+  "right": {
+    "cn": "正確的；右邊的",
+    "usage": "Turn right at the traffic light.",
+    "tenses": "POS: adjective 形容詞\n原級 : right\n比較級 : righter\n最高級 : rightest"
+  },
+  "saw": {
+    "cn": "鋸子；看見（see 的過去式）",
+    "usage": "I saw a bird in the tree.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : see, sees\npast 過去式 : saw\nprogressive 進行式 : seeing\nperfect 完成式 : have/has seen"
+  },
+  "sha": {
+    "cn": "沒有這個詞彙",
+    "usage": "This word is not recognized in English.",
+    "tenses": "POS: other 其他詞性"
+  },
+  "station": {
+    "cn": "車站；站",
+    "usage": "We waited at the bus station.",
+    "tenses": "POS: noun 名詞\nplural 複數 : stations"
+  },
+  "store": {
+    "cn": "商店；儲存",
+    "usage": "We store our books on the shelf.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : store, stores\npast 過去式 : stored\nprogressive 進行式 : storing\nperfect 完成式 : have stored"
+  },
+  "suddenly": {
+    "cn": "突然地",
+    "usage": "It suddenly started to rain.",
+    "tenses": "POS: adverb 副詞"
+  },
+  "t": {
+    "cn": "字母T",
+    "usage": "The letter T is the twentieth letter in the alphabet.",
+    "tenses": "POS: other 其他詞性"
+  },
+  "tin": {
+    "cn": "錫罐；錫",
+    "usage": "The tin is full of cookies.",
+    "tenses": "POS: noun 名詞\nplural 複數 : tins"
+  },
+  "twenty": {
+    "cn": "二十",
+    "usage": "There are twenty apples in the basket.",
+    "tenses": "POS: determiner 限定詞"
+  },
+  "wai": {
+    "cn": "（無此英文詞）",
+    "usage": "The word 'wai' is not a common English word.",
+    "tenses": "POS: other 其他詞性"
+  },
+  "wait": {
+    "cn": "等待",
+    "usage": "Please wait for me at the bus stop.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : wait, waits\npast 過去式 : waited\nprogressive 進行式 : waiting\nperfect 完成式 : have waited"
+  },
+  "walked": {
+    "cn": "走路（過去式）",
+    "usage": "She walked to school yesterday.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : walk, walks\npast 過去式 : walked\nprogressive 進行式 : walking\nperfect 完成式 : have/has walked"
+  },
+  "went": {
+    "cn": "去（go 的過去式）",
+    "usage": "She went to the park yesterday.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : go, goes\npast 過去式 : went\nprogressive 進行式 : going\nperfect 完成式 : have/has gone"
+  },
+  "worried": {
+    "cn": "擔心的",
+    "usage": "She is worried about the test.",
+    "tenses": "POS: adjective 形容詞\n原級 : worried\n比較級 : worrieder\n最高級 : worriedest"
+  },
+  "wrong": {
+    "cn": "錯誤的",
+    "usage": "You gave the wrong answer.",
+    "tenses": "POS: adjective 形容詞\n原級 : wrong\n比較級 : wronger\n最高級 : wrongest"
+  },
+  "alan": {
+    "cn": "艾倫（人名）",
+    "usage": "Alan is my best friend.",
+    "tenses": "POS: other 其他詞性"
+  },
+  "always": {
+    "cn": "總是，永遠",
+    "usage": "She always does her homework on time.",
+    "tenses": "POS: adverb 副詞"
+  },
+  "balanced": {
+    "cn": "平衡的，均衡的",
+    "usage": "She has a balanced diet with fruits and vegetables.",
+    "tenses": "POS: adjective 形容詞\n原級 : balanced\n比較級 : balanceder\n最高級 : balancedest"
+  },
+  "bella": {
+    "cn": "貝拉（人名）",
+    "usage": "Bella is my best friend.",
+    "tenses": "POS: other 其他詞性"
+  },
+  "diet": {
+    "cn": "飲食，飲食習慣",
+    "usage": "My diet includes lots of fruits and vegetables.",
+    "tenses": "POS: noun 名詞\nplural 複數 : diets"
+  },
+  "eat": {
+    "cn": "吃",
+    "usage": "I eat an apple every day.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : eat, eats\npast 過去式 : ate\nprogressive 進行式 : eating\nperfect 完成式 : have eaten"
+  },
+  "feels": {
+    "cn": "感覺",
+    "usage": "She feels happy today.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : feel, feels\npast 過去式 : felt\nprogressive 進行式 : feeling\nperfect 完成式 : have/has felt"
+  },
+  "fewer": {
+    "cn": "較少的（用於可數名詞）",
+    "usage": "There are fewer apples in the basket today.",
+    "tenses": "POS: determiner 限定詞"
+  },
+  "have": {
+    "cn": "有；吃；擁有",
+    "usage": "I have a pet cat.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : have, has\npast 過去式 : had\nprogressive 進行式 : having\nperfect 完成式 : have had"
+  },
+  "help": {
+    "cn": "幫助",
+    "usage": "Can you help me with my homework?",
+    "tenses": "POS: verb 動詞\npresent 現在式 : help, helps\npast 過去式 : helped\nprogressive 進行式 : helping\nperfect 完成式 : have helped"
+  },
+  "less": {
+    "cn": "較少的",
+    "usage": "I have less homework today.",
+    "tenses": "POS: determiner 限定詞"
+  },
+  "lose": {
+    "cn": "失去；輸掉",
+    "usage": "I don't want to lose my keys.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : lose, loses\npast 過去式 : lost\nprogressive 進行式 : losing\nperfect 完成式 : have lost"
+  },
+  "more": {
+    "cn": "更多",
+    "usage": "I want more apples.",
+    "tenses": "POS: determiner 限定詞"
+  },
+  "needs": {
+    "cn": "需要",
+    "usage": "She needs help with her homework.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : need, needs\npast 過去式 : needed\nprogressive 進行式 : needing\nperfect 完成式 : have/has needed"
+  },
+  "overweight": {
+    "cn": "超重的，體重過重的",
+    "usage": "He is overweight because he eats too much junk food.",
+    "tenses": "POS: adjective 形容詞"
+  },
+  "pasta": {
+    "cn": "意大利粉",
+    "usage": "I like to eat pasta for dinner.",
+    "tenses": "POS: noun 名詞\nplural 複數 : pastas"
+  },
+  "rice": {
+    "cn": "米飯",
+    "usage": "I like to eat rice with vegetables.",
+    "tenses": "POS: noun 名詞\nplural 複數 : rices"
+  },
+  "stronger": {
+    "cn": "更強壯的",
+    "usage": "He is stronger than before.",
+    "tenses": "POS: adjective 形容詞\n原級 : stronger\n比較級 : strongerer\n最高級 : strongerest"
+  },
+  "thin": {
+    "cn": "瘦的；薄的",
+    "usage": "The book is very thin.",
+    "tenses": "POS: adjective 形容詞\n原級 : thin\n比較級 : thinner\n最高級 : thinnest"
+  },
+  "very": {
+    "cn": "非常，很",
+    "usage": "She is very happy today.",
+    "tenses": "POS: adverb 副詞"
+  },
+  "weak": {
+    "cn": "虛弱的，無力的",
+    "usage": "The weak boy needs to rest.",
+    "tenses": "POS: adjective 形容詞\n原級 : weak\n比較級 : weaker\n最高級 : weakest"
+  },
+  "weight": {
+    "cn": "重量",
+    "usage": "The weight of the box is heavy.",
+    "tenses": "POS: noun 名詞\nplural 複數 : weights"
+  },
+  "will": {
+    "cn": "將會，會（表示未來）",
+    "usage": "I will go to school tomorrow.",
+    "tenses": "POS: auxiliary verb 助動詞"
+  },
+  "ate": {
+    "cn": "吃（過去式）",
+    "usage": "She ate an apple for lunch.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : eat, eats\npast 過去式 : ate\nprogressive 進行式 : eating\nperfect 完成式 : have/has eaten"
+  },
+  "few": {
+    "cn": "少量的，幾乎沒有",
+    "usage": "There are few apples left in the basket.",
+    "tenses": "POS: determiner 限定詞"
+  },
+  "food": {
+    "cn": "食物",
+    "usage": "I like to eat healthy food.",
+    "tenses": "POS: noun 名詞\nplural 複數 : foods"
+  },
+  "healthy": {
+    "cn": "健康的",
+    "usage": "Eating fruits is healthy.",
+    "tenses": "POS: adjective 形容詞\n原級 : healthy\n比較級 : healthier\n最高級 : healthiest"
+  },
+  "lettuce": {
+    "cn": "生菜",
+    "usage": "I like to eat lettuce in my salad.",
+    "tenses": "POS: noun 名詞\nplural 複數 : lettuces"
+  },
+  "little": {
+    "cn": "小的；少量的",
+    "usage": "She has a little dog.",
+    "tenses": "POS: adjective 形容詞\n原級 : little\n比較級 : less\n最高級 : least"
+  },
+  "lot": {
+    "cn": "很多；一大堆",
+    "usage": "She has a lot of books to read.",
+    "tenses": "POS: noun 名詞\nplural 複數 : lots"
+  },
+  "must": {
+    "cn": "必須，必定",
+    "usage": "You must finish your homework before playing.",
+    "tenses": "POS: auxiliary verb 助動詞"
+  },
+  "need": {
+    "cn": "需要",
+    "usage": "I need a pencil to write.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : need/needs\npast 過去式 : needed\nprogressive 進行式 : needing\nperfect 完成式 : have/has needed"
+  },
+  "peas": {
+    "cn": "豌豆",
+    "usage": "I like to eat green peas.",
+    "tenses": "POS: noun 名詞\nplural 複數 : peas"
+  },
+  "so": {
+    "cn": "所以；這麼（副詞）",
+    "usage": "It was raining, so we stayed inside.",
+    "tenses": "POS: adverb 副詞"
+  },
+  "well": {
+    "cn": "好；健康地；井",
+    "usage": "She sings well in the school concert.",
+    "tenses": "POS: adverb 副詞"
+  },
+  "are": {
+    "cn": "是（用於複數或第二人稱）",
+    "usage": "They are my friends.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : are\npast 過去式 : were\nprogressive 進行式 : being\nperfect 完成式 : have been"
+  },
+  "as": {
+    "cn": "作為；像",
+    "usage": "She works as a teacher.",
+    "tenses": "POS: preposition 介詞"
+  },
+  "bacon": {
+    "cn": "煙肉",
+    "usage": "I like to eat bacon for breakfast.",
+    "tenses": "POS: noun 名詞\nplural 複數 : bacons"
+  },
+  "bad": {
+    "cn": "壞的，不好的",
+    "usage": "The food tastes bad.",
+    "tenses": "POS: adjective 形容詞\n原級 : bad\n比較級 : worse\n最高級 : worst"
+  },
+  "bread": {
+    "cn": "麵包",
+    "usage": "I like to eat bread for breakfast.",
+    "tenses": "POS: noun 名詞\nplural 複數 : breads"
+  },
+  "can": {
+    "cn": "能夠；可以",
+    "usage": "I can swim very well.",
+    "tenses": "POS: auxiliary verb 助動詞"
+  },
+  "cola": {
+    "cn": "可樂（一種汽水）",
+    "usage": "I like to drink cola with my lunch.",
+    "tenses": "POS: noun 名詞\nplural 複數 : colas"
+  },
+  "contains": {
+    "cn": "包含",
+    "usage": "This box contains toys.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : contain, contains\npast 過去式 : contained\nprogressive 進行式 : containing\nperfect 完成式 : have contained"
+  },
+  "day": {
+    "cn": "日子，天",
+    "usage": "I go to school every day.",
+    "tenses": "POS: noun 名詞\nplural 複數 : days"
+  },
+  "don": {
+    "cn": "穿上（衣服）",
+    "usage": "He will don his hat before going outside.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : don, dons\npast 過去式 : donned\nprogressive 進行式 : donning\nperfect 完成式 : have/has donned"
+  },
+  "drink": {
+    "cn": "喝（飲料）",
+    "usage": "I like to drink water every day.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : drink, drinks\npast 過去式 : drank\nprogressive 進行式 : drinking\nperfect 完成式 : have/has drunk"
+  },
+  "eight": {
+    "cn": "八",
+    "usage": "I have eight apples.",
+    "tenses": "POS: determiner 限定詞"
+  },
+  "energy": {
+    "cn": "能量，力量",
+    "usage": "The sun gives us energy to grow plants.",
+    "tenses": "POS: noun 名詞\nplural 複數 : energies"
+  },
+  "enough": {
+    "cn": "足夠的",
+    "usage": "She has enough books to read.",
+    "tenses": "POS: determiner 限定詞"
+  },
+  "fat": {
+    "cn": "胖的；脂肪",
+    "usage": "The cat is fat and happy.",
+    "tenses": "POS: adjective 形容詞\n原級 : fat\n比較級 : fatter\n最高級 : fattest"
+  },
+  "for": {
+    "cn": "為了；給",
+    "usage": "This gift is for you.",
+    "tenses": "POS: preposition 介詞"
+  },
+  "fried": {
+    "cn": "油炸的",
+    "usage": "I like fried chicken for dinner.",
+    "tenses": "POS: adjective 形容詞\n原級 : fried\n比較級 : frieder\n最高級 : friedest"
+  },
+  "fruits": {
+    "cn": "水果（複數）",
+    "usage": "I like to eat different fruits every day.",
+    "tenses": "POS: noun 名詞\nplural 複數 : fruits"
+  },
+  "give": {
+    "cn": "給予",
+    "usage": "Please give me the book.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : give, gives\npast 過去式 : gave\nprogressive 進行式 : giving\nperfect 完成式 : have given"
+  },
+  "glasses": {
+    "cn": "眼鏡",
+    "usage": "She wears glasses to see better.",
+    "tenses": "POS: noun 名詞\nplural 複數 : glasses"
+  },
+  "grain": {
+    "cn": "穀粒，穀物",
+    "usage": "The farmer grows grain in the field.",
+    "tenses": "POS: noun 名詞\nplural 複數 : grains"
+  },
+  "health": {
+    "cn": "健康",
+    "usage": "Good health is important for everyone.",
+    "tenses": "POS: noun 名詞"
+  },
+  "instead": {
+    "cn": "取代；代替",
+    "usage": "I will have tea instead of coffee.",
+    "tenses": "POS: preposition 介詞"
+  },
+  "least": {
+    "cn": "最少的",
+    "usage": "She has the least toys in the class.",
+    "tenses": "POS: adjective 形容詞\n原級 : least\n比較級 : leaster\n最高級 : leastest"
+  },
+  "makes": {
+    "cn": "製造，做（動詞第三人稱單數）",
+    "usage": "She makes a cake every Sunday.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : make, makes\npast 過去式 : made\nprogressive 進行式 : making\nperfect 完成式 : have/has made"
+  },
+  "much": {
+    "cn": "很多（用於不可數名詞）",
+    "usage": "She has much water in her bottle.",
+    "tenses": "POS: determiner 限定詞"
+  },
+  "ourselves": {
+    "cn": "我們自己",
+    "usage": "We did the project by ourselves.",
+    "tenses": "POS: pronoun 代名詞"
+  },
+  "per": {
+    "cn": "每、每一（表示比例或分配）",
+    "usage": "The price is five dollars per book.",
+    "tenses": "POS: preposition 介詞"
+  },
+  "portions": {
+    "cn": "部分；份量",
+    "usage": "She ate small portions of the cake.",
+    "tenses": "POS: noun 名詞\nplural 複數 : portions"
+  },
+  "products": {
+    "cn": "產品",
+    "usage": "The store sells many products.",
+    "tenses": "POS: noun 名詞\nplural 複數 : products"
+  },
+  "should": {
+    "cn": "應該，表示建議或義務",
+    "usage": "You should do your homework before playing.",
+    "tenses": "POS: auxiliary verb 助動詞"
+  },
+  "six": {
+    "cn": "六",
+    "usage": "I have six apples.",
+    "tenses": "POS: determiner 限定詞"
+  },
+  "such": {
+    "cn": "如此的；這樣的",
+    "usage": "She is such a good friend.",
+    "tenses": "POS: determiner 限定詞"
+  },
+  "sugar": {
+    "cn": "糖",
+    "usage": "I like to put sugar in my tea.",
+    "tenses": "POS: noun 名詞\nplural 複數 : sugars"
+  },
+  "teeth": {
+    "cn": "牙齒",
+    "usage": "I brush my teeth every morning.",
+    "tenses": "POS: noun 名詞\nplural 複數 : teeth"
+  },
+  "two": {
+    "cn": "二，兩個",
+    "usage": "I have two apples.",
+    "tenses": "POS: determiner 限定詞"
+  },
+  "us": {
+    "cn": "我們（賓格代詞）",
+    "usage": "She gave us a gift.",
+    "tenses": "POS: pronoun 代名詞"
+  },
+  "we": {
+    "cn": "我們（代詞）",
+    "usage": "We are going to the park.",
+    "tenses": "POS: pronoun 代名詞"
+  },
+  "your": {
+    "cn": "你的（表示所有）",
+    "usage": "Is this your book?",
+    "tenses": "POS: determiner 限定詞"
+  }
+}
