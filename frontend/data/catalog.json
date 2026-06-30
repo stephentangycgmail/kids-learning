@@ -1,0 +1,18 @@
+{
+  "dictation": [
+    {
+      "id": "dictation01",
+      "title": "Dictation 01",
+      "file": "dictation01.json",
+      "level": "Primary 3",
+      "topic": "Health"
+    },
+    {
+      "id": "dictation02",
+      "title": "Dictation 02",
+      "file": "dictation02.json",
+      "level": "Primary 3",
+      "topic": "Food"
+    }
+  ]
+}
