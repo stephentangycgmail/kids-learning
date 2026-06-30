@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-06-30
+
+### Added
+
+- Added `docs/MASTER_TASK.md` as the highest-level project specification.
+- Added `docs/CODEX_PLAYBOOK.md` for Codex operating rules.
+- Added `docs/FOLDER_STRUCTURE.md` as the canonical repository structure reference.
+- Added `docs/DEVELOPMENT_GUIDE.md` for branch, feature, review, and release workflow.
+- Added `docs/RELEASE_NOTES.md` for milestone history.
+
+### Changed
+
+- Updated `docs/ROADMAP.md` into Version 2, Version 2.5, Version 3, and Future planning.
+- Updated project-structure documents to point to the canonical folder structure document.
+
+### Notes
+
+- Documentation-only milestone.
+- No frontend, backend, CSS, JavaScript, JSON, lesson content, or GitHub Pages runtime changes are intended.
+
 ## 2026-06-29
 
 ### Added

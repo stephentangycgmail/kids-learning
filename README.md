@@ -1,29 +1,51 @@
 # Kids Learning Website
 
-A local-first kids English learning website with static frontend pages, JSON-based learning content, and optional backend utilities for generating or maintaining data files.
+A local-first kids learning website with static frontend pages, JSON-based learning content, and optional backend utilities for generating or maintaining data files.
 
-The current priority is to keep the existing website working while gradually moving away from live API-based content generation. New learning materials should be generated as JSON files first, reviewed, and then committed into `frontend/data/`.
+The current priority is to keep the student-facing website working on GitHub Pages while gradually moving away from live API-based content generation. New learning materials should be generated as JSON files first, reviewed, and then committed into `frontend/data/`.
 
 ## Current Status
 
 - Frontend website is stored in `frontend/`.
 - Learning content is mainly stored as JSON files under `frontend/data/`.
 - Browser speech is mainly handled by the Web Speech API, not by large stored audio files.
-- Azure/OpenAI API usage is planned to be phased out.
+- Backend files are preserved as legacy/local-only tooling.
 - `backend/config.json` is a local-only secret file and must never be committed.
 
 ## Repository Structure
 
 ```text
 kids-learning/
-├── frontend/          # Static website files: HTML, CSS, JS, JSON, small audio assets
-├── backend/           # Local tools and generated data support files
-├── deploy/            # Deployment-related files, generated zip packages are ignored
-├── docs/              # Project documentation and future Codex task references
-├── Dockerfile         # Existing container configuration
-├── .gitignore         # Prevents secrets and generated files from being committed
-└── README.md          # Project overview
++-- frontend/      # Static website files: HTML, CSS, JS, JSON, small audio assets
++-- backend/       # Local tools and generated data support files
++-- docs/          # Governance, architecture, workflow, and planning docs
++-- Dockerfile     # Existing container configuration
++-- index.html     # GitHub Pages redirect to frontend/index.html
++-- .gitignore     # Prevents secrets and generated files from being committed
+`-- README.md      # Project overview
 ```
+
+The canonical structure reference is [docs/FOLDER_STRUCTURE.md](docs/FOLDER_STRUCTURE.md).
+
+## Documentation Index
+
+Governance:
+
+- [Master Task](docs/MASTER_TASK.md)
+- [Codex Playbook](docs/CODEX_PLAYBOOK.md)
+- [Folder Structure](docs/FOLDER_STRUCTURE.md)
+- [Development Guide](docs/DEVELOPMENT_GUIDE.md)
+- [Roadmap](docs/ROADMAP.md)
+- [Release Notes](docs/RELEASE_NOTES.md)
+
+Supporting docs:
+
+- [System Architecture](docs/SYSTEM_ARCHITECTURE_V1.md)
+- [API Dependency Audit](docs/API_DEPENDENCY_AUDIT.md)
+- [Content Generation Plan](docs/CONTENT_GENERATION_PLAN.md)
+- [JSON Specification](docs/JSON_SPECIFICATION.md)
+- [Codex Workflow](docs/CODEX_WORKFLOW.md)
+- [Changelog](docs/CHANGELOG.md)
 
 ## Important Security Rules
 
@@ -45,17 +67,14 @@ Recommended workflow:
 
 ```text
 User requirement
-    ↓
-ChatGPT reviews and prepares a clear task plan
-    ↓
-Codex modifies the repository
-    ↓
-ChatGPT reviews the changes
-    ↓
-Commit / merge after confirmation
+  -> analyze current repository state
+  -> plan the change
+  -> implement the smallest safe change
+  -> validate GitHub Pages compatibility
+  -> report changed files, validation, and risks
 ```
 
-For now, do not restructure the frontend or rewrite major logic unless a specific task requires it.
+For detailed branch, review, and release workflow, see [docs/DEVELOPMENT_GUIDE.md](docs/DEVELOPMENT_GUIDE.md).
 
 ## Future Direction
 
@@ -63,12 +82,9 @@ The long-term goal is:
 
 ```text
 ChatGPT / Codex generates learning content
-    ↓
-Content is saved as JSON
-    ↓
-Website reads static JSON files
-    ↓
-No live API call is needed during student use
+  -> content is saved as reviewed JSON
+  -> website reads static JSON files
+  -> no live API call is needed during student use
 ```
 
 This keeps hosting simple, reduces cost, and makes the project easier to maintain with GitHub Pages or other static hosting.

@@ -1,47 +1,85 @@
 # Roadmap
 
-## Phase 1: Project Cleanup
+This roadmap organizes long-term platform work by version. It should guide planning without forcing large rewrites.
 
-Goal: make the current project safe and maintainable without changing existing website behavior.
+## Version 2 - Static Platform Foundation
 
-Tasks:
+Goal: make the existing student website stable, maintainable, and safe as a static GitHub Pages platform.
 
-- Add `.gitignore` to protect local secrets.
-- Add `backend/config.example.json` as a safe template.
-- Add documentation under `docs/`.
-- Keep existing frontend and JSON behavior unchanged.
-- Keep API-related backend files for now, but mark live API generation as planned for removal.
+Priorities:
 
-## Phase 2: Content Generation Migration
+- Preserve current student-facing behavior.
+- Keep GitHub Pages compatibility.
+- Keep backend tooling local-only.
+- Establish project governance documents.
+- Maintain static JSON learning content under `frontend/data/`.
+- Keep AI Teacher disabled until a reviewed design exists.
+- Add validation practices for documentation, JSON, and static pages.
 
-Goal: reduce or remove dependency on live API calls.
+Expected outcomes:
 
-Tasks:
+- Clear repository rules.
+- Clear development workflow.
+- Canonical folder structure.
+- Stable documentation baseline.
+- No student-facing backend dependency.
 
-- Review backend Python scripts.
-- Identify which scripts are still useful without API access.
-- Convert content generation into a prompt/Codex-driven JSON workflow.
-- Add JSON validation and review steps.
+## Version 2.5 - Content Factory and Quality Gates
 
-## Phase 3: Website Improvement
+Goal: create a repeatable workflow for producing, reviewing, validating, and publishing lesson content.
 
-Goal: improve learning features while keeping the project static-hosting friendly.
+Priorities:
 
-Possible future tasks:
+- Define Lesson Package structure.
+- Expand JSON schema documentation.
+- Add content review checklists.
+- Add JSON validation scripts or documented validation commands.
+- Separate draft/generated content from reviewed published content.
+- Document how Codex or ChatGPT should help create content safely.
 
-- Improve dictation practice.
-- Add more grammar modules.
-- Add phonics or reading practice.
-- Add review mode for wrong answers.
-- Improve mobile/PWA behavior.
-- Improve content selection and navigation.
+Expected outcomes:
 
-## Phase 4: Hosting and Deployment
+- Reviewed lesson content workflow.
+- Lower risk of malformed JSON.
+- Better traceability for content changes.
+- Clear approval path for new learning materials.
 
-Goal: choose the simplest low-cost hosting approach.
+## Version 3 - Learning Platform Expansion
 
-Possible options:
+Goal: expand learning modules while preserving the static-first architecture.
 
-- GitHub Pages for static frontend.
-- Cloudflare Pages if faster CDN or custom routing is needed.
-- Keep backend tools local only unless a server is truly required.
+Potential areas:
+
+- More grammar modules.
+- Improved dictation selection.
+- Vocabulary review modes.
+- Reading comprehension.
+- Phonics or pronunciation practice.
+- Quiz improvements.
+- Progress-friendly UX that can still work without a backend.
+
+Expected outcomes:
+
+- Richer learning experience.
+- More reusable lesson package patterns.
+- Better content organization.
+- Continued GitHub Pages compatibility.
+
+## Future
+
+Longer-term possibilities:
+
+- Optional local tooling for content generation and validation.
+- Optional teacher/admin workflows that do not affect student static runtime.
+- Better offline/PWA behavior.
+- Custom domain and deployment monitoring.
+- Accessibility and mobile usability improvements.
+- Carefully reviewed backend services only if static hosting can no longer meet a clearly defined need.
+
+## Roadmap Rules
+
+- Do not trade maintainability for speed.
+- Do not add paid API dependencies to student-facing pages.
+- Do not change JSON schemas without explicit migration planning.
+- Do not redesign existing UI without a dedicated approved milestone.
+- Prefer small, reviewable milestones.
