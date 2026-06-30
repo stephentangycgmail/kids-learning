@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-06-30 - Epic001-G2 Content Standards
+
+### Added
+
+- Added `docs/LESSON_PACKAGE_STANDARD.md` for future lesson package structure.
+- Added `docs/METADATA_STANDARD.md` for package metadata fields.
+- Added `docs/INDEX_STANDARD.md` for future package discovery indexes.
+- Added `docs/NAMING_STANDARD.md` for future IDs, folders, files, and indexes.
+- Added `docs/DATA_LIFECYCLE.md` for create, validate, publish, update, archive, and deprecate flow.
+- Added `docs/VERSIONING.md` for semantic versioning rules.
+
+### Changed
+
+- Expanded `docs/JSON_SPECIFICATION.md` from a placeholder into common JSON principles and future package rules.
+- Updated `README.md` documentation index with content standards.
+
+### Notes
+
+- Documentation-only milestone.
+- Existing JSON files, lesson content, frontend code, backend code, and GitHub Pages behavior were not modified.
+
 ## 2026-06-30
 
 ### Added

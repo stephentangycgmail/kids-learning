@@ -44,6 +44,12 @@ Supporting docs:
 - [API Dependency Audit](docs/API_DEPENDENCY_AUDIT.md)
 - [Content Generation Plan](docs/CONTENT_GENERATION_PLAN.md)
 - [JSON Specification](docs/JSON_SPECIFICATION.md)
+- [Lesson Package Standard](docs/LESSON_PACKAGE_STANDARD.md)
+- [Metadata Standard](docs/METADATA_STANDARD.md)
+- [Index Standard](docs/INDEX_STANDARD.md)
+- [Naming Standard](docs/NAMING_STANDARD.md)
+- [Data Lifecycle](docs/DATA_LIFECYCLE.md)
+- [Versioning](docs/VERSIONING.md)
 - [Codex Workflow](docs/CODEX_WORKFLOW.md)
 - [Changelog](docs/CHANGELOG.md)
 
