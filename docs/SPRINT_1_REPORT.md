@@ -16,7 +16,7 @@ Sprint 1 analysis documents have been created. No existing website feature or la
 1. GitHub Pages can load the homepage.
 2. `frontend/` is the main student-facing website.
 3. Grammar is mostly static and uses local JSON plus browser TTS.
-4. Dictation pages are mostly static and use browser TTS, but still contain backend-style paths such as `/static/data/...` and `/list-dictation-files`.
+4. At the time of Sprint 1, dictation pages were mostly static and used browser TTS, but still contained backend-style paths such as `/static/data/...` and `/list-dictation-files`. These were addressed in the later static GitHub Pages migration.
 5. AI Teacher and old Vocabulary ask functions depend on backend/API and should be disabled or redesigned.
 6. Real API config must remain local only through `backend/config.json`.
 7. Future教材 generation should be reviewed JSON committed into `frontend/data/`.

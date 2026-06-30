@@ -203,8 +203,8 @@
 ></script>
 
 <script>
-  const DATA_DIR = "/static/data";
-  const DICTATION_BASES = ["cn_dictation01", "cn_dictation02", "cn_dictation03", "cn_dictation04"];
+  const DATA_DIR = "data";
+  const DICTATION_BASES = ["cn_dictation01", "cn_dictation02"];
 
   const selectEl      = document.getElementById("cnDictationSelect");
   const containerEl   = document.getElementById("sentencesContainer");
@@ -586,7 +586,7 @@
       console.error("Load CN dictation error:", err);
       containerEl.innerHTML = "";
       errorEl.style.display = "block";
-      errorEl.textContent = `無法讀取 ${jsonFile}，請檢查檔案是否存在於 /static/data/。`;
+      errorEl.textContent = `無法讀取 ${jsonFile}，請檢查檔案是否存在於 ${DATA_DIR}。`;
     }
   }
 

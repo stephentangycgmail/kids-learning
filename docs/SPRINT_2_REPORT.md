@@ -2,20 +2,23 @@
 
 ## Status
 
-Sprint 2 has started with the first safe functional change: AI Teacher is disabled while API usage is paused.
+Sprint 2 includes the static GitHub Pages migration for student-facing pages while keeping the existing UI and JSON schemas intact.
 
 ## Completed
 
 - Updated `frontend/eng.html` to mark AI Teacher as temporarily disabled.
 - Updated `frontend/ai_teacher.html` to show a maintenance notice and return to the English menu.
 - Updated `frontend/js/ai_teacher.js` to stop API calls while disabled.
+- Updated English and Chinese dictation pages to use static `data/...` JSON paths and browser SpeechSynthesis.
+- Updated Vocabulary to use local JSON lookup instead of an AI/API ask helper.
+- Updated shared frontend helper code so API/TTS helpers are disabled on the static site.
 
 ## Preserved
 
 - Existing UI layout is preserved.
 - AI Teacher files are preserved.
 - Backend API code is preserved for future review.
-- Grammar and Dictation pages were not changed.
+- Grammar and Dictation learning flow is preserved.
 - JSON formats were not changed.
 - No new教材 was added.
 
@@ -32,9 +35,8 @@ After GitHub Pages deploys, test:
 7. Confirm Grammar still opens.
 8. Confirm Dictation still opens.
 
-## Next Sprint 2 Tasks
+## Remaining Notes
 
-1. Review `/static/...` links and backend-style paths.
-2. Convert safe links to relative GitHub Pages compatible paths.
-3. Avoid changing page layout.
-4. Keep API-dependent functionality disabled until redesigned.
+1. Backend files remain as legacy/local-only tooling.
+2. Keep API-dependent functionality disabled until a reviewed static-hosting plan exists.
+3. Test the GitHub Pages deployment after publishing.

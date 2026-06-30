@@ -1,40 +1,65 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const vocabList = document.getElementById("vocab-list");
   const selectedWordDiv = document.getElementById("selected-word");
   const btnAsk = document.getElementById("btn-ask-word");
   const answerDiv = document.getElementById("vocab-answer");
 
   let selectedWord = null;
-  let history = [];
+  let vocabData = {};
+  let vocabHints = {};
 
-  // demo words, later replace by fetching data/vocab.json
-  const words = ["elephant", "happy", "school"];
+  function showAnswer(word) {
+    const entry = vocabData[word] || {};
+    const hint = vocabHints[word] || {};
+    const parts = [
+      entry.word || word,
+      entry.pos ? "Part of speech: " + entry.pos : "",
+      entry.meaning_zh || hint.cn || "",
+      entry.example_en || hint.usage || "",
+      entry.example_zh || "",
+      hint.tenses || "",
+    ].filter(Boolean);
 
-  words.forEach(w => {
+    answerDiv.textContent = parts.length
+      ? parts.join("\n")
+      : "No local explanation is available for this word yet.";
+  }
+
+  try {
+    vocabData = await KidsAPI.fetchJson("data/vocab.json");
+  } catch (err) {
+    vocabData = {};
+  }
+
+  try {
+    vocabHints = await KidsAPI.fetchJson("data/vocab_ai.json");
+  } catch (err) {
+    vocabHints = {};
+  }
+
+  const words = Object.keys(vocabData).length
+    ? Object.keys(vocabData)
+    : Object.keys(vocabHints).slice(0, 30);
+
+  vocabList.innerHTML = "";
+  words.forEach(word => {
     const li = document.createElement("li");
-    li.textContent = w;
+    li.textContent = word;
     li.addEventListener("click", () => {
-      selectedWord = w;
-      selectedWordDiv.textContent = "Selected word: " + w;
+      selectedWord = word;
+      selectedWordDiv.textContent = "Selected word: " + word;
+      answerDiv.textContent = "";
     });
     vocabList.appendChild(li);
   });
 
-  btnAsk.addEventListener("click", async () => {
-    if (!selectedWord) return;
-    answerDiv.textContent = "Thinking...";
-
-    const q = `請用小三小四程度講解英文單字 "${selectedWord}" 的意思和例句。`;
-
-    try {
-      const res = await callTeacherAPI(q, history);
-      const reply = res.reply;
-      history.push({ role: "user", content: q });
-      history.push({ role: "assistant", content: reply });
-
-      answerDiv.textContent = reply;
-    } catch (e) {
-      answerDiv.textContent = "Error: " + e.message;
-    }
-  });
+  if (btnAsk) {
+    btnAsk.addEventListener("click", () => {
+      if (!selectedWord) {
+        answerDiv.textContent = "Select a word first.";
+        return;
+      }
+      showAnswer(selectedWord);
+    });
+  }
 });
