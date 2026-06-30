@@ -4,15 +4,17 @@
       "id": "dictation01",
       "title": "Dictation 01",
       "file": "dictation01.json",
-      "level": "Primary 3",
-      "topic": "Health"
+      "level": "",
+      "topic": "",
+      "order": 1
     },
     {
       "id": "dictation02",
       "title": "Dictation 02",
       "file": "dictation02.json",
-      "level": "Primary 3",
-      "topic": "Food"
+      "level": "",
+      "topic": "",
+      "order": 2
     }
   ]
 }
