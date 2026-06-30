@@ -8,7 +8,8 @@ Restore Dictation Practice playback so a sentence resumes from the selected or s
 
 - Clicking a token stores and highlights its sentence/token position before speaking it.
 - Playing that sentence resumes from its stored token in natural, fast, and learning modes.
-- Stopping playback preserves the active token position.
+- Pausing playback preserves the active highlighted token position.
+- Stopping playback resets that sentence to the beginning.
 - Completing a sentence resets its position to the beginning.
 - Loading another lesson clears all saved playback positions.
 - Speech API fallback, catalog loading, settings persistence, vocabulary help, and show/hide controls remain unchanged.
