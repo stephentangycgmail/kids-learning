@@ -1,0 +1,84 @@
+name: Validate JSON
+
+on:
+  pull_request:
+    paths:
+      - "**/*.json"
+      - ".github/workflows/validate-json.yml"
+  push:
+    branches:
+      - main
+      - develop
+    paths:
+      - "**/*.json"
+      - ".github/workflows/validate-json.yml"
+
+jobs:
+  validate-json:
+    name: Parse JSON files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Parse repository JSON
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require("fs");
+          const path = require("path");
+
+          const ignoredDirs = new Set([
+            ".git",
+            "node_modules",
+            ".venv",
+            "venv",
+            "env",
+            "ENV",
+          ]);
+
+          const files = [];
+
+          function walk(dir) {
+            for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+              if (entry.isDirectory()) {
+                if (!ignoredDirs.has(entry.name)) {
+                  walk(path.join(dir, entry.name));
+                }
+                continue;
+              }
+
+              if (entry.isFile() && entry.name.endsWith(".json")) {
+                files.push(path.join(dir, entry.name));
+              }
+            }
+          }
+
+          walk(".");
+
+          const failures = [];
+          for (const file of files.sort()) {
+            try {
+              JSON.parse(fs.readFileSync(file, "utf8"));
+              console.log(`OK ${file}`);
+            } catch (error) {
+              failures.push(`${file}: ${error.message}`);
+            }
+          }
+
+          if (failures.length) {
+            console.error("JSON validation failed:");
+            for (const failure of failures) {
+              console.error(`- ${failure}`);
+            }
+            process.exit(1);
+          }
+
+          console.log(`Validated ${files.length} JSON file(s).`);
+          NODE

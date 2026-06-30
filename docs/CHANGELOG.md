@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-06-30 - Epic001-G3 Automation and Quality Gate
+
+### Added
+
+- Added `.github/workflows/validate-json.yml` to parse repository JSON files on pull requests and pushes to `main` or `develop`.
+- Added `.github/workflows/check-markdown-links.yml` to check local Markdown links on pull requests and pushes to `main` or `develop`.
+
+### Notes
+
+- Automation-only milestone.
+- No website UI, learning functionality, frontend runtime, backend code, or lesson content changes are intended.
+
 ## 2026-06-30 - Epic001-G2 Content Standards
 
 ### Added
