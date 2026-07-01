@@ -10,19 +10,13 @@
       "category": "tenses",
       "id": "present-continuous",
       "title": "Present Continuous",
-      "file": "tenses_present_continuous.json"
+      "file": "grammar_present_continuous_lesson.json"
     },
     {
       "category": "tenses",
       "id": "past-simple",
       "title": "Past Simple",
-      "file": "tenses_past_simple.json"
-    },
-    {
-      "category": "tenses",
-      "id": "present-continuous-p4",
-      "title": "Present Continuous (P4)",
-      "file": "grammar_present_continuous_lesson.json"
+      "file": "grammar_past_simple_lesson.json"
     }
   ]
 }

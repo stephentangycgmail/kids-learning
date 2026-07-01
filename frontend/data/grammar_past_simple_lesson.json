@@ -1,0 +1,280 @@
+{
+  "id": "P4_PAST_SIMPLE",
+  "title": "Past Simple",
+  "level": "Primary 4",
+  "explanation_en": "Use the Past Simple for something that started and finished in the past. Step 1: Find the past-time signal. Step 2: Use the past form of the action word. Example: I played football yesterday.",
+  "explanation_zh": "過去簡單式表示在過去開始並已經完成的事情。第一步：找出表示過去時間的提示詞。第二步：使用動詞的過去式。例如：I played football yesterday.（我昨天踢了足球。）",
+  "structure": {
+    "positive": "Subject + past-tense verb.",
+    "negative": "Subject + did not + base verb.",
+    "question": "Did + subject + base verb?"
+  },
+  "spelling_rules": [
+    {"rule": "For most verbs, add -ed.", "example": "play → played"},
+    {"rule": "If a verb ends in e, add -d.", "example": "dance → danced"},
+    {"rule": "Change consonant + y to -ied.", "example": "study → studied"},
+    {"rule": "For some short verbs, double the last letter and add -ed.", "example": "stop → stopped"},
+    {"rule": "Some verbs have a special past form.", "example": "go → went"}
+  ],
+  "signal_words": [
+    "yesterday",
+    "last night",
+    "last week",
+    "last month",
+    "two days ago"
+  ],
+  "common_mistakes": [
+    {"wrong": "I go to the park yesterday.", "correct": "I went to the park yesterday."},
+    {"wrong": "She did not played tennis.", "correct": "She did not play tennis."},
+    {"wrong": "Did he went home?", "correct": "Did he go home?"}
+  ],
+  "keywords": [
+    "yesterday",
+    "yesterday morning",
+    "yesterday afternoon",
+    "last night",
+    "last weekend",
+    "last week",
+    "last month",
+    "an hour ago",
+    "two days ago",
+    "three days ago"
+  ],
+  "examples": [
+    {
+      "english": "I played football yesterday.",
+      "chinese": "我昨天踢了足球。",
+      "reason_cn": "yesterday 表示事情在昨天已經完成。",
+      "time_keywords": ["yesterday"]
+    },
+    {
+      "english": "Mum cooked dinner last night.",
+      "chinese": "媽媽昨晚煮了晚餐。",
+      "reason_cn": "last night 表示事情在昨晚已經完成。",
+      "time_keywords": ["last night"]
+    },
+    {
+      "english": "Amy danced at the school show yesterday.",
+      "chinese": "Amy 昨天在學校表演中跳舞。",
+      "reason_cn": "dance 以 e 結尾，過去式加 d。",
+      "time_keywords": ["yesterday"]
+    },
+    {
+      "english": "Ben studied English last night.",
+      "chinese": "Ben 昨晚溫習了英文。",
+      "reason_cn": "study 的過去式是 studied。",
+      "time_keywords": ["last night"]
+    },
+    {
+      "english": "The bus stopped here an hour ago.",
+      "chinese": "巴士一小時前在這裏停下來。",
+      "reason_cn": "stop 的過去式是 stopped。",
+      "time_keywords": ["an hour ago"]
+    },
+    {
+      "english": "We visited Grandma last weekend.",
+      "chinese": "我們上週末探望了祖母。",
+      "reason_cn": "last weekend 表示事情在上週末已經完成。",
+      "time_keywords": ["last weekend"]
+    },
+    {
+      "english": "Dad washed the car yesterday morning.",
+      "chinese": "爸爸昨天早上洗了車。",
+      "reason_cn": "yesterday morning 表示事情在昨天早上已經完成。",
+      "time_keywords": ["yesterday morning"]
+    },
+    {
+      "english": "My sister cleaned her desk yesterday.",
+      "chinese": "我姐姐昨天清潔了她的書桌。",
+      "reason_cn": "clean 的過去式是 cleaned。",
+      "time_keywords": ["yesterday"]
+    },
+    {
+      "english": "They watched a film last night.",
+      "chinese": "他們昨晚看了一齣電影。",
+      "reason_cn": "watch 的過去式是 watched。",
+      "time_keywords": ["last night"]
+    },
+    {
+      "english": "The children planted flowers last week.",
+      "chinese": "孩子們上星期種了花。",
+      "reason_cn": "last week 表示事情在上星期已經完成。",
+      "time_keywords": ["last week"]
+    },
+    {
+      "english": "I went to the library yesterday.",
+      "chinese": "我昨天去了圖書館。",
+      "reason_cn": "go 的過去式是不規則變化 went。",
+      "time_keywords": ["yesterday"]
+    },
+    {
+      "english": "She ate a sandwich at lunchtime yesterday.",
+      "chinese": "她昨天午飯時吃了一份三文治。",
+      "reason_cn": "eat 的過去式是不規則變化 ate。",
+      "time_keywords": ["yesterday"]
+    },
+    {
+      "english": "We saw a rainbow yesterday afternoon.",
+      "chinese": "我們昨天下午看見一道彩虹。",
+      "reason_cn": "see 的過去式是不規則變化 saw。",
+      "time_keywords": ["yesterday afternoon"]
+    },
+    {
+      "english": "Tom drank some water after PE yesterday.",
+      "chinese": "Tom 昨天上體育課後喝了一些水。",
+      "reason_cn": "drink 的過去式是不規則變化 drank。",
+      "time_keywords": ["yesterday"]
+    },
+    {
+      "english": "My friend gave me a birthday card last week.",
+      "chinese": "我的朋友上星期送了我一張生日卡。",
+      "reason_cn": "give 的過去式是不規則變化 gave。",
+      "time_keywords": ["last week"]
+    },
+    {
+      "english": "I did not use the computer last night.",
+      "chinese": "我昨晚沒有使用電腦。",
+      "reason_cn": "否定句用 did not 加動詞原形 use。",
+      "time_keywords": ["last night"]
+    },
+    {
+      "english": "She did not bring her umbrella yesterday.",
+      "chinese": "她昨天沒有帶雨傘。",
+      "reason_cn": "否定句用 did not 加動詞原形 bring。",
+      "time_keywords": ["yesterday"]
+    },
+    {
+      "english": "We did not have homework last weekend.",
+      "chinese": "我們上週末沒有功課。",
+      "reason_cn": "否定句用 did not 加動詞原形 have。",
+      "time_keywords": ["last weekend"]
+    },
+    {
+      "english": "Dad did not drive to work yesterday.",
+      "chinese": "爸爸昨天沒有駕車上班。",
+      "reason_cn": "否定句用 did not 加動詞原形 drive。",
+      "time_keywords": ["yesterday"]
+    },
+    {
+      "english": "The shop did not open yesterday morning.",
+      "chinese": "那間商店昨天早上沒有開門。",
+      "reason_cn": "否定句用 did not 加動詞原形 open。",
+      "time_keywords": ["yesterday morning"]
+    },
+    {
+      "english": "Did you finish your homework last night?",
+      "chinese": "你昨晚完成了功課嗎？",
+      "reason_cn": "一般疑問句用 Did 加主語和動詞原形 finish。",
+      "time_keywords": ["last night"]
+    },
+    {
+      "english": "Did Amy walk to school yesterday?",
+      "chinese": "Amy 昨天步行上學嗎？",
+      "reason_cn": "一般疑問句用 Did 加主語和動詞原形 walk。",
+      "time_keywords": ["yesterday"]
+    },
+    {
+      "english": "Did they win the match last week?",
+      "chinese": "他們上星期贏了比賽嗎？",
+      "reason_cn": "Did 後面的動詞使用原形 win。",
+      "time_keywords": ["last week"]
+    },
+    {
+      "english": "What did you eat yesterday?",
+      "chinese": "你昨天吃了甚麼？",
+      "reason_cn": "特殊疑問句用疑問詞、did、主語和動詞原形。",
+      "time_keywords": ["yesterday"]
+    },
+    {
+      "english": "Where did Dad put the keys last night?",
+      "chinese": "爸爸昨晚把鎖匙放在哪裏？",
+      "reason_cn": "Did 後面的動詞使用原形 put。",
+      "time_keywords": ["last night"]
+    },
+    {
+      "english": "I borrowed two books from the library three days ago.",
+      "chinese": "我三天前從圖書館借了兩本書。",
+      "reason_cn": "three days ago 表示事情在三天前已經完成。",
+      "time_keywords": ["three days ago"]
+    },
+    {
+      "english": "Our class made a poster last week.",
+      "chinese": "我們班上星期製作了一張海報。",
+      "reason_cn": "make 的過去式是不規則變化 made。",
+      "time_keywords": ["last week"]
+    },
+    {
+      "english": "The rain started two hours ago.",
+      "chinese": "雨在兩小時前開始下。",
+      "reason_cn": "two hours ago 表示事情在兩小時前發生。",
+      "time_keywords": ["two hours ago"]
+    },
+    {
+      "english": "My family had dim sum last Sunday.",
+      "chinese": "我的家人上星期日吃了點心。",
+      "reason_cn": "have 的過去式是不規則變化 had。",
+      "time_keywords": ["last Sunday"]
+    },
+    {
+      "english": "I found my library card yesterday afternoon.",
+      "chinese": "我昨天下午找到了圖書證。",
+      "reason_cn": "find 的過去式是不規則變化 found。",
+      "time_keywords": ["yesterday afternoon"]
+    }
+  ],
+  "optional_extension": {
+    "title": "Useful Irregular Verbs",
+    "explanation_en": "Some verbs do not use -ed. Learn their special past forms a few at a time.",
+    "explanation_zh": "有些動詞的過去式不加 -ed。每次學習幾個特別的過去式便可以了。",
+    "examples": [
+      {"english": "go → went", "chinese": "去"},
+      {"english": "eat → ate", "chinese": "吃"},
+      {"english": "see → saw", "chinese": "看見"},
+      {"english": "have → had", "chinese": "有／吃"}
+    ]
+  },
+  "practice": [
+    {"id": 1, "type": "fill_blank", "question": "I ___ (play) badminton yesterday."},
+    {"id": 2, "type": "fill_blank", "question": "She ___ (dance) at the show last night."},
+    {"id": 3, "type": "fill_blank", "question": "We ___ (study) Chinese yesterday."},
+    {"id": 4, "type": "fill_blank", "question": "The bus ___ (stop) here an hour ago."},
+    {"id": 5, "type": "fill_blank", "question": "Tom ___ (go) to the park last Sunday."},
+    {"id": 6, "type": "multiple_choice", "question": "Mum ___ a cake yesterday.", "options": ["bake", "baked", "bakes"]},
+    {"id": 7, "type": "multiple_choice", "question": "The children ___ lunch at school yesterday.", "options": ["eat", "eated", "ate"]},
+    {"id": 8, "type": "multiple_choice", "question": "I ___ my friend last weekend.", "options": ["see", "saw", "seen"]},
+    {"id": 9, "type": "multiple_choice", "question": "Dad did not ___ the car yesterday.", "options": ["washed", "wash", "washing"]},
+    {"id": 10, "type": "multiple_choice", "question": "Did Amy ___ her homework?", "options": ["finished", "finishes", "finish"]},
+    {"id": 11, "type": "sentence_rewrite", "question": "Change to negative: He played basketball yesterday."},
+    {"id": 12, "type": "sentence_rewrite", "question": "Change to negative: We visited the museum last week."},
+    {"id": 13, "type": "sentence_rewrite", "question": "Change to a question: Lily cleaned her room yesterday."},
+    {"id": 14, "type": "sentence_rewrite", "question": "Change to a question: They went home after school."},
+    {"id": 15, "type": "word_order", "question": "Put in order: yesterday / I / my bike / rode"},
+    {"id": 16, "type": "word_order", "question": "Put in order: last night / did / what / you / eat / ?"},
+    {"id": 17, "type": "error_correction", "question": "Correct the sentence: She goed to school yesterday."},
+    {"id": 18, "type": "error_correction", "question": "Correct the sentence: I did not watched TV."},
+    {"id": 19, "type": "error_correction", "question": "Correct the sentence: Did he played football?"},
+    {"id": 20, "type": "translation", "question": "Translate into English: 我們上星期去了圖書館。"}
+  ],
+  "answer_key": [
+    {"id": 1, "answer": "played"},
+    {"id": 2, "answer": "danced"},
+    {"id": 3, "answer": "studied"},
+    {"id": 4, "answer": "stopped"},
+    {"id": 5, "answer": "went"},
+    {"id": 6, "answer": "baked"},
+    {"id": 7, "answer": "ate"},
+    {"id": 8, "answer": "saw"},
+    {"id": 9, "answer": "wash"},
+    {"id": 10, "answer": "finish"},
+    {"id": 11, "answer": "He did not play basketball yesterday."},
+    {"id": 12, "answer": "We did not visit the museum last week."},
+    {"id": 13, "answer": "Did Lily clean her room yesterday?"},
+    {"id": 14, "answer": "Did they go home after school?"},
+    {"id": 15, "answer": "I rode my bike yesterday."},
+    {"id": 16, "answer": "What did you eat last night?"},
+    {"id": 17, "answer": "She went to school yesterday."},
+    {"id": 18, "answer": "I did not watch TV."},
+    {"id": 19, "answer": "Did he play football?"},
+    {"id": 20, "answer": "We went to the library last week."}
+  ]
+}
