@@ -278,90 +278,13 @@
     <!-- Tenses Section -->
     <div class="grammar-section active" data-section-panel="tenses">
 
-        <!-- Tense Tabs (Fixed) -->
+        <!-- Grammar lesson tabs are generated from grammar_catalog.json. -->
         <div style="background: #0f172a; padding: 0 16px; flex: 0 0 auto;">
-            <div class="tense-tabs">
-                <button class="tense-tab active" data-tense="present-simple">Present Simple</button>
-                <button class="tense-tab" data-tense="present-continuous">Present Continuous</button>
-                <button class="tense-tab" data-tense="past-simple">Past Simple</button>
-                <button class="tense-tab" data-tense="future-simple">Future (will)</button>
-                <button class="tense-tab" data-tense="present-perfect">Present Perfect</button>
-            </div>
+            <div id="grammarLessonTabs" class="tense-tabs"></div>
         </div>
-
-        <!-- Present Simple -->
-        <section class="tense-panel active" data-tense-panel="present-simple">
-            <div class="panel-fixed-header">
-                <h2 class="tense-title">Present Simple</h2>
-                <div class="tense-tip">
-                    <strong>Keywords:</strong> every day, every morning, always, usually<br>
-                    <strong>中文說明：</strong>看到這些字，代表是習慣或固定時間表，用現在簡單式。
-                </div>
-            </div>
-            <div class="scroll-content">
-                <div id="sentences-present-simple" class="sentence-list"></div>
-            </div>
-        </section>
-
-        <!-- Present Continuous -->
-        <section class="tense-panel" data-tense-panel="present-continuous">
-            <div class="panel-fixed-header">
-                <h2 class="tense-title">Present Continuous</h2>
-                <div class="tense-tip">
-                    <strong>Keywords:</strong> now, right now, at the moment, this week<br>
-                    <strong>中文說明：</strong>看到 <strong>now</strong> 等字，代表正在發生，用現在進行式。
-                </div>
-            </div>
-            <div class="scroll-content">
-                <div id="sentences-present-continuous" class="sentence-list"></div>
-            </div>
-        </section>
-
-        <!-- Past Simple -->
-        <section class="tense-panel" data-tense-panel="past-simple">
-            <div class="panel-fixed-header">
-                <h2 class="tense-title">Past Simple</h2>
-                <div class="tense-tip">
-                    <strong>Keywords:</strong> yesterday, last night, last week, ago<br>
-                    <strong>中文說明：</strong>看到 <strong>yesterday / ago</strong>，代表過去已完成，用過去簡單式。
-                </div>
-            </div>
-            <div class="scroll-content">
-                <div id="sentences-past-simple" class="sentence-list"></div>
-            </div>
-        </section>
-
-        <!-- Future Simple -->
-        <section class="tense-panel" data-tense-panel="future-simple">
-            <div class="panel-fixed-header">
-                <h2 class="tense-title">Future (will)</h2>
-                <div class="tense-tip">
-                    <strong>Keywords:</strong> tomorrow, next week, soon, later<br>
-                    <strong>中文說明：</strong>看到 <strong>tomorrow</strong>，是在說未來，通常用 will。
-                </div>
-            </div>
-            <div class="scroll-content">
-                <div id="sentences-future-simple" class="sentence-list">
-                    <p class="no-data">Coming soon. JSON file not added yet.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Present Perfect -->
-        <section class="tense-panel" data-tense-panel="present-perfect">
-            <div class="panel-fixed-header">
-                <h2 class="tense-title">Present Perfect</h2>
-                <div class="tense-tip">
-                    <strong>Keywords:</strong> already, just, ever, never, yet<br>
-                    <strong>中文說明：</strong>看到 <strong>already / never</strong>，是說「到現在為止」的經驗。
-                </div>
-            </div>
-            <div class="scroll-content">
-                <div id="sentences-present-perfect" class="sentence-list">
-                    <p class="no-data">Coming soon. JSON file not added yet.</p>
-                </div>
-            </div>
-        </section>
+        <div id="grammarLessonStatus" class="panel-fixed-header">
+            <p class="no-data">Loading grammar lessons...</p>
+        </div>
     </div>
 
     <!-- Parts of Speech Placeholder -->
@@ -386,16 +309,8 @@
 </div>
 
 <script>
-    /* ========= JSON path for each tense ========= */
-
-    const TENSE_FILES = {
-        "present-simple": "data/tenses_present_simple.json",
-        "present-continuous": "data/tenses_present_continuous.json",
-        "past-simple": "data/tenses_past_simple.json",
-        "future-simple": "data/tenses_future_simple.json",      
-        "present-perfect": "data/tenses_present_perfect.json"   
-    };
-
+    const GRAMMAR_CATALOG_PATH = "data/grammar_catalog.json";
+    let grammarLessons = [];
     const tenseDataCache = {};
 
     /* ========= SIMPLE SLOW TTS (NO HIGHLIGHT) ========= */
@@ -503,19 +418,62 @@
 
     /* ========= Render sentences ========= */
 
+    function normalizeLessonData(data) {
+        if (Array.isArray(data)) {
+            return { examples: data, explanation_en: "", explanation_zh: "", keywords: [] };
+        }
+        return {
+            examples: Array.isArray(data && data.examples) ? data.examples : [],
+            explanation_en: data && data.explanation_en ? data.explanation_en : "",
+            explanation_zh: data && data.explanation_zh ? data.explanation_zh : "",
+            keywords: Array.isArray(data && data.keywords) ? data.keywords : []
+        };
+    }
+
+    function renderLessonSummary(lessonId, lessonData) {
+        const panel = document.querySelector(`[data-tense-panel="${lessonId}"]`);
+        const tip = panel && panel.querySelector(".tense-tip");
+        if (!tip) return;
+
+        const keywordSet = new Set(lessonData.keywords);
+        lessonData.examples.forEach(item => {
+            (item.time_keywords || []).forEach(keyword => keywordSet.add(keyword));
+        });
+
+        tip.innerHTML = "";
+        const keywords = document.createElement("p");
+        const keywordsLabel = document.createElement("strong");
+        keywordsLabel.textContent = "Keywords: ";
+        keywords.append(keywordsLabel, document.createTextNode([...keywordSet].slice(0, 10).join(", ") || "See highlighted words below."));
+        tip.appendChild(keywords);
+
+        if (lessonData.explanation_en) {
+            const english = document.createElement("p");
+            english.textContent = lessonData.explanation_en;
+            tip.appendChild(english);
+        }
+        if (lessonData.explanation_zh) {
+            const chinese = document.createElement("p");
+            chinese.textContent = lessonData.explanation_zh;
+            tip.appendChild(chinese);
+        }
+    }
+
     function renderTenseSentences(tenseKey, data) {
-        const containerId = "sentences-" + tenseKey.replace(/_/g, "-");
+        const containerId = "sentences-" + tenseKey;
         const container = document.getElementById(containerId);
         if (!container) return;
 
         container.innerHTML = "";
+        const lessonData = normalizeLessonData(data);
+        renderLessonSummary(tenseKey, lessonData);
 
-        if (!Array.isArray(data) || data.length === 0) {
+        if (lessonData.examples.length === 0) {
             container.innerHTML = '<p class="no-data">No sentences in JSON yet.</p>';
             return;
         }
 
-        data.forEach(item => {
+        lessonData.examples.forEach(item => {
             const block = document.createElement("div");
             block.className = "sentence-block";
 
@@ -555,22 +513,15 @@
 
     /* ========= Load JSON ========= */
 
-    function loadTenseData(tenseKey) {
-        if (tenseDataCache[tenseKey]) {
-            renderTenseSentences(tenseKey, tenseDataCache[tenseKey]);
+    function loadTenseData(lesson) {
+        if (tenseDataCache[lesson.id]) {
+            renderTenseSentences(lesson.id, tenseDataCache[lesson.id]);
             return;
         }
 
-        const filePath = TENSE_FILES[tenseKey];
-        const containerId = "sentences-" + tenseKey.replace(/_/g, "-");
+        const filePath = "data/" + lesson.file;
+        const containerId = "sentences-" + lesson.id;
         const container = document.getElementById(containerId);
-
-        if (!filePath) {
-            if (container && !container.querySelector(".no-data")) {
-                container.innerHTML = '<p class="no-data">JSON file not configured yet.</p>';
-            }
-            return;
-        }
 
         if (container) {
             container.innerHTML = '<p class="no-data">Loading sentences...</p>';
@@ -582,15 +533,79 @@
                 return res.json();
             })
             .then(json => {
-                tenseDataCache[tenseKey] = json;
-                renderTenseSentences(tenseKey, json);
+                tenseDataCache[lesson.id] = json;
+                renderTenseSentences(lesson.id, json);
             })
             .catch(err => {
-                console.error("Failed to load tense JSON for", tenseKey, err);
+                console.error("Failed to load grammar JSON for", lesson.id, err);
                 if (container) {
                     container.innerHTML =
                         '<p class="no-data">Cannot load JSON file. Please check the path.</p>';
                 }
+            });
+    }
+
+    function activateGrammarLesson(lesson) {
+        document.querySelectorAll(".tense-tab").forEach(tab => {
+            tab.classList.toggle("active", tab.dataset.tense === lesson.id);
+        });
+        document.querySelectorAll(".tense-panel").forEach(panel => {
+            panel.classList.toggle("active", panel.dataset.tensePanel === lesson.id);
+        });
+        stopReading();
+        loadTenseData(lesson);
+    }
+
+    function createGrammarLessonControls(lessons) {
+        const tabs = document.getElementById("grammarLessonTabs");
+        const section = document.querySelector('[data-section-panel="tenses"]');
+        const status = document.getElementById("grammarLessonStatus");
+        tabs.innerHTML = "";
+        status.remove();
+
+        lessons.forEach((lesson, index) => {
+            const tab = document.createElement("button");
+            tab.className = "tense-tab" + (index === 0 ? " active" : "");
+            tab.dataset.tense = lesson.id;
+            tab.textContent = lesson.title;
+            tab.addEventListener("click", () => activateGrammarLesson(lesson));
+            tabs.appendChild(tab);
+
+            const panel = document.createElement("section");
+            panel.className = "tense-panel" + (index === 0 ? " active" : "");
+            panel.dataset.tensePanel = lesson.id;
+            panel.innerHTML = `
+                <div class="panel-fixed-header">
+                    <h2 class="tense-title"></h2>
+                    <div class="tense-tip"></div>
+                </div>
+                <div class="scroll-content">
+                    <div id="sentences-${lesson.id}" class="sentence-list"></div>
+                </div>
+            `;
+            panel.querySelector(".tense-title").textContent = lesson.title;
+            section.appendChild(panel);
+        });
+    }
+
+    function loadGrammarCatalog() {
+        return fetch(GRAMMAR_CATALOG_PATH)
+            .then(res => {
+                if (!res.ok) throw new Error("HTTP " + res.status);
+                return res.json();
+            })
+            .then(catalog => {
+                grammarLessons = Array.isArray(catalog.lessons)
+                    ? catalog.lessons.filter(lesson => lesson.category === "tenses" && lesson.id && lesson.title && lesson.file)
+                    : [];
+                if (!grammarLessons.length) throw new Error("No grammar lessons configured");
+                createGrammarLessonControls(grammarLessons);
+                activateGrammarLesson(grammarLessons[0]);
+            })
+            .catch(err => {
+                console.error("Failed to load grammar catalog", err);
+                const status = document.getElementById("grammarLessonStatus");
+                if (status) status.innerHTML = '<p class="no-data">Cannot load grammar catalog.</p>';
             });
     }
 
@@ -621,30 +636,7 @@
             });
         });
 
-        const tenseTabs = document.querySelectorAll(".tense-tab");
-        const tensePanels = document.querySelectorAll(".tense-panel");
-
-        tenseTabs.forEach(tab => {
-            tab.addEventListener("click", () => {
-                const tenseKey = tab.dataset.tense;
-
-                tenseTabs.forEach(t => t.classList.remove("active"));
-                tab.classList.add("active");
-
-                tensePanels.forEach(panel => {
-                    if (panel.dataset.tensePanel === tenseKey) {
-                        panel.classList.add("active");
-                    } else {
-                        panel.classList.remove("active");
-                    }
-                });
-
-                stopReading();
-                loadTenseData(tenseKey);
-            });
-        });
-
-        loadTenseData("present-simple");
+        loadGrammarCatalog();
     });
 </script>
 </body>
