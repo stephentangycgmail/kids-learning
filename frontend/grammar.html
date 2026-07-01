@@ -124,12 +124,43 @@
 
         .lesson-practice-action {
             display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
             justify-content: center;
             padding: 16px 0 24px;
         }
 
         .lesson-practice-action .lesson-nav-button {
             text-decoration: none;
+        }
+
+        .lesson-quiz {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            padding: 16px;
+        }
+
+        .quiz-question {
+            border-bottom: 1px solid #334155;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+        }
+
+        .quiz-option {
+            display: block;
+            margin-top: 8px;
+        }
+
+        .quiz-option input {
+            margin-right: 8px;
+        }
+
+        .quiz-result {
+            color: #facc15;
+            font-weight: 700;
+            margin: 16px 0 0;
         }
 
         .grammar-main-tab.active, .tense-tab.active {
@@ -447,13 +478,75 @@
 
     function normalizeLessonData(data) {
         if (Array.isArray(data)) {
-            return { examples: data, explanation_en: "", explanation_zh: "", keywords: [] };
+            return { examples: data, explanation_en: "", explanation_zh: "", keywords: [], quiz: [] };
         }
         return {
             examples: Array.isArray(data && data.examples) ? data.examples : [],
             explanation_en: data && data.explanation_en ? data.explanation_en : "",
             explanation_zh: data && data.explanation_zh ? data.explanation_zh : "",
-            keywords: Array.isArray(data && data.keywords) ? data.keywords : []
+            keywords: Array.isArray(data && data.keywords) ? data.keywords : [],
+            quiz: Array.isArray(data && data.quiz) ? data.quiz : []
+        };
+    }
+
+    function renderLessonQuiz(lessonId, quiz) {
+        const panel = document.querySelector(`[data-tense-panel="${lessonId}"]`);
+        const button = panel && panel.querySelector(".take-quiz-button");
+        const container = panel && panel.querySelector(".lesson-quiz");
+        if (!button || !container) return;
+
+        const questions = quiz.slice(0, 5).filter(item =>
+            item && item.question && Array.isArray(item.options) && item.options.length >= 2 && item.answer
+        );
+        button.hidden = questions.length !== 5;
+        container.hidden = true;
+        container.innerHTML = "";
+        if (questions.length !== 5) return;
+
+        const heading = document.createElement("h3");
+        heading.textContent = "Lesson Quiz";
+        container.appendChild(heading);
+
+        questions.forEach((item, index) => {
+            const question = document.createElement("div");
+            question.className = "quiz-question";
+            const prompt = document.createElement("p");
+            prompt.textContent = `${index + 1}. ${item.question}`;
+            question.appendChild(prompt);
+
+            item.options.forEach(optionText => {
+                const label = document.createElement("label");
+                label.className = "quiz-option";
+                const input = document.createElement("input");
+                input.type = "radio";
+                input.name = `quiz-${lessonId}-${index}`;
+                input.value = optionText;
+                label.append(input, document.createTextNode(optionText));
+                question.appendChild(label);
+            });
+            container.appendChild(question);
+        });
+
+        const submit = document.createElement("button");
+        submit.type = "button";
+        submit.className = "lesson-nav-button";
+        submit.textContent = "Check Score";
+        const result = document.createElement("p");
+        result.className = "quiz-result";
+        result.setAttribute("aria-live", "polite");
+        submit.addEventListener("click", () => {
+            let score = 0;
+            questions.forEach((item, index) => {
+                const selected = container.querySelector(`input[name="quiz-${lessonId}-${index}"]:checked`);
+                if (selected && selected.value === item.answer) score++;
+            });
+            result.textContent = `Score: ${score}/5`;
+        });
+        container.append(submit, result);
+
+        button.onclick = () => {
+            container.hidden = !container.hidden;
+            button.textContent = container.hidden ? "Take Quiz" : "Hide Quiz";
         };
     }
 
@@ -494,6 +587,7 @@
         container.innerHTML = "";
         const lessonData = normalizeLessonData(data);
         renderLessonSummary(tenseKey, lessonData);
+        renderLessonQuiz(tenseKey, lessonData.quiz);
 
         if (lessonData.examples.length === 0) {
             container.innerHTML = '<p class="no-data">No sentences in JSON yet.</p>';
@@ -628,8 +722,10 @@
                 <div class="scroll-content">
                     <div id="sentences-${lesson.id}" class="sentence-list"></div>
                     <div class="lesson-practice-action">
+                        <button class="lesson-nav-button take-quiz-button" type="button" hidden>Take Quiz</button>
                         <a class="lesson-nav-button" href="dictation_practice.html?grammar=${encodeURIComponent(lesson.id)}">Practice Dictation</a>
                     </div>
+                    <div class="lesson-quiz" hidden></div>
                 </div>
             `;
             panel.querySelector(".tense-title").textContent = lesson.title;

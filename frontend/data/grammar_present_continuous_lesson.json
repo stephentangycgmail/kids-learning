@@ -233,6 +233,38 @@
       }
     ]
   },
+  "quiz": [
+    {
+      "id": 1,
+      "question": "She ___ a picture right now.",
+      "options": ["is drawing", "are drawing", "draws"],
+      "answer": "is drawing"
+    },
+    {
+      "id": 2,
+      "question": "The boys ___ in the playground at the moment.",
+      "options": ["is running", "are running", "run"],
+      "answer": "are running"
+    },
+    {
+      "id": 3,
+      "question": "I ___ the computer now.",
+      "options": ["am not using", "is not using", "do not using"],
+      "answer": "am not using"
+    },
+    {
+      "id": 4,
+      "question": "___ Amy reading a book?",
+      "options": ["Is", "Are", "Does"],
+      "answer": "Is"
+    },
+    {
+      "id": 5,
+      "question": "Choose the correct -ing form of run.",
+      "options": ["runing", "running", "runs"],
+      "answer": "running"
+    }
+  ],
   "practice": [
     {
       "id": 1,
