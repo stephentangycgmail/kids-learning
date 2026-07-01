@@ -2,13 +2,31 @@
   "id": "P4_PRESENT_CONTINUOUS",
   "title": "Present Continuous",
   "level": "Primary 4",
-  "explanation_en": "We use the Present Continuous for actions happening now or around the present time. Form it with am, is, or are followed by a verb ending in -ing. Use am with I, is with he, she, it, or one person, and are with you, we, they, or more than one person.",
-  "explanation_zh": "現在進行式用來表示此刻正在發生，或現階段正在進行的事情。句式是 am、is 或 are 加上動詞的 -ing 形式。I 配 am；he、she、it 或單數人物配 is；you、we、they 或複數人物配 are。",
+  "explanation_en": "Use the Present Continuous for something happening now. Step 1: Choose am, is, or are. Step 2: Add -ing to the action word. Example: She is reading.",
+  "explanation_zh": "現在進行式表示現在正在發生的事情。第一步：選擇 am、is 或 are。第二步：在動作詞後加 -ing。例如：She is reading.（她正在閱讀。）",
   "structure": {
     "positive": "Subject + am/is/are + verb-ing.",
     "negative": "Subject + am/is/are + not + verb-ing.",
     "question": "Am/Is/Are + subject + verb-ing?"
   },
+  "spelling_rules": [
+    {"rule": "Take away e, then add -ing.", "example": "make → making"},
+    {"rule": "Take away e, then add -ing.", "example": "dance → dancing"},
+    {"rule": "Double the last letter, then add -ing.", "example": "run → running"},
+    {"rule": "Double the last letter, then add -ing.", "example": "swim → swimming"},
+    {"rule": "Change ie to y, then add -ing.", "example": "lie → lying"}
+  ],
+  "signal_words": [
+    "now",
+    "right now",
+    "at the moment",
+    "look",
+    "listen"
+  ],
+  "common_mistakes": [
+    {"wrong": "I am go to school.", "correct": "I am going to school."},
+    {"wrong": "He are playing.", "correct": "He is playing."}
+  ],
   "keywords": [
     "now",
     "right now",
@@ -53,34 +71,34 @@
       "time_keywords": ["this week"]
     },
     {
-      "english": "Mum is cooking dinner at this moment.",
-      "chinese": "媽媽此刻正在煮晚餐。",
-      "reason_cn": "表示此刻正在進行的動作。",
-      "time_keywords": ["at this moment"]
-    },
-    {
-      "english": "The teacher is explaining the answer now.",
-      "chinese": "老師現在正在講解答案。",
+      "english": "Mum is making sandwiches now.",
+      "chinese": "媽媽現在正在做三文治。",
       "reason_cn": "表示此刻正在進行的動作。",
       "time_keywords": ["now"]
     },
     {
-      "english": "My friends are practising for the show today.",
-      "chinese": "我的朋友今天正在為表演練習。",
-      "reason_cn": "表示今天正在進行的活動。",
-      "time_keywords": ["today"]
+      "english": "The teacher is writing on the board now.",
+      "chinese": "老師現在正在黑板上寫字。",
+      "reason_cn": "表示此刻正在進行的動作。",
+      "time_keywords": ["now"]
     },
     {
-      "english": "Dad is washing the car at the moment.",
-      "chinese": "爸爸此刻正在洗車。",
+      "english": "May is dancing to music right now.",
+      "chinese": "May 現在正跟着音樂跳舞。",
+      "reason_cn": "表示此刻正在進行的動作。",
+      "time_keywords": ["right now"]
+    },
+    {
+      "english": "The boys are running in the playground at the moment.",
+      "chinese": "男孩子們此刻正在操場上跑步。",
       "reason_cn": "表示此刻正在進行的動作。",
       "time_keywords": ["at the moment"]
     },
     {
-      "english": "I am learning to swim this month.",
-      "chinese": "我這個月正在學習游泳。",
-      "reason_cn": "表示現階段正在進行的事情。",
-      "time_keywords": ["this month"]
+      "english": "The children are swimming in the pool now.",
+      "chinese": "孩子們現在正在泳池裏游泳。",
+      "reason_cn": "表示此刻正在進行的動作。",
+      "time_keywords": ["now"]
     },
     {
       "english": "Listen! The baby is crying.",
@@ -113,34 +131,34 @@
       "time_keywords": ["now"]
     },
     {
-      "english": "I am writing an email at the moment.",
-      "chinese": "我此刻正在寫電郵。",
+      "english": "I am packing my school bag at the moment.",
+      "chinese": "我此刻正在收拾書包。",
       "reason_cn": "表示此刻正在進行的動作。",
       "time_keywords": ["at the moment"]
     },
     {
-      "english": "Our class is collecting old books this week.",
-      "chinese": "我們班這星期正在收集舊書。",
+      "english": "Our class is growing beans this week.",
+      "chinese": "我們班這星期正在種豆。",
       "reason_cn": "表示現階段正在進行的事情。",
       "time_keywords": ["this week"]
     },
     {
-      "english": "We are watching a science video now.",
-      "chinese": "我們現在正在觀看科學影片。",
+      "english": "We are feeding the fish now.",
+      "chinese": "我們現在正在餵魚。",
       "reason_cn": "表示此刻正在進行的動作。",
       "time_keywords": ["now"]
     },
     {
-      "english": "Ben is practising the piano at this moment.",
-      "chinese": "Ben 此刻正在練習鋼琴。",
+      "english": "Ben is building a model plane at the moment.",
+      "chinese": "Ben 此刻正在砌模型飛機。",
       "reason_cn": "表示此刻正在進行的動作。",
-      "time_keywords": ["at this moment"]
+      "time_keywords": ["at the moment"]
     },
     {
-      "english": "The birds are building a nest currently.",
-      "chinese": "鳥兒目前正在築巢。",
-      "reason_cn": "表示目前正在進行的事情。",
-      "time_keywords": ["currently"]
+      "english": "The cat is lying on the mat now.",
+      "chinese": "小貓現在正躺在墊上。",
+      "reason_cn": "表示此刻正在進行的動作。",
+      "time_keywords": ["now"]
     },
     {
       "english": "I am not using the computer now.",
@@ -180,21 +198,21 @@
     },
     {
       "english": "Where is Lily going right now?",
-      "chinese": "Lily 現在正要去哪裏？",
+      "chinese": "Lily 現在正去哪裏？",
       "reason_cn": "特殊疑問詞放在現在進行式疑問句之前。",
       "time_keywords": ["right now"]
     },
     {
-      "english": "We are meeting our cousins this evening.",
-      "chinese": "我們今晚會和表親見面。",
-      "reason_cn": "現在進行式也可表示已安排的近期活動。",
-      "time_keywords": ["this evening"]
+      "english": "We are cleaning our desks right now.",
+      "chinese": "我們現在正在清潔書桌。",
+      "reason_cn": "表示此刻正在進行的動作。",
+      "time_keywords": ["right now"]
     },
     {
-      "english": "The school team is playing a match today.",
-      "chinese": "校隊今天正在比賽。",
-      "reason_cn": "表示今天正在進行的活動。",
-      "time_keywords": ["today"]
+      "english": "Look! The school team is playing a match.",
+      "chinese": "看！校隊正在比賽。",
+      "reason_cn": "Look 提示動作正在發生。",
+      "time_keywords": ["Look"]
     },
     {
       "english": "My sister is staying with Grandma this week.",
@@ -203,6 +221,18 @@
       "time_keywords": ["this week"]
     }
   ],
+  "optional_extension": {
+    "title": "Future Arrangements",
+    "explanation_en": "The Present Continuous can also show a plan we have already made.",
+    "explanation_zh": "現在進行式也可以表示已經安排好的近期活動。",
+    "examples": [
+      {
+        "english": "We are meeting our cousins this evening.",
+        "chinese": "我們今晚會和表親見面。",
+        "time_keywords": ["this evening"]
+      }
+    ]
+  },
   "practice": [
     {
       "id": 1,
@@ -227,7 +257,7 @@
     {
       "id": 5,
       "type": "fill_blank",
-      "question": "Tom ___ not ___ (sleep) now."
+      "question": "Complete with the correct Present Continuous form: Tom ___ on the sofa now. (lie)"
     },
     {
       "id": 6,
@@ -315,7 +345,7 @@
     {"id": 2, "answer": "is making"},
     {"id": 3, "answer": "are running"},
     {"id": 4, "answer": "are studying"},
-    {"id": 5, "answer": "is not sleeping"},
+    {"id": 5, "answer": "is lying"},
     {"id": 6, "answer": "is cooking"},
     {"id": 7, "answer": "are playing"},
     {"id": 8, "answer": "am doing"},
