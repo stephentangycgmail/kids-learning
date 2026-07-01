@@ -1,0 +1,106 @@
+{
+  "id": "P4_PRESENT_SIMPLE",
+  "title": "Present Simple",
+  "level": "Primary 4",
+  "explanation_en": "Use the Present Simple for habits, routines and facts. Add -s or -es to the verb with he, she or it. Use do not or does not for negative sentences.",
+  "explanation_zh": "現在簡單式用來表示習慣、日常活動和事實。主語是 he、she 或 it 時，動詞通常加 -s 或 -es。否定句使用 do not 或 does not。",
+  "structure": {
+    "learning_objective_en": "I can use the Present Simple to talk about habits, routines and facts.",
+    "learning_objective_zh": "我能運用現在簡單式說明習慣、日常活動和事實。",
+    "positive": "Subject + base verb. / He, She or It + verb-s.",
+    "negative": "Subject + do not/does not + base verb.",
+    "question": "Do/Does + subject + base verb?"
+  },
+  "spelling_rules": [
+    {"rule": "Add -s with he, she or it.", "example": "read → reads"},
+    {"rule": "Add -es after ch, sh, s, x or o.", "example": "watch → watches"},
+    {"rule": "Change consonant + y to -ies.", "example": "study → studies"},
+    {"rule": "Use does not with he, she or it.", "example": "She does not play."},
+    {"rule": "Use the base verb after do or does.", "example": "Does he walk?"}
+  ],
+  "signal_words": ["always", "usually", "often", "sometimes", "never", "every day"],
+  "common_mistakes": [
+    {"wrong": "She play tennis.", "correct": "She plays tennis."},
+    {"wrong": "He doesn't likes milk.", "correct": "He doesn't like milk."},
+    {"wrong": "Does Amy walks to school?", "correct": "Does Amy walk to school?"}
+  ],
+  "keywords": ["always", "usually", "often", "sometimes", "never", "every day", "every morning", "on weekdays", "on weekends"],
+  "examples": [
+    {"english": "I usually eat breakfast at 7 o'clock.", "chinese": "我通常在七點吃早餐。", "reason_cn": "用來表示習慣性的動作。", "time_keywords": ["usually"]},
+    {"english": "She always does her homework after school.", "chinese": "她總是在放學後做功課。", "reason_cn": "表示經常發生的習慣行為。", "time_keywords": ["always"]},
+    {"english": "We play football every weekend.", "chinese": "我們每個週末踢足球。", "reason_cn": "表示固定時間的活動。", "time_keywords": ["every weekend"]},
+    {"english": "He never drinks fizzy drinks.", "chinese": "他從不喝汽水。", "reason_cn": "表示習慣性的否定行為。", "time_keywords": ["never"]},
+    {"english": "My mother cooks dinner every evening.", "chinese": "我媽媽每晚做晚餐。", "reason_cn": "表示每天固定時間的習慣。", "time_keywords": ["every evening"]},
+    {"english": "They sometimes go to the park after school.", "chinese": "他們有時放學後去公園。", "reason_cn": "表示偶爾發生的習慣行為。", "time_keywords": ["sometimes"]},
+    {"english": "I don't watch TV on weekdays.", "chinese": "我平日不看電視。", "reason_cn": "表示習慣性的否定行為和固定時間。", "time_keywords": ["don't", "on weekdays"]},
+    {"english": "She often reads books before bed.", "chinese": "她經常在睡覺前看書。", "reason_cn": "表示頻繁發生的習慣行為。", "time_keywords": ["often"]},
+    {"english": "We go to school every day.", "chinese": "我們每天上學。", "reason_cn": "表示每天固定的習慣。", "time_keywords": ["every day"]},
+    {"english": "He seldom eats sweets.", "chinese": "他很少吃糖果。", "reason_cn": "表示不常發生的習慣行為。", "time_keywords": ["seldom"]},
+    {"english": "My father works on Mondays.", "chinese": "我爸爸星期一工作。", "reason_cn": "表示固定時間的事實。", "time_keywords": ["on Mondays"]},
+    {"english": "I always brush my teeth in the morning.", "chinese": "我總是在早上刷牙。", "reason_cn": "表示習慣性的日常行為。", "time_keywords": ["always", "in the morning"]},
+    {"english": "They usually play basketball after school.", "chinese": "他們通常放學後打籃球。", "reason_cn": "表示經常發生的習慣行為。", "time_keywords": ["usually"]},
+    {"english": "She doesn't like to eat vegetables.", "chinese": "她不喜歡吃蔬菜。", "reason_cn": "表示習慣性的否定。", "time_keywords": ["doesn't"]},
+    {"english": "We sometimes visit our grandparents on Sundays.", "chinese": "我們有時在星期天拜訪祖父母。", "reason_cn": "表示偶爾發生的習慣行為和固定時間。", "time_keywords": ["sometimes", "on Sundays"]},
+    {"english": "I never forget my homework.", "chinese": "我從不忘記做功課。", "reason_cn": "表示習慣性的否定行為。", "time_keywords": ["never"]},
+    {"english": "She always helps her little brother.", "chinese": "她總是幫助她的小弟弟。", "reason_cn": "表示經常發生的習慣行為。", "time_keywords": ["always"]},
+    {"english": "We don't play video games every day.", "chinese": "我們不是每天玩電子遊戲。", "reason_cn": "表示習慣性的否定和頻率。", "time_keywords": ["don't", "every day"]},
+    {"english": "He usually wakes up early.", "chinese": "他通常早起。", "reason_cn": "表示經常發生的習慣行為。", "time_keywords": ["usually"]},
+    {"english": "My sister reads books every morning.", "chinese": "我妹妹每天早上看書。", "reason_cn": "表示每天固定時間的習慣。", "time_keywords": ["every morning"]},
+    {"english": "They often go swimming on weekends.", "chinese": "他們經常在週末游泳。", "reason_cn": "表示頻繁發生的習慣行為和固定時間。", "time_keywords": ["often", "on weekends"]},
+    {"english": "I sometimes help my parents with housework.", "chinese": "我有時幫父母做家務。", "reason_cn": "表示偶爾發生的習慣行為。", "time_keywords": ["sometimes"]},
+    {"english": "She doesn't watch cartoons every evening.", "chinese": "她不是每天晚上看卡通。", "reason_cn": "表示習慣性的否定和頻率。", "time_keywords": ["doesn't", "every evening"]},
+    {"english": "We always clean our room on Saturdays.", "chinese": "我們總是在星期六打掃房間。", "reason_cn": "表示經常發生的習慣行為和固定時間。", "time_keywords": ["always", "on Saturdays"]},
+    {"english": "He never forgets to feed the dog.", "chinese": "他從不忘記餵狗。", "reason_cn": "表示習慣性的否定行為。", "time_keywords": ["never"]},
+    {"english": "I usually walk to school.", "chinese": "我通常走路去學校。", "reason_cn": "表示經常發生的習慣行為。", "time_keywords": ["usually"]},
+    {"english": "They don't eat breakfast on weekdays.", "chinese": "他們平日不吃早餐。", "reason_cn": "表示習慣性的否定和固定時間。", "time_keywords": ["don't", "on weekdays"]},
+    {"english": "My brother often plays the piano.", "chinese": "我哥哥經常彈鋼琴。", "reason_cn": "表示頻繁發生的習慣行為。", "time_keywords": ["often"]},
+    {"english": "She sometimes goes to bed late.", "chinese": "她有時候睡得很晚。", "reason_cn": "表示偶爾發生的習慣行為。", "time_keywords": ["sometimes"]},
+    {"english": "We always have lunch at noon.", "chinese": "我們總是在中午吃午餐。", "reason_cn": "表示經常發生的習慣行為。", "time_keywords": ["always"]}
+  ],
+  "optional_extension": {
+    "title": "Frequency Words",
+    "explanation_en": "Frequency words tell us how often something happens.",
+    "explanation_zh": "頻率詞告訴我們事情多久發生一次。",
+    "examples": [
+      {"english": "always", "chinese": "總是"},
+      {"english": "usually", "chinese": "通常"},
+      {"english": "sometimes", "chinese": "有時"},
+      {"english": "never", "chinese": "從不"}
+    ]
+  },
+  "quiz": [
+    {"id": 1, "question": "She ___ her homework every day.", "options": ["does", "do", "doing"], "answer": "does"},
+    {"id": 2, "question": "Which word shows a regular habit?", "options": ["usually", "yesterday", "tomorrow"], "answer": "usually"},
+    {"id": 3, "question": "He ___ like fizzy drinks.", "options": ["doesn't", "don't", "isn't"], "answer": "doesn't"},
+    {"id": 4, "question": "___ Amy walk to school?", "options": ["Does", "Do", "Is"], "answer": "Does"},
+    {"id": 5, "question": "We ___ breakfast at seven every morning.", "options": ["eat", "eats", "eating"], "answer": "eat"}
+  ],
+  "practice": [
+    {"id": 1, "type": "fill_blank", "question": "I ___ (walk) to school every day."},
+    {"id": 2, "type": "fill_blank", "question": "She ___ (read) before bed."},
+    {"id": 3, "type": "fill_blank", "question": "Tom ___ (watch) TV after dinner."},
+    {"id": 4, "type": "fill_blank", "question": "Amy ___ (study) English on Mondays."},
+    {"id": 5, "type": "fill_blank", "question": "We ___ (play) football every weekend."},
+    {"id": 6, "type": "multiple_choice", "question": "Dad ___ dinner every evening.", "options": ["cook", "cooks", "cooking"]},
+    {"id": 7, "type": "multiple_choice", "question": "They ___ to school every day.", "options": ["go", "goes", "going"]},
+    {"id": 8, "type": "multiple_choice", "question": "She ___ milk.", "options": ["doesn't like", "don't like", "doesn't likes"]},
+    {"id": 9, "type": "multiple_choice", "question": "___ Ben play the piano?", "options": ["Do", "Does", "Is"]},
+    {"id": 10, "type": "multiple_choice", "question": "We ___ watch TV on weekdays.", "options": ["don't", "doesn't", "aren't"]},
+    {"id": 11, "type": "sentence_rewrite", "question": "Change to negative: He plays basketball after school."},
+    {"id": 12, "type": "sentence_rewrite", "question": "Change to negative: We eat breakfast at seven."},
+    {"id": 13, "type": "sentence_rewrite", "question": "Change to a question: Amy walks to school."},
+    {"id": 14, "type": "sentence_rewrite", "question": "Change to a question: They visit Grandma on Sundays."},
+    {"id": 15, "type": "word_order", "question": "Put in order: always / I / my teeth / brush"},
+    {"id": 16, "type": "word_order", "question": "Put in order: every day / does / read / she / ?"},
+    {"id": 17, "type": "error_correction", "question": "Correct the sentence: He play football every week."},
+    {"id": 18, "type": "error_correction", "question": "Correct the sentence: She doesn't likes vegetables."},
+    {"id": 19, "type": "error_correction", "question": "Correct the sentence: Does Tom walks to school?"},
+    {"id": 20, "type": "translation", "question": "Translate into English: 我每天做家課。"}
+  ],
+  "answer_key": [
+    {"id": 1, "answer": "walk"}, {"id": 2, "answer": "reads"}, {"id": 3, "answer": "watches"}, {"id": 4, "answer": "studies"}, {"id": 5, "answer": "play"},
+    {"id": 6, "answer": "cooks"}, {"id": 7, "answer": "go"}, {"id": 8, "answer": "doesn't like"}, {"id": 9, "answer": "Does"}, {"id": 10, "answer": "don't"},
+    {"id": 11, "answer": "He doesn't play basketball after school."}, {"id": 12, "answer": "We don't eat breakfast at seven."}, {"id": 13, "answer": "Does Amy walk to school?"}, {"id": 14, "answer": "Do they visit Grandma on Sundays?"},
+    {"id": 15, "answer": "I always brush my teeth."}, {"id": 16, "answer": "Does she read every day?"}, {"id": 17, "answer": "He plays football every week."}, {"id": 18, "answer": "She doesn't like vegetables."}, {"id": 19, "answer": "Does Tom walk to school?"}, {"id": 20, "answer": "I do my homework every day."}
+  ]
+}

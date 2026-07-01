@@ -222,8 +222,10 @@
 
   let isPlaying       = false;
   let isPaused        = false;
+  let pauseRequested  = false;
   let currentUtterance= null;
   let playingSentenceIdx = null;
+  let playbackGeneration = 0;
   const playState     = new Map();
 
   const punctRegex = /[，。、！？：；「」『』（）…—\s]/;
@@ -303,8 +305,10 @@
   }
 
   function cancelSpeech(clearHighlight = true) {
+    playbackGeneration += 1;
     isPlaying = false;
     isPaused  = false;
+    pauseRequested = false;
     playingSentenceIdx = null;
     if (window.speechSynthesis) {
       window.speechSynthesis.cancel();
@@ -357,18 +361,26 @@
 
     // 同一句正在播 → 暫停 / 繼續
     if (playingSentenceIdx === sentenceIdx) {
+      if (pauseRequested) return;
       if (isPlaying && !isPaused) {
-        window.speechSynthesis.pause();
-        isPaused = true;
+        pauseRequested = true;
+        if (!currentUtterance) {
+          playbackGeneration += 1;
+          pauseRequested = false;
+          isPaused = true;
+        }
         btnPlay.textContent = "▶ 繼續";
         btnPlay.dataset.state = "paused";
         return;
       }
       if (isPaused) {
-        window.speechSynthesis.resume();
+        const pausedState = playState.get(sentenceIdx);
+        if (!pausedState || typeof pausedState.step !== "function") return;
         isPaused = false;
+        pausedState.runGeneration = playbackGeneration;
         btnPlay.textContent = "⏸ 暫停";
         btnPlay.dataset.state = "playing";
+        pausedState.step();
         return;
       }
     }
@@ -389,23 +401,28 @@
     cancelSpeech(true);
     resetAllPlayButtons();
 
-    const state = { tokenIndex: startIndex };
+    const state = { tokenIndex: startIndex, runGeneration: playbackGeneration, step: null };
     playState.set(sentenceIdx, state);
     isPlaying = true;
     isPaused  = false;
+    pauseRequested = false;
     playingSentenceIdx = sentenceIdx;
 
     btnPlay.textContent = "⏸ 暫停";
     btnPlay.dataset.state = "playing";
 
     const step = () => {
-      if (!isPlaying || isPaused) return;
+      if (!isPlaying || isPaused || state.runGeneration !== playbackGeneration) return;
 
       spans.forEach(s => s.classList.remove("active-word"));
 
       if (state.tokenIndex >= spans.length) {
         isPlaying = false;
+        isPaused = false;
+        pauseRequested = false;
         playingSentenceIdx = null;
+        currentUtterance = null;
+        state.tokenIndex = 0;
         btnPlay.textContent = "▶ 播放";
         btnPlay.dataset.state = "stopped";
         return;
@@ -418,7 +435,10 @@
       if (isPunc || !ch.trim()) {
         state.tokenIndex += 1;
         const gapSkip = currentMode === "fast" ? 90 : 140;
-        setTimeout(step, gapSkip);
+        const scheduledGeneration = playbackGeneration;
+        setTimeout(() => {
+          if (scheduledGeneration === playbackGeneration) step();
+        }, gapSkip);
         return;
       }
 
@@ -426,23 +446,55 @@
 
       const utter = createUtterance(ch);
       currentUtterance = utter;
+      const utterGeneration = playbackGeneration;
 
       utter.onend = () => {
-        if (isPaused) return;
+        if (isPaused || utterGeneration !== playbackGeneration) return;
+        if (currentUtterance === utter) currentUtterance = null;
         state.tokenIndex += 1;
+        if (pauseRequested) {
+          if (state.tokenIndex >= spans.length) {
+            pauseRequested = false;
+            step();
+            return;
+          }
+          playbackGeneration += 1;
+          pauseRequested = false;
+          isPaused = true;
+          return;
+        }
         const gap = currentMode === "fast" ? 90 : 140;
-        setTimeout(step, gap);
+        const scheduledGeneration = playbackGeneration;
+        setTimeout(() => {
+          if (scheduledGeneration === playbackGeneration) step();
+        }, gap);
       };
       utter.onerror = () => {
-        if (isPaused) return;
+        if (isPaused || utterGeneration !== playbackGeneration) return;
+        if (currentUtterance === utter) currentUtterance = null;
         state.tokenIndex += 1;
+        if (pauseRequested) {
+          if (state.tokenIndex >= spans.length) {
+            pauseRequested = false;
+            step();
+            return;
+          }
+          playbackGeneration += 1;
+          pauseRequested = false;
+          isPaused = true;
+          return;
+        }
         const gap = currentMode === "fast" ? 90 : 140;
-        setTimeout(step, gap);
+        const scheduledGeneration = playbackGeneration;
+        setTimeout(() => {
+          if (scheduledGeneration === playbackGeneration) step();
+        }, gap);
       };
 
       window.speechSynthesis.speak(utter);
     };
 
+    state.step = step;
     step();
   }
 

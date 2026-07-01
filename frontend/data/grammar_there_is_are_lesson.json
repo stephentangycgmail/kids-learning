@@ -234,6 +234,13 @@
       {"english": "No, there aren't.", "chinese": "不，沒有。"}
     ]
   },
+  "quiz": [
+    {"id": 1, "question": "___ a clock in the classroom.", "options": ["There is", "There are", "Are there"], "answer": "There is"},
+    {"id": 2, "question": "___ three books on the desk.", "options": ["There are", "There is", "Is there"], "answer": "There are"},
+    {"id": 3, "question": "There ___ any milk in the fridge.", "options": ["isn't", "aren't", "are"], "answer": "isn't"},
+    {"id": 4, "question": "___ any trees in the park?", "options": ["Are there", "Is there", "There are"], "answer": "Are there"},
+    {"id": 5, "question": "Which sentence is correct?", "options": ["There is a cat in the kitchen.", "There are a cat in the kitchen.", "There is two cats in the kitchen."], "answer": "There is a cat in the kitchen."}
+  ],
   "practice": [
     {"id": 1, "type": "fill_blank", "question": "___ a clock in the classroom."},
     {"id": 2, "type": "fill_blank", "question": "___ two books on the desk."},

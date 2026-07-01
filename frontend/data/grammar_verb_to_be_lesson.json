@@ -1,0 +1,106 @@
+{
+  "id": "P4_VERB_TO_BE",
+  "title": "Verb to be",
+  "level": "Primary 4",
+  "explanation_en": "Use am, is and are to describe people, animals, places and things. Use am with I, is with he, she, it or one thing, and are with you, we, they or plural things.",
+  "explanation_zh": "am、is 和 are 用來描述人、動物、地方和物件。I 配 am；he、she、it 或單數配 is；you、we、they 或複數配 are。",
+  "structure": {
+    "learning_objective_en": "I can choose am, is or are in statements, negative sentences and questions.",
+    "learning_objective_zh": "我能在陳述句、否定句和疑問句中正確選擇 am、is 或 are。",
+    "positive": "Subject + am/is/are + description.",
+    "negative": "Subject + am not/isn't/aren't + description.",
+    "question": "Am/Is/Are + subject + description?"
+  },
+  "spelling_rules": [
+    {"rule": "Use am with I.", "example": "I am happy."},
+    {"rule": "Use is with he, she, it or one thing.", "example": "She is kind."},
+    {"rule": "Use are with you, we, they or plural things.", "example": "They are ready."},
+    {"rule": "Use isn't as the short form of is not.", "example": "is not → isn't"},
+    {"rule": "Use aren't as the short form of are not.", "example": "are not → aren't"}
+  ],
+  "signal_words": ["am", "is", "are", "isn't", "aren't"],
+  "common_mistakes": [
+    {"wrong": "I is happy.", "correct": "I am happy."},
+    {"wrong": "She are my friend.", "correct": "She is my friend."},
+    {"wrong": "They is at school.", "correct": "They are at school."}
+  ],
+  "keywords": ["am", "is", "are", "am not", "isn't", "aren't", "Is", "Are"],
+  "examples": [
+    {"english": "I am nine years old.", "chinese": "我九歲。", "reason_cn": "I 配 am。", "time_keywords": ["am"]},
+    {"english": "I am ready for school.", "chinese": "我已準備好上學。", "reason_cn": "I 配 am。", "time_keywords": ["am"]},
+    {"english": "Amy is my best friend.", "chinese": "Amy 是我最好的朋友。", "reason_cn": "一個人名配 is。", "time_keywords": ["is"]},
+    {"english": "He is good at football.", "chinese": "他擅長踢足球。", "reason_cn": "He 配 is。", "time_keywords": ["is"]},
+    {"english": "She is in the classroom.", "chinese": "她在課室裏。", "reason_cn": "She 配 is。", "time_keywords": ["is"]},
+    {"english": "The cat is under the table.", "chinese": "小貓在桌子下面。", "reason_cn": "一隻小貓是單數，所以使用 is。", "time_keywords": ["is"]},
+    {"english": "It is sunny today.", "chinese": "今天天氣晴朗。", "reason_cn": "It 配 is。", "time_keywords": ["is"]},
+    {"english": "We are in Primary Four.", "chinese": "我們就讀小學四年級。", "reason_cn": "We 配 are。", "time_keywords": ["are"]},
+    {"english": "You are very helpful.", "chinese": "你很樂於助人。", "reason_cn": "You 配 are。", "time_keywords": ["are"]},
+    {"english": "They are at the library.", "chinese": "他們在圖書館。", "reason_cn": "They 配 are。", "time_keywords": ["are"]},
+    {"english": "The books are on the shelf.", "chinese": "書本在書架上。", "reason_cn": "多本書是複數，所以使用 are。", "time_keywords": ["are"]},
+    {"english": "My parents are at home.", "chinese": "我的父母在家。", "reason_cn": "父母是複數，所以使用 are。", "time_keywords": ["are"]},
+    {"english": "Mum is a nurse.", "chinese": "媽媽是一位護士。", "reason_cn": "一個人是單數，所以使用 is。", "time_keywords": ["is"]},
+    {"english": "Our classroom is clean.", "chinese": "我們的課室很整潔。", "reason_cn": "一間課室是單數，所以使用 is。", "time_keywords": ["is"]},
+    {"english": "The flowers are beautiful.", "chinese": "花朵很美麗。", "reason_cn": "多朵花是複數，所以使用 are。", "time_keywords": ["are"]},
+    {"english": "I am not tired.", "chinese": "我不疲倦。", "reason_cn": "I 的否定形式使用 am not。", "time_keywords": ["am not"]},
+    {"english": "Ben isn't late today.", "chinese": "Ben 今天沒有遲到。", "reason_cn": "一個人名的否定形式使用 isn't。", "time_keywords": ["isn't"]},
+    {"english": "She isn't in the kitchen.", "chinese": "她不在廚房。", "reason_cn": "She 的否定形式使用 isn't。", "time_keywords": ["isn't"]},
+    {"english": "We aren't hungry now.", "chinese": "我們現在不餓。", "reason_cn": "We 的否定形式使用 aren't。", "time_keywords": ["aren't"]},
+    {"english": "The children aren't outside.", "chinese": "孩子們不在外面。", "reason_cn": "複數主語的否定形式使用 aren't。", "time_keywords": ["aren't"]},
+    {"english": "Am I in the right room?", "chinese": "我在正確的房間嗎？", "reason_cn": "I 的疑問句把 Am 放在前面。", "time_keywords": ["Am"]},
+    {"english": "Is Amy your sister?", "chinese": "Amy 是你的姐姐嗎？", "reason_cn": "單數主語的疑問句把 Is 放在前面。", "time_keywords": ["Is"]},
+    {"english": "Is the bus full?", "chinese": "巴士滿座嗎？", "reason_cn": "一輛巴士是單數，所以使用 Is。", "time_keywords": ["Is"]},
+    {"english": "Are you ready?", "chinese": "你準備好了嗎？", "reason_cn": "You 的疑問句把 Are 放在前面。", "time_keywords": ["Are"]},
+    {"english": "Are the pupils in the hall?", "chinese": "學生們在禮堂嗎？", "reason_cn": "複數主語的疑問句使用 Are。", "time_keywords": ["Are"]},
+    {"english": "My lunch box is in my school bag.", "chinese": "我的飯盒在書包裏。", "reason_cn": "一個飯盒是單數，所以使用 is。", "time_keywords": ["is"]},
+    {"english": "The pencils are in the pencil case.", "chinese": "鉛筆在筆袋裏。", "reason_cn": "多枝鉛筆是複數，所以使用 are。", "time_keywords": ["are"]},
+    {"english": "Dad is busy this morning.", "chinese": "爸爸今天早上很忙。", "reason_cn": "一個人是單數，所以使用 is。", "time_keywords": ["is"]},
+    {"english": "My brother and I are happy.", "chinese": "我和哥哥都很開心。", "reason_cn": "兩個人是複數，所以使用 are。", "time_keywords": ["are"]},
+    {"english": "The zoo animals are safe.", "chinese": "動物園的動物很安全。", "reason_cn": "多隻動物是複數，所以使用 are。", "time_keywords": ["are"]}
+  ],
+  "optional_extension": {
+    "title": "Short Forms",
+    "explanation_en": "We often use short forms when we speak.",
+    "explanation_zh": "說話時，我們常使用縮寫。",
+    "examples": [
+      {"english": "I am → I'm", "chinese": "我是"},
+      {"english": "She is → She's", "chinese": "她是"},
+      {"english": "We are → We're", "chinese": "我們是"},
+      {"english": "They are → They're", "chinese": "他們是"}
+    ]
+  },
+  "quiz": [
+    {"id": 1, "question": "I ___ ready for school.", "options": ["am", "is", "are"], "answer": "am"},
+    {"id": 2, "question": "She ___ my friend.", "options": ["is", "am", "are"], "answer": "is"},
+    {"id": 3, "question": "The books ___ on the desk.", "options": ["are", "is", "am"], "answer": "are"},
+    {"id": 4, "question": "We ___ tired today.", "options": ["aren't", "isn't", "am not"], "answer": "aren't"},
+    {"id": 5, "question": "___ Amy in the classroom?", "options": ["Is", "Are", "Am"], "answer": "Is"}
+  ],
+  "practice": [
+    {"id": 1, "type": "fill_blank", "question": "I ___ nine years old."},
+    {"id": 2, "type": "fill_blank", "question": "She ___ my classmate."},
+    {"id": 3, "type": "fill_blank", "question": "We ___ at school."},
+    {"id": 4, "type": "fill_blank", "question": "The cat ___ under the chair."},
+    {"id": 5, "type": "fill_blank", "question": "The children ___ happy."},
+    {"id": 6, "type": "multiple_choice", "question": "Dad ___ busy.", "options": ["am", "is", "are"]},
+    {"id": 7, "type": "multiple_choice", "question": "You ___ helpful.", "options": ["is", "am", "are"]},
+    {"id": 8, "type": "multiple_choice", "question": "I ___ tired.", "options": ["am not", "isn't", "aren't"]},
+    {"id": 9, "type": "multiple_choice", "question": "They ___ at home.", "options": ["isn't", "aren't", "am not"]},
+    {"id": 10, "type": "multiple_choice", "question": "___ Ben your brother?", "options": ["Am", "Is", "Are"]},
+    {"id": 11, "type": "sentence_rewrite", "question": "Change to negative: She is in the kitchen."},
+    {"id": 12, "type": "sentence_rewrite", "question": "Change to negative: They are at school."},
+    {"id": 13, "type": "sentence_rewrite", "question": "Change to a question: Amy is happy."},
+    {"id": 14, "type": "sentence_rewrite", "question": "Change to a question: The pupils are ready."},
+    {"id": 15, "type": "word_order", "question": "Put in order: am / I / hungry / not"},
+    {"id": 16, "type": "word_order", "question": "Put in order: your books / are / where / ?"},
+    {"id": 17, "type": "error_correction", "question": "Correct the sentence: I is nine years old."},
+    {"id": 18, "type": "error_correction", "question": "Correct the sentence: She are my friend."},
+    {"id": 19, "type": "error_correction", "question": "Correct the sentence: They is at school."},
+    {"id": 20, "type": "translation", "question": "Translate into English: 我們在課室裏。"}
+  ],
+  "answer_key": [
+    {"id": 1, "answer": "am"}, {"id": 2, "answer": "is"}, {"id": 3, "answer": "are"}, {"id": 4, "answer": "is"}, {"id": 5, "answer": "are"},
+    {"id": 6, "answer": "is"}, {"id": 7, "answer": "are"}, {"id": 8, "answer": "am not"}, {"id": 9, "answer": "aren't"}, {"id": 10, "answer": "Is"},
+    {"id": 11, "answer": "She isn't in the kitchen."}, {"id": 12, "answer": "They aren't at school."}, {"id": 13, "answer": "Is Amy happy?"}, {"id": 14, "answer": "Are the pupils ready?"},
+    {"id": 15, "answer": "I am not hungry."}, {"id": 16, "answer": "Where are your books?"}, {"id": 17, "answer": "I am nine years old."}, {"id": 18, "answer": "She is my friend."}, {"id": 19, "answer": "They are at school."}, {"id": 20, "answer": "We are in the classroom."}
+  ]
+}

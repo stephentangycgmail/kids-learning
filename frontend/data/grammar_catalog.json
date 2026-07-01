@@ -4,7 +4,13 @@
       "category": "tenses",
       "id": "present-simple",
       "title": "Present Simple",
-      "file": "tenses_present_simple.json"
+      "file": "grammar_present_simple_lesson.json"
+    },
+    {
+      "category": "tenses",
+      "id": "verb-to-be",
+      "title": "Verb to be",
+      "file": "grammar_verb_to_be_lesson.json"
     },
     {
       "category": "tenses",
