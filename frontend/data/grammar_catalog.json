@@ -17,6 +17,12 @@
       "id": "past-simple",
       "title": "Past Simple",
       "file": "grammar_past_simple_lesson.json"
+    },
+    {
+      "category": "tenses",
+      "id": "future-simple",
+      "title": "Future Simple (will)",
+      "file": "grammar_future_simple_lesson.json"
     }
   ]
 }

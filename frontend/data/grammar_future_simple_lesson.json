@@ -1,0 +1,280 @@
+{
+  "id": "P4_FUTURE_SIMPLE",
+  "title": "Future Simple (will)",
+  "level": "Primary 4",
+  "explanation_en": "Use will to talk about something in the future. Step 1: Find the future-time signal. Step 2: Put will before the action word. Keep the action word in its base form. Example: I will visit Grandma tomorrow.",
+  "explanation_zh": "未來簡單式用來表示將來的事情。第一步：找出表示未來時間的提示詞。第二步：在動詞前加 will，動詞使用原形。例如：I will visit Grandma tomorrow.（我明天會探望祖母。）",
+  "structure": {
+    "positive": "Subject + will + base verb.",
+    "negative": "Subject + will not + base verb.",
+    "question": "Will + subject + base verb?"
+  },
+  "spelling_rules": [
+    {"rule": "Use the base verb after will.", "example": "will play"},
+    {"rule": "Do not add -s after will.", "example": "She will read."},
+    {"rule": "Use will not for a negative sentence.", "example": "will not rain"},
+    {"rule": "Use won't as the short form of will not.", "example": "will not → won't"},
+    {"rule": "Put will before the subject in a question.", "example": "Will you come?"}
+  ],
+  "signal_words": [
+    "tomorrow",
+    "next week",
+    "next month",
+    "soon",
+    "later"
+  ],
+  "common_mistakes": [
+    {"wrong": "I will goes to school.", "correct": "I will go to school."},
+    {"wrong": "She will to play tennis.", "correct": "She will play tennis."},
+    {"wrong": "Will he comes tomorrow?", "correct": "Will he come tomorrow?"}
+  ],
+  "keywords": [
+    "tomorrow",
+    "tomorrow morning",
+    "tomorrow afternoon",
+    "tomorrow evening",
+    "next week",
+    "next weekend",
+    "next month",
+    "soon",
+    "later",
+    "after school"
+  ],
+  "examples": [
+    {
+      "english": "I will finish my homework later.",
+      "chinese": "我稍後會完成家課。",
+      "reason_cn": "later 表示稍後會發生的事情。",
+      "time_keywords": ["later"]
+    },
+    {
+      "english": "Mum will cook noodles tomorrow.",
+      "chinese": "媽媽明天會煮麵。",
+      "reason_cn": "tomorrow 表示明天會發生的事情。",
+      "time_keywords": ["tomorrow"]
+    },
+    {
+      "english": "We will play football after school.",
+      "chinese": "我們放學後會踢足球。",
+      "reason_cn": "after school 表示稍後的時間。",
+      "time_keywords": ["after school"]
+    },
+    {
+      "english": "Dad will wash the car tomorrow morning.",
+      "chinese": "爸爸明天早上會洗車。",
+      "reason_cn": "tomorrow morning 表示明天早上會發生的事情。",
+      "time_keywords": ["tomorrow morning"]
+    },
+    {
+      "english": "Amy will bring her library book tomorrow.",
+      "chinese": "Amy 明天會帶圖書館的書回來。",
+      "reason_cn": "will 後面使用動詞原形 bring。",
+      "time_keywords": ["tomorrow"]
+    },
+    {
+      "english": "Our class will visit the museum next week.",
+      "chinese": "我們班下星期會參觀博物館。",
+      "reason_cn": "next week 表示下星期會發生的事情。",
+      "time_keywords": ["next week"]
+    },
+    {
+      "english": "My sister will start swimming lessons next month.",
+      "chinese": "我姐姐下個月會開始上游泳課。",
+      "reason_cn": "next month 表示下個月會發生的事情。",
+      "time_keywords": ["next month"]
+    },
+    {
+      "english": "The bus will arrive soon.",
+      "chinese": "巴士很快便會到達。",
+      "reason_cn": "soon 表示事情很快會發生。",
+      "time_keywords": ["soon"]
+    },
+    {
+      "english": "I will tidy my desk later.",
+      "chinese": "我稍後會整理書桌。",
+      "reason_cn": "will 後面使用動詞原形 tidy。",
+      "time_keywords": ["later"]
+    },
+    {
+      "english": "They will watch a film tomorrow evening.",
+      "chinese": "他們明晚會看一齣電影。",
+      "reason_cn": "tomorrow evening 表示明晚會發生的事情。",
+      "time_keywords": ["tomorrow evening"]
+    },
+    {
+      "english": "Ben will practise the piano tomorrow.",
+      "chinese": "Ben 明天會練習鋼琴。",
+      "reason_cn": "will 後面使用動詞原形 practise。",
+      "time_keywords": ["tomorrow"]
+    },
+    {
+      "english": "We will plant flowers next weekend.",
+      "chinese": "我們下週末會種花。",
+      "reason_cn": "next weekend 表示下週末會發生的事情。",
+      "time_keywords": ["next weekend"]
+    },
+    {
+      "english": "The teacher will check our work later.",
+      "chinese": "老師稍後會檢查我們的課業。",
+      "reason_cn": "later 表示稍後會發生的事情。",
+      "time_keywords": ["later"]
+    },
+    {
+      "english": "My family will have dim sum tomorrow morning.",
+      "chinese": "我的家人明天早上會吃點心。",
+      "reason_cn": "will 後面使用動詞原形 have。",
+      "time_keywords": ["tomorrow morning"]
+    },
+    {
+      "english": "The rain will stop soon.",
+      "chinese": "雨很快便會停。",
+      "reason_cn": "soon 表示事情很快會發生。",
+      "time_keywords": ["soon"]
+    },
+    {
+      "english": "I will not use the computer tonight.",
+      "chinese": "我今晚不會使用電腦。",
+      "reason_cn": "否定句用 will not 加動詞原形 use。",
+      "time_keywords": ["tonight"]
+    },
+    {
+      "english": "She will not be late tomorrow.",
+      "chinese": "她明天不會遲到。",
+      "reason_cn": "否定句用 will not 加動詞原形 be。",
+      "time_keywords": ["tomorrow"]
+    },
+    {
+      "english": "We will not have PE next week.",
+      "chinese": "我們下星期不會上體育課。",
+      "reason_cn": "否定句用 will not 加動詞原形 have。",
+      "time_keywords": ["next week"]
+    },
+    {
+      "english": "Dad will not drive tomorrow morning.",
+      "chinese": "爸爸明天早上不會駕車。",
+      "reason_cn": "否定句用 will not 加動詞原形 drive。",
+      "time_keywords": ["tomorrow morning"]
+    },
+    {
+      "english": "The shop will not open until next month.",
+      "chinese": "那間商店要到下個月才會開門。",
+      "reason_cn": "next month 表示下個月的事情。",
+      "time_keywords": ["next month"]
+    },
+    {
+      "english": "Will you come to school tomorrow?",
+      "chinese": "你明天會回學校嗎？",
+      "reason_cn": "一般疑問句把 Will 放在主語前，come 使用原形。",
+      "time_keywords": ["tomorrow"]
+    },
+    {
+      "english": "Will Amy join us later?",
+      "chinese": "Amy 稍後會加入我們嗎？",
+      "reason_cn": "一般疑問句把 Will 放在主語前。",
+      "time_keywords": ["later"]
+    },
+    {
+      "english": "Will they play in the match next week?",
+      "chinese": "他們下星期會參加比賽嗎？",
+      "reason_cn": "Will 後面使用主語和動詞原形 play。",
+      "time_keywords": ["next week"]
+    },
+    {
+      "english": "What will you do tomorrow?",
+      "chinese": "你明天會做甚麼？",
+      "reason_cn": "特殊疑問句用疑問詞、will、主語和動詞原形。",
+      "time_keywords": ["tomorrow"]
+    },
+    {
+      "english": "When will the lesson start?",
+      "chinese": "課堂何時會開始？",
+      "reason_cn": "Will 後面使用主語和動詞原形 start。",
+      "time_keywords": ["When"]
+    },
+    {
+      "english": "I think our team will win tomorrow.",
+      "chinese": "我想我們的隊伍明天會勝出。",
+      "reason_cn": "will 可以表示對將來的預測。",
+      "time_keywords": ["tomorrow"]
+    },
+    {
+      "english": "It will be sunny next week.",
+      "chinese": "下星期天氣會晴朗。",
+      "reason_cn": "will 可以表示對將來的預測。",
+      "time_keywords": ["next week"]
+    },
+    {
+      "english": "I will help you with your homework later.",
+      "chinese": "我稍後會幫你做家課。",
+      "reason_cn": "will 可以表示願意幫忙。",
+      "time_keywords": ["later"]
+    },
+    {
+      "english": "We will carry the books for the teacher soon.",
+      "chinese": "我們很快會替老師搬書。",
+      "reason_cn": "will 可以表示願意幫忙。",
+      "time_keywords": ["soon"]
+    },
+    {
+      "english": "My cousin will move to a new flat next month.",
+      "chinese": "我的表親下個月會搬到新住所。",
+      "reason_cn": "next month 表示下個月會發生的事情。",
+      "time_keywords": ["next month"]
+    }
+  ],
+  "optional_extension": {
+    "title": "Short Forms",
+    "explanation_en": "We often use short forms when we speak or write informally.",
+    "explanation_zh": "說話或非正式寫作時，我們常使用縮寫。",
+    "examples": [
+      {"english": "I will → I'll", "chinese": "我將會"},
+      {"english": "She will → She'll", "chinese": "她將會"},
+      {"english": "We will → We'll", "chinese": "我們將會"},
+      {"english": "will not → won't", "chinese": "將不會"}
+    ]
+  },
+  "practice": [
+    {"id": 1, "type": "fill_blank", "question": "I ___ (visit) Grandma tomorrow."},
+    {"id": 2, "type": "fill_blank", "question": "She ___ (read) the book later."},
+    {"id": 3, "type": "fill_blank", "question": "We ___ (play) football next week."},
+    {"id": 4, "type": "fill_blank", "question": "Dad ___ (cook) dinner tomorrow."},
+    {"id": 5, "type": "fill_blank", "question": "The bus ___ (arrive) soon."},
+    {"id": 6, "type": "multiple_choice", "question": "Mum ___ the shopping later.", "options": ["will do", "will does", "does will"]},
+    {"id": 7, "type": "multiple_choice", "question": "They ___ a film tomorrow.", "options": ["will watched", "will watch", "watch will"]},
+    {"id": 8, "type": "multiple_choice", "question": "I ___ late tomorrow.", "options": ["will not be", "will not am", "not will be"]},
+    {"id": 9, "type": "multiple_choice", "question": "___ Amy come later?", "options": ["Does", "Is", "Will"]},
+    {"id": 10, "type": "multiple_choice", "question": "Will Dad ___ the car next week?", "options": ["fixes", "fix", "fixed"]},
+    {"id": 11, "type": "sentence_rewrite", "question": "Change to negative: He will play basketball tomorrow."},
+    {"id": 12, "type": "sentence_rewrite", "question": "Change to negative: We will visit the museum next week."},
+    {"id": 13, "type": "sentence_rewrite", "question": "Change to a question: Lily will clean her room later."},
+    {"id": 14, "type": "sentence_rewrite", "question": "Change to a question: They will go home soon."},
+    {"id": 15, "type": "word_order", "question": "Put in order: tomorrow / will / I / my bike / ride"},
+    {"id": 16, "type": "word_order", "question": "Put in order: next week / what / will / you / do / ?"},
+    {"id": 17, "type": "error_correction", "question": "Correct the sentence: She will goes to school tomorrow."},
+    {"id": 18, "type": "error_correction", "question": "Correct the sentence: I will to watch TV later."},
+    {"id": 19, "type": "error_correction", "question": "Correct the sentence: Will he plays football?"},
+    {"id": 20, "type": "translation", "question": "Translate into English: 我們下星期會去圖書館。"}
+  ],
+  "answer_key": [
+    {"id": 1, "answer": "will visit"},
+    {"id": 2, "answer": "will read"},
+    {"id": 3, "answer": "will play"},
+    {"id": 4, "answer": "will cook"},
+    {"id": 5, "answer": "will arrive"},
+    {"id": 6, "answer": "will do"},
+    {"id": 7, "answer": "will watch"},
+    {"id": 8, "answer": "will not be"},
+    {"id": 9, "answer": "Will"},
+    {"id": 10, "answer": "fix"},
+    {"id": 11, "answer": "He will not play basketball tomorrow."},
+    {"id": 12, "answer": "We will not visit the museum next week."},
+    {"id": 13, "answer": "Will Lily clean her room later?"},
+    {"id": 14, "answer": "Will they go home soon?"},
+    {"id": 15, "answer": "I will ride my bike tomorrow."},
+    {"id": 16, "answer": "What will you do next week?"},
+    {"id": 17, "answer": "She will go to school tomorrow."},
+    {"id": 18, "answer": "I will watch TV later."},
+    {"id": 19, "answer": "Will he play football?"},
+    {"id": 20, "answer": "We will go to the library next week."}
+  ]
+}
