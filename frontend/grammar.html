@@ -98,7 +98,7 @@
         }
         .grammar-main-tabs::-webkit-scrollbar, .tense-tabs::-webkit-scrollbar { display: none; }
 
-        .grammar-main-tab, .tense-tab {
+        .grammar-main-tab, .tense-tab, .lesson-nav-button {
             flex: 0 0 auto;
             background: #1e293b; /* 深灰藍按鈕底色 */
             border: 1px solid #334155;
@@ -108,6 +108,28 @@
             font-size: 0.9rem;
             cursor: pointer;
             transition: all 0.2s;
+        }
+
+        .lesson-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            padding-bottom: 10px;
+        }
+
+        .lesson-nav-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.45;
+        }
+
+        .lesson-practice-action {
+            display: flex;
+            justify-content: center;
+            padding: 16px 0 24px;
+        }
+
+        .lesson-practice-action .lesson-nav-button {
+            text-decoration: none;
         }
 
         .grammar-main-tab.active, .tense-tab.active {
@@ -281,6 +303,10 @@
         <!-- Grammar lesson tabs are generated from grammar_catalog.json. -->
         <div style="background: #0f172a; padding: 0 16px; flex: 0 0 auto;">
             <div id="grammarLessonTabs" class="tense-tabs"></div>
+            <div class="lesson-navigation">
+                <button id="previousLessonButton" class="lesson-nav-button" type="button" disabled>Previous Lesson</button>
+                <button id="nextLessonButton" class="lesson-nav-button" type="button" disabled>Next Lesson</button>
+            </div>
         </div>
         <div id="grammarLessonStatus" class="panel-fixed-header">
             <p class="no-data">Loading grammar lessons...</p>
@@ -311,6 +337,7 @@
 <script>
     const GRAMMAR_CATALOG_PATH = "data/grammar_catalog.json";
     let grammarLessons = [];
+    let currentLessonIndex = -1;
     const tenseDataCache = {};
 
     /* ========= SIMPLE SLOW TTS (NO HIGHLIGHT) ========= */
@@ -546,22 +573,41 @@
     }
 
     function activateGrammarLesson(lesson) {
+        currentLessonIndex = grammarLessons.findIndex(item => item.id === lesson.id);
         document.querySelectorAll(".tense-tab").forEach(tab => {
             tab.classList.toggle("active", tab.dataset.tense === lesson.id);
         });
         document.querySelectorAll(".tense-panel").forEach(panel => {
             panel.classList.toggle("active", panel.dataset.tensePanel === lesson.id);
         });
+        updateLessonNavigation();
         stopReading();
         loadTenseData(lesson);
+    }
+
+    function updateLessonNavigation() {
+        const previousButton = document.getElementById("previousLessonButton");
+        const nextButton = document.getElementById("nextLessonButton");
+        previousButton.disabled = currentLessonIndex <= 0;
+        nextButton.disabled = currentLessonIndex < 0 || currentLessonIndex >= grammarLessons.length - 1;
+    }
+
+    function navigateLesson(offset) {
+        const nextIndex = currentLessonIndex + offset;
+        if (nextIndex < 0 || nextIndex >= grammarLessons.length) return;
+        activateGrammarLesson(grammarLessons[nextIndex]);
     }
 
     function createGrammarLessonControls(lessons) {
         const tabs = document.getElementById("grammarLessonTabs");
         const section = document.querySelector('[data-section-panel="tenses"]');
         const status = document.getElementById("grammarLessonStatus");
+        const previousButton = document.getElementById("previousLessonButton");
+        const nextButton = document.getElementById("nextLessonButton");
         tabs.innerHTML = "";
         status.remove();
+        previousButton.addEventListener("click", () => navigateLesson(-1));
+        nextButton.addEventListener("click", () => navigateLesson(1));
 
         lessons.forEach((lesson, index) => {
             const tab = document.createElement("button");
@@ -581,6 +627,9 @@
                 </div>
                 <div class="scroll-content">
                     <div id="sentences-${lesson.id}" class="sentence-list"></div>
+                    <div class="lesson-practice-action">
+                        <a class="lesson-nav-button" href="dictation_practice.html">Practice Dictation</a>
+                    </div>
                 </div>
             `;
             panel.querySelector(".tense-title").textContent = lesson.title;
