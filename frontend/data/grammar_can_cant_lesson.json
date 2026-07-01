@@ -225,6 +225,38 @@
       {"english": "No, they can't.", "chinese": "不，他們不可以。"}
     ]
   },
+  "quiz": [
+    {
+      "id": 1,
+      "question": "Amy ___ swim well.",
+      "options": ["can", "cans", "can to"],
+      "answer": "can"
+    },
+    {
+      "id": 2,
+      "question": "The baby ___ read yet.",
+      "options": ["can't", "doesn't can", "can not to"],
+      "answer": "can't"
+    },
+    {
+      "id": 3,
+      "question": "___ I borrow your ruler?",
+      "options": ["Can", "Am", "Do"],
+      "answer": "Can"
+    },
+    {
+      "id": 4,
+      "question": "Which is a polite request?",
+      "options": ["Can you help me, please?", "You help me.", "Helping me now."],
+      "answer": "Can you help me, please?"
+    },
+    {
+      "id": 5,
+      "question": "Ben can ___ football.",
+      "options": ["play", "plays", "playing"],
+      "answer": "play"
+    }
+  ],
   "practice": [
     {"id": 1, "type": "fill_blank", "question": "I ___ swim across the pool."},
     {"id": 2, "type": "fill_blank", "question": "Amy ___ play the piano."},

@@ -233,6 +233,38 @@
       {"english": "will not → won't", "chinese": "將不會"}
     ]
   },
+  "quiz": [
+    {
+      "id": 1,
+      "question": "I ___ Grandma tomorrow.",
+      "options": ["will visit", "will visits", "visited"],
+      "answer": "will visit"
+    },
+    {
+      "id": 2,
+      "question": "She ___ late next week.",
+      "options": ["will not be", "will not is", "is not will"],
+      "answer": "will not be"
+    },
+    {
+      "id": 3,
+      "question": "___ they play football tomorrow?",
+      "options": ["Will", "Do", "Are"],
+      "answer": "Will"
+    },
+    {
+      "id": 4,
+      "question": "Which phrase tells us about the future?",
+      "options": ["next month", "yesterday", "last night"],
+      "answer": "next month"
+    },
+    {
+      "id": 5,
+      "question": "The bus ___ soon.",
+      "options": ["will arrive", "will arrives", "arrived"],
+      "answer": "will arrive"
+    }
+  ],
   "practice": [
     {"id": 1, "type": "fill_blank", "question": "I ___ (visit) Grandma tomorrow."},
     {"id": 2, "type": "fill_blank", "question": "She ___ (read) the book later."},

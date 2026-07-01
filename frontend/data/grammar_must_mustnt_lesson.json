@@ -227,6 +227,38 @@
       {"english": "We mustn't shout.", "chinese": "我們不准大叫。"}
     ]
   },
+  "quiz": [
+    {
+      "id": 1,
+      "question": "Pupils ___ listen to the teacher.",
+      "options": ["must", "musts", "must to"],
+      "answer": "must"
+    },
+    {
+      "id": 2,
+      "question": "We ___ run in the corridor.",
+      "options": ["mustn't", "must", "don't must"],
+      "answer": "mustn't"
+    },
+    {
+      "id": 3,
+      "question": "You must ___ your homework before you play.",
+      "options": ["finish", "finishes", "finishing"],
+      "answer": "finish"
+    },
+    {
+      "id": 4,
+      "question": "Which sentence is a road safety rule?",
+      "options": ["We must stop at a red light.", "We must sing at a red light.", "We mustn't look at the road."],
+      "answer": "We must stop at a red light."
+    },
+    {
+      "id": 5,
+      "question": "Children ___ touch a hot pan.",
+      "options": ["mustn't", "must", "musts"],
+      "answer": "mustn't"
+    }
+  ],
   "practice": [
     {"id": 1, "type": "fill_blank", "question": "We ___ listen to the teacher."},
     {"id": 2, "type": "fill_blank", "question": "Pupils ___ wear their school uniform."},
