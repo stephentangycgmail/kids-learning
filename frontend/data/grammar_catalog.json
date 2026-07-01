@@ -23,6 +23,24 @@
       "id": "future-simple",
       "title": "Future Simple (will)",
       "file": "grammar_future_simple_lesson.json"
+    },
+    {
+      "category": "tenses",
+      "id": "can-cant",
+      "title": "Can / Can't",
+      "file": "grammar_can_cant_lesson.json"
+    },
+    {
+      "category": "tenses",
+      "id": "must-mustnt",
+      "title": "Must / Mustn't",
+      "file": "grammar_must_mustnt_lesson.json"
+    },
+    {
+      "category": "tenses",
+      "id": "there-is-are",
+      "title": "There is / There are",
+      "file": "grammar_there_is_are_lesson.json"
     }
   ]
 }

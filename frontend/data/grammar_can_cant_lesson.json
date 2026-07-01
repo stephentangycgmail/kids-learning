@@ -1,0 +1,272 @@
+{
+  "id": "P4_CAN_CANT",
+  "title": "Can / Can't",
+  "level": "Primary 4",
+  "explanation_en": "Use can for something a person is able or allowed to do. Use can't for something a person is not able or allowed to do. We also use can for simple requests. Always use the base verb after can or can't.",
+  "explanation_zh": "can 表示有能力或獲准做某事；can't 表示沒有能力或不獲准做某事。can 也可以用於簡單請求。can 或 can't 後面的動詞使用原形。",
+  "structure": {
+    "positive": "Subject + can + base verb.",
+    "negative": "Subject + can't + base verb.",
+    "question": "Can + subject + base verb?"
+  },
+  "spelling_rules": [
+    {"rule": "Use the base verb after can.", "example": "can swim"},
+    {"rule": "Use the base verb after can't.", "example": "can't swim"},
+    {"rule": "Use can with every subject.", "example": "I can / She can / They can"},
+    {"rule": "Do not add to after can.", "example": "can play"},
+    {"rule": "Can't is the short form of cannot.", "example": "cannot → can't"}
+  ],
+  "signal_words": [
+    "can",
+    "can't"
+  ],
+  "common_mistakes": [
+    {"wrong": "She cans swim.", "correct": "She can swim."},
+    {"wrong": "I can to ride a bike.", "correct": "I can ride a bike."},
+    {"wrong": "Can he plays football?", "correct": "Can he play football?"}
+  ],
+  "keywords": [
+    "can",
+    "can't",
+    "Can I",
+    "Can we",
+    "Can you"
+  ],
+  "examples": [
+    {
+      "english": "I can ride a bike.",
+      "chinese": "我會踏單車。",
+      "reason_cn": "can 表示有能力做某事。",
+      "time_keywords": ["can"]
+    },
+    {
+      "english": "Amy can swim well.",
+      "chinese": "Amy 很會游泳。",
+      "reason_cn": "can 後面使用動詞原形 swim。",
+      "time_keywords": ["can"]
+    },
+    {
+      "english": "Ben can play the piano.",
+      "chinese": "Ben 會彈鋼琴。",
+      "reason_cn": "can 表示有能力做某事。",
+      "time_keywords": ["can"]
+    },
+    {
+      "english": "We can speak English in class.",
+      "chinese": "我們可以在課堂上說英語。",
+      "reason_cn": "can 表示有能力做某事。",
+      "time_keywords": ["can"]
+    },
+    {
+      "english": "My sister can draw lovely animals.",
+      "chinese": "我姐姐會畫可愛的動物。",
+      "reason_cn": "can 後面使用動詞原形 draw。",
+      "time_keywords": ["can"]
+    },
+    {
+      "english": "Dad can cook fried rice.",
+      "chinese": "爸爸會煮炒飯。",
+      "reason_cn": "can 表示有能力做某事。",
+      "time_keywords": ["can"]
+    },
+    {
+      "english": "The baby can walk now.",
+      "chinese": "嬰兒現在會走路了。",
+      "reason_cn": "can 表示已經有能力做某事。",
+      "time_keywords": ["can"]
+    },
+    {
+      "english": "Our dog can catch a ball.",
+      "chinese": "我們的狗會接球。",
+      "reason_cn": "can 後面使用動詞原形 catch。",
+      "time_keywords": ["can"]
+    },
+    {
+      "english": "They can sing this song.",
+      "chinese": "他們會唱這首歌。",
+      "reason_cn": "can 表示有能力做某事。",
+      "time_keywords": ["can"]
+    },
+    {
+      "english": "I can carry my school bag.",
+      "chinese": "我可以拿自己的書包。",
+      "reason_cn": "can 後面使用動詞原形 carry。",
+      "time_keywords": ["can"]
+    },
+    {
+      "english": "I can't lift this heavy box.",
+      "chinese": "我搬不動這個重箱子。",
+      "reason_cn": "can't 表示沒有能力做某事。",
+      "time_keywords": ["can't"]
+    },
+    {
+      "english": "Tom can't read without his glasses.",
+      "chinese": "Tom 沒有眼鏡便不能閱讀。",
+      "reason_cn": "can't 表示沒有能力做某事。",
+      "time_keywords": ["can't"]
+    },
+    {
+      "english": "My little brother can't tie his shoes yet.",
+      "chinese": "我的弟弟還不會綁鞋帶。",
+      "reason_cn": "can't 表示暫時沒有能力做某事。",
+      "time_keywords": ["can't"]
+    },
+    {
+      "english": "The cat can't open the door.",
+      "chinese": "小貓不能打開門。",
+      "reason_cn": "can't 後面使用動詞原形 open。",
+      "time_keywords": ["can't"]
+    },
+    {
+      "english": "We can't hear the teacher from here.",
+      "chinese": "我們在這裏聽不到老師說話。",
+      "reason_cn": "can't 表示沒有能力做到某事。",
+      "time_keywords": ["can't"]
+    },
+    {
+      "english": "We can use the library after school.",
+      "chinese": "我們放學後可以使用圖書館。",
+      "reason_cn": "can 表示獲准做某事。",
+      "time_keywords": ["can"]
+    },
+    {
+      "english": "Pupils can borrow two books.",
+      "chinese": "學生可以借兩本書。",
+      "reason_cn": "can 表示獲准做某事。",
+      "time_keywords": ["can"]
+    },
+    {
+      "english": "You can have some water now.",
+      "chinese": "你現在可以喝一些水。",
+      "reason_cn": "can 表示獲准做某事。",
+      "time_keywords": ["can"]
+    },
+    {
+      "english": "We can't run in the corridor.",
+      "chinese": "我們不可以在走廊奔跑。",
+      "reason_cn": "can't 表示不獲准做某事。",
+      "time_keywords": ["can't"]
+    },
+    {
+      "english": "You can't eat in the computer room.",
+      "chinese": "你不可以在電腦室進食。",
+      "reason_cn": "can't 表示不獲准做某事。",
+      "time_keywords": ["can't"]
+    },
+    {
+      "english": "Can I open the window?",
+      "chinese": "我可以打開窗戶嗎？",
+      "reason_cn": "Can I 用來有禮貌地請求許可。",
+      "time_keywords": ["Can"]
+    },
+    {
+      "english": "Can I borrow your ruler?",
+      "chinese": "我可以借你的間尺嗎？",
+      "reason_cn": "Can I 用來有禮貌地請求許可。",
+      "time_keywords": ["Can"]
+    },
+    {
+      "english": "Can we play outside?",
+      "chinese": "我們可以到外面玩嗎？",
+      "reason_cn": "Can we 用來請求許可。",
+      "time_keywords": ["Can"]
+    },
+    {
+      "english": "Can you help me with this bag?",
+      "chinese": "你可以幫我拿這個袋嗎？",
+      "reason_cn": "Can you 用來提出簡單請求。",
+      "time_keywords": ["Can"]
+    },
+    {
+      "english": "Can you close the door, please?",
+      "chinese": "請問你可以關門嗎？",
+      "reason_cn": "Can you 和 please 令請求更有禮貌。",
+      "time_keywords": ["Can"]
+    },
+    {
+      "english": "Can Amy join our game?",
+      "chinese": "Amy 可以加入我們的遊戲嗎？",
+      "reason_cn": "Can 放在主語前面組成疑問句。",
+      "time_keywords": ["Can"]
+    },
+    {
+      "english": "Can Ben come to the party?",
+      "chinese": "Ben 可以來參加派對嗎？",
+      "reason_cn": "Can 後面使用主語和動詞原形 come。",
+      "time_keywords": ["Can"]
+    },
+    {
+      "english": "Can your sister make a sandwich?",
+      "chinese": "你姐姐會做三文治嗎？",
+      "reason_cn": "Can 可以詢問別人的能力。",
+      "time_keywords": ["Can"]
+    },
+    {
+      "english": "Can the children cross the road here?",
+      "chinese": "孩子們可以在這裏過馬路嗎？",
+      "reason_cn": "Can 可以詢問是否獲准做某事。",
+      "time_keywords": ["Can"]
+    },
+    {
+      "english": "Can you show me the answer, please?",
+      "chinese": "請問你可以給我看答案嗎？",
+      "reason_cn": "Can you 用來提出有禮貌的請求。",
+      "time_keywords": ["Can"]
+    }
+  ],
+  "optional_extension": {
+    "title": "Short Answers",
+    "explanation_en": "Use can or can't in a short answer.",
+    "explanation_zh": "簡短回答可以使用 can 或 can't。",
+    "examples": [
+      {"english": "Yes, I can.", "chinese": "是的，我可以。"},
+      {"english": "No, I can't.", "chinese": "不，我不可以。"},
+      {"english": "Yes, she can.", "chinese": "是的，她可以。"},
+      {"english": "No, they can't.", "chinese": "不，他們不可以。"}
+    ]
+  },
+  "practice": [
+    {"id": 1, "type": "fill_blank", "question": "I ___ swim across the pool."},
+    {"id": 2, "type": "fill_blank", "question": "Amy ___ play the piano."},
+    {"id": 3, "type": "fill_blank", "question": "The baby ___ read yet."},
+    {"id": 4, "type": "fill_blank", "question": "We ___ borrow books from the library."},
+    {"id": 5, "type": "fill_blank", "question": "You ___ run in the corridor."},
+    {"id": 6, "type": "multiple_choice", "question": "Dad ___ cook fried rice.", "options": ["can", "cans", "can to"]},
+    {"id": 7, "type": "multiple_choice", "question": "She can't ___ the heavy box.", "options": ["lifts", "lift", "lifting"]},
+    {"id": 8, "type": "multiple_choice", "question": "___ I use your pencil?", "options": ["Am", "Can", "Do"]},
+    {"id": 9, "type": "multiple_choice", "question": "Can Ben ___ football?", "options": ["plays", "played", "play"]},
+    {"id": 10, "type": "multiple_choice", "question": "We ___ eat in the computer room.", "options": ["can", "can't", "are"]},
+    {"id": 11, "type": "sentence_rewrite", "question": "Change to negative: She can ride a bike."},
+    {"id": 12, "type": "sentence_rewrite", "question": "Change to negative: We can hear the music."},
+    {"id": 13, "type": "sentence_rewrite", "question": "Change to a question: Amy can swim."},
+    {"id": 14, "type": "sentence_rewrite", "question": "Change to a question: They can use the library."},
+    {"id": 15, "type": "word_order", "question": "Put in order: can / I / this book / borrow / ?"},
+    {"id": 16, "type": "word_order", "question": "Put in order: help / can / you / me / please / ?"},
+    {"id": 17, "type": "error_correction", "question": "Correct the sentence: She cans draw well."},
+    {"id": 18, "type": "error_correction", "question": "Correct the sentence: I can to play chess."},
+    {"id": 19, "type": "error_correction", "question": "Correct the sentence: Can he rides a bike?"},
+    {"id": 20, "type": "translation", "question": "Translate into English: 我可以借你的間尺嗎？"}
+  ],
+  "answer_key": [
+    {"id": 1, "answer": "can"},
+    {"id": 2, "answer": "can"},
+    {"id": 3, "answer": "can't"},
+    {"id": 4, "answer": "can"},
+    {"id": 5, "answer": "can't"},
+    {"id": 6, "answer": "can"},
+    {"id": 7, "answer": "lift"},
+    {"id": 8, "answer": "Can"},
+    {"id": 9, "answer": "play"},
+    {"id": 10, "answer": "can't"},
+    {"id": 11, "answer": "She can't ride a bike."},
+    {"id": 12, "answer": "We can't hear the music."},
+    {"id": 13, "answer": "Can Amy swim?"},
+    {"id": 14, "answer": "Can they use the library?"},
+    {"id": 15, "answer": "Can I borrow this book?"},
+    {"id": 16, "answer": "Can you help me, please?"},
+    {"id": 17, "answer": "She can draw well."},
+    {"id": 18, "answer": "I can play chess."},
+    {"id": 19, "answer": "Can he ride a bike?"},
+    {"id": 20, "answer": "Can I borrow your ruler?"}
+  ]
+}

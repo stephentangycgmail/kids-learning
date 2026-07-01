@@ -1,0 +1,281 @@
+{
+  "id": "P4_THERE_IS_ARE",
+  "title": "There is / There are",
+  "level": "Primary 4",
+  "explanation_en": "Use there is for one person, animal, place or thing. Use there are for two or more. These forms tell us what we can find in a place.",
+  "explanation_zh": "there is 用於一個人、動物、地方或物件；there are 用於兩個或以上。這些句式用來說明某個地方有甚麼。",
+  "structure": {
+    "learning_objective_en": "I can use there is and there are to describe people, animals and things in familiar places.",
+    "learning_objective_zh": "我能運用 there is 和 there are 描述熟悉地方裏的人、動物和物件。",
+    "positive": "There is + singular noun. / There are + plural noun.",
+    "negative": "There isn't + singular noun. / There aren't + plural noun.",
+    "question": "Is there + singular noun? / Are there + plural noun?",
+    "difference": {
+      "singular": "Use there is with one person, animal, place or thing.",
+      "plural": "Use there are with two or more people, animals, places or things."
+    }
+  },
+  "spelling_rules": [
+    {"rule": "Use there is before one thing.", "example": "There is a book."},
+    {"rule": "Use there are before two or more things.", "example": "There are two books."},
+    {"rule": "Use there isn't for one thing that is not present.", "example": "There isn't a clock."},
+    {"rule": "Use there aren't for plural things that are not present.", "example": "There aren't any chairs."},
+    {"rule": "Use Is there or Are there to ask a question.", "example": "Is there a park? / Are there any trees?"}
+  ],
+  "signal_words": [
+    "there is",
+    "there are",
+    "there isn't",
+    "there aren't"
+  ],
+  "common_mistakes": [
+    {"wrong": "There is two books.", "correct": "There are two books."},
+    {"wrong": "There are a cat.", "correct": "There is a cat."},
+    {"wrong": "Is there any chairs?", "correct": "Are there any chairs?"}
+  ],
+  "keywords": [
+    "There is",
+    "There are",
+    "There isn't",
+    "There aren't",
+    "Is there",
+    "Are there"
+  ],
+  "examples": [
+    {
+      "english": "There is a clock in the classroom.",
+      "chinese": "課室裏有一個時鐘。",
+      "reason_cn": "一個時鐘是單數，所以使用 There is。",
+      "time_keywords": ["There is"]
+    },
+    {
+      "english": "There is a book on the teacher's desk.",
+      "chinese": "老師的書桌上有一本書。",
+      "reason_cn": "一本書是單數，所以使用 There is。",
+      "time_keywords": ["There is"]
+    },
+    {
+      "english": "There is a new pupil in our class.",
+      "chinese": "我們班有一位新同學。",
+      "reason_cn": "一位同學是單數，所以使用 There is。",
+      "time_keywords": ["There is"]
+    },
+    {
+      "english": "There is a bed beside the window.",
+      "chinese": "窗旁有一張床。",
+      "reason_cn": "一張床是單數，所以使用 There is。",
+      "time_keywords": ["There is"]
+    },
+    {
+      "english": "There is a lamp on my desk.",
+      "chinese": "我的書桌上有一盞燈。",
+      "reason_cn": "一盞燈是單數，所以使用 There is。",
+      "time_keywords": ["There is"]
+    },
+    {
+      "english": "There is a fridge in the kitchen.",
+      "chinese": "廚房裏有一個雪櫃。",
+      "reason_cn": "一個雪櫃是單數，所以使用 There is。",
+      "time_keywords": ["There is"]
+    },
+    {
+      "english": "There is an apple on the table.",
+      "chinese": "桌上有一個蘋果。",
+      "reason_cn": "一個蘋果是單數，所以使用 There is。",
+      "time_keywords": ["There is"]
+    },
+    {
+      "english": "There is a library in our school.",
+      "chinese": "我們學校裏有一間圖書館。",
+      "reason_cn": "一間圖書館是單數，所以使用 There is。",
+      "time_keywords": ["There is"]
+    },
+    {
+      "english": "There is a pond in the park.",
+      "chinese": "公園裏有一個池塘。",
+      "reason_cn": "一個池塘是單數，所以使用 There is。",
+      "time_keywords": ["There is"]
+    },
+    {
+      "english": "There is a lion near the tree at the zoo.",
+      "chinese": "動物園的樹旁有一隻獅子。",
+      "reason_cn": "一隻獅子是單數，所以使用 There is。",
+      "time_keywords": ["There is"]
+    },
+    {
+      "english": "There are thirty desks in our classroom.",
+      "chinese": "我們的課室裏有三十張書桌。",
+      "reason_cn": "多張書桌是複數，所以使用 There are。",
+      "time_keywords": ["There are"]
+    },
+    {
+      "english": "There are three pencils in my pencil case.",
+      "chinese": "我的筆袋裏有三枝鉛筆。",
+      "reason_cn": "三枝鉛筆是複數，所以使用 There are。",
+      "time_keywords": ["There are"]
+    },
+    {
+      "english": "There are some books beside my bed.",
+      "chinese": "我的床旁有一些書。",
+      "reason_cn": "一些書是複數，所以使用 There are。",
+      "time_keywords": ["There are"]
+    },
+    {
+      "english": "There are two pillows on the bed.",
+      "chinese": "床上有兩個枕頭。",
+      "reason_cn": "兩個枕頭是複數，所以使用 There are。",
+      "time_keywords": ["There are"]
+    },
+    {
+      "english": "There are four cups in the cupboard.",
+      "chinese": "廚櫃裏有四隻杯。",
+      "reason_cn": "四隻杯是複數，所以使用 There are。",
+      "time_keywords": ["There are"]
+    },
+    {
+      "english": "There are many pupils in the playground.",
+      "chinese": "操場上有很多學生。",
+      "reason_cn": "很多學生是複數，所以使用 There are。",
+      "time_keywords": ["There are"]
+    },
+    {
+      "english": "There are two computer rooms in our school.",
+      "chinese": "我們學校裏有兩間電腦室。",
+      "reason_cn": "兩間電腦室是複數，所以使用 There are。",
+      "time_keywords": ["There are"]
+    },
+    {
+      "english": "There are tall trees in the park.",
+      "chinese": "公園裏有高大的樹木。",
+      "reason_cn": "多棵樹是複數，所以使用 There are。",
+      "time_keywords": ["There are"]
+    },
+    {
+      "english": "There are five benches near the pond.",
+      "chinese": "池塘附近有五張長椅。",
+      "reason_cn": "五張長椅是複數，所以使用 There are。",
+      "time_keywords": ["There are"]
+    },
+    {
+      "english": "There are three monkeys at the zoo.",
+      "chinese": "動物園裏有三隻猴子。",
+      "reason_cn": "三隻猴子是複數，所以使用 There are。",
+      "time_keywords": ["There are"]
+    },
+    {
+      "english": "There isn't a television in my bedroom.",
+      "chinese": "我的睡房裏沒有電視。",
+      "reason_cn": "一部電視是單數，否定句使用 There isn't。",
+      "time_keywords": ["There isn't"]
+    },
+    {
+      "english": "There isn't any milk in the fridge.",
+      "chinese": "雪櫃裏沒有牛奶。",
+      "reason_cn": "不可數的牛奶使用 There isn't。",
+      "time_keywords": ["There isn't"]
+    },
+    {
+      "english": "There aren't any plates on the table.",
+      "chinese": "桌上沒有碟子。",
+      "reason_cn": "多隻碟子是複數，否定句使用 There aren't。",
+      "time_keywords": ["There aren't"]
+    },
+    {
+      "english": "There aren't any swings in this park.",
+      "chinese": "這個公園裏沒有鞦韆。",
+      "reason_cn": "多個鞦韆是複數，否定句使用 There aren't。",
+      "time_keywords": ["There aren't"]
+    },
+    {
+      "english": "There aren't any pandas in this part of the zoo.",
+      "chinese": "動物園的這個區域沒有熊貓。",
+      "reason_cn": "多隻熊貓是複數，否定句使用 There aren't。",
+      "time_keywords": ["There aren't"]
+    },
+    {
+      "english": "Is there a map on the classroom wall?",
+      "chinese": "課室牆上有一幅地圖嗎？",
+      "reason_cn": "詢問一幅地圖時使用 Is there。",
+      "time_keywords": ["Is there"]
+    },
+    {
+      "english": "Is there a mirror in your bedroom?",
+      "chinese": "你的睡房裏有鏡子嗎？",
+      "reason_cn": "詢問一面鏡子時使用 Is there。",
+      "time_keywords": ["Is there"]
+    },
+    {
+      "english": "Are there any eggs in the kitchen?",
+      "chinese": "廚房裏有雞蛋嗎？",
+      "reason_cn": "詢問多隻雞蛋時使用 Are there。",
+      "time_keywords": ["Are there"]
+    },
+    {
+      "english": "Are there any flowers in the park?",
+      "chinese": "公園裏有花嗎？",
+      "reason_cn": "詢問多朵花時使用 Are there。",
+      "time_keywords": ["Are there"]
+    },
+    {
+      "english": "Are there any elephants at the zoo?",
+      "chinese": "動物園裏有大象嗎？",
+      "reason_cn": "詢問多隻大象時使用 Are there。",
+      "time_keywords": ["Are there"]
+    }
+  ],
+  "optional_extension": {
+    "title": "Short Answers",
+    "explanation_en": "Use is or are in a short answer.",
+    "explanation_zh": "簡短回答使用 is 或 are。",
+    "examples": [
+      {"english": "Yes, there is.", "chinese": "是的，有。"},
+      {"english": "No, there isn't.", "chinese": "不，沒有。"},
+      {"english": "Yes, there are.", "chinese": "是的，有。"},
+      {"english": "No, there aren't.", "chinese": "不，沒有。"}
+    ]
+  },
+  "practice": [
+    {"id": 1, "type": "fill_blank", "question": "___ a clock in the classroom."},
+    {"id": 2, "type": "fill_blank", "question": "___ two books on the desk."},
+    {"id": 3, "type": "fill_blank", "question": "___ an apple in my bag."},
+    {"id": 4, "type": "fill_blank", "question": "___ many trees in the park."},
+    {"id": 5, "type": "fill_blank", "question": "___ any milk in the fridge."},
+    {"id": 6, "type": "multiple_choice", "question": "___ a bed beside the window.", "options": ["There is", "There are", "Are there"]},
+    {"id": 7, "type": "multiple_choice", "question": "___ three chairs in the kitchen.", "options": ["There is", "There are", "Is there"]},
+    {"id": 8, "type": "multiple_choice", "question": "___ a library in your school?", "options": ["Is there", "Are there", "There are"]},
+    {"id": 9, "type": "multiple_choice", "question": "___ any monkeys at the zoo?", "options": ["There is", "Is there", "Are there"]},
+    {"id": 10, "type": "multiple_choice", "question": "___ any plates on the table.", "options": ["There isn't", "There aren't", "Is there"]},
+    {"id": 11, "type": "sentence_rewrite", "question": "Change to negative: There is a lamp on the desk."},
+    {"id": 12, "type": "sentence_rewrite", "question": "Change to negative: There are some cups in the cupboard."},
+    {"id": 13, "type": "sentence_rewrite", "question": "Change to a question: There is a pond in the park."},
+    {"id": 14, "type": "sentence_rewrite", "question": "Change to a question: There are two lions at the zoo."},
+    {"id": 15, "type": "word_order", "question": "Put in order: is / a book / there / on the bed"},
+    {"id": 16, "type": "word_order", "question": "Put in order: any flowers / are / in the park / there / ?"},
+    {"id": 17, "type": "error_correction", "question": "Correct the sentence: There is three pencils."},
+    {"id": 18, "type": "error_correction", "question": "Correct the sentence: There are a cat in the kitchen."},
+    {"id": 19, "type": "error_correction", "question": "Correct the sentence: Is there any chairs in the classroom?"},
+    {"id": 20, "type": "translation", "question": "Translate into English: 公園裏有兩張長椅。"}
+  ],
+  "answer_key": [
+    {"id": 1, "answer": "There is"},
+    {"id": 2, "answer": "There are"},
+    {"id": 3, "answer": "There is"},
+    {"id": 4, "answer": "There are"},
+    {"id": 5, "answer": "There isn't"},
+    {"id": 6, "answer": "There is"},
+    {"id": 7, "answer": "There are"},
+    {"id": 8, "answer": "Is there"},
+    {"id": 9, "answer": "Are there"},
+    {"id": 10, "answer": "There aren't"},
+    {"id": 11, "answer": "There isn't a lamp on the desk."},
+    {"id": 12, "answer": "There aren't any cups in the cupboard."},
+    {"id": 13, "answer": "Is there a pond in the park?"},
+    {"id": 14, "answer": "Are there two lions at the zoo?"},
+    {"id": 15, "answer": "There is a book on the bed."},
+    {"id": 16, "answer": "Are there any flowers in the park?"},
+    {"id": 17, "answer": "There are three pencils."},
+    {"id": 18, "answer": "There is a cat in the kitchen."},
+    {"id": 19, "answer": "Are there any chairs in the classroom?"},
+    {"id": 20, "answer": "There are two benches in the park."}
+  ]
+}

@@ -1,0 +1,274 @@
+{
+  "id": "P4_MUST_MUSTNT",
+  "title": "Must / Mustn't",
+  "level": "Primary 4",
+  "explanation_en": "Use must for an important rule or something we need to do. Use mustn't for something we are not allowed to do. Always use the base verb after must or mustn't.",
+  "explanation_zh": "must 表示重要規則或必須做的事情；mustn't 表示不准做的事情。must 或 mustn't 後面的動詞使用原形。",
+  "structure": {
+    "learning_objective_en": "I can use must and mustn't to talk about simple rules, duties and things that are not allowed.",
+    "learning_objective_zh": "我能運用 must 和 mustn't 說明簡單規則、責任和禁止事項。",
+    "positive": "Subject + must + base verb.",
+    "negative": "Subject + mustn't + base verb.",
+    "question": "Must + subject + base verb?",
+    "usage": {
+      "rules": "Use must for an important rule.",
+      "obligation": "Use must for something we need to do.",
+      "prohibition": "Use mustn't for something we are not allowed to do."
+    }
+  },
+  "spelling_rules": [
+    {"rule": "Use the base verb after must.", "example": "must listen"},
+    {"rule": "Use the base verb after mustn't.", "example": "mustn't run"},
+    {"rule": "Use must with every subject.", "example": "I must / She must / They must"},
+    {"rule": "Do not add to after must.", "example": "must finish"},
+    {"rule": "Mustn't is the short form of must not.", "example": "must not → mustn't"}
+  ],
+  "signal_words": [
+    "must",
+    "mustn't"
+  ],
+  "common_mistakes": [
+    {"wrong": "She musts listen.", "correct": "She must listen."},
+    {"wrong": "I must to finish my homework.", "correct": "I must finish my homework."},
+    {"wrong": "You don't must run here.", "correct": "You mustn't run here."}
+  ],
+  "keywords": [
+    "must",
+    "mustn't"
+  ],
+  "examples": [
+    {
+      "english": "We must arrive at school on time.",
+      "chinese": "我們必須準時回到學校。",
+      "reason_cn": "must 表示重要的學校規則。",
+      "time_keywords": ["must"]
+    },
+    {
+      "english": "Pupils must wear their school uniform.",
+      "chinese": "學生必須穿校服。",
+      "reason_cn": "must 表示必須遵守的學校規則。",
+      "time_keywords": ["must"]
+    },
+    {
+      "english": "I must bring my homework to school.",
+      "chinese": "我必須帶家課回校。",
+      "reason_cn": "must 表示需要完成的責任。",
+      "time_keywords": ["must"]
+    },
+    {
+      "english": "We must listen to the teacher.",
+      "chinese": "我們必須聆聽老師。",
+      "reason_cn": "must 表示課堂上的重要規則。",
+      "time_keywords": ["must"]
+    },
+    {
+      "english": "The children must line up quietly.",
+      "chinese": "孩子們必須安靜地排隊。",
+      "reason_cn": "must 表示需要遵守的學校規則。",
+      "time_keywords": ["must"]
+    },
+    {
+      "english": "I must raise my hand before I speak.",
+      "chinese": "我發言前必須先舉手。",
+      "reason_cn": "must 表示課堂上的重要規則。",
+      "time_keywords": ["must"]
+    },
+    {
+      "english": "We must keep our classroom tidy.",
+      "chinese": "我們必須保持課室整潔。",
+      "reason_cn": "must 表示大家需要履行的責任。",
+      "time_keywords": ["must"]
+    },
+    {
+      "english": "I must finish my homework before I play.",
+      "chinese": "我玩耍前必須先完成家課。",
+      "reason_cn": "must 表示需要完成的責任。",
+      "time_keywords": ["must"]
+    },
+    {
+      "english": "We must wash our hands before dinner.",
+      "chinese": "我們吃晚飯前必須洗手。",
+      "reason_cn": "must 表示家中的健康規則。",
+      "time_keywords": ["must"]
+    },
+    {
+      "english": "I must tidy my room every week.",
+      "chinese": "我每星期必須整理房間。",
+      "reason_cn": "must 表示在家需要完成的責任。",
+      "time_keywords": ["must"]
+    },
+    {
+      "english": "We must switch off the lights before we leave.",
+      "chinese": "我們離開前必須關燈。",
+      "reason_cn": "must 表示在家需要遵守的規則。",
+      "time_keywords": ["must"]
+    },
+    {
+      "english": "I must help Mum set the table.",
+      "chinese": "我必須幫媽媽擺放餐具。",
+      "reason_cn": "must 表示家庭中的責任。",
+      "time_keywords": ["must"]
+    },
+    {
+      "english": "We must stop when the traffic light is red.",
+      "chinese": "交通燈是紅色時，我們必須停下來。",
+      "reason_cn": "must 表示重要的道路安全規則。",
+      "time_keywords": ["must"]
+    },
+    {
+      "english": "Children must use the pedestrian crossing.",
+      "chinese": "孩子們必須使用行人過路處。",
+      "reason_cn": "must 表示重要的道路安全規則。",
+      "time_keywords": ["must"]
+    },
+    {
+      "english": "We must wear seat belts in the car.",
+      "chinese": "我們乘車時必須佩戴安全帶。",
+      "reason_cn": "must 表示重要的乘車安全規則。",
+      "time_keywords": ["must"]
+    },
+    {
+      "english": "We mustn't run in the corridor.",
+      "chinese": "我們不准在走廊奔跑。",
+      "reason_cn": "mustn't 表示學校禁止的事情。",
+      "time_keywords": ["mustn't"]
+    },
+    {
+      "english": "Pupils mustn't shout in the library.",
+      "chinese": "學生不准在圖書館大叫。",
+      "reason_cn": "mustn't 表示不准做某事。",
+      "time_keywords": ["mustn't"]
+    },
+    {
+      "english": "We mustn't eat in the computer room.",
+      "chinese": "我們不准在電腦室進食。",
+      "reason_cn": "mustn't 表示課室禁止的事情。",
+      "time_keywords": ["mustn't"]
+    },
+    {
+      "english": "You mustn't push your classmates.",
+      "chinese": "你不准推撞同學。",
+      "reason_cn": "mustn't 表示不安全和不友善的行為。",
+      "time_keywords": ["mustn't"]
+    },
+    {
+      "english": "We mustn't use our phones during lessons.",
+      "chinese": "我們上課時不准使用電話。",
+      "reason_cn": "mustn't 表示課堂禁止的事情。",
+      "time_keywords": ["mustn't"]
+    },
+    {
+      "english": "Children mustn't touch the hot pan.",
+      "chinese": "孩子們不准觸摸熱鍋。",
+      "reason_cn": "mustn't 表示家中的安全規則。",
+      "time_keywords": ["mustn't"]
+    },
+    {
+      "english": "We mustn't leave toys on the stairs.",
+      "chinese": "我們不准把玩具留在樓梯上。",
+      "reason_cn": "mustn't 表示家中的安全規則。",
+      "time_keywords": ["mustn't"]
+    },
+    {
+      "english": "I mustn't wake the baby.",
+      "chinese": "我不可以吵醒嬰兒。",
+      "reason_cn": "mustn't 表示家中不應做的事情。",
+      "time_keywords": ["mustn't"]
+    },
+    {
+      "english": "We mustn't waste water at home.",
+      "chinese": "我們在家不可以浪費食水。",
+      "reason_cn": "mustn't 表示保護資源的重要規則。",
+      "time_keywords": ["mustn't"]
+    },
+    {
+      "english": "You mustn't open the door to strangers.",
+      "chinese": "你不可以為陌生人開門。",
+      "reason_cn": "mustn't 表示家庭安全規則。",
+      "time_keywords": ["mustn't"]
+    },
+    {
+      "english": "We mustn't cross the road when the light is red.",
+      "chinese": "交通燈是紅色時，我們不准過馬路。",
+      "reason_cn": "mustn't 表示重要的道路安全規則。",
+      "time_keywords": ["mustn't"]
+    },
+    {
+      "english": "Children mustn't play in the road.",
+      "chinese": "孩子們不准在馬路上玩耍。",
+      "reason_cn": "mustn't 表示重要的道路安全規則。",
+      "time_keywords": ["mustn't"]
+    },
+    {
+      "english": "We mustn't run across the road.",
+      "chinese": "我們不准跑過馬路。",
+      "reason_cn": "mustn't 表示重要的道路安全規則。",
+      "time_keywords": ["mustn't"]
+    },
+    {
+      "english": "You mustn't ride a bike without a helmet.",
+      "chinese": "你不准在沒有頭盔的情況下踏單車。",
+      "reason_cn": "mustn't 表示重要的踏單車安全規則。",
+      "time_keywords": ["mustn't"]
+    },
+    {
+      "english": "We mustn't stand up while the bus is moving.",
+      "chinese": "巴士行駛時，我們不准站起來。",
+      "reason_cn": "mustn't 表示重要的乘車安全規則。",
+      "time_keywords": ["mustn't"]
+    }
+  ],
+  "optional_extension": {
+    "title": "Must or Mustn't?",
+    "explanation_en": "Use must for something important to do. Use mustn't for something that is not allowed.",
+    "explanation_zh": "重要而需要做的事情用 must；不准做的事情用 mustn't。",
+    "examples": [
+      {"english": "We must listen.", "chinese": "我們必須聆聽。"},
+      {"english": "We mustn't shout.", "chinese": "我們不准大叫。"}
+    ]
+  },
+  "practice": [
+    {"id": 1, "type": "fill_blank", "question": "We ___ listen to the teacher."},
+    {"id": 2, "type": "fill_blank", "question": "Pupils ___ wear their school uniform."},
+    {"id": 3, "type": "fill_blank", "question": "You ___ run in the corridor."},
+    {"id": 4, "type": "fill_blank", "question": "We ___ stop when the traffic light is red."},
+    {"id": 5, "type": "fill_blank", "question": "Children ___ play in the road."},
+    {"id": 6, "type": "multiple_choice", "question": "I ___ finish my homework before I play.", "options": ["must", "musts", "must to"]},
+    {"id": 7, "type": "multiple_choice", "question": "We mustn't ___ in the library.", "options": ["shouts", "shout", "shouting"]},
+    {"id": 8, "type": "multiple_choice", "question": "You ___ touch the hot pan.", "options": ["must", "mustn't", "are"]},
+    {"id": 9, "type": "multiple_choice", "question": "Children ___ use the pedestrian crossing.", "options": ["must", "mustn't", "musts"]},
+    {"id": 10, "type": "multiple_choice", "question": "We must ___ our seat belts.", "options": ["wear", "wears", "wearing"]},
+    {"id": 11, "type": "sentence_rewrite", "question": "Change to a prohibition with mustn't: Do not run in the corridor."},
+    {"id": 12, "type": "sentence_rewrite", "question": "Change to a rule with must: It is important to listen to the teacher."},
+    {"id": 13, "type": "sentence_rewrite", "question": "Change to a prohibition with mustn't: Do not eat in the computer room."},
+    {"id": 14, "type": "sentence_rewrite", "question": "Change to a rule with must: It is important to stop at a red light."},
+    {"id": 15, "type": "word_order", "question": "Put in order: must / we / our classroom / keep / tidy"},
+    {"id": 16, "type": "word_order", "question": "Put in order: mustn't / road / children / the / in / play"},
+    {"id": 17, "type": "error_correction", "question": "Correct the sentence: She musts finish her homework."},
+    {"id": 18, "type": "error_correction", "question": "Correct the sentence: We must to wear seat belts."},
+    {"id": 19, "type": "error_correction", "question": "Correct the sentence: You don't must run here."},
+    {"id": 20, "type": "translation", "question": "Translate into English: 我們不准在課室大叫。"}
+  ],
+  "answer_key": [
+    {"id": 1, "answer": "must"},
+    {"id": 2, "answer": "must"},
+    {"id": 3, "answer": "mustn't"},
+    {"id": 4, "answer": "must"},
+    {"id": 5, "answer": "mustn't"},
+    {"id": 6, "answer": "must"},
+    {"id": 7, "answer": "shout"},
+    {"id": 8, "answer": "mustn't"},
+    {"id": 9, "answer": "must"},
+    {"id": 10, "answer": "wear"},
+    {"id": 11, "answer": "You mustn't run in the corridor."},
+    {"id": 12, "answer": "You must listen to the teacher."},
+    {"id": 13, "answer": "You mustn't eat in the computer room."},
+    {"id": 14, "answer": "You must stop at a red light."},
+    {"id": 15, "answer": "We must keep our classroom tidy."},
+    {"id": 16, "answer": "Children mustn't play in the road."},
+    {"id": 17, "answer": "She must finish her homework."},
+    {"id": 18, "answer": "We must wear seat belts."},
+    {"id": 19, "answer": "You mustn't run here."},
+    {"id": 20, "answer": "We mustn't shout in the classroom."}
+  ]
+}
