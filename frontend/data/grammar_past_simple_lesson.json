@@ -233,6 +233,38 @@
       {"english": "have → had", "chinese": "有／吃"}
     ]
   },
+  "quiz": [
+    {
+      "id": 1,
+      "question": "Mum ___ dinner yesterday.",
+      "options": ["cooked", "cook", "cooking"],
+      "answer": "cooked"
+    },
+    {
+      "id": 2,
+      "question": "We ___ to the library last Saturday.",
+      "options": ["go", "went", "goed"],
+      "answer": "went"
+    },
+    {
+      "id": 3,
+      "question": "I saw Amy two days ___.",
+      "options": ["ago", "later", "next"],
+      "answer": "ago"
+    },
+    {
+      "id": 4,
+      "question": "She did not ___ TV last night.",
+      "options": ["watched", "watch", "watches"],
+      "answer": "watch"
+    },
+    {
+      "id": 5,
+      "question": "___ you play football yesterday?",
+      "options": ["Did", "Do", "Are"],
+      "answer": "Did"
+    }
+  ],
   "practice": [
     {"id": 1, "type": "fill_blank", "question": "I ___ (play) badminton yesterday."},
     {"id": 2, "type": "fill_blank", "question": "She ___ (dance) at the show last night."},
