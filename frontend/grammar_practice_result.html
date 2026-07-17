@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grammar Practice Result | Kids Learning</title>
+  <link rel="stylesheet" href="css/grammar_practice.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="back-link" href="grammar_practice_history.html">← Practice History</a>
+    <div>
+      <p class="eyebrow">Grammar Practice</p>
+      <h1>Practice Result</h1>
+      <p class="zh-text">練習結果</p>
+    </div>
+    <a class="header-link" href="grammar_practice.html">New Practice</a>
+  </header>
+
+  <main class="page-shell">
+    <div id="resultMessage" class="notice notice-error" role="alert" hidden></div>
+    <section id="resultPanel" hidden>
+      <div class="result-summary">
+        <div class="score-block">
+          <span>Overall Score</span>
+          <strong id="overallScore">0 / 20</strong>
+        </div>
+        <dl id="scoreDetails" class="score-details"></dl>
+      </div>
+
+      <dl id="sessionDetails" class="session-details"></dl>
+
+      <div class="review-controls" role="group" aria-label="Result view">
+        <button id="wrongAnswersButton" class="button button-primary" type="button">View Wrong Answers</button>
+        <button id="allAnswersButton" class="button button-secondary" type="button">View All Questions</button>
+        <a class="button button-secondary" href="grammar_practice_history.html">Practice History</a>
+        <a class="button button-accent" href="grammar_practice.html">Start New Practice</a>
+      </div>
+
+      <section aria-labelledby="reviewTitle">
+        <h2 id="reviewTitle">Wrong Answers</h2>
+        <div id="reviewList" class="review-list"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="js/grammar_practice_core.js"></script>
+  <script src="js/grammar_practice_storage.js"></script>
+  <script src="js/grammar_practice_result.js"></script>
+</body>
+</html>
