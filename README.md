@@ -9,6 +9,7 @@ The current priority is to keep the student-facing website working on GitHub Pag
 - Frontend website is stored in `frontend/`.
 - Learning content is mainly stored as JSON files under `frontend/data/`.
 - Browser speech is mainly handled by the Web Speech API, not by large stored audio files.
+- English Grammar Practice runs from committed static question banks and stores practice history in the student's browser.
 - Backend files are preserved as legacy/local-only tooling.
 - `backend/config.json` is a local-only secret file and must never be committed.
 
@@ -52,6 +53,8 @@ Supporting docs:
 - [Versioning](docs/VERSIONING.md)
 - [Codex Workflow](docs/CODEX_WORKFLOW.md)
 - [Changelog](docs/CHANGELOG.md)
+- [Grammar Practice Development Guide](docs/development/grammar-practice.md)
+- [Grammar Practice Manual Test](docs/development/grammar-practice-manual-test.md)
 
 ## Important Security Rules
 
