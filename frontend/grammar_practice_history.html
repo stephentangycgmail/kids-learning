@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grammar Practice History | Kids Learning</title>
+  <link rel="stylesheet" href="css/grammar_practice.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="back-link" href="eng.html">← English Menu</a>
+    <div>
+      <p class="eyebrow">For Students &amp; Parents</p>
+      <h1>Practice History</h1>
+      <p class="zh-text">練習紀錄</p>
+    </div>
+    <a class="header-link" href="grammar_practice.html">New Practice</a>
+  </header>
+
+  <main class="page-shell">
+    <div id="historyMessage" class="notice notice-error" role="alert" hidden></div>
+    <section class="history-toolbar" aria-label="History filters">
+      <label for="historyFilter">Show</label>
+      <select id="historyFilter" class="select-control select-compact">
+        <option value="all">All Records</option>
+        <option value="submitted">Submitted</option>
+        <option value="in_progress">In Progress</option>
+        <option value="abandoned">Abandoned</option>
+        <option value="short_long">Short &amp; Long Answer</option>
+        <option value="rearrangement">Sentence Rearrangement</option>
+        <option value="mixed">Mixed Practice</option>
+      </select>
+    </section>
+    <p class="privacy-note history-note">Practice records are stored only in this browser and device.</p>
+    <div id="historyList" class="history-list" aria-live="polite"></div>
+  </main>
+
+  <script src="js/grammar_practice_core.js"></script>
+  <script src="js/grammar_practice_storage.js"></script>
+  <script src="js/grammar_practice_history.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grammar Practice | Kids Learning</title>
+  <link rel="stylesheet" href="css/grammar_practice.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="back-link" href="eng.html">← English Menu</a>
+    <div>
+      <p class="eyebrow">Kids Learning</p>
+      <h1>Grammar Practice</h1>
+      <p class="zh-text">英文文法練習</p>
+    </div>
+    <a class="header-link" href="grammar_practice_history.html">Practice History</a>
+  </header>
+
+  <main class="page-shell">
+    <div id="appMessage" class="notice notice-error" role="alert" hidden></div>
+
+    <section id="resumePanel" class="notice notice-info" aria-labelledby="resumeTitle" hidden>
+      <div>
+        <h2 id="resumeTitle">You have an unfinished practice.</h2>
+        <p>Continue where you stopped, or abandon it and keep the record in Practice History.</p>
+      </div>
+      <div class="button-row">
+        <button id="continueButton" class="button button-primary" type="button">▶ Continue Practice</button>
+        <button id="abandonButton" class="button button-danger" type="button">■ Abandon Practice</button>
+      </div>
+    </section>
+
+    <section id="setupPanel" class="setup-panel" aria-labelledby="setupTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">New Practice</p>
+          <h2 id="setupTitle">Choose how you want to practise</h2>
+        </div>
+        <p>Each practice has exactly 20 questions.</p>
+      </div>
+
+      <fieldset class="mode-fieldset">
+        <legend>Practice mode</legend>
+        <div class="mode-grid">
+          <label class="mode-option">
+            <input type="radio" name="practiceMode" value="short_long" checked>
+            <span class="mode-icon" aria-hidden="true">A/B</span>
+            <strong>Short &amp; Long Answer</strong>
+            <small>Complete four answer patterns.</small>
+          </label>
+          <label class="mode-option">
+            <input type="radio" name="practiceMode" value="rearrangement">
+            <span class="mode-icon" aria-hidden="true">↔</span>
+            <strong>Sentence Rearrangement</strong>
+            <small>Build a sentence from tokens.</small>
+          </label>
+          <label class="mode-option">
+            <input type="radio" name="practiceMode" value="mixed">
+            <span class="mode-icon" aria-hidden="true">½</span>
+            <strong>Mixed Practice</strong>
+            <small>10 questions of each type.</small>
+          </label>
+        </div>
+      </fieldset>
+
+      <label class="field-label" for="topicSelect">Grammar topic</label>
+      <select id="topicSelect" class="select-control" disabled>
+        <option>Loading topics...</option>
+      </select>
+
+      <div class="setup-actions">
+        <p class="privacy-note">Records stay only in this browser and device.</p>
+        <button id="startButton" class="button button-primary button-large" type="button" disabled>Start 20 Questions →</button>
+      </div>
+    </section>
+
+    <section id="practicePanel" class="practice-panel" aria-labelledby="practiceTitle" hidden>
+      <div class="practice-toolbar">
+        <div>
+          <p id="practiceMeta" class="eyebrow"></p>
+          <h2 id="practiceTitle">Question <span id="questionPosition">1 of 20</span></h2>
+        </div>
+        <div class="progress-copy">
+          <strong id="answeredProgress">Answered 0 of 20</strong>
+          <span id="saveStatus" aria-live="polite">Saved</span>
+        </div>
+      </div>
+
+      <nav id="questionNavigator" class="question-navigator" aria-label="Question navigator"></nav>
+      <article id="questionContainer" class="question-card" aria-live="polite"></article>
+
+      <div class="practice-actions">
+        <button id="previousButton" class="button button-secondary" type="button">← Previous</button>
+        <button id="submitReviewButton" class="button button-accent" type="button">Review &amp; Submit</button>
+        <button id="nextButton" class="button button-primary" type="button">Next →</button>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="submitDialog" class="submit-dialog">
+    <form method="dialog">
+      <h2>Ready to submit?</h2>
+      <p id="submitSummary"></p>
+      <p id="unansweredSummary" class="warning-copy"></p>
+      <p><strong>Final check:</strong> answers cannot be changed after submission.</p>
+      <div class="button-row dialog-actions">
+        <button class="button button-secondary" value="cancel">Return to Practice</button>
+        <button id="confirmSubmitButton" class="button button-danger" value="default" type="button">Submit Answers</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="js/grammar_practice_core.js"></script>
+  <script src="js/grammar_practice_storage.js"></script>
+  <script src="js/grammar_practice.js"></script>
+</body>
+</html>

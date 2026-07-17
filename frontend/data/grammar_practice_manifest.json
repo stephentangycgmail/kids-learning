@@ -1,0 +1,171 @@
+{
+  "schemaVersion": "1.0.0",
+  "defaultSeed": 20260716,
+  "sessionQuestionCount": 20,
+  "mixedTypeCount": 10,
+  "pronounRules": {
+    "Peter": [
+      "he"
+    ],
+    "Tom": [
+      "he"
+    ],
+    "your uncle": [
+      "he"
+    ],
+    "your father": [
+      "he"
+    ],
+    "your brother": [
+      "he"
+    ],
+    "Lisa": [
+      "she"
+    ],
+    "Mary": [
+      "she"
+    ],
+    "your aunt": [
+      "she"
+    ],
+    "your mother": [
+      "she"
+    ],
+    "your sister": [
+      "she"
+    ],
+    "Peter and Lisa": [
+      "they"
+    ],
+    "your parents": [
+      "they"
+    ],
+    "the children": [
+      "they"
+    ],
+    "the dog": [
+      "it"
+    ],
+    "the cat": [
+      "it"
+    ],
+    "the book": [
+      "it"
+    ],
+    "the computer": [
+      "it"
+    ],
+    "you": [
+      "I",
+      "we"
+    ],
+    "I": [
+      "you"
+    ]
+  },
+  "banks": {
+    "short_long": "grammar_practice_short_long.json",
+    "rearrangement": "grammar_practice_rearrangement.json"
+  },
+  "topics": [
+    {
+      "id": "all",
+      "label": "All Topics",
+      "labelZh": "所有課題",
+      "categories": [
+        "present_verb_to_be",
+        "past_verb_to_be",
+        "present_simple",
+        "past_simple",
+        "present_continuous",
+        "past_continuous",
+        "can_cannot"
+      ]
+    },
+    {
+      "id": "present_verb_to_be",
+      "label": "Present Verb to Be: am / is / are",
+      "labelZh": "現在式 be 動詞",
+      "categories": [
+        "present_verb_to_be"
+      ]
+    },
+    {
+      "id": "past_verb_to_be",
+      "label": "Past Verb to Be: was / were",
+      "labelZh": "過去式 be 動詞",
+      "categories": [
+        "past_verb_to_be"
+      ]
+    },
+    {
+      "id": "present_simple",
+      "label": "Present Simple: do / does",
+      "labelZh": "一般現在式",
+      "categories": [
+        "present_simple"
+      ]
+    },
+    {
+      "id": "past_simple",
+      "label": "Past Simple: did",
+      "labelZh": "一般過去式",
+      "categories": [
+        "past_simple"
+      ]
+    },
+    {
+      "id": "present_continuous",
+      "label": "Present Continuous",
+      "labelZh": "現在進行式",
+      "categories": [
+        "present_continuous"
+      ]
+    },
+    {
+      "id": "past_continuous",
+      "label": "Past Continuous",
+      "labelZh": "過去進行式",
+      "categories": [
+        "past_continuous"
+      ]
+    },
+    {
+      "id": "can_cannot",
+      "label": "Can / Cannot",
+      "labelZh": "Can / Cannot",
+      "categories": [
+        "can_cannot"
+      ]
+    },
+    {
+      "id": "mixed_tenses",
+      "label": "Mixed Tenses",
+      "labelZh": "混合時態",
+      "categories": [
+        "present_verb_to_be",
+        "past_verb_to_be",
+        "present_simple",
+        "past_simple",
+        "present_continuous",
+        "past_continuous",
+        "can_cannot"
+      ]
+    },
+    {
+      "id": "wh_questions",
+      "label": "Wh-Questions",
+      "labelZh": "疑問詞問句",
+      "categories": [
+        "present_verb_to_be",
+        "past_verb_to_be",
+        "present_simple",
+        "past_simple",
+        "present_continuous",
+        "past_continuous",
+        "can_cannot"
+      ],
+      "requiredTag": "wh_questions"
+    }
+  ]
+}
