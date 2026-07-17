@@ -2,6 +2,21 @@
 
 This file summarizes project history at a milestone level.
 
+## Offline English Grammar Practice - July 2026
+
+Focus:
+
+- Added 20-question Short & Long Answer, Sentence Rearrangement, and Mixed Practice sessions.
+- Added 630 reviewed static questions covering present and past verb to be, present and past simple, present and past continuous, can/cannot, mixed tenses, and Wh-questions.
+- Added automatic browser-local saving, unfinished-session restoration, submitted result review, and practice history.
+- Preserved static GitHub Pages operation without an API or backend dependency.
+
+Quality:
+
+- Added deterministic Python question generation and validation tools.
+- Added Node and Python regression tests.
+- Completed manual desktop, tablet, and mobile acceptance testing before deployment.
+
 ## Sprint 1 - Project Audit and Safety Foundation
 
 Focus:

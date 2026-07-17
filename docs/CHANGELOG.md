@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-07-17 - Offline English Grammar Practice
+
+### Added
+
+- Added a static English Grammar Practice module with Short & Long Answer, Sentence Rearrangement, and Mixed Practice modes.
+- Added 630 validated offline questions across seven grammar categories.
+- Added browser-local practice autosave, result review, and parent-friendly practice history using IndexedDB with a localStorage fallback.
+- Added deterministic question generation, question-bank validation, automated tests, and a manual test checklist.
+
+### Notes
+
+- The feature uses committed JSON files and does not require an API, backend service, login, or new Service Worker.
+- Manual desktop and mobile testing completed successfully before deployment.
+
 ## 2026-06-30 - Epic001-G3 Automation and Quality Gate
 
 ### Added
