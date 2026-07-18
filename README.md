@@ -1,64 +1,100 @@
-# Kids Learning Website
+# Kids Learning
 
-A local-first kids learning website with static frontend pages, JSON-based learning content, and optional backend utilities for generating or maintaining data files.
+Kids Learning is a static, GitHub Pages hosted learning website for child-friendly English, Chinese, and Math practice. The v1.0.0 release is live on GitHub Pages, and the project is now in maintenance mode.
 
-The current priority is to keep the student-facing website working on GitHub Pages while gradually moving away from live API-based content generation. New learning materials should be generated as JSON files first, reviewed, and then committed into `frontend/data/`.
+The production site uses committed HTML, CSS, JavaScript, and JSON files. It does not require Azure, FastAPI, paid APIs, login, or a production backend during student use.
 
 ## Current Status
 
-- Frontend website is stored in `frontend/`.
-- Learning content is mainly stored as JSON files under `frontend/data/`.
-- Browser speech is mainly handled by the Web Speech API, not by large stored audio files.
-- English Grammar Practice runs from committed static question banks and stores practice history in the student's browser.
-- Backend files are preserved as legacy/local-only tooling.
-- `backend/config.json` is a local-only secret file and must never be committed.
+- Production platform: GitHub Pages static hosting.
+- Production branch: `main`.
+- Maintenance and integration branch: `develop`.
+- Student-facing content lives mainly in `frontend/` and `frontend/data/`.
+- Backend files are legacy/local-only tooling and are not part of the current production deployment.
+- AI Teacher remains disabled for static production use while live API usage is paused.
+
+## Website Areas
+
+- Subject menu: `frontend/index.html`
+- English menu: `frontend/eng.html`
+- Vocabulary: `frontend/vocab.html`
+- English Dictation Practice: `frontend/dictation_practice.html`
+- Chinese Dictation: `frontend/cn_dictation.html`
+- Grammar lessons: `frontend/grammar.html`
+- English Grammar Practice: `frontend/grammar_practice.html`
+- Practice history and results: `frontend/grammar_practice_history.html`, `frontend/grammar_practice_result.html`
 
 ## Repository Structure
 
 ```text
 kids-learning/
-+-- frontend/      # Static website files: HTML, CSS, JS, JSON, small audio assets
-+-- backend/       # Local tools and generated data support files
-+-- docs/          # Governance, architecture, workflow, and planning docs
-+-- Dockerfile     # Existing container configuration
-+-- index.html     # GitHub Pages redirect to frontend/index.html
-+-- .gitignore     # Prevents secrets and generated files from being committed
-`-- README.md      # Project overview
++-- .github/workflows/   # JSON and Markdown validation workflows
++-- frontend/            # Static website pages, scripts, styles, and data
++-- frontend/data/       # Reviewed JSON content and catalogs
++-- backend/             # Legacy/local-only tooling and generated support files
++-- docs/                # Governance, standards, architecture, and release docs
++-- tools/               # Local validation and content generation tools
++-- tests/               # Grammar Practice validation tests
++-- AGENTS.md            # Durable Codex repository guidance
++-- index.html           # GitHub Pages root redirect to frontend/index.html
+`-- README.md
 ```
 
-The canonical structure reference is [docs/FOLDER_STRUCTURE.md](docs/FOLDER_STRUCTURE.md).
+The canonical folder reference is [docs/FOLDER_STRUCTURE.md](docs/FOLDER_STRUCTURE.md).
 
 ## Documentation Index
 
-Governance:
-
 - [Master Task](docs/MASTER_TASK.md)
-- [Codex Playbook](docs/CODEX_PLAYBOOK.md)
-- [Folder Structure](docs/FOLDER_STRUCTURE.md)
+- [Technical Overview](docs/TECHNICAL_OVERVIEW.md)
+- [Deployment Guide](docs/DEPLOYMENT_GUIDE.md)
+- [Content Standard](docs/CONTENT_STANDARD.md)
 - [Development Guide](docs/DEVELOPMENT_GUIDE.md)
-- [Roadmap](docs/ROADMAP.md)
-- [Release Notes](docs/RELEASE_NOTES.md)
-
-Supporting docs:
-
-- [System Architecture](docs/SYSTEM_ARCHITECTURE_V1.md)
+- [Folder Structure](docs/FOLDER_STRUCTURE.md)
 - [API Dependency Audit](docs/API_DEPENDENCY_AUDIT.md)
-- [Content Generation Plan](docs/CONTENT_GENERATION_PLAN.md)
-- [JSON Specification](docs/JSON_SPECIFICATION.md)
-- [Lesson Package Standard](docs/LESSON_PACKAGE_STANDARD.md)
-- [Metadata Standard](docs/METADATA_STANDARD.md)
-- [Index Standard](docs/INDEX_STANDARD.md)
-- [Naming Standard](docs/NAMING_STANDARD.md)
-- [Data Lifecycle](docs/DATA_LIFECYCLE.md)
-- [Versioning](docs/VERSIONING.md)
-- [Codex Workflow](docs/CODEX_WORKFLOW.md)
 - [Changelog](docs/CHANGELOG.md)
+- [Release Notes](docs/RELEASE_NOTES.md)
 - [Grammar Practice Development Guide](docs/development/grammar-practice.md)
 - [Grammar Practice Manual Test](docs/development/grammar-practice-manual-test.md)
 
-## Important Security Rules
+## Content Model
 
-Do not commit these files:
+The site reads static JSON from `frontend/data/`.
+
+- `catalog.json` lists English dictation lessons.
+- `grammar_catalog.json` lists Grammar lesson JSON files.
+- Grammar Gold Lessons use one object per file with examples, practice questions, answer keys, and optional quiz data.
+- Grammar Practice uses `grammar_practice_manifest.json` plus committed question banks.
+- Vocabulary uses `vocab.json` and `vocab_ai.json`.
+
+See [docs/CONTENT_STANDARD.md](docs/CONTENT_STANDARD.md) for the current schemas and compatibility rules.
+
+## Development Workflow
+
+Normal work should happen on `develop` or an appropriate feature/fix/docs branch. Do not commit ordinary development changes directly to `main`.
+
+Recommended flow:
+
+```text
+develop or feature branch
+  -> inspect implementation and docs
+  -> make the smallest safe change
+  -> validate JSON, Markdown links, and affected static pages
+  -> review
+  -> merge develop to main only with explicit release approval
+```
+
+## Validation
+
+Existing automated checks:
+
+- `.github/workflows/validate-json.yml`
+- `.github/workflows/check-markdown-links.yml`
+
+For local work, run equivalent JSON parsing and Markdown local-link checks when relevant. For student-facing changes, also run static smoke tests through a local static server or the GitHub Pages URL after deployment.
+
+## Security Rules
+
+Do not commit:
 
 ```text
 backend/config.json
@@ -68,32 +104,5 @@ backend/config.json
 secrets.json
 ```
 
-If an API key is ever exposed, regenerate it immediately in the provider portal and update only the local configuration file.
+If an API key is ever exposed, regenerate it in the provider portal and update only local configuration.
 
-## Development Workflow
-
-Recommended workflow:
-
-```text
-User requirement
-  -> analyze current repository state
-  -> plan the change
-  -> implement the smallest safe change
-  -> validate GitHub Pages compatibility
-  -> report changed files, validation, and risks
-```
-
-For detailed branch, review, and release workflow, see [docs/DEVELOPMENT_GUIDE.md](docs/DEVELOPMENT_GUIDE.md).
-
-## Future Direction
-
-The long-term goal is:
-
-```text
-ChatGPT / Codex generates learning content
-  -> content is saved as reviewed JSON
-  -> website reads static JSON files
-  -> no live API call is needed during student use
-```
-
-This keeps hosting simple, reduces cost, and makes the project easier to maintain with GitHub Pages or other static hosting.

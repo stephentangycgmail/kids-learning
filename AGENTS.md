@@ -14,13 +14,14 @@ Durable instructions for future Codex work in the Kids Learning repository.
 - `main` is the production branch.
 - Do not make normal development changes directly on `main`.
 - Use `develop` or an appropriate `feature/*`, `fix/*`, or `docs/*` branch for ordinary work.
+- Normal release flow is `develop -> main` after explicit approval.
 - Never force push.
 - Before release, branch switching, merge, tag, or deployment work, stop if the working tree is not clean.
 - Do not merge into `main`, push `main`, create tags, create GitHub Releases, or deploy unless the user explicitly instructs it.
 
 ## Change Discipline
 
-- Inspect the relevant files and docs before editing.
+- Inspect the relevant repository documentation and code before editing.
 - Make the smallest reasonable change that satisfies the request.
 - Do not modify unrelated files.
 - Preserve backward compatibility unless the user explicitly approves a breaking change.
@@ -33,6 +34,7 @@ Durable instructions for future Codex work in the Kids Learning repository.
 - Follow `docs/CONTENT_STANDARD.md`.
 - Preserve existing JSON compatibility and file naming unless a migration is explicitly approved.
 - When adding, removing, or renaming lesson JSON files, update the relevant catalog file.
+- Current catalogs include `frontend/data/catalog.json`, `frontend/data/grammar_catalog.json`, and `frontend/data/grammar_practice_manifest.json`.
 - Validate JSON after content or data changes.
 - Keep reviewed learning content under `frontend/data/`.
 - Do not commit secrets or local-only config such as `backend/config.json`, `.env`, keys, or secret JSON files.

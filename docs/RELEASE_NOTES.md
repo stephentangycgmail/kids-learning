@@ -2,6 +2,22 @@
 
 This file summarizes project history at a milestone level.
 
+## v1.0.0 Production Release - July 2026
+
+Focus:
+
+- Released Kids Learning v1.0.0 to GitHub Pages static hosting.
+- Confirmed the production runtime is static and does not use Azure, FastAPI, backend APIs, login, or `/api/health`.
+- Confirmed `main` as the production branch and `develop` as the integration branch.
+- Verified production static pages and JSON assets after deployment.
+
+Key documents:
+
+- [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
+- [TECHNICAL_OVERVIEW.md](TECHNICAL_OVERVIEW.md)
+- [CONTENT_STANDARD.md](CONTENT_STANDARD.md)
+- [CHANGELOG.md](CHANGELOG.md)
+
 ## Offline English Grammar Practice - July 2026
 
 Focus:

@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-07-18 - v1.0.0 Production Release
+
+### Released
+
+- Released Kids Learning v1.0.0 to GitHub Pages static hosting.
+- Confirmed `main` as the production branch and `develop` as the integration branch.
+- Confirmed production does not require Azure, FastAPI, backend APIs, login, or `/api/health`.
+- Verified static production pages and JSON assets after GitHub Pages deployment.
+
+### Notes
+
+- The official v1.0.0 tag points to the production release commit.
+- The project entered maintenance mode after this release.
+
 ## 2026-07-17 - Offline English Grammar Practice
 
 ### Added
@@ -14,6 +28,20 @@
 - The feature uses committed JSON files and does not require an API, backend service, login, or new Service Worker.
 - Manual desktop and mobile testing completed successfully before deployment.
 
+## 2026-07-16 - Grammar Gold Lessons and Acceptance Fixes
+
+### Added
+
+- Added catalog-driven Grammar Gold Lessons for core Primary 4 grammar topics.
+- Added optional 5-question quizzes to supported Grammar lessons.
+- Added Grammar lesson navigation and Dictation deep-link support.
+
+### Fixed
+
+- Refined English Dictation resume behavior and Speech API fallback.
+- Fixed Chinese Dictation pause/resume behavior during acceptance testing.
+- Improved Grammar page layout for normal browser scrolling.
+
 ## 2026-06-30 - Epic001-G3 Automation and Quality Gate
 
 ### Added
@@ -24,7 +52,7 @@
 ### Notes
 
 - Automation-only milestone.
-- No website UI, learning functionality, frontend runtime, backend code, or lesson content changes are intended.
+- No website UI, learning functionality, frontend runtime, backend code, or lesson content changes were intended.
 
 ## 2026-06-30 - Epic001-G2 Content Standards
 
@@ -47,7 +75,7 @@
 - Documentation-only milestone.
 - Existing JSON files, lesson content, frontend code, backend code, and GitHub Pages behavior were not modified.
 
-## 2026-06-30
+## 2026-06-30 - Epic001-G1 Governance Foundation
 
 ### Added
 
@@ -65,9 +93,9 @@
 ### Notes
 
 - Documentation-only milestone.
-- No frontend, backend, CSS, JavaScript, JSON, lesson content, or GitHub Pages runtime changes are intended.
+- No frontend, backend, CSS, JavaScript, JSON, lesson content, or GitHub Pages runtime changes were intended.
 
-## 2026-06-29
+## 2026-06-29 - Initial Documentation Cleanup
 
 ### Added
 
@@ -80,4 +108,5 @@
 
 - Existing website behavior was not intentionally changed.
 - No new learning content was added in this cleanup phase.
-- Live API-based content generation is planned to be replaced gradually by reviewed static JSON files.
+- Live API-based content generation was planned to be replaced gradually by reviewed static JSON files.
+

@@ -1,30 +1,39 @@
 # Codex Workflow
 
-This document describes the recommended workflow for future code changes.
+This document describes the recommended workflow for future Codex tasks in the maintenance-phase Kids Learning repository.
+
+## Current Context
+
+- Kids Learning v1.0.0 is released and live on GitHub Pages.
+- Production is static hosting from `main`.
+- Normal maintenance and development work happens on `develop` or a focused branch.
+- Azure and backend APIs are not part of the current production deployment process.
 
 ## Recommended Process
 
 ```text
-1. User describes the change request
-2. ChatGPT clarifies and prepares a precise task brief
-3. Codex implements the task in GitHub
-4. ChatGPT reviews the changed files
-5. User approves and keeps the final version
+1. User describes the change request.
+2. Codex reads AGENTS.md and relevant repository docs.
+3. Codex inspects the relevant code or content files.
+4. Codex confirms scope and risk when needed.
+5. Codex implements the smallest reasonable change.
+6. Codex validates with existing checks and relevant smoke tests.
+7. Codex reports changed files, validation, skipped checks, and risks.
+8. User reviews before commit, push, release, tag, or deployment when approval is required.
 ```
 
-## Why Not Ask Codex Directly First
+## Task Brief Template
 
-Codex works best when the task is already clear. For this project, many changes affect learning flow, JSON formats, and frontend behavior. A planning step helps avoid accidental rewrites or format mismatches.
-
-## Codex Task Brief Template
-
-Use this format when giving work to Codex:
+Use this format when giving larger work to Codex:
 
 ```markdown
 # Task
 
 ## Goal
 Describe the intended result.
+
+## Branch
+Name the required branch.
 
 ## Scope
 List files or folders that may be changed.
@@ -37,6 +46,9 @@ Detailed bullet points.
 
 ## Validation
 How to check the result manually or with tests.
+
+## Commit / Push
+State whether Codex should commit or push.
 
 ## Notes
 Any project-specific constraints.
@@ -55,24 +67,32 @@ passwords
 tokens
 ```
 
-Codex should not rewrite the whole project unless explicitly requested.
+Codex must not:
 
-## First Cleanup Phase Rules
+- force push
+- discard user changes without permission
+- rewrite branch history
+- merge into `main` without explicit approval
+- create tags or GitHub Releases without explicit approval
+- invent an Azure deployment process
 
-During the current cleanup phase:
+## Content Rule
 
-- Do not add new教材.
-- Do not change existing JSON formats.
-- Do not remove working pages.
-- Do not migrate away from Azure code yet.
-- Only document, secure, and prepare the project for future work.
-
-## Future Content Generation Rule
-
-When adding new教材 later, prefer:
+When adding or improving learning content, prefer:
 
 ```text
-Generate JSON → save under frontend/data/ → website reads static JSON
+reviewed content -> static JSON under frontend/data/ -> catalog update if needed -> validation
 ```
 
-rather than adding live API calls.
+Do not add live API calls to student-facing pages unless a future architecture task explicitly approves it.
+
+## Documentation Rule
+
+When behavior, structure, deployment, or workflow changes, update the relevant current document:
+
+- [MASTER_TASK.md](MASTER_TASK.md)
+- [TECHNICAL_OVERVIEW.md](TECHNICAL_OVERVIEW.md)
+- [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
+- [CONTENT_STANDARD.md](CONTENT_STANDARD.md)
+- [DEVELOPMENT_GUIDE.md](DEVELOPMENT_GUIDE.md)
+

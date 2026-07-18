@@ -1,5 +1,7 @@
 # System Architecture v1.0
 
+This historical architecture note is retained for context. For the current post-release implementation, see [TECHNICAL_OVERVIEW.md](TECHNICAL_OVERVIEW.md).
+
 Sprint 1 purpose: document the existing system before any functional change. The current website layout and working behavior must be preserved.
 
 ## Current Hosting
@@ -15,7 +17,6 @@ Sprint 1 purpose: document the existing system before any functional change. The
 kids-learning/
 ├── frontend/        # Student-facing static website
 ├── backend/         # Local/FastAPI tools and old API-based generation/runtime
-├── deploy/          # Deployment package area
 ├── docs/            # Project documentation
 ├── Dockerfile
 └── index.html       # GitHub Pages redirect to frontend/index.html
