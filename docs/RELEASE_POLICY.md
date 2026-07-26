@@ -49,6 +49,11 @@ The release manifest records the tag, commit, date, production platform,
 validation evidence, known issues, artifact status, and rollback baseline.
 Use `N/A` with a reason instead of inventing evidence.
 
+Before release, confirm the documentation-impact review required by root
+[`AGENTS.md`](../AGENTS.md) is complete. Review the changelog, release notes,
+release manifest, user guide, testing, deployment, configuration, architecture,
+and known limitations where applicable; update only the affected authorities.
+
 ## Release Flow
 
 The approved release path is:

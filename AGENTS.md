@@ -31,6 +31,25 @@ Durable instructions for future Codex work in the Kids Learning repository.
 - Never discard, stash, apply, or delete user changes without permission.
 - Clearly report modified files, validation performed, skipped checks, and important decisions.
 
+## Documentation Synchronization Requirement
+
+Every implementation change requires a documentation-impact review. In the
+same pull request, update the authoritative and directly affected
+documentation when functionality, student-facing behavior, business or
+validation rules, architecture, source structure, configuration, dependencies,
+build or run procedures, tests, deployment, security, known limitations,
+project status, or release status changes.
+
+This review must specifically consider Dictation, Grammar, Grammar Practice,
+Vocabulary, AI Teacher availability, content catalogs and JSON structures,
+browser storage and history, TTS behavior, GitHub Pages deployment, tests,
+configuration, architecture, releases, and known limitations when relevant.
+
+Do not duplicate policy across unrelated documents or make cosmetic updates
+that do not improve accuracy. A pull request is incomplete when relevant
+documentation is missing unless it clearly records why no documentation
+change is required.
+
 ## Content and Data Rules
 
 - Follow `docs/CONTENT_STANDARD.md`.
