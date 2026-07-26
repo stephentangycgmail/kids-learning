@@ -22,9 +22,11 @@ Normal development should not be committed directly to `main`. Release flow is `
 2. Read `AGENTS.md` and the relevant implementation/docs.
 3. Confirm the working tree state before branch or release operations.
 4. Make the smallest reasonable change.
-5. Validate locally.
-6. Report changed files, validation, skipped checks, and risks.
-7. Wait for review when requested.
+5. Apply the documentation-impact review required by root `AGENTS.md`.
+6. Validate locally.
+7. Report changed files, documentation impact, validation, skipped checks, and
+   risks.
+8. Wait for review when requested.
 
 ## Feature Workflow
 
@@ -57,7 +59,8 @@ Review should check:
 - JSON schemas are preserved or documented.
 - Catalog references are valid.
 - Student-facing pages remain static.
-- Documentation is updated.
+- The root `AGENTS.md` documentation-impact requirement is satisfied, or the
+  pull request explains why no documentation update is required.
 - Validation is credible and repeatable.
 - No secrets or local-only files are included.
 

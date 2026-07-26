@@ -77,12 +77,7 @@ Do not add live API calls to student-facing pages unless a future architecture t
 
 ## Documentation Rule
 
-When behavior, structure, deployment, or workflow changes, update the relevant current document:
-
-- [MASTER_TASK.md](MASTER_TASK.md)
-- [TECHNICAL_OVERVIEW.md](TECHNICAL_OVERVIEW.md)
-- [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
-- [CONTENT_STANDARD.md](CONTENT_STANDARD.md)
-- [DEVELOPMENT_GUIDE.md](DEVELOPMENT_GUIDE.md)
-- [TESTING_GUIDE.md](TESTING_GUIDE.md)
-- [RELEASE_MANIFEST.md](RELEASE_MANIFEST.md)
+Apply the mandatory documentation-impact review in root
+[`AGENTS.md`](../AGENTS.md) before treating a task as complete. Update only
+the authoritative and directly affected documents, or record in the pull
+request why no documentation update is required.
