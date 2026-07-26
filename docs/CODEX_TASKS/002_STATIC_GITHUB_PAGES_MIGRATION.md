@@ -1,5 +1,10 @@
 # Codex Task 002 - Static GitHub Pages Migration
 
+> **Historical completed task:** Retained as migration history. Current
+> architecture and deployment rules are maintained in
+> [`../TECHNICAL_OVERVIEW.md`](../TECHNICAL_OVERVIEW.md) and
+> [`../DEPLOYMENT_GUIDE.md`](../DEPLOYMENT_GUIDE.md).
+
 ## Goal
 
 Make the existing Kids Learning website work as a static GitHub Pages website without requiring FastAPI, Azure OpenAI, Azure Speech, or any backend API during student use.

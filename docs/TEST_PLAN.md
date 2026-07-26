@@ -1,6 +1,11 @@
-# Manual Regression Test Plan
+# Historical Manual Regression Checklist
 
-Use this checklist after changes that may affect learning activities. Record failures in `BUG_TRACKER.md`.
+This short checklist is retained as historical regression context. It is not
+the complete current test plan.
+
+Use [`TESTING_GUIDE.md`](TESTING_GUIDE.md) for current automated, local,
+production, and evidence requirements. Record failures in
+[`BUG_TRACKER.md`](BUG_TRACKER.md).
 
 ## Dictation
 

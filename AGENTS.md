@@ -4,7 +4,9 @@ Durable instructions for future Codex work in the Kids Learning repository.
 
 ## Project Status
 
-- Kids Learning v1.0.0 has been released and is live on GitHub Pages.
+- Kids Learning has an immutable `v1.0.0` tagged baseline. The current GitHub
+  Pages deployment contains later untagged changes; see
+  `docs/RELEASE_MANIFEST.md`.
 - Production is static hosting from GitHub Pages.
 - Azure is not part of the current deployment process. Backend and Azure-related code is legacy/local-only unless a future approved task says otherwise.
 - The project is in maintenance mode: prioritise reliability, content quality, compatibility, and small safe improvements.
@@ -41,6 +43,7 @@ Durable instructions for future Codex work in the Kids Learning repository.
 
 ## Testing and Validation
 
+- Use `docs/TESTING_GUIDE.md` as the current validation entry point.
 - Run the repository's existing validation when relevant:
   - JSON validation from `.github/workflows/validate-json.yml`
   - Markdown link check from `.github/workflows/check-markdown-links.yml`
@@ -52,6 +55,9 @@ Durable instructions for future Codex work in the Kids Learning repository.
 ## Release and Deployment Safety
 
 - GitHub Pages is the official production deployment method.
+- Follow `docs/RELEASE_POLICY.md`, `docs/RELEASE_MANIFEST.md`, and
+  `docs/DEPLOYMENT_GUIDE.md`. Do not treat every Pages deployment as a new
+  release.
 - Do not invent an Azure deployment procedure.
 - Stop on merge conflicts, failed validation, failed Pages deployment, or unclear production state.
 - For releases, confirm:
@@ -63,6 +69,22 @@ Durable instructions for future Codex work in the Kids Learning repository.
 
 ## Documentation
 
+- Documentation authority:
+  - this file: durable repository and AI-agent rules
+  - `docs/MASTER_TASK.md`: durable product constraints
+  - `docs/PROJECT_DASHBOARD.md`: current status
+  - `docs/ROADMAP.md`: future priorities
+  - `docs/TECHNICAL_OVERVIEW.md`: current architecture
+  - `docs/SYSTEM_ARCHITECTURE_V1.md`: historical architecture
 - Keep `README.md` and related docs consistent when behavior, structure, workflow, or deployment changes.
 - Use GitHub Issues or `docs/MASTER_TASK.md` for roadmap and future work. Do not turn this file into a task backlog.
 - If documentation and implementation disagree, report the mismatch before making broad changes.
+
+## Known Deferred Implementation Issues
+
+- `frontend/ai_teacher.html` and `frontend/vocab.html` reference missing
+  `frontend/css/styles.css`. Do not hide this in documentation or claim the
+  local asset check passes until a separate bug-fix task resolves it.
+- The Dockerfile references a backend application module that is not present
+  in the tracked repository. Document the current state; do not classify
+  Docker support as retired or supported without an approved decision.

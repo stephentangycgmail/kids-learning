@@ -2,7 +2,10 @@
 
 ## Current Version
 
-v1.0.0
+Tagged baseline: `v1.0.0`
+
+Current Pages state: later untagged `main` deployment. See
+[`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
 
 ## Current Status
 
@@ -45,9 +48,13 @@ P1:
 
 ## Open Bugs
 
-None documented in the repository dashboard.
+- BUG-001 is fixed in code but remains pending verification in
+  [`BUG_TRACKER.md`](BUG_TRACKER.md).
+- Vocabulary and AI Teacher reference missing `css/styles.css`; implementation
+  correction is deferred to a future bug-fix task.
+- Docker references a missing backend application module; support status is
+  undecided.
 
 ## Next Milestone
 
 Maintenance release planning.
-

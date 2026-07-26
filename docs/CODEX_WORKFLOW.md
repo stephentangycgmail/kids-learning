@@ -2,9 +2,14 @@
 
 This document describes the recommended workflow for future Codex tasks in the maintenance-phase Kids Learning repository.
 
+Root [`AGENTS.md`](../AGENTS.md) is authoritative for safety, Git, and release
+authorization. This file defines task sequencing and should not duplicate or
+weaken those rules.
+
 ## Current Context
 
-- Kids Learning v1.0.0 is released and live on GitHub Pages.
+- Kids Learning has a `v1.0.0` tagged baseline and a later untagged Pages
+  deployment.
 - Production is static hosting from `main`.
 - Normal maintenance and development work happens on `develop` or a focused branch.
 - Azure and backend APIs are not part of the current production deployment process.
@@ -56,25 +61,9 @@ Any project-specific constraints.
 
 ## Safety Rules
 
-Codex must not commit or expose:
-
-```text
-backend/config.json
-.env
-.env.*
-API keys
-passwords
-tokens
-```
-
-Codex must not:
-
-- force push
-- discard user changes without permission
-- rewrite branch history
-- merge into `main` without explicit approval
-- create tags or GitHub Releases without explicit approval
-- invent an Azure deployment process
+Follow the safety and authorization rules in root `AGENTS.md`. Configuration
+boundaries are maintained in [`CONFIGURATION.md`](CONFIGURATION.md), and
+release rules are maintained in [`RELEASE_POLICY.md`](RELEASE_POLICY.md).
 
 ## Content Rule
 
@@ -95,4 +84,5 @@ When behavior, structure, deployment, or workflow changes, update the relevant c
 - [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
 - [CONTENT_STANDARD.md](CONTENT_STANDARD.md)
 - [DEVELOPMENT_GUIDE.md](DEVELOPMENT_GUIDE.md)
-
+- [TESTING_GUIDE.md](TESTING_GUIDE.md)
+- [RELEASE_MANIFEST.md](RELEASE_MANIFEST.md)

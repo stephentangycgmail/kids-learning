@@ -1,106 +1,70 @@
-# Codex Playbook
+# Codex Implementation Playbook
 
-This handbook defines how Codex should operate in this repository.
+This playbook contains project-specific implementation guidance. Root
+[`AGENTS.md`](../AGENTS.md) is authoritative for Git, scope, security,
+validation honesty, and release/deployment authorization.
 
-## Repository Rules
+The standard task sequence is maintained in
+[`CODEX_WORKFLOW.md`](CODEX_WORKFLOW.md). Contributor and branch workflow is in
+[`DEVELOPMENT_GUIDE.md`](DEVELOPMENT_GUIDE.md).
 
-1. Preserve GitHub Pages compatibility.
-2. Keep student-facing runtime static unless a task explicitly approves otherwise.
-3. Do not redesign UI, layout, or learning flow unless requested.
-4. Do not remove backend files; treat them as legacy/local-only tooling.
-5. Do not add API keys, tokens, secrets, or `backend/config.json`.
-6. Keep changes small, reviewable, and scoped to the task.
+## Static Runtime Rules
 
-## Coding Standards
+- Preserve GitHub Pages compatibility.
+- Keep student-facing runtime static unless an approved architecture task says
+  otherwise.
+- Prefer existing plain HTML, CSS, JavaScript, and JSON patterns.
+- Do not add live API dependencies or production backend requirements without
+  explicit approval.
+- Keep AI Teacher disabled until a reviewed implementation task changes that
+  decision.
+- Use browser SpeechSynthesis for existing speech features.
 
-- Follow existing file style and structure.
-- Prefer plain HTML/CSS/JavaScript patterns already used in `frontend/`.
-- Avoid new dependencies for student-facing pages unless explicitly approved.
-- Use browser SpeechSynthesis for student-facing speech features.
-- Keep placeholder pages simple and linked back to the appropriate menu.
+## Content Rules
+
+- Store reviewed learning content under `frontend/data/`.
+- Follow [`CONTENT_STANDARD.md`](CONTENT_STANDARD.md).
+- Preserve existing schemas, IDs, paths, and filenames unless a migration is
+  approved.
+- Update the relevant catalog or manifest when catalog-driven files change.
+- Validate JSON and consuming-page behavior.
+- Do not commit unreviewed generated content.
+
+## Frontend Rules
+
+- Preserve current learning flow and layout unless the task requests a design
+  change.
+- Keep placeholder pages linked and explicit.
+- Test relative paths under the GitHub Pages repository subpath.
+- Check browser speech fallbacks for affected pages.
+- Do not claim a clean static-reference check while the known
+  `css/styles.css` defect remains.
+
+## Tool and Test Rules
+
+- Prefer standard-library tools already used in `tools/`.
+- Avoid new dependencies unless approved and documented.
+- Add or update tests when shared behavior, storage, scoring, generation, or
+  validation changes.
+- Use [`TESTING_GUIDE.md`](TESTING_GUIDE.md) for commands and evidence.
 
 ## Documentation Rules
 
-- Update documentation when project rules, workflows, folder structure, or JSON schemas change.
-- Use `docs/MASTER_TASK.md` as the highest-level project specification.
-- Use `docs/FOLDER_STRUCTURE.md` as the canonical folder reference.
-- Keep historical sprint reports as history; avoid rewriting them as if they were current specs.
-- Prefer relative Markdown links for local documentation.
+- Current architecture: [`TECHNICAL_OVERVIEW.md`](TECHNICAL_OVERVIEW.md)
+- Historical architecture:
+  [`SYSTEM_ARCHITECTURE_V1.md`](SYSTEM_ARCHITECTURE_V1.md)
+- Current structure: [`FOLDER_STRUCTURE.md`](FOLDER_STRUCTURE.md)
+- Current roadmap: [`ROADMAP.md`](ROADMAP.md)
+- Release identity: [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md)
 
-## JSON Rules
+Do not rewrite historical reports as current specifications. Add a
+classification notice and point to the current authority.
 
-- Store reviewed learning content under `frontend/data/`.
-- Do not change an existing JSON schema without a task that explicitly approves it.
-- Validate JSON syntax before reporting completion.
-- Do not include secrets, private data, or unreviewed generated content.
-- Document new JSON file patterns in `docs/JSON_SPECIFICATION.md` or a successor schema document.
+## Review Checklist
 
-## Commit Message Rules
-
-Use concise, task-oriented commit messages.
-
-Recommended forms:
-
-```text
-Epic 001 - Milestone 1 Project Governance
-Migrate frontend to static GitHub Pages runtime
-Disable AI Teacher for static site
-```
-
-Avoid vague messages such as:
-
-```text
-updates
-misc fixes
-stuff
-```
-
-## Testing Checklist
-
-For documentation-only changes:
-
-1. Confirm no runtime files changed unexpectedly.
-2. Confirm required docs exist.
-3. Check Markdown links.
-4. Confirm repository structure is still valid.
-
-For frontend changes:
-
-1. Homepage loads.
-2. Chinese menu loads.
-3. English menu loads.
-4. Linked module pages open.
-5. Required JSON files load.
-6. Browser console has no unexpected `/static/`, `/api/`, or backend 404 errors.
-7. Speech features use browser SpeechSynthesis.
-
-For JSON changes:
-
-1. JSON parses successfully.
-2. Consuming page can load the file.
-3. Schema matches the existing frontend expectation.
-4. Content is suitable for child learners.
-
-## Pull Request Checklist
-
-- Summary explains the purpose of the change.
-- Files changed are within the requested scope.
-- Validation steps are listed.
-- Risks and remaining issues are disclosed.
-- GitHub Pages compatibility is considered.
-- No secrets or local-only files are included.
-
-## Files Requiring Approval Before Modification
-
-Do not modify these without explicit approval:
-
-- `frontend/data/*.json` lesson data.
-- `frontend/*.html` layout or learning flow.
-- `frontend/js/*.js` runtime behavior.
-- `frontend/css/*` styling.
-- `backend/config.json` or any local secret file.
-- Backend API behavior in `backend/`.
-- Existing lesson filenames.
-- Generated audio or media assets.
-
-Documentation-only milestones may modify `docs/` and `README.md` when the task requests governance or documentation work.
+- Scope matches the request.
+- Runtime and data compatibility are preserved.
+- Catalog references and local assets are checked.
+- Required validation ran and skipped checks are explicit.
+- No secrets, local config, generated output, or unrelated files are included.
+- Documentation claims are supported by repository or environment evidence.

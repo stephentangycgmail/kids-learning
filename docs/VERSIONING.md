@@ -2,6 +2,10 @@
 
 Future Lesson Packages and indexes should use semantic versioning.
 
+This document does not version the repository application, Git tags, or GitHub
+Pages deployments. Repository release identity is governed by
+[`RELEASE_POLICY.md`](RELEASE_POLICY.md).
+
 Format:
 
 ```text
