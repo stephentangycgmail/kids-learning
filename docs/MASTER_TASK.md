@@ -4,7 +4,9 @@ This is the highest-level project specification for `stephentangycgmail/kids-lea
 
 ## Project Status
 
-Kids Learning v1.0.0 has been released and is live on GitHub Pages. The project is now in maintenance mode.
+Kids Learning has an immutable `v1.0.0` tagged baseline. GitHub Pages currently
+serves a later untagged `main` deployment that includes post-tag changes. The
+project is in maintenance mode.
 
 Production is static hosting from GitHub Pages. Azure, FastAPI, and backend APIs are not part of the current production deployment process.
 
@@ -94,7 +96,9 @@ Before changes are accepted:
 
 ## Release and Deployment
 
-GitHub Pages is the official production deployment method. The current production release is v1.0.0.
+GitHub Pages is the official production deployment method. The current tagged
+release baseline is `v1.0.0`; the current Pages deployment is newer and
+untagged. See [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
 
 Release preparation must confirm:
 
@@ -108,6 +112,9 @@ Release preparation must confirm:
 
 See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md).
 
+Repository release rules are maintained in
+[`RELEASE_POLICY.md`](RELEASE_POLICY.md).
+
 ## Roadmap
 
 Maintenance priorities:
@@ -119,4 +126,3 @@ Maintenance priorities:
 - Add small, well-tested improvements.
 
 Future roadmap work belongs in [ROADMAP.md](ROADMAP.md), GitHub Issues, or dedicated planning documents.
-

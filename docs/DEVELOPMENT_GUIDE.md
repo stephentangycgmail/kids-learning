@@ -2,6 +2,10 @@
 
 This guide defines the maintenance-phase development workflow for the Kids Learning repository.
 
+Root [`AGENTS.md`](../AGENTS.md) is authoritative for repository safety and
+authorization. This guide owns contributor workflow; task sequencing is in
+[`CODEX_WORKFLOW.md`](CODEX_WORKFLOW.md).
+
 ## Branch Strategy
 
 - `main`: production branch published by GitHub Pages.
@@ -73,6 +77,10 @@ Use this flow only after explicit approval:
 
 See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md).
 
+Use [`BUILD_GUIDE.md`](BUILD_GUIDE.md) for local serving,
+[`TESTING_GUIDE.md`](TESTING_GUIDE.md) for validation, and
+[`RELEASE_POLICY.md`](RELEASE_POLICY.md) for official release identity.
+
 ## Documentation-Only Workflow
 
 Documentation-only changes must not alter:
@@ -86,4 +94,3 @@ Documentation-only changes must not alter:
 - tests
 
 Validation should include the Markdown local-link check and a git diff review proving runtime files were not touched.
-

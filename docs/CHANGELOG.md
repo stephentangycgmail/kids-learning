@@ -1,18 +1,22 @@
 # Changelog
 
-## 2026-07-18 - v1.0.0 Production Release
+Release identity and deployment evidence are maintained in
+[`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
 
-### Released
+## 2026-07-17 - Untagged Production Deployment
 
-- Released Kids Learning v1.0.0 to GitHub Pages static hosting.
-- Confirmed `main` as the production branch and `develop` as the integration branch.
-- Confirmed production does not require Azure, FastAPI, backend APIs, login, or `/api/health`.
-- Verified static production pages and JSON assets after GitHub Pages deployment.
+### Deployed
+
+- Deployed `main` commit `a3c6610` to GitHub Pages.
+- Included Offline English Grammar Practice changes made after the `v1.0.0`
+  tag.
+- Preserved static production without Azure, FastAPI, backend APIs, login, or
+  `/api/health`.
 
 ### Notes
 
-- The official v1.0.0 tag points to the production release commit.
-- The project entered maintenance mode after this release.
+- This deployment is not represented by a later release tag.
+- No new version or GitHub Release is inferred.
 
 ## 2026-07-17 - Offline English Grammar Practice
 
@@ -26,7 +30,24 @@
 ### Notes
 
 - The feature uses committed JSON files and does not require an API, backend service, login, or new Service Worker.
-- Manual desktop and mobile testing completed successfully before deployment.
+- Historical project notes reported manual desktop and mobile testing before
+  deployment. A dated retained manual test record is not present in the
+  repository.
+
+## 2026-07-03 - v1.0.0 Tagged Baseline
+
+### Released
+
+- Created the immutable `v1.0.0` tag at commit `c2cbcba`.
+- Confirmed GitHub Pages static hosting from `main`.
+- Confirmed production did not require Azure, FastAPI, backend APIs, login, or
+  `/api/health`.
+
+### Notes
+
+- No GitHub Release is present for this tag.
+- Later production changes do not alter the tagged commit.
+- The project moved into maintenance-oriented development after this baseline.
 
 ## 2026-07-16 - Grammar Gold Lessons and Acceptance Fixes
 
@@ -109,4 +130,3 @@
 - Existing website behavior was not intentionally changed.
 - No new learning content was added in this cleanup phase.
 - Live API-based content generation was planned to be replaced gradually by reviewed static JSON files.
-

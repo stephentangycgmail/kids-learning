@@ -2,14 +2,24 @@
 
 This file summarizes project history at a milestone level.
 
-## v1.0.0 Production Release - July 2026
+Verified tag and deployment identities are maintained in
+[`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md). A production deployment is not
+automatically an official release.
+
+## v1.0.0 Tagged Baseline - 3 July 2026
 
 Focus:
 
-- Released Kids Learning v1.0.0 to GitHub Pages static hosting.
+- Tagged commit `c2cbcba` as `v1.0.0`.
+- Established Kids Learning on GitHub Pages static hosting.
 - Confirmed the production runtime is static and does not use Azure, FastAPI, backend APIs, login, or `/api/health`.
 - Confirmed `main` as the production branch and `develop` as the integration branch.
-- Verified production static pages and JSON assets after deployment.
+
+Release evidence:
+
+- Immutable Git tag exists.
+- GitHub Release is not present.
+- No packaged artifact applies; Pages serves committed static files.
 
 Key documents:
 
@@ -31,7 +41,14 @@ Quality:
 
 - Added deterministic Python question generation and validation tools.
 - Added Node and Python regression tests.
-- Completed manual desktop, tablet, and mobile acceptance testing before deployment.
+- Historical notes report manual desktop, tablet, and mobile acceptance
+  testing before deployment; no dated completed checklist is retained.
+
+Deployment:
+
+- Included in the untagged `main` deployment at commit `a3c6610` on
+  17 July 2026.
+- This post-tag deployment is not relabeled as `v1.0.0` or a later release.
 
 ## Sprint 1 - Project Audit and Safety Foundation
 

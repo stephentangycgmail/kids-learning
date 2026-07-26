@@ -12,6 +12,13 @@ Kids Learning is a static GitHub Pages site.
 - Learning content is loaded from relative `frontend/data/` JSON paths.
 - No production backend, Azure service, login, or API health endpoint is required.
 
+## Current Architecture
+
+This document is the authority for the current tracked implementation.
+Historical FastAPI, Azure, and backend endpoint context is retained separately
+in [`SYSTEM_ARCHITECTURE_V1.md`](SYSTEM_ARCHITECTURE_V1.md) and
+[`API_DEPENDENCY_AUDIT.md`](API_DEPENDENCY_AUDIT.md).
+
 ## Main Pages
 
 | Area | Entry file | Notes |
@@ -82,7 +89,23 @@ GitHub Pages deployment is handled by GitHub Pages static hosting, not by a cust
 
 ## Backend Status
 
-`backend/` is legacy/local-only. It may contain historical FastAPI, Azure, or generated-output support files, but production GitHub Pages does not use them.
+`backend/` is legacy/local-only. The current tracked directory contains an
+example configuration, requirements, generated/reference output, and a source
+workbook. It does not contain the FastAPI application or Azure generation
+modules described by the historical architecture.
 
 Do not add production dependencies on backend APIs without an approved architecture change.
 
+## Docker Status
+
+The tracked Dockerfile installs `backend/requirements.txt` and starts
+`kids_ai_teacher:app`, but the corresponding tracked Python module is absent.
+Docker is not used by production. Its supported/retired status has not been
+decided.
+
+## Known Implementation Issue
+
+`frontend/ai_teacher.html` and `frontend/vocab.html` reference
+`css/styles.css`, but that file is not tracked. The repository contains
+`frontend/css/tyles.css`. This is a deferred implementation bug and is not
+corrected or hidden by documentation.

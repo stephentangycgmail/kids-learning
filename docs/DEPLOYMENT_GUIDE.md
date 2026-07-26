@@ -2,6 +2,11 @@
 
 This guide documents the current production deployment process for Kids Learning v1.0.0 and later maintenance releases.
 
+The immutable `v1.0.0` tag and the current later Pages deployment are distinct.
+See [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md). Follow
+[`RELEASE_POLICY.md`](RELEASE_POLICY.md) before creating a future official
+release.
+
 ## Production Platform
 
 Production uses GitHub Pages static hosting.
@@ -64,6 +69,9 @@ develop
 
 Do not force push. Do not create tags, GitHub Releases, or deployments unless explicitly instructed.
 
+A successful Pages deployment does not by itself create or rename an official
+release.
+
 ## GitHub Pages Verification
 
 After pushing `main`, verify the GitHub Pages build/deployment in GitHub Actions or the repository Pages deployment UI.
@@ -100,6 +108,8 @@ Smoke-test expectations:
 - Grammar Practice loads static question banks.
 - AI Teacher page remains disabled without backend API calls.
 - Required JSON files return HTTP 200.
+- Known stylesheet failures on Vocabulary and AI Teacher are recorded rather
+  than treated as newly discovered release evidence.
 
 Do not check `/api/health` for production static hosting.
 
@@ -114,4 +124,3 @@ Stop and report before making changes if:
 - GitHub Pages deployment fails
 - production serves the wrong commit after reasonable propagation time
 - authentication or remote configuration is unexpected
-

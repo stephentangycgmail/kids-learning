@@ -1,5 +1,15 @@
 # Content Generation Plan
 
+## Document Status
+
+This is the historical strategy that moved student runtime away from live API
+generation. The static-first direction remains valid, but references to the
+“cleanup phase” and later migration tasks reflect the earlier planning state.
+
+Current content rules are authoritative in
+[`CONTENT_STANDARD.md`](CONTENT_STANDARD.md), and future priorities are in
+[`ROADMAP.md`](ROADMAP.md).
+
 This project will gradually move away from live API-based content generation and towards reviewed static JSON content.
 
 ## Current Principle

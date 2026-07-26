@@ -7,6 +7,7 @@ This is the canonical folder structure reference for the Kids Learning repositor
 ```text
 kids-learning/
 +-- .github/workflows/
++-- .specs/
 +-- frontend/
 +-- backend/
 +-- docs/
@@ -25,6 +26,12 @@ Repository validation workflows:
 
 - `validate-json.yml`: parses repository JSON files on relevant pull requests and pushes to `main` or `develop`.
 - `check-markdown-links.yml`: checks local Markdown links on relevant pull requests and pushes to `main` or `develop`.
+
+## `.specs/`
+
+Historical and completed implementation specifications. These files record the
+requirements used for individual milestones and are not current roadmap or
+task authority unless a new task explicitly adopts them.
 
 ## `frontend/`
 
@@ -135,12 +142,28 @@ Current tests:
 
 Legacy/local-only tooling and generated output.
 
+Current tracked contents include:
+
+- `config.example.json`
+- `requirements.txt`
+- `output/*.json`
+- `vocab_source.xlsx`
+
+The tracked tree does not currently include the historical FastAPI application
+or Azure generation modules described in older architecture records.
+
 Rules:
 
 - Backend files may remain for future content generation, validation, or migration work.
 - Backend is not required for GitHub Pages student use.
 - Do not commit `backend/config.json`.
 - Do not expose API keys or local secrets.
+
+## Root `Dockerfile`
+
+The Dockerfile is retained and references `kids_ai_teacher:app`, but the
+corresponding backend application module is not present. Docker is not part of
+GitHub Pages production. Its future support status is intentionally undecided.
 
 ## `docs/`
 
@@ -151,6 +174,12 @@ Core documents:
 - [MASTER_TASK.md](MASTER_TASK.md)
 - [TECHNICAL_OVERVIEW.md](TECHNICAL_OVERVIEW.md)
 - [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
+- [BUILD_GUIDE.md](BUILD_GUIDE.md)
+- [CONFIGURATION.md](CONFIGURATION.md)
+- [TESTING_GUIDE.md](TESTING_GUIDE.md)
+- [USER_GUIDE.md](USER_GUIDE.md)
+- [RELEASE_POLICY.md](RELEASE_POLICY.md)
+- [RELEASE_MANIFEST.md](RELEASE_MANIFEST.md)
 - [CONTENT_STANDARD.md](CONTENT_STANDARD.md)
 - [CODEX_PLAYBOOK.md](CODEX_PLAYBOOK.md)
 - [FOLDER_STRUCTURE.md](FOLDER_STRUCTURE.md)
@@ -169,4 +198,3 @@ Supporting documents:
 - Review and development notes.
 
 Do not move documents until references are updated in the same change.
-

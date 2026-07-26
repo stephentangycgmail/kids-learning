@@ -1,5 +1,13 @@
 # Codex Task 003 - Content Architecture
 
+> **Historical partially superseded task:** The documentation standards were
+> developed, but the five proposed index files below are not present. Current
+> runtime discovery uses `catalog.json`, `grammar_catalog.json`, and
+> `grammar_practice_manifest.json`. Do not create the proposed indexes unless a
+> new approved implementation task reconciles them with
+> [`../CONTENT_STANDARD.md`](../CONTENT_STANDARD.md) and
+> [`../ROADMAP.md`](../ROADMAP.md).
+
 ## Goal
 
 Complete Sprint 3 by preparing the website for JSON-driven learning content packages.

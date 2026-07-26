@@ -1,10 +1,28 @@
 # System Architecture v1.0
 
-This historical architecture note is retained for context. For the current post-release implementation, see [TECHNICAL_OVERVIEW.md](TECHNICAL_OVERVIEW.md).
+## Document Classification
+
+### Historical Architecture
+
+The main body of this document is the Sprint 1 architecture snapshot. It is
+retained as historical evidence and must not be read as a current file
+inventory. In particular, the historical backend Python modules listed below
+are not present in the current tracked repository.
+
+### Current Architecture
+
+For the current post-release implementation, use
+[`TECHNICAL_OVERVIEW.md`](TECHNICAL_OVERVIEW.md). Current production is a
+static GitHub Pages site. The current tracked Dockerfile references a missing
+backend application module; Docker support remains undecided. The current
+Vocabulary and AI Teacher pages also reference a missing stylesheet, as
+recorded in [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
+
+## Historical Sprint 1 Snapshot
 
 Sprint 1 purpose: document the existing system before any functional change. The current website layout and working behavior must be preserved.
 
-## Current Hosting
+## Historical Hosting Context
 
 - Public test site: GitHub Pages.
 - Repository: `stephentangycgmail/kids-learning`.
@@ -91,6 +109,9 @@ Only two small WAV files exist under `frontend/tts/`; they are not the main pron
 
 ## Backend Inventory
 
+This table records files and responsibilities observed in the historical
+architecture. It does not assert that the listed Python files exist now.
+
 | File | Purpose | Status |
 |---|---|---|
 | `backend/kids_ai_teacher.py` | FastAPI app, static file serving, AI teacher, TTS, dictation file list | Keep for now. API-dependent parts planned for removal or local-only use. |
@@ -111,6 +132,9 @@ Only two small WAV files exist under `frontend/tts/`; they are not the main pron
 - Do not add live API calls.
 
 ## Immediate Findings
+
+These were findings at the time of the Sprint 1 snapshot. Later implementation
+may have completed or superseded them.
 
 1. GitHub Pages can load the homepage.
 2. Student-facing frontend links and JSON fetches use GitHub Pages compatible relative paths.
