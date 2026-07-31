@@ -1,5 +1,15 @@
 # Documentation Audit
 
+> **Historical snapshot:** This audit records repository state and findings at
+> the baseline below. It is evidence, not a current project authority. Start
+> with root [`AGENTS.md`](../AGENTS.md) for task-based routing, and use
+> [`README.md`](../README.md) only as the project overview and document index.
+> For current behavior, follow the task-specific authority named by
+> `AGENTS.md`, such as [`MASTER_TASK.md`](MASTER_TASK.md),
+> [`CONTENT_STANDARD.md`](CONTENT_STANDARD.md), the relevant feature
+> specification, [`TESTING_GUIDE.md`](TESTING_GUIDE.md), and current
+> implementation and tests.
+
 Audit date: 2026-07-26
 
 Audit baseline:

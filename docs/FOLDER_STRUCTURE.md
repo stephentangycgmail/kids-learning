@@ -172,6 +172,7 @@ Project governance, architecture, workflow, standards, and planning documents.
 Core documents:
 
 - [MASTER_TASK.md](MASTER_TASK.md)
+- [AI_HANDOVER.md](AI_HANDOVER.md)
 - [TECHNICAL_OVERVIEW.md](TECHNICAL_OVERVIEW.md)
 - [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
 - [BUILD_GUIDE.md](BUILD_GUIDE.md)
