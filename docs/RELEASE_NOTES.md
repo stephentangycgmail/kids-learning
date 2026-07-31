@@ -6,6 +6,28 @@ Verified tag and deployment identities are maintained in
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md). A production deployment is not
 automatically an official release.
 
+## v1.1.0 Release Candidate - July 2026
+
+Focus:
+
+- Promote the backward-compatible Offline English Grammar Practice feature
+  already present in the later untagged production deployment into an official
+  release identity.
+- Preserve 20-question practice, submitted result review, local history,
+  duration, resume, and abandoned-session behavior.
+- Verify BUG-001 Dictation playback position behavior.
+- Correct the shared Vocabulary and AI Teacher stylesheet filename.
+- Include the current maintenance governance and fresh-agent handover.
+
+Release boundary:
+
+- GitHub Pages remains the only official deployment path.
+- Docker remains a retained, unsupported legacy artifact.
+- No production API, login, paid service, Azure dependency, or new Service
+  Worker is introduced.
+- Tag, GitHub Release, and final production evidence are pending until all
+  release gates pass.
+
 ## v1.0.0 Tagged Baseline - 3 July 2026
 
 Focus:

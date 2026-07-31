@@ -144,9 +144,7 @@ change is required.
 
 ## Known Deferred Implementation Issues
 
-- `frontend/ai_teacher.html` and `frontend/vocab.html` reference missing
-  `frontend/css/styles.css`. Do not hide this in documentation or claim the
-  local asset check passes until a separate bug-fix task resolves it.
 - The Dockerfile references a backend application module that is not present
-  in the tracked repository. Document the current state; do not classify
-  Docker support as retired or supported without an approved decision.
+  in the tracked repository. It is a retained legacy artifact, not a supported
+  build, run, or production path. Restoring or removing it requires a separate
+  approved task; GitHub Pages remains the only official deployment path.

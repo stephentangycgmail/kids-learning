@@ -22,10 +22,6 @@ placeholders or temporarily disabled and say so on screen.
 Vocabulary uses reviewed local JSON data. Search or select a word to view the
 available meaning and usage information.
 
-Known issue: the current Vocabulary page references a missing stylesheet and
-may not display with its intended styling. The learning data remains static;
-the styling defect is deferred to a separate bug fix.
-
 ### Dictation Practice
 
 1. Select a dictation lesson.
@@ -65,9 +61,6 @@ practice history.
 - Sentences, Usage, Quiz, and Math may show Coming Soon.
 - AI Teacher is temporarily disabled and does not call a production API.
 
-Known issue: the AI Teacher page also references the missing stylesheet noted
-above.
-
 ## Chinese Learning
 
 Chinese Dictation loads committed Chinese sentence files and uses browser
@@ -103,8 +96,8 @@ disposable.
   succeeded.
 - **Practice history missing:** confirm the same browser/device is being used
   and site data was not cleared.
-- **Unexpected styling:** see the known stylesheet issue in
-  [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
+- **Unexpected styling:** refresh the page and confirm static CSS requests
+  succeed under the repository subpath.
 
 Technical validation instructions are in
 [`TESTING_GUIDE.md`](TESTING_GUIDE.md).

@@ -3,6 +3,36 @@
 Release identity and deployment evidence are maintained in
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
 
+## Unreleased - v1.1.0
+
+### Added
+
+- Added Offline English Grammar Practice with 20-question Short & Long Answer,
+  Sentence Rearrangement, and Mixed Practice sessions.
+- Added deterministic question generation, 630 validated static questions,
+  browser-local history, scoring, review, duration, resume, and abandoned
+  session handling.
+- Added repository governance, task-based AI routing, release policy, current
+  architecture, testing, deployment, and handover documentation.
+- Added regression coverage for local HTML assets and Dictation playback-state
+  controls.
+
+### Fixed
+
+- Verified BUG-001 Dictation selected-word, pause/resume, Stop, completion, and
+  mode behavior.
+- Corrected the shared Vocabulary and AI Teacher stylesheet filename from
+  `tyles.css` to `styles.css`.
+
+### Release Notes
+
+- This is a minor release because it includes the backward-compatible Offline
+  English Grammar Practice feature added after `v1.0.0`.
+- GitHub Pages remains the only official deployment path. The retained
+  Dockerfile is an unsupported legacy artifact.
+- Final tag, release commit, deployment, and production evidence remain pending
+  until the release gates complete.
+
 ## 2026-07-17 - Untagged Production Deployment
 
 ### Deployed

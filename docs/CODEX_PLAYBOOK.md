@@ -37,8 +37,8 @@ The standard task sequence is maintained in
 - Keep placeholder pages linked and explicit.
 - Test relative paths under the GitHub Pages repository subpath.
 - Check browser speech fallbacks for affected pages.
-- Do not claim a clean static-reference check while the known
-  `css/styles.css` defect remains.
+- Run the static-site regression test so local HTML asset references remain
+  resolvable.
 
 ## Tool and Test Rules
 

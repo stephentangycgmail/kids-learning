@@ -108,8 +108,7 @@ Smoke-test expectations:
 - Grammar Practice loads static question banks.
 - AI Teacher page remains disabled without backend API calls.
 - Required JSON files return HTTP 200.
-- Known stylesheet failures on Vocabulary and AI Teacher are recorded rather
-  than treated as newly discovered release evidence.
+- Vocabulary and AI Teacher load `frontend/css/styles.css` without a CSS 404.
 
 Do not check `/api/health` for production static hosting.
 

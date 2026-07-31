@@ -100,12 +100,11 @@ Do not add production dependencies on backend APIs without an approved architect
 
 The tracked Dockerfile installs `backend/requirements.txt` and starts
 `kids_ai_teacher:app`, but the corresponding tracked Python module is absent.
-Docker is not used by production. Its supported/retired status has not been
-decided.
+It is retained as an unsupported legacy artifact and is not a current build,
+run, or production path.
 
 ## Known Implementation Issue
 
-`frontend/ai_teacher.html` and `frontend/vocab.html` reference
-`css/styles.css`, but that file is not tracked. The repository contains
-`frontend/css/tyles.css`. This is a deferred implementation bug and is not
-corrected or hidden by documentation.
+`frontend/ai_teacher.html` and `frontend/vocab.html` share
+`frontend/css/styles.css`. The filename mismatch present in earlier snapshots
+was corrected during `v1.1.0` release preparation.

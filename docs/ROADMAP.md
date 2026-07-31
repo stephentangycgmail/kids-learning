@@ -25,16 +25,17 @@ deployment. Current priorities are:
 - AI Teacher disabled for production.
 - JSON and Markdown GitHub Actions validation.
 - Repository governance, content standards, and documentation audit.
+- BUG-001 Dictation resume verification and static asset regression coverage.
+- Vocabulary and AI Teacher shared stylesheet path correction.
 
 ## Next Priorities
 
 ### P1: Reliability
 
-- Resolve the missing stylesheet references for Vocabulary and AI Teacher in a
-  separate tested bug-fix task.
-- Decide whether Docker/backend runtime support should be restored or retired;
-  do not infer the decision from documentation.
-- Complete verification of BUG-001.
+- Preserve the verified Dictation playback-state behavior and static asset
+  checks.
+- Keep Docker outside supported runtime and deployment paths unless a separate
+  approved task restores it.
 
 ### P2: Quality
 
