@@ -3,6 +3,25 @@
 This manifest records verified repository and production evidence. It does not
 create or redefine a release.
 
+## v1.1.0 Release Candidate
+
+| Field | Verified value |
+| --- | --- |
+| Planned version | `1.1.0` |
+| Planned tag | `v1.1.0` |
+| Status | Release preparation; not yet tagged or deployed |
+| Preparation base | `develop` commit `b423155acbda554b50d2c0d5d2e7302a8e5c2dd3` |
+| Production platform | GitHub Pages static hosting |
+| Release artifact | N/A; production serves committed static files |
+| Docker | Retained unsupported legacy artifact; not a release path |
+| Final release commit | Pending approved merge to `main` |
+| Production verification | Pending GitHub Pages deployment |
+
+The minor version is required because the release includes Offline English
+Grammar Practice, a backward-compatible student feature added after `v1.0.0`.
+The final commit, tag, deployment date, validation evidence, and rollback
+baseline must be recorded from completed release gates rather than inferred.
+
 ## Tagged Baseline
 
 | Field | Verified value |
@@ -51,14 +70,13 @@ The documentation audit on 2026-07-26 ran against `develop` commit
 This is repository validation evidence, not a claim that every check ran at
 the time of the `v1.0.0` tag or the July 17 deployment.
 
-## Known Issues
+## Known Boundaries
 
-- `frontend/ai_teacher.html` and `frontend/vocab.html` reference missing
-  `frontend/css/styles.css`; the tracked file is `frontend/css/tyles.css`.
-  This is an implementation defect deferred to a separate bug-fix task.
+- The earlier stylesheet filename mismatch is resolved in the `v1.1.0`
+  release candidate and protected by local-asset regression coverage.
 - The tracked Dockerfile starts `kids_ai_teacher:app`, but
-  `backend/kids_ai_teacher.py` is not present. Docker support has not been
-  classified as supported or retired.
+  `backend/kids_ai_teacher.py` is not present. It is retained as an unsupported
+  legacy artifact and is not a release path.
 - Historical backend architecture documents describe files and endpoints that
   are not present in the current tracked tree.
 - Browser speech behavior varies by browser, platform, installed voices, and

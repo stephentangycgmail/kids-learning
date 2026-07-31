@@ -7,6 +7,8 @@ Tagged baseline: `v1.0.0`
 Current Pages state: later untagged `main` deployment. See
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
 
+Next planned official release: `v1.1.0`.
+
 ## Current Status
 
 Released on GitHub Pages; maintenance mode.
@@ -46,14 +48,12 @@ P1:
 - TTS specification and audit.
 - Codex repository guidance.
 
-## Open Bugs
+## Open Boundaries
 
-- BUG-001 is fixed in code but remains pending verification in
-  [`BUG_TRACKER.md`](BUG_TRACKER.md).
-- Vocabulary and AI Teacher reference missing `css/styles.css`; implementation
-  correction is deferred to a future bug-fix task.
-- Docker references a missing backend application module; support status is
-  undecided.
+- BUG-001 and the Vocabulary/AI Teacher stylesheet mismatch were verified
+  resolved during `v1.1.0` release preparation.
+- Docker references a missing backend application module and is retained as an
+  unsupported legacy artifact, not a production path.
 
 ## Next Milestone
 

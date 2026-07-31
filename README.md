@@ -17,6 +17,9 @@ The production site uses committed HTML, CSS, JavaScript, and JSON files. It doe
 - The current Pages deployment contains changes made after the `v1.0.0` tag.
   See [Release Manifest](docs/RELEASE_MANIFEST.md) for verified commits and
   dates.
+- The next official release is being prepared as `v1.1.0` because it includes
+  the backward-compatible Offline English Grammar Practice feature added after
+  `v1.0.0`.
 
 ## Website Areas
 
@@ -111,12 +114,9 @@ baseline limitations.
 
 ## Known Issues
 
-- `frontend/ai_teacher.html` and `frontend/vocab.html` reference missing
-  `frontend/css/styles.css`; styling may be incomplete until a separate
-  implementation bug fix is approved.
 - The Dockerfile references a backend application module that is not present
-  in the current tracked repository. Docker is not part of the GitHub Pages
-  production process, and its future support status is undecided.
+  in the current tracked repository. It is retained as an unsupported legacy
+  artifact and is not part of the GitHub Pages production process.
 
 ## Security Rules
 

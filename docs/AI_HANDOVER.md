@@ -10,6 +10,8 @@ instead of reading every document.
 - Normal maintenance uses a focused branch based on `develop`, then integrates
   through `develop`.
 - `v1.0.0` is immutable; current Pages content is a later untagged deployment.
+- The next official release is planned as `v1.1.0`; verify the release manifest
+  and Git state before treating it as completed.
 - The project is in maintenance mode. Prefer focused fixes and compatible
   content improvements over redesign or broad refactoring.
 - Student use requires no login, production backend, paid API, or Azure
@@ -61,11 +63,10 @@ followed by Pages verification and production smoke testing.
 
 ## Known Boundaries
 
-- Vocabulary and AI Teacher reference missing `frontend/css/styles.css`.
-  Handle this only in a separate implementation fix.
-- Docker references a missing backend module. Do not classify it as supported
-  or retired without an owner decision.
-- BUG-001 is fixed but still pending manual verification.
+- Docker references a missing backend module and is retained as an unsupported
+  legacy artifact. GitHub Pages is the only official deployment path.
+- BUG-001 Dictation resume behavior was verified during `v1.1.0` release
+  preparation; retain its playback-state regression coverage.
 - Browser speech varies by platform and installed voices; repository tests do
   not prove production speech behavior.
 

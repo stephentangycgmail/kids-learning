@@ -8,7 +8,7 @@ the change, and report every skipped or unavailable check.
 From the repository root:
 
 ```powershell
-node --test tests/grammar_practice.test.js
+node --test tests/grammar_practice.test.js tests/static_site.test.js
 python -m unittest tests/test_grammar_practice_questions.py
 python tools/validate_grammar_practice_questions.py
 ```
@@ -43,13 +43,8 @@ declare a Markdown-lint dependency.
 Check local `src` and `href` targets for modified pages. This is separate from
 Markdown link validation.
 
-Known baseline failure:
-
-- `frontend/ai_teacher.html` references missing `css/styles.css`.
-- `frontend/vocab.html` references missing `css/styles.css`.
-
-Do not report a completely clean local-asset check until that implementation
-bug is fixed.
+The static-site regression test requires every local HTML `src` and `href`
+target to exist and protects the Dictation pause/resume/reset source contract.
 
 ## Local Static Smoke Test
 

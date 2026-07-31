@@ -14,7 +14,8 @@ retained as history and is not a runnable backend specification.
 Student-facing pages use static JSON and browser speech. Production does not
 use the historical endpoints. The current tracked backend directory contains
 local/reference files only, and the Dockerfile points to a backend module that
-is absent. Docker support remains undecided.
+is absent. The Dockerfile is retained as an unsupported legacy artifact and is
+not a build, run, or production authority.
 
 See [`TECHNICAL_OVERVIEW.md`](TECHNICAL_OVERVIEW.md) for the current
 architecture and [`BUILD_GUIDE.md`](BUILD_GUIDE.md) for the current local-run

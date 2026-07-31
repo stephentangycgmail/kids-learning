@@ -163,7 +163,8 @@ Rules:
 
 The Dockerfile is retained and references `kids_ai_teacher:app`, but the
 corresponding backend application module is not present. Docker is not part of
-GitHub Pages production. Its future support status is intentionally undecided.
+GitHub Pages production and is retained as an unsupported legacy artifact.
+Restoration or removal requires a separate approved task.
 
 ## `docs/`
 
