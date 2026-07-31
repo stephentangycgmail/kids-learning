@@ -59,7 +59,10 @@ is historical, audit, or release work.
 
 - Preserve the static GitHub Pages runtime and existing JSON compatibility.
 - Grammar Practice sessions contain 20 questions; submitted and abandoned
-  records remain locked and reviewable with score and duration evidence.
+  records remain locked. Submitted records retain score, review, and duration
+  evidence. Abandoned records remain distinguishable and retain duration, but
+  do not receive a score summary or completed-answer review unless the current
+  runtime and tests explicitly implement that behavior.
 - Preserve sentence-rearrangement token identity, punctuation, and
   capitalization rules defined by current content, implementation, and tests.
 - Preserve Dictation resume, stop/reset, natural-completion, settings, and
