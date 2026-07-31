@@ -3,24 +3,27 @@
 This manifest records verified repository and production evidence. It does not
 create or redefine a release.
 
-## v1.1.0 Release Candidate
+## Current Official Release
 
 | Field | Verified value |
 | --- | --- |
-| Planned version | `1.1.0` |
-| Planned tag | `v1.1.0` |
-| Status | Release preparation; not yet tagged or deployed |
+| Version | `1.1.0` |
+| Tag | `v1.1.0` (annotated) |
+| Status | Published and verified |
 | Preparation base | `develop` commit `b423155acbda554b50d2c0d5d2e7302a8e5c2dd3` |
 | Production platform | GitHub Pages static hosting |
 | Release artifact | N/A; production serves committed static files |
 | Docker | Retained unsupported legacy artifact; not a release path |
-| Final release commit | Pending approved merge to `main` |
-| Production verification | Pending GitHub Pages deployment |
+| Release commit | `67bf0d38282fa50e761b7c437cc40d12ac71a8f0` |
+| GitHub Release | Published 2026-07-31 |
+| Pages deployment | Built from release commit on 2026-07-31 |
+| Production verification | HTTP and browser smoke passed |
+| Rollback baseline | `v1.1.0` |
 
 The minor version is required because the release includes Offline English
 Grammar Practice, a backward-compatible student feature added after `v1.0.0`.
-The final commit, tag, deployment date, validation evidence, and rollback
-baseline must be recorded from completed release gates rather than inferred.
+The release commit, tag, deployment, validation evidence, and rollback baseline
+above were recorded from completed release gates.
 
 ## Tagged Baseline
 
@@ -38,7 +41,7 @@ baseline must be recorded from completed release gates rather than inferred.
 
 The tag is an ancestor of current `main` and remains immutable.
 
-## Current Verified Production Deployment
+## Previous Verified Production Deployment
 
 | Field | Verified value |
 | --- | --- |
@@ -49,8 +52,8 @@ The tag is an ancestor of current `main` and remains immutable.
 | Pages state | Built, public, HTTPS enforced |
 | Version classification | Untagged post-v1.0.0 production deployment |
 
-This deployment contains the Offline English Grammar Practice work added after
-the `v1.0.0` tag. No later version or release tag is inferred.
+This deployment contained the Offline English Grammar Practice work added after
+the `v1.0.0` tag and was superseded by the verified `v1.1.0` deployment.
 
 ## Validation Evidence
 
