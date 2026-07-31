@@ -85,14 +85,12 @@ For production recovery:
 
 ## Current Verified State
 
-- Tagged baseline: `v1.0.0`
-- Tagged commit: `c2cbcba61a680c809ad31c9f7696f74318dee7a4`
-- Tag date: 2026-07-03
+- Current release: `v1.1.0`
+- Tagged commit: `67bf0d38282fa50e761b7c437cc40d12ac71a8f0`
+- Tag date: 2026-07-31
 - Current verified Pages deployment commit:
-  `a3c661012c16a3215cc9d3c52c4eb34a376ff41f`
-- Current deployment date: 2026-07-17
-- GitHub Release for `v1.0.0`: not present
+  `67bf0d38282fa50e761b7c437cc40d12ac71a8f0`
+- Current deployment date: 2026-07-31
+- GitHub Release for `v1.1.0`: published
 
-The current Pages commit contains changes made after the `v1.0.0` tag.
-Documentation must not relabel that commit without an approved release
-decision.
+The immutable `v1.0.0` tag remains the prior release baseline.
