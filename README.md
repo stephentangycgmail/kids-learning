@@ -14,12 +14,10 @@ The production site uses committed HTML, CSS, JavaScript, and JSON files. It doe
 - Student-facing content lives mainly in `frontend/` and `frontend/data/`.
 - Backend files are legacy/local-only tooling and are not part of the current production deployment.
 - AI Teacher remains disabled for static production use while live API usage is paused.
-- The current Pages deployment contains changes made after the `v1.0.0` tag.
-  See [Release Manifest](docs/RELEASE_MANIFEST.md) for verified commits and
-  dates.
-- The next official release is being prepared as `v1.1.0` because it includes
-  the backward-compatible Offline English Grammar Practice feature added after
-  `v1.0.0`.
+- Current official release: `v1.1.0`, deployed from commit
+  `67bf0d38282fa50e761b7c437cc40d12ac71a8f0`.
+- See [Release Manifest](docs/RELEASE_MANIFEST.md) for verified release and
+  deployment evidence.
 
 ## Website Areas
 

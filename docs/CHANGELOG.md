@@ -3,7 +3,7 @@
 Release identity and deployment evidence are maintained in
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
 
-## Unreleased - v1.1.0
+## v1.1.0 - 2026-07-31
 
 ### Added
 
@@ -30,8 +30,8 @@ Release identity and deployment evidence are maintained in
   English Grammar Practice feature added after `v1.0.0`.
 - GitHub Pages remains the only official deployment path. The retained
   Dockerfile is an unsupported legacy artifact.
-- Final tag, release commit, deployment, and production evidence remain pending
-  until the release gates complete.
+- Tagged release commit `67bf0d38282fa50e761b7c437cc40d12ac71a8f0`
+  was published through GitHub Pages and verified in production.
 
 ## 2026-07-17 - Untagged Production Deployment
 

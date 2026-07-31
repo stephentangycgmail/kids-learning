@@ -2,12 +2,10 @@
 
 ## Current Version
 
-Tagged baseline: `v1.0.0`
+Current official release: `v1.1.0`
 
-Current Pages state: later untagged `main` deployment. See
+Current Pages state: verified `v1.1.0` deployment. See
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
-
-Next planned official release: `v1.1.0`.
 
 ## Current Status
 

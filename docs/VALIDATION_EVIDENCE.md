@@ -3,13 +3,13 @@
 This file records dated validation evidence. It is not a substitute for
 production acceptance testing and does not retroactively prove release checks.
 
-## 2026-07-31 v1.1.0 Release-Candidate Validation
+## 2026-07-31 v1.1.0 Release Validation
 
 Baseline:
 
 - Branch: `release/kids-learning-next`
 - Preparation base: `b423155acbda554b50d2c0d5d2e7302a8e5c2dd3`
-- Final release and production commits: pending completion of the release gates
+- Release and production commit: `67bf0d38282fa50e761b7c437cc40d12ac71a8f0`
 
 Results:
 
@@ -28,8 +28,11 @@ Results:
 | Responsive browser smoke | 1280 px desktop and 390 px mobile passed without horizontal overflow |
 | Grammar Practice browser smoke | 20-question session, submission, review, history, resume, and abandon passed |
 
-GitHub pull-request checks, the final GitHub Pages deployment, and direct
-production verification remain pending until their respective release gates.
+GitHub pull-request checks passed. The GitHub Pages build completed for the
+release commit, and direct production HTTP/browser checks confirmed the home,
+Vocabulary, AI Teacher, Dictation, Chinese Dictation, Grammar, Grammar Practice,
+history, stylesheet, and Service Worker resources were available. Vocabulary
+and AI Teacher loaded normally without a stylesheet 404.
 
 ## 2026-07-26 Documentation Audit Baseline
 

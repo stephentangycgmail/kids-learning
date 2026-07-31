@@ -6,7 +6,7 @@ Verified tag and deployment identities are maintained in
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md). A production deployment is not
 automatically an official release.
 
-## v1.1.0 Release Candidate - July 2026
+## v1.1.0 - 31 July 2026
 
 Focus:
 
@@ -25,8 +25,8 @@ Release boundary:
 - Docker remains a retained, unsupported legacy artifact.
 - No production API, login, paid service, Azure dependency, or new Service
   Worker is introduced.
-- Tag, GitHub Release, and final production evidence are pending until all
-  release gates pass.
+- Annotated tag `v1.1.0`, GitHub Release, and GitHub Pages deployment were
+  published from commit `67bf0d38282fa50e761b7c437cc40d12ac71a8f0`.
 
 ## v1.0.0 Tagged Baseline - 3 July 2026
 
