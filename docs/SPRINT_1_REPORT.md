@@ -1,5 +1,10 @@
 # Sprint 1 Report
 
+> **Historical report:** This document records the Sprint 1 state. Use
+> [`TECHNICAL_OVERVIEW.md`](TECHNICAL_OVERVIEW.md) for current architecture.
+> Historical backend modules discussed here are not present in the current
+> tracked repository.
+
 ## Status
 
 Sprint 1 analysis documents have been created. No existing website feature or layout was intentionally changed.

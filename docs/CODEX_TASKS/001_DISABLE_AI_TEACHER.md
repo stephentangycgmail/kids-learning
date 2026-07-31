@@ -1,5 +1,8 @@
 # Codex Task 001 - Disable AI Teacher Safely
 
+> **Historical completed task:** Retained as implementation history. AI Teacher
+> is currently disabled. This file is not an instruction to repeat the task.
+
 ## Goal
 
 Temporarily disable AI Teacher because the project is moving away from live API usage. Preserve the existing website layout and all source files. Do not delete AI Teacher code.

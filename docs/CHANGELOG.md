@@ -1,5 +1,53 @@
 # Changelog
 
+Release identity and deployment evidence are maintained in
+[`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
+
+## Unreleased - v1.1.0
+
+### Added
+
+- Added Offline English Grammar Practice with 20-question Short & Long Answer,
+  Sentence Rearrangement, and Mixed Practice sessions.
+- Added deterministic question generation, 630 validated static questions,
+  browser-local history, scoring, review, duration, resume, and abandoned
+  session handling.
+- Added repository governance, task-based AI routing, release policy, current
+  architecture, testing, deployment, and handover documentation.
+- Added regression coverage for local HTML assets and Dictation playback-state
+  controls.
+
+### Fixed
+
+- Verified BUG-001 Dictation selected-word, pause/resume, Stop, completion, and
+  mode behavior.
+- Corrected the shared Vocabulary and AI Teacher stylesheet filename from
+  `tyles.css` to `styles.css`.
+
+### Release Notes
+
+- This is a minor release because it includes the backward-compatible Offline
+  English Grammar Practice feature added after `v1.0.0`.
+- GitHub Pages remains the only official deployment path. The retained
+  Dockerfile is an unsupported legacy artifact.
+- Final tag, release commit, deployment, and production evidence remain pending
+  until the release gates complete.
+
+## 2026-07-17 - Untagged Production Deployment
+
+### Deployed
+
+- Deployed `main` commit `a3c6610` to GitHub Pages.
+- Included Offline English Grammar Practice changes made after the `v1.0.0`
+  tag.
+- Preserved static production without Azure, FastAPI, backend APIs, login, or
+  `/api/health`.
+
+### Notes
+
+- This deployment is not represented by a later release tag.
+- No new version or GitHub Release is inferred.
+
 ## 2026-07-17 - Offline English Grammar Practice
 
 ### Added
@@ -12,7 +60,38 @@
 ### Notes
 
 - The feature uses committed JSON files and does not require an API, backend service, login, or new Service Worker.
-- Manual desktop and mobile testing completed successfully before deployment.
+- Historical project notes reported manual desktop and mobile testing before
+  deployment. A dated retained manual test record is not present in the
+  repository.
+
+## 2026-07-03 - v1.0.0 Tagged Baseline
+
+### Released
+
+- Created the immutable `v1.0.0` tag at commit `c2cbcba`.
+- Confirmed GitHub Pages static hosting from `main`.
+- Confirmed production did not require Azure, FastAPI, backend APIs, login, or
+  `/api/health`.
+
+### Notes
+
+- No GitHub Release is present for this tag.
+- Later production changes do not alter the tagged commit.
+- The project moved into maintenance-oriented development after this baseline.
+
+## 2026-07-16 - Grammar Gold Lessons and Acceptance Fixes
+
+### Added
+
+- Added catalog-driven Grammar Gold Lessons for core Primary 4 grammar topics.
+- Added optional 5-question quizzes to supported Grammar lessons.
+- Added Grammar lesson navigation and Dictation deep-link support.
+
+### Fixed
+
+- Refined English Dictation resume behavior and Speech API fallback.
+- Fixed Chinese Dictation pause/resume behavior during acceptance testing.
+- Improved Grammar page layout for normal browser scrolling.
 
 ## 2026-06-30 - Epic001-G3 Automation and Quality Gate
 
@@ -24,7 +103,7 @@
 ### Notes
 
 - Automation-only milestone.
-- No website UI, learning functionality, frontend runtime, backend code, or lesson content changes are intended.
+- No website UI, learning functionality, frontend runtime, backend code, or lesson content changes were intended.
 
 ## 2026-06-30 - Epic001-G2 Content Standards
 
@@ -47,7 +126,7 @@
 - Documentation-only milestone.
 - Existing JSON files, lesson content, frontend code, backend code, and GitHub Pages behavior were not modified.
 
-## 2026-06-30
+## 2026-06-30 - Epic001-G1 Governance Foundation
 
 ### Added
 
@@ -65,9 +144,9 @@
 ### Notes
 
 - Documentation-only milestone.
-- No frontend, backend, CSS, JavaScript, JSON, lesson content, or GitHub Pages runtime changes are intended.
+- No frontend, backend, CSS, JavaScript, JSON, lesson content, or GitHub Pages runtime changes were intended.
 
-## 2026-06-29
+## 2026-06-29 - Initial Documentation Cleanup
 
 ### Added
 
@@ -80,4 +159,4 @@
 
 - Existing website behavior was not intentionally changed.
 - No new learning content was added in this cleanup phase.
-- Live API-based content generation is planned to be replaced gradually by reviewed static JSON files.
+- Live API-based content generation was planned to be replaced gradually by reviewed static JSON files.

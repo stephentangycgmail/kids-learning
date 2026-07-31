@@ -1,5 +1,9 @@
 # Sprint 2 Report
 
+> **Historical report:** This document records the completed static-migration
+> sprint. Use [`TECHNICAL_OVERVIEW.md`](TECHNICAL_OVERVIEW.md) and
+> [`DEPLOYMENT_GUIDE.md`](DEPLOYMENT_GUIDE.md) for current operation.
+
 ## Status
 
 Sprint 2 includes the static GitHub Pages migration for student-facing pages while keeping the existing UI and JSON schemas intact.

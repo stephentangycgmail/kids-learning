@@ -1,5 +1,12 @@
 # Kids Learning - Project Master Plan
 
+> **Historical planning document:** This file records the original sprint
+> sequence and long-term idea. It is not the current planning authority.
+> Use [`MASTER_TASK.md`](MASTER_TASK.md) for durable constraints,
+> [`PROJECT_DASHBOARD.md`](PROJECT_DASHBOARD.md) for current status, and
+> [`ROADMAP.md`](ROADMAP.md) for future priorities. The original plan below is
+> retained without rewriting its history.
+
 ## Vision
 Build a completely static, GitHub Pages based learning platform for children. Runtime should not depend on Azure, FastAPI or paid APIs.
 

@@ -1,5 +1,23 @@
 # EPIC-002-M1 Dictation Practice Baseline Review
 
+## Historical Review Status
+
+This is the pre-M2 baseline review retained as historical evidence. It is not a
+current Dictation implementation guide.
+
+Later EPIC-002 work superseded several findings:
+
+- Dictation discovery now uses `frontend/data/catalog.json` instead of
+  `DICTATION_FILES`.
+- Settings persistence, Play/Stop labels, resume behavior, and the speech API
+  fallback were implemented in later specifications under `.specs/EPIC-002/`.
+
+Use [`../TECHNICAL_OVERVIEW.md`](../TECHNICAL_OVERVIEW.md),
+[`../CONTENT_STANDARD.md`](../CONTENT_STANDARD.md), and
+[`../TESTING_GUIDE.md`](../TESTING_GUIDE.md) for current behavior and
+validation. The original baseline observations below are intentionally not
+rewritten.
+
 ## Overview
 
 Dictation Practice is the English sentence dictation module reached from the English menu. Its purpose is to let a student select a dictation set, hide or reveal sentences, listen to sentence audio through the browser Web Speech API, click individual words for pronunciation, and view vocabulary hints from static JSON.

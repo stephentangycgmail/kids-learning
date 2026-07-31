@@ -1,85 +1,89 @@
 # Roadmap
 
-This roadmap organizes long-term platform work by version. It should guide planning without forcing large rewrites.
+This is the authority for future Kids Learning priorities. Durable product
+constraints belong in [`MASTER_TASK.md`](MASTER_TASK.md); current status
+belongs in [`PROJECT_DASHBOARD.md`](PROJECT_DASHBOARD.md).
 
-## Version 2 - Static Platform Foundation
+## Current Phase: Maintenance
 
-Goal: make the existing student website stable, maintainable, and safe as a static GitHub Pages platform.
+Kids Learning has a `v1.0.0` tagged baseline and a later untagged GitHub Pages
+deployment. Current priorities are:
 
-Priorities:
+- preserve production stability and GitHub Pages compatibility;
+- fix verified runtime defects through focused implementation tasks;
+- improve reviewed learning content without breaking catalogs or schemas;
+- maintain credible validation and release evidence;
+- keep AI Teacher disabled until a separately approved design exists.
 
-- Preserve current student-facing behavior.
-- Keep GitHub Pages compatibility.
-- Keep backend tooling local-only.
-- Establish project governance documents.
-- Maintain static JSON learning content under `frontend/data/`.
-- Keep AI Teacher disabled until a reviewed design exists.
-- Add validation practices for documentation, JSON, and static pages.
+## Completed Foundation
 
-Expected outcomes:
+- Static GitHub Pages student runtime.
+- Root redirect and subject menus.
+- English and Chinese Dictation using static JSON and browser speech.
+- Catalog-driven Grammar Gold Lessons and supported quizzes.
+- Offline English Grammar Practice with local history and automated tests.
+- AI Teacher disabled for production.
+- JSON and Markdown GitHub Actions validation.
+- Repository governance, content standards, and documentation audit.
+- BUG-001 Dictation resume verification and static asset regression coverage.
+- Vocabulary and AI Teacher shared stylesheet path correction.
 
-- Clear repository rules.
-- Clear development workflow.
-- Canonical folder structure.
-- Stable documentation baseline.
-- No student-facing backend dependency.
+## Next Priorities
 
-## Version 2.5 - Content Factory and Quality Gates
+### P1: Reliability
 
-Goal: create a repeatable workflow for producing, reviewing, validating, and publishing lesson content.
+- Preserve the verified Dictation playback-state behavior and static asset
+  checks.
+- Keep Docker outside supported runtime and deployment paths unless a separate
+  approved task restores it.
 
-Priorities:
+### P2: Quality
 
-- Define Lesson Package structure.
-- Expand JSON schema documentation.
-- Add content review checklists.
-- Add JSON validation scripts or documented validation commands.
-- Separate draft/generated content from reviewed published content.
-- Document how Codex or ChatGPT should help create content safely.
+- Expand automated/static reference coverage beyond Grammar Practice.
+- Record dated browser, device, speech, and production validation evidence.
+- Improve reviewed English, Chinese, and Math learning content through small,
+  catalog-compatible changes.
+- Improve accessibility and mobile usability without broad redesign.
 
-Expected outcomes:
+### P3: Maintainability
 
-- Reviewed lesson content workflow.
-- Lower risk of malformed JSON.
-- Better traceability for content changes.
-- Clear approval path for new learning materials.
+- Continue reducing obsolete documentation after references are understood.
+- Keep current architecture separate from historical backend records.
+- Consolidate content-generation and review procedures as they are exercised.
 
-## Version 3 - Learning Platform Expansion
+## Deferred Content Package Direction
 
-Goal: expand learning modules while preserving the static-first architecture.
+Future Lesson Packages, metadata, lifecycle states, and indexes remain a
+documented design direction. They are not the current runtime model.
 
-Potential areas:
+Any implementation must first reconcile:
 
-- More grammar modules.
-- Improved dictation selection.
+- [`CONTENT_STANDARD.md`](CONTENT_STANDARD.md)
+- [`LESSON_PACKAGE_STANDARD.md`](LESSON_PACKAGE_STANDARD.md)
+- [`INDEX_STANDARD.md`](INDEX_STANDARD.md)
+- current `catalog.json`, `grammar_catalog.json`, and
+  `grammar_practice_manifest.json`
+
+Do not create parallel indexes or migrate existing content without an approved
+implementation and compatibility plan.
+
+## Longer-Term Possibilities
+
+- More grammar and dictation material.
 - Vocabulary review modes.
 - Reading comprehension.
 - Phonics or pronunciation practice.
 - Quiz improvements.
-- Progress-friendly UX that can still work without a backend.
-
-Expected outcomes:
-
-- Richer learning experience.
-- More reusable lesson package patterns.
-- Better content organization.
-- Continued GitHub Pages compatibility.
-
-## Future
-
-Longer-term possibilities:
-
-- Optional local tooling for content generation and validation.
-- Optional teacher/admin workflows that do not affect student static runtime.
 - Better offline/PWA behavior.
-- Custom domain and deployment monitoring.
-- Accessibility and mobile usability improvements.
-- Carefully reviewed backend services only if static hosting can no longer meet a clearly defined need.
+- Optional teacher/admin tooling that does not weaken the static student
+  runtime.
+- Carefully reviewed backend services only if static hosting no longer meets a
+  clearly defined need.
 
 ## Roadmap Rules
 
-- Do not trade maintainability for speed.
+- Prefer small, reviewable milestones.
 - Do not add paid API dependencies to student-facing pages.
 - Do not change JSON schemas without explicit migration planning.
 - Do not redesign existing UI without a dedicated approved milestone.
-- Prefer small, reviewable milestones.
+- Do not treat a roadmap item as implemented until repository evidence exists.

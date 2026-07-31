@@ -1,30 +1,44 @@
 # Codex Workflow
 
-This document describes the recommended workflow for future code changes.
+This document describes the recommended workflow for future Codex tasks in the maintenance-phase Kids Learning repository.
+
+Root [`AGENTS.md`](../AGENTS.md) is authoritative for safety, Git, and release
+authorization. This file defines task sequencing and should not duplicate or
+weaken those rules.
+
+## Current Context
+
+- Kids Learning has a `v1.0.0` tagged baseline and a later untagged Pages
+  deployment.
+- Production is static hosting from `main`.
+- Normal maintenance and development work happens on `develop` or a focused branch.
+- Azure and backend APIs are not part of the current production deployment process.
 
 ## Recommended Process
 
 ```text
-1. User describes the change request
-2. ChatGPT clarifies and prepares a precise task brief
-3. Codex implements the task in GitHub
-4. ChatGPT reviews the changed files
-5. User approves and keeps the final version
+1. User describes the change request.
+2. Codex reads AGENTS.md and relevant repository docs.
+3. Codex inspects the relevant code or content files.
+4. Codex confirms scope and risk when needed.
+5. Codex implements the smallest reasonable change.
+6. Codex validates with existing checks and relevant smoke tests.
+7. Codex reports changed files, validation, skipped checks, and risks.
+8. User reviews before commit, push, release, tag, or deployment when approval is required.
 ```
 
-## Why Not Ask Codex Directly First
+## Task Brief Template
 
-Codex works best when the task is already clear. For this project, many changes affect learning flow, JSON formats, and frontend behavior. A planning step helps avoid accidental rewrites or format mismatches.
-
-## Codex Task Brief Template
-
-Use this format when giving work to Codex:
+Use this format when giving larger work to Codex:
 
 ```markdown
 # Task
 
 ## Goal
 Describe the intended result.
+
+## Branch
+Name the required branch.
 
 ## Scope
 List files or folders that may be changed.
@@ -38,41 +52,32 @@ Detailed bullet points.
 ## Validation
 How to check the result manually or with tests.
 
+## Commit / Push
+State whether Codex should commit or push.
+
 ## Notes
 Any project-specific constraints.
 ```
 
 ## Safety Rules
 
-Codex must not commit or expose:
+Follow the safety and authorization rules in root `AGENTS.md`. Configuration
+boundaries are maintained in [`CONFIGURATION.md`](CONFIGURATION.md), and
+release rules are maintained in [`RELEASE_POLICY.md`](RELEASE_POLICY.md).
+
+## Content Rule
+
+When adding or improving learning content, prefer:
 
 ```text
-backend/config.json
-.env
-.env.*
-API keys
-passwords
-tokens
+reviewed content -> static JSON under frontend/data/ -> catalog update if needed -> validation
 ```
 
-Codex should not rewrite the whole project unless explicitly requested.
+Do not add live API calls to student-facing pages unless a future architecture task explicitly approves it.
 
-## First Cleanup Phase Rules
+## Documentation Rule
 
-During the current cleanup phase:
-
-- Do not add new教材.
-- Do not change existing JSON formats.
-- Do not remove working pages.
-- Do not migrate away from Azure code yet.
-- Only document, secure, and prepare the project for future work.
-
-## Future Content Generation Rule
-
-When adding new教材 later, prefer:
-
-```text
-Generate JSON → save under frontend/data/ → website reads static JSON
-```
-
-rather than adding live API calls.
+Apply the mandatory documentation-impact review in root
+[`AGENTS.md`](../AGENTS.md) before treating a task as complete. Update only
+the authoritative and directly affected documents, or record in the pull
+request why no documentation update is required.

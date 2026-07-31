@@ -2,125 +2,127 @@
 
 This is the highest-level project specification for `stephentangycgmail/kids-learning`.
 
+## Project Status
+
+Kids Learning has an immutable `v1.0.0` tagged baseline. GitHub Pages currently
+serves a later untagged `main` deployment that includes post-tag changes. The
+project is in maintenance mode.
+
+Production is static hosting from GitHub Pages. Azure, FastAPI, and backend APIs are not part of the current production deployment process.
+
 ## Project Vision
 
-Kids Learning is a long-term educational platform for child-friendly learning activities. The project should stay simple to host, easy to maintain, and safe for students to use without live backend services.
+Kids Learning is a long-term educational platform for child-friendly learning activities. It should stay simple to host, easy to maintain, safe for students, and practical for reviewed content growth.
 
-The platform should grow through reviewed lesson content, predictable page behavior, and clear project governance.
+The platform should grow through stable static pages, reviewed JSON content, small improvements, and clear release discipline.
 
 ## Platform Philosophy
 
-1. Static-first: student-facing pages should work on GitHub Pages.
-2. Local-first tooling: backend scripts may exist for local generation, validation, or maintenance.
-3. Reviewed content: lesson materials should be committed as reviewed JSON under `frontend/data/`.
-4. Backward compatibility: existing pages, layouts, JSON schemas, and lesson files should not be changed casually.
-5. No student-facing paid API dependency: students should not need FastAPI, Azure OpenAI, Azure Speech, or any backend API during normal use.
+1. Static-first: production student pages must work on GitHub Pages.
+2. Content-first: learning materials should be committed as reviewed JSON under `frontend/data/`.
+3. Local-first tooling: scripts and backend files may support local generation, validation, or migration only.
+4. Backward compatible: existing page URLs, JSON schemas, and catalog entries should remain stable unless a migration is approved.
+5. No production API dependency: students should not need Azure, FastAPI, paid APIs, login, or a backend service.
 
 ## Repository Structure
 
 ```text
 kids-learning/
-+-- frontend/      # Student-facing static website
-+-- backend/       # Legacy/local-only tooling and generated output
-+-- docs/          # Governance, architecture, workflow, and planning docs
-+-- index.html     # GitHub Pages redirect to frontend/index.html
-+-- README.md      # Project overview and documentation index
-+-- Dockerfile     # Existing container configuration
-`-- .gitignore     # Secret and generated-file protection
++-- .github/workflows/   # JSON and Markdown validation
++-- frontend/            # Student-facing static website
++-- frontend/data/       # Reviewed JSON content and catalogs
++-- backend/             # Legacy/local-only tooling and generated output
++-- docs/                # Governance, standards, architecture, release docs
++-- tools/               # Local generation and validation scripts
++-- tests/               # Automated checks for Grammar Practice content
++-- AGENTS.md            # Codex repository instructions
++-- index.html           # GitHub Pages redirect to frontend/index.html
+`-- README.md
 ```
 
-## Folder Structure
+See [FOLDER_STRUCTURE.md](FOLDER_STRUCTURE.md) for the canonical folder reference.
 
-The canonical folder reference is [FOLDER_STRUCTURE.md](FOLDER_STRUCTURE.md).
+## Current Architecture
 
-High-level rules:
+- `index.html` redirects GitHub Pages visitors to `frontend/index.html`.
+- Main subject pages are static HTML files under `frontend/`.
+- Student data is fetched from relative `frontend/data/` JSON paths.
+- English Dictation uses `catalog.json` plus dictation JSON files.
+- Grammar lessons use `grammar_catalog.json` plus lesson JSON files.
+- English Grammar Practice uses a static manifest and question banks with browser-local practice history.
+- Browser speech uses the Web Speech API where available.
+- AI Teacher is present but disabled for static production use.
+- Backend files are retained as legacy/local-only tooling.
 
-- Keep student-facing HTML, CSS, JavaScript, and JSON in `frontend/`.
-- Keep reviewed learning JSON in `frontend/data/`.
-- Keep local-only backend tooling in `backend/`.
-- Keep project governance and planning documents in `docs/`.
-- Do not add secrets, API keys, or local-only config to the repository.
+See [TECHNICAL_OVERVIEW.md](TECHNICAL_OVERVIEW.md) for implementation details.
 
 ## Development Workflow
 
-The standard workflow is:
-
-1. Analyze the current repository and documentation.
-2. Plan the change before editing.
-3. Implement the smallest reviewable change.
-4. Validate that static GitHub Pages behavior still works.
+1. Inspect the relevant implementation and documentation.
+2. Plan the change before editing when the task is non-trivial.
+3. Make the smallest reasonable change.
+4. Validate JSON, Markdown links, and affected static pages.
 5. Report changed files, validation, risks, and follow-up recommendations.
 
-See [DEVELOPMENT_GUIDE.md](DEVELOPMENT_GUIDE.md) for branch, review, and release workflow.
+## Branch Strategy
 
-## GitHub Workflow
+- `main`: production branch published by GitHub Pages.
+- `develop`: integration branch for approved maintenance and feature work.
+- `feature/*`, `fix/*`, `docs/*`: focused task branches when useful.
 
-Preferred workflow for normal development:
+Normal development should not be committed directly to `main`. Release flow is `develop -> main` and requires explicit user approval before merging, pushing `main`, tagging, creating a GitHub Release, or deploying.
 
-1. Create a feature branch from `main`.
-2. Make a focused change.
-3. Validate locally.
-4. Open a pull request with a concise summary and checklist.
-5. Review docs, runtime behavior, and static-hosting compatibility.
-6. Merge after approval.
+## Content Model
 
-Commit messages should be clear and milestone-oriented when applicable, for example:
+The current content model is catalog-driven where needed:
 
-```text
-Epic 001 - Milestone 1 Project Governance
-```
+- English Dictation: `frontend/data/catalog.json`.
+- Grammar lessons: `frontend/data/grammar_catalog.json`.
+- Grammar Practice: `frontend/data/grammar_practice_manifest.json`.
 
-## Lesson Package Overview
-
-A Lesson Package is the long-term unit for shipping reviewed learning content.
-
-Expected package elements:
-
-- Lesson metadata.
-- Student-facing activity data.
-- Vocabulary or grammar support data.
-- Review checklist.
-- Validation result.
-- Notes about which page or module consumes the data.
-
-Lesson Packages should preserve existing JSON schemas unless a schema change is explicitly planned and documented.
-
-## Content Factory Overview
-
-The Content Factory is the future workflow for creating, reviewing, validating, and publishing learning materials.
-
-Target flow:
-
-```text
-Draft content
-  -> generate or edit JSON
-  -> validate JSON
-  -> review educational quality
-  -> commit under frontend/data/
-  -> verify static pages load the content
-```
-
-Backend or AI-assisted tools may help generate drafts, but the student website should read reviewed static JSON.
+Lesson JSON should remain backward compatible. Adding or renaming a lesson file requires updating the relevant catalog. See [CONTENT_STANDARD.md](CONTENT_STANDARD.md).
 
 ## Quality Gate
 
 Before changes are accepted:
 
-1. No secrets or local config are committed.
+1. No secrets or local-only config are committed.
 2. GitHub Pages compatibility is preserved.
-3. Existing UI layout is unchanged unless the task explicitly allows it.
-4. Existing JSON schemas are unchanged unless the task explicitly allows it.
-5. Student-facing pages do not require backend APIs.
-6. Documentation links are valid.
-7. Validation results are recorded in the final report or pull request.
+3. Existing JSON compatibility is preserved or the migration is documented and approved.
+4. Student-facing pages do not require backend APIs.
+5. Markdown links are valid.
+6. JSON files parse correctly.
+7. Relevant static-page smoke tests are performed or explicitly reported as skipped.
 
-## Future Roadmap
+## Release and Deployment
 
-The canonical roadmap is [ROADMAP.md](ROADMAP.md).
+GitHub Pages is the official production deployment method. The current tagged
+release baseline is `v1.0.0`; the current Pages deployment is newer and
+untagged. See [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
 
-Long-term direction:
+Release preparation must confirm:
 
-- Version 2: governance foundation and static-site stability.
-- Version 2.5: content workflow and validation.
-- Version 3: lesson package system and richer learning modules.
-- Future: scalable educational platform features while preserving static-first operation.
+- working tree is clean
+- `develop` is synchronized with `origin/develop`
+- `main` is synchronized before the release merge
+- validation passes
+- the release merge is intentional
+- GitHub Pages deployment succeeds
+- production smoke tests pass
+
+See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md).
+
+Repository release rules are maintained in
+[`RELEASE_POLICY.md`](RELEASE_POLICY.md).
+
+## Roadmap
+
+Maintenance priorities:
+
+- Fix production bugs.
+- Improve lesson content quality.
+- Preserve static hosting compatibility.
+- Keep documentation aligned with implementation.
+- Add small, well-tested improvements.
+
+Future roadmap work belongs in [ROADMAP.md](ROADMAP.md), GitHub Issues, or dedicated planning documents.
