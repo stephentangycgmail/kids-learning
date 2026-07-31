@@ -31,6 +31,45 @@ Durable instructions for future Codex work in the Kids Learning repository.
 - Never discard, stash, apply, or delete user changes without permission.
 - Clearly report modified files, validation performed, skipped checks, and important decisions.
 
+## Task-Based Reading
+
+Read this file first, then only the authorities needed for the task:
+
+| Task | Required reading |
+| --- | --- |
+| Small bug fix | The affected rule in [`docs/MASTER_TASK.md`](docs/MASTER_TASK.md), [`docs/CONTENT_STANDARD.md`](docs/CONTENT_STANDARD.md), or a feature specification; affected implementation and related tests |
+| Exercise or question-rule change | [`docs/CONTENT_STANDARD.md`](docs/CONTENT_STANDARD.md), affected JSON/generator, related tests, and the relevant [`docs/USER_GUIDE.md`](docs/USER_GUIDE.md) section |
+| Dictation or speech change | [`docs/TTS_SPECIFICATION.md`](docs/TTS_SPECIFICATION.md), affected Dictation implementation/content, related tests, and the Dictation section of the User Guide |
+| Grammar or sentence-rearrangement change | [`docs/CONTENT_STANDARD.md`](docs/CONTENT_STANDARD.md), affected content/generator and implementation, related tests, and the relevant User Guide section |
+| UI or layout change | Relevant User Guide section, affected HTML/CSS/JavaScript, accessibility/responsive expectations, and related tests |
+| Content-only update | [`docs/CONTENT_STANDARD.md`](docs/CONTENT_STANDARD.md), affected JSON/catalog, validation tools, and content tests |
+| Test-only change | [`docs/TESTING_GUIDE.md`](docs/TESTING_GUIDE.md), the rules being tested, and affected tests |
+| GitHub Pages or deployment | [`docs/DEPLOYMENT_GUIDE.md`](docs/DEPLOYMENT_GUIDE.md), affected workflow/site configuration, and relevant checks |
+| Release or version work | [`docs/RELEASE_POLICY.md`](docs/RELEASE_POLICY.md), [`docs/RELEASE_MANIFEST.md`](docs/RELEASE_MANIFEST.md), changelog/release notes, deployment guidance, and applicable evidence |
+| Documentation only | This file, the target source of truth, and direct references only |
+| Architecture or handover | [`docs/AI_HANDOVER.md`](docs/AI_HANDOVER.md), [`docs/TECHNICAL_OVERVIEW.md`](docs/TECHNICAL_OVERVIEW.md), and directly affected build/deployment authorities |
+
+If no row fits, read the closest current rule, affected implementation, and
+related tests, then stop for clarification if authority remains ambiguous.
+Do not treat `.specs/`, sprint reports, task briefs, changelogs, dated audits,
+validation evidence, or release notes as current instructions unless the task
+is historical, audit, or release work.
+
+## Durable Maintenance Constraints
+
+- Preserve the static GitHub Pages runtime and existing JSON compatibility.
+- Grammar Practice sessions contain 20 questions; submitted and abandoned
+  records remain locked and reviewable with score and duration evidence.
+- Preserve sentence-rearrangement token identity, punctuation, and
+  capitalization rules defined by current content, implementation, and tests.
+- Preserve Dictation resume, stop/reset, natural-completion, settings, and
+  unsupported-speech behavior unless explicitly changed.
+- Keep reviewed content in committed JSON and do not add a live student API,
+  login, production backend, or new Service Worker dependency without an
+  approved architecture change.
+- Preserve `develop` as integration and `main` as production. Maintenance work
+  must not become an unrequested redesign or broad refactor.
+
 ## Documentation Synchronization Requirement
 
 Every implementation change requires a documentation-impact review. In the
@@ -94,6 +133,7 @@ change is required.
   - `docs/PROJECT_DASHBOARD.md`: current status
   - `docs/ROADMAP.md`: future priorities
   - `docs/TECHNICAL_OVERVIEW.md`: current architecture
+  - `docs/AI_HANDOVER.md`: fresh-agent maintenance and recovery entry point
   - `docs/SYSTEM_ARCHITECTURE_V1.md`: historical architecture
 - Keep `README.md` and related docs consistent when behavior, structure, workflow, or deployment changes.
 - Use GitHub Issues or `docs/MASTER_TASK.md` for roadmap and future work. Do not turn this file into a task backlog.

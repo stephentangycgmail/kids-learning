@@ -1,5 +1,10 @@
 # Documentation Audit
 
+> **Historical snapshot:** This audit records repository state and findings at
+> the baseline below. It is evidence, not the current governance or task
+> authority. Use root [`AGENTS.md`](../AGENTS.md) for AI instructions and the
+> current documents linked from [`README.md`](../README.md) for active rules.
+
 Audit date: 2026-07-26
 
 Audit baseline:
