@@ -156,13 +156,21 @@ When instructions appear to conflict, apply them in this order:
 
 1. Platform, safety, legal, and security requirements.
 2. The user's explicit instructions for the current task.
-3. This root `AGENTS.md`.
-4. The nearest applicable project or directory `AGENTS.md`.
-5. Current task-specific authority documents identified by `AGENTS.md`.
+3. The nearest applicable scoped project or directory `AGENTS.md`.
+4. This root `AGENTS.md`.
+5. Current task-specific authority documents identified by the applicable
+   `AGENTS.md`.
 6. Explicitly authorized optional plugin guidance.
 7. General agent preferences, heuristics, and optimization advice.
 
 A lower-priority instruction must not override a higher-priority requirement.
+The nearest applicable scoped `AGENTS.md` governs within its directory scope
+and may refine or strengthen root requirements. It must not weaken platform,
+safety, legal, security, or explicit current-task user requirements.
+
+This root `AGENTS.md` supplies repository-wide defaults. A nearer `AGENTS.md`
+takes precedence only for matters within its defined scope. Rules outside that
+scope remain governed by this root file.
 
 ### Authorized Optional Plugins
 
