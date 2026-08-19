@@ -71,6 +71,21 @@ Rules:
 - New Grammar lessons should require one lesson JSON file plus one catalog entry.
 - Do not create duplicate visible lesson titles.
 
+### Temporary Preview Grammar Data
+
+File: `frontend/data/grammar_preview_topics.json`
+
+This file is reserved for temporary user-acceptance-test content shown only by
+`frontend/grammar_preview.html`. It is intentionally not referenced from
+`grammar_catalog.json` and must not change released Grammar lessons or English
+Grammar Practice question banks.
+
+Preview topic data contains a `preview: true` marker, a `topics` array, visual
+learning cards, and staged multiple-choice practice questions with an answer
+and an explanation for each choice set. Preview completion may be stored only
+in browser-local storage under a separate key; it must not be mixed into the
+released Grammar Practice history schema.
+
 ## Vocabulary
 
 ### `vocab.json`

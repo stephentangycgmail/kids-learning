@@ -1,0 +1,50 @@
+:root { color-scheme: light; font-family: Arial, Helvetica, sans-serif; background: #f7fbff; color: #17324d; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.site-header { align-items: center; background: #153b66; color: #fff; display: flex; gap: 18px; padding: 20px max(20px, calc((100% - 1050px) / 2)); }
+.site-header h1, .site-header p { margin: 0; }
+.site-header h1 { font-size: clamp(1.5rem, 4vw, 2.25rem); }
+.eyebrow { color: #ffe89b; font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.zh-text { color: #d6eaff; margin-top: 4px !important; }
+.back-link { background: #fff; border-radius: 999px; color: #153b66; font-weight: 700; padding: 10px 14px; text-decoration: none; white-space: nowrap; }
+.page-shell { margin: 0 auto; max-width: 1050px; padding: 24px 18px 48px; }
+.preview-notice, .notice { background: #fff5cf; border: 2px solid #f4ca50; border-radius: 14px; display: flex; gap: 10px; margin-bottom: 18px; padding: 13px 16px; }
+.topic-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
+.topic-tabs button, .choice, .next-button { border: 0; border-radius: 12px; cursor: pointer; font: inherit; font-weight: 700; }
+.topic-tabs button { background: #e2edf8; color: #17324d; padding: 12px 16px; }
+.topic-tabs button[aria-selected="true"] { background: #2176c5; color: #fff; }
+.lesson { display: grid; gap: 20px; }
+.hero, .learning-card, .practice-card, .completion-card { background: #fff; border: 1px solid #d4e2ef; border-radius: 20px; box-shadow: 0 4px 14px #163b6520; padding: clamp(18px, 4vw, 30px); }
+.hero { background: linear-gradient(135deg, #dff4ff, #fff0c9); }
+.hero h2 { font-size: clamp(1.7rem, 5vw, 2.7rem); margin: 0 0 8px; }
+.hero p { font-size: 1.1rem; line-height: 1.55; max-width: 760px; }
+.step-label { color: #2176c5; font-size: .9rem; font-weight: 800; margin: 0; text-transform: uppercase; }
+.visual-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+.visual-card { background: #f4f9fd; border: 2px solid #d4e2ef; border-radius: 16px; min-height: 175px; padding: 16px; text-align: center; }
+.visual-card .picture { display: block; font-size: 4rem; line-height: 1.1; margin-bottom: 10px; }
+.visual-card h3 { margin: 0 0 7px; }
+.visual-card p { margin: 0; line-height: 1.4; }
+.rule-list { display: grid; gap: 10px; margin: 0; padding-left: 22px; }
+.rule-list li { line-height: 1.5; }
+.comparison { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.comparison > div { border-radius: 15px; padding: 18px; }
+.countable { background: #e6f7e9; border: 2px solid #76be83; }
+.uncountable { background: #e4f1ff; border: 2px solid #74a9dc; }
+.practice-header { align-items: baseline; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; }
+.practice-header h2 { margin: 0; }
+.progress { color: #48647d; font-weight: 700; }
+.question-visual { font-size: 4.5rem; margin: 12px 0; text-align: center; }
+.prompt { font-size: 1.25rem; font-weight: 700; line-height: 1.45; }
+.choice-list { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+.choice { background: #edf4fb; border: 2px solid #c5d9ea; color: #17324d; min-height: 54px; padding: 12px; text-align: left; }
+.choice:hover { border-color: #2176c5; }
+.choice.correct { background: #ddf7e3; border-color: #32914a; }
+.choice.wrong { background: #ffe5e1; border-color: #cc4e42; }
+.feedback { border-radius: 12px; font-weight: 700; line-height: 1.5; margin-top: 16px; padding: 13px; }
+.feedback.good { background: #ddf7e3; color: #175f2d; }
+.feedback.try { background: #ffe5e1; color: #8d2d25; }
+.next-button { background: #2176c5; color: #fff; margin-top: 16px; padding: 13px 18px; }
+.next-button:hover { background: #145a9e; }
+.completion-card { background: #e9f8ec; border-color: #69b47a; text-align: center; }
+.completion-card .picture { font-size: 4rem; }
+@media (max-width: 650px) { .site-header { align-items: flex-start; flex-direction: column; } .back-link { order: 2; } }

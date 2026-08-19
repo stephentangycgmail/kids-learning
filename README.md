@@ -29,6 +29,7 @@ The production site uses committed HTML, CSS, JavaScript, and JSON files. It doe
 - Grammar lessons: `frontend/grammar.html`
 - English Grammar Practice: `frontend/grammar_practice.html`
 - Practice history and results: `frontend/grammar_practice_history.html`, `frontend/grammar_practice_result.html`
+- TEST / Preview Grammar: `frontend/grammar_preview.html` (temporary UAT content; not part of released Grammar)
 
 ## Repository Structure
 

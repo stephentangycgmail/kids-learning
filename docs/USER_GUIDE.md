@@ -40,6 +40,14 @@ Grammar lessons are loaded from the committed lesson catalog. Select lesson
 tabs, review examples and practice, use a quiz when the lesson provides one,
 or follow the Dictation link for the selected lesson.
 
+### TEST / Preview Grammar
+
+The English menu includes a clearly marked temporary TEST / Preview entry for
+user acceptance testing. It currently offers visual Question Words and
+Quantifiers learning followed by short progressive practice. Preview completion
+is stored only in the current browser and is separate from released Grammar
+lessons and Grammar Practice History.
+
 ### English Grammar Practice
 
 Grammar Practice provides:

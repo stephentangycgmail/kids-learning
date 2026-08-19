@@ -28,6 +28,7 @@ in [`SYSTEM_ARCHITECTURE_V1.md`](SYSTEM_ARCHITECTURE_V1.md) and
 | English Dictation | `frontend/dictation_practice.html` | Uses `catalog.json`, dictation JSON, browser SpeechSynthesis, settings persistence, and Grammar deep links. |
 | Chinese Dictation | `frontend/cn_dictation.html` | Uses static Chinese dictation JSON and browser SpeechSynthesis. |
 | Grammar lessons | `frontend/grammar.html` | Loads lesson tabs from `grammar_catalog.json`; supports lesson quizzes and Dictation deep links. |
+| TEST / Preview Grammar | `frontend/grammar_preview.html` | Temporary UAT-only Question Words and Quantifiers lessons, loaded from its separate preview JSON. It does not modify the released Grammar catalog or Grammar Practice history. |
 | English Grammar Practice | `frontend/grammar_practice.html` | Loads static question banks; stores progress/history in browser storage. |
 | Practice history | `frontend/grammar_practice_history.html` | Reads browser-local practice records. |
 | Practice result | `frontend/grammar_practice_result.html` | Displays one stored practice result. |
@@ -41,6 +42,7 @@ All reviewed production content is committed under `frontend/data/`.
 - `catalog.json`: English Dictation lesson catalog.
 - `grammar_catalog.json`: Grammar lesson catalog and lesson order.
 - `grammar_*_lesson.json`: catalog-driven Grammar Gold Lessons.
+- `grammar_preview_topics.json`: temporary UAT-only data for the separate Preview Grammar page.
 - `grammar_practice_manifest.json`: Grammar Practice topic and bank metadata.
 - `grammar_practice_short_long.json`: short/long answer question bank.
 - `grammar_practice_rearrangement.json`: sentence rearrangement question bank.

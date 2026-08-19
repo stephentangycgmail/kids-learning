@@ -1,0 +1,102 @@
+{
+  "preview": true,
+  "title": "TEST / Preview Grammar",
+  "topics": [
+    {
+      "id": "question-words",
+      "title": "Question Words",
+      "subtitle": "Ask for the information you need.",
+      "learning": {
+        "intro": "Question words are helper words at the start of a question. Look at the picture first, then choose the word that asks for the missing information.",
+        "cards": [
+          {"word": "What", "picture": "🎁", "meaning": "Ask about a thing or an action.", "example": "What is in the box?"},
+          {"word": "Who", "picture": "🧑‍🤝‍🧑", "meaning": "Ask about a person.", "example": "Who is your teacher?"},
+          {"word": "Where", "picture": "🏫", "meaning": "Ask about a place.", "example": "Where is the library?"},
+          {"word": "When", "picture": "🕒", "meaning": "Ask about a time or day.", "example": "When is your birthday?"},
+          {"word": "Why", "picture": "🤔", "meaning": "Ask for a reason.", "example": "Why are you smiling?"},
+          {"word": "Which", "picture": "🍎🍌", "meaning": "Choose from choices.", "example": "Which fruit do you want?"},
+          {"word": "Whose", "picture": "🎒", "meaning": "Ask who owns something.", "example": "Whose bag is this?"},
+          {"word": "How", "picture": "🚌", "meaning": "Ask about a way, condition or amount.", "example": "How do you get to school?"}
+        ]
+      },
+      "stages": [
+        {
+          "title": "1. Visual choice",
+          "questions": [
+            {"visual": "🎂", "prompt": "You want to ask about the day of a birthday. Which word do you use?", "options": ["When", "Where", "Who"], "answer": "When", "why": "When asks about time or a day."},
+            {"visual": "🏠", "prompt": "You want to ask about the place where Sam lives. Which word do you use?", "options": ["Where", "What", "Why"], "answer": "Where", "why": "Where asks about a place."}
+          ]
+        },
+        {
+          "title": "2. Match the information",
+          "questions": [
+            {"visual": "👩‍🏫", "prompt": "Which question word asks for the name of a person?", "options": ["Who", "Whose", "How"], "answer": "Who", "why": "Who asks about a person. Whose asks who owns something."},
+            {"visual": "🧥", "prompt": "Which question word asks who owns this coat?", "options": ["Whose", "Which", "What"], "answer": "Whose", "why": "Whose asks about ownership."}
+          ]
+        },
+        {
+          "title": "3. Sentence choice",
+          "questions": [
+            {"visual": "🚲", "prompt": "___ do you ride your bicycle to school?", "options": ["How", "Why", "Which"], "answer": "How", "why": "How asks about the way you do something."},
+            {"visual": "😊", "prompt": "___ are you happy today?", "options": ["Why", "Where", "When"], "answer": "Why", "why": "Why asks for a reason."}
+          ]
+        },
+        {
+          "title": "4. Mixed practice",
+          "questions": [
+            {"visual": "🍎🍌", "prompt": "___ snack would you like: an apple or a banana?", "options": ["Which", "What", "Who"], "answer": "Which", "why": "Which is used when there is a choice."},
+            {"visual": "📚", "prompt": "___ are you reading?", "options": ["What", "When", "Whose"], "answer": "What", "why": "What asks about the thing or action."}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quantifiers",
+      "title": "Quantifiers",
+      "subtitle": "Choose words for number and amount.",
+      "learning": {
+        "intro": "First, sort the noun. Countable nouns can be counted one by one. Uncountable nouns are measured as an amount. Then choose a quantifier.",
+        "countable": ["apples", "books", "students", "grapes"],
+        "uncountable": ["water", "milk", "rice", "money", "time"],
+        "cards": [
+          {"word": "a few", "picture": "🍎🍎🍎", "meaning": "a small number of countable things", "example": "We have a few apples."},
+          {"word": "many", "picture": "🍎🍎🍎🍎🍎🍎🍎🍎", "meaning": "many countable things", "example": "There are many apples."},
+          {"word": "a little", "picture": "🥛", "meaning": "a small amount of uncountable things", "example": "There is a little water in the large glass."},
+          {"word": "much", "picture": "🥛💧💧💧", "meaning": "a large amount of uncountable quantity", "example": "How much water do we need?"},
+          {"word": "some", "picture": "🛒", "meaning": "usually used in positive statements", "example": "I have some grapes."},
+          {"word": "any", "picture": "❓", "meaning": "usually used in questions and negative statements", "example": "Do you have any milk?"}
+        ]
+      },
+      "stages": [
+        {
+          "title": "1. Visual choice",
+          "questions": [
+            {"visual": "🍎🍎🍎", "prompt": "Choose the best words: We have ___ apples.", "options": ["a few", "a little", "much"], "answer": "a few", "why": "Apples are countable, and the picture shows a small number."},
+            {"visual": "🥛", "prompt": "A large glass has only a small amount of water. Choose the best words.", "options": ["a little", "a few", "many"], "answer": "a little", "why": "Water is uncountable. A little means a small amount."}
+          ]
+        },
+        {
+          "title": "2. Countable or uncountable",
+          "questions": [
+            {"visual": "📚", "prompt": "Books are ...", "options": ["Countable", "Uncountable"], "answer": "Countable", "why": "Books can be counted one by one."},
+            {"visual": "🍚", "prompt": "Rice is ...", "options": ["Uncountable", "Countable"], "answer": "Uncountable", "why": "Rice is treated as an amount in this lesson."}
+          ]
+        },
+        {
+          "title": "3. Sentence choice",
+          "questions": [
+            {"visual": "❓🥛", "prompt": "Do you have ___ milk?", "options": ["any", "some", "many"], "answer": "any", "why": "Any is usually used in questions and negative statements."},
+            {"visual": "🍇🍇🍇🍇🍇🍇🍇", "prompt": "There are ___ grapes in the bowl.", "options": ["many", "much", "a little"], "answer": "many", "why": "Grapes are countable, so many is the best choice."}
+          ]
+        },
+        {
+          "title": "4. Mixed practice",
+          "questions": [
+            {"visual": "🧃", "prompt": "We need ___ juice for the picnic.", "options": ["some", "any", "a few"], "answer": "some", "why": "This is a positive statement, so some is the usual choice."},
+            {"visual": "⏰", "prompt": "We do not have ___ time.", "options": ["much", "many", "a few"], "answer": "much", "why": "Time is uncountable, so much is the best choice here."}
+          ]
+        }
+      ]
+    }
+  ]
+}
