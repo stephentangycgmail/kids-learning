@@ -54,13 +54,17 @@
 
   function renderLearning() {
     const learning = activeTopic.learning;
+    const visual = (card) => card.visual === "water-glass"
+      ? `<span class="water-glass" style="--water-level:${Math.max(0, Math.min(100, Number(card.water_level) || 0))}%" role="img" aria-label="A large glass with ${card.water_level}% water"></span>`
+      : `<span class="picture" aria-hidden="true">${card.picture}</span>`;
+    const waterCards = learning.cards.filter((card) => card.visual === "water-glass");
     const special = activeTopic.id === "quantifiers"
-      ? `<div class="comparison"><div class="countable"><h3>Countable</h3><p>Count one by one: ${learning.countable.map(escapeHtml).join(", ")}.</p></div><div class="uncountable"><h3>Uncountable</h3><p>Measure as an amount: ${learning.uncountable.map(escapeHtml).join(", ")}.</p></div></div>`
+      ? `<div class="comparison"><div class="countable"><h3>Countable</h3><p>Count one by one: ${learning.countable.map(escapeHtml).join(", ")}.</p></div><div class="uncountable"><h3>Uncountable</h3><p>Measure as an amount: ${learning.uncountable.map(escapeHtml).join(", ")}.</p></div></div><section class="water-comparison" aria-label="Compare small and large amounts of water"><h2>Compare the same large glass</h2><p class="zh-copy">比較同一款大玻璃杯中的水量。</p><div>${waterCards.map((card) => `<article>${visual(card)}<h3>${escapeHtml(card.word)} water</h3><p>${escapeHtml(card.meaning)}</p><p class="zh-copy">${escapeHtml(card.meaning_zh)}</p></article>`).join("")}</div></section>`
       : "";
     byId("lesson").innerHTML = `
-      <section class="hero"><p class="step-label">Learn first</p><h2>${escapeHtml(activeTopic.title)}</h2><p>${escapeHtml(activeTopic.subtitle)}</p><p>${escapeHtml(learning.intro)}</p></section>
+      <section class="hero"><p class="step-label">Learn first</p><h2>${escapeHtml(activeTopic.title)}</h2><p>${escapeHtml(activeTopic.subtitle)}</p><p class="zh-copy">${escapeHtml(activeTopic.subtitle_zh || "")}</p><p>${escapeHtml(learning.intro)}</p><p class="zh-copy">${escapeHtml(learning.intro_zh || "")}</p></section>
       ${special}
-      <section class="learning-card"><h2>Look, say and read</h2><div class="visual-grid">${learning.cards.map((card) => `<article class="visual-card"><span class="picture" aria-hidden="true">${card.picture}</span><h3>${escapeHtml(card.word)}</h3><p>${escapeHtml(card.meaning)}</p><p><strong>${escapeHtml(card.example)}</strong></p></article>`).join("")}</div></section>
+      <section class="learning-card"><h2>Look, say and read</h2><div class="visual-grid">${learning.cards.map((card) => `<article class="visual-card">${visual(card)}<h3>${escapeHtml(card.word)}</h3><p>${escapeHtml(card.meaning)}</p><p class="zh-copy">${escapeHtml(card.meaning_zh || "")}</p><p><strong>${escapeHtml(card.example)}</strong></p><p class="zh-copy"><strong>${escapeHtml(card.example_zh || "")}</strong></p></article>`).join("")}</div></section>
       <section class="learning-card"><h2>Ready to practise?</h2><p>Work through four short stages. Every answer gives a reason, so you can learn from a mistake.</p><button id="startPractice" class="next-button" type="button">Start practice →</button></section>`;
     byId("startPractice").addEventListener("click", renderQuestion);
   }

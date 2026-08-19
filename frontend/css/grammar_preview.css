@@ -20,16 +20,25 @@ body { margin: 0; }
 .hero p { font-size: 1.1rem; line-height: 1.55; max-width: 760px; }
 .step-label { color: #2176c5; font-size: .9rem; font-weight: 800; margin: 0; text-transform: uppercase; }
 .visual-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
-.visual-card { background: #f4f9fd; border: 2px solid #d4e2ef; border-radius: 16px; min-height: 175px; padding: 16px; text-align: center; }
+.visual-card { background: #f4f9fd; border: 2px solid #d4e2ef; border-radius: 16px; padding: 16px; text-align: center; }
 .visual-card .picture { display: block; font-size: 4rem; line-height: 1.1; margin-bottom: 10px; }
 .visual-card h3 { margin: 0 0 7px; }
 .visual-card p { margin: 0; line-height: 1.4; }
+.zh-copy { color: #49657c; font-size: 1rem; line-height: 1.5 !important; margin-top: 5px !important; }
+.water-glass { background: linear-gradient(to right, #ffffff80, #d9efff66, #ffffff80); border: 5px solid #75a5c7; border-radius: 14px 14px 24px 24px; display: block; height: 220px; margin: 0 auto 14px; max-width: 170px; overflow: hidden; position: relative; width: 72%; }
+.water-glass::after { background: linear-gradient(#66c7f6, #168bd0); bottom: 0; content: ""; height: var(--water-level); left: 0; position: absolute; right: 0; transition: height .2s ease; }
+.water-glass::before { background: #ffffff8c; content: ""; height: 100%; left: 18%; position: absolute; width: 14%; z-index: 1; }
 .rule-list { display: grid; gap: 10px; margin: 0; padding-left: 22px; }
 .rule-list li { line-height: 1.5; }
 .comparison { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 .comparison > div { border-radius: 15px; padding: 18px; }
 .countable { background: #e6f7e9; border: 2px solid #76be83; }
 .uncountable { background: #e4f1ff; border: 2px solid #74a9dc; }
+.water-comparison { background: #eaf6ff; border: 2px solid #74a9dc; border-radius: 18px; padding: 20px; text-align: center; }
+.water-comparison h2, .water-comparison p { margin: 0; }
+.water-comparison > div { display: grid; gap: 22px; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 16px; }
+.water-comparison article { background: #fff; border: 1px solid #c6deef; border-radius: 15px; padding: 14px; }
+.water-comparison article p { line-height: 1.45; margin-top: 5px; }
 .practice-header { align-items: baseline; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; }
 .practice-header h2 { margin: 0; }
 .progress { color: #48647d; font-weight: 700; }
@@ -47,4 +56,4 @@ body { margin: 0; }
 .next-button:hover { background: #145a9e; }
 .completion-card { background: #e9f8ec; border-color: #69b47a; text-align: center; }
 .completion-card .picture { font-size: 4rem; }
-@media (max-width: 650px) { .site-header { align-items: flex-start; flex-direction: column; } .back-link { order: 2; } }
+@media (max-width: 650px) { .site-header { align-items: flex-start; flex-direction: column; } .back-link { order: 2; } .water-glass { height: 200px; max-width: 155px; } .zh-copy { font-size: .98rem; } .water-comparison { padding: 15px; } .water-comparison > div { gap: 12px; } }

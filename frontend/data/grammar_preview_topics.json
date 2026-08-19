@@ -6,17 +6,19 @@
       "id": "question-words",
       "title": "Question Words",
       "subtitle": "Ask for the information you need.",
+      "subtitle_zh": "用問句詞找出你想知道的資料。",
       "learning": {
         "intro": "Question words are helper words at the start of a question. Look at the picture first, then choose the word that asks for the missing information.",
+        "intro_zh": "問句詞放在問題的開頭，幫助我們詢問想知道的資料。先看圖片，再選擇最合適的問句詞。",
         "cards": [
-          {"word": "What", "picture": "🎁", "meaning": "Ask about a thing or an action.", "example": "What is in the box?"},
-          {"word": "Who", "picture": "🧑‍🤝‍🧑", "meaning": "Ask about a person.", "example": "Who is your teacher?"},
-          {"word": "Where", "picture": "🏫", "meaning": "Ask about a place.", "example": "Where is the library?"},
-          {"word": "When", "picture": "🕒", "meaning": "Ask about a time or day.", "example": "When is your birthday?"},
-          {"word": "Why", "picture": "🤔", "meaning": "Ask for a reason.", "example": "Why are you smiling?"},
-          {"word": "Which", "picture": "🍎🍌", "meaning": "Choose from choices.", "example": "Which fruit do you want?"},
-          {"word": "Whose", "picture": "🎒", "meaning": "Ask who owns something.", "example": "Whose bag is this?"},
-          {"word": "How", "picture": "🚌", "meaning": "Ask about a way, condition or amount.", "example": "How do you get to school?"}
+          {"word": "What", "picture": "🎁", "meaning": "Ask about a thing or an action.", "meaning_zh": "詢問「甚麼」：事物或動作。", "example": "What is in the box?", "example_zh": "盒子裡有甚麼？"},
+          {"word": "Who", "picture": "🧑‍🤝‍🧑", "meaning": "Ask about a person.", "meaning_zh": "詢問「誰」：人物。", "example": "Who is your teacher?", "example_zh": "誰是你的老師？"},
+          {"word": "Where", "picture": "🏫", "meaning": "Ask about a place.", "meaning_zh": "詢問「哪裡」：地方。", "example": "Where is the library?", "example_zh": "圖書館在哪裡？"},
+          {"word": "When", "picture": "🕒", "meaning": "Ask about a time or day.", "meaning_zh": "詢問「何時／甚麼時候」：時間或日子。", "example": "When is your birthday?", "example_zh": "你的生日在甚麼時候？"},
+          {"word": "Why", "picture": "🤔", "meaning": "Ask for a reason.", "meaning_zh": "詢問「為甚麼」：原因。", "example": "Why are you smiling?", "example_zh": "你為甚麼在笑？"},
+          {"word": "Which", "picture": "🍎🍌", "meaning": "Choose from choices.", "meaning_zh": "詢問「哪一個」：從選項中選擇。", "example": "Which fruit do you want?", "example_zh": "你想要哪一種水果？"},
+          {"word": "Whose", "picture": "🎒", "meaning": "Ask who owns something.", "meaning_zh": "詢問「誰的」：物件屬於誰。", "example": "Whose bag is this?", "example_zh": "這是誰的書包？"},
+          {"word": "How", "picture": "🚌", "meaning": "Ask about a way, condition or amount.", "meaning_zh": "詢問「怎樣／如何」：方法、情況或程度。", "example": "How do you get to school?", "example_zh": "你怎樣去上學？"}
         ]
       },
       "stages": [
@@ -54,17 +56,19 @@
       "id": "quantifiers",
       "title": "Quantifiers",
       "subtitle": "Choose words for number and amount.",
+      "subtitle_zh": "選擇表示數量和份量的詞語。",
       "learning": {
         "intro": "First, sort the noun. Countable nouns can be counted one by one. Uncountable nouns are measured as an amount. Then choose a quantifier.",
+        "intro_zh": "先分辨名詞。可數名詞可以逐一數；不可數名詞用份量來量度。然後選擇合適的數量詞。",
         "countable": ["apples", "books", "students", "grapes"],
         "uncountable": ["water", "milk", "rice", "money", "time"],
         "cards": [
-          {"word": "a few", "picture": "🍎🍎🍎", "meaning": "a small number of countable things", "example": "We have a few apples."},
-          {"word": "many", "picture": "🍎🍎🍎🍎🍎🍎🍎🍎", "meaning": "many countable things", "example": "There are many apples."},
-          {"word": "a little", "picture": "🥛", "meaning": "a small amount of uncountable things", "example": "There is a little water in the large glass."},
-          {"word": "much", "picture": "🥛💧💧💧", "meaning": "a large amount of uncountable quantity", "example": "How much water do we need?"},
-          {"word": "some", "picture": "🛒", "meaning": "usually used in positive statements", "example": "I have some grapes."},
-          {"word": "any", "picture": "❓", "meaning": "usually used in questions and negative statements", "example": "Do you have any milk?"}
+          {"word": "a few", "picture": "🍎🍎🍎", "meaning": "a small number of countable things", "meaning_zh": "少量可數的東西／幾個", "example": "We have a few apples.", "example_zh": "我們有幾個蘋果。"},
+          {"word": "many", "picture": "🍎🍎🍎🍎🍎🍎🍎🍎", "meaning": "many countable things", "meaning_zh": "很多可數的東西", "example": "There are many apples.", "example_zh": "這裡有很多蘋果。"},
+          {"word": "a little", "visual": "water-glass", "water_level": 18, "meaning": "a small amount of uncountable things", "meaning_zh": "少量不可數的東西", "example": "There is a little water in the large glass.", "example_zh": "這個大玻璃杯裡只有少量水。"},
+          {"word": "much", "visual": "water-glass", "water_level": 85, "meaning": "a large amount of an uncountable quantity", "meaning_zh": "很多／大量不可數的東西", "example": "There is much water in the large glass.", "example_zh": "這個大玻璃杯裡有很多水。"},
+          {"word": "some", "picture": "🛒", "meaning": "usually used in positive statements", "meaning_zh": "通常用於肯定句，表示「一些」", "example": "I have some grapes.", "example_zh": "我有一些葡萄。"},
+          {"word": "any", "picture": "❓", "meaning": "usually used in questions and negative statements", "meaning_zh": "通常用於問句和否定句，表示「一些／任何」", "example": "Do you have any milk?", "example_zh": "你有一些牛奶嗎？"}
         ]
       },
       "stages": [
