@@ -3,6 +3,20 @@
 Release identity and deployment evidence are maintained in
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
 
+## v1.2.2 - 2026-08-19
+
+### Fixed
+
+- Made Grammar lesson navigation wrap responsively when the available width is
+  constrained.
+- Kept Question Words, Quantifiers, Quiz, and Dictation actions fully visible
+  on desktop and mobile layouts without horizontal page overflow.
+
+### Validation
+
+- Verified at 1024px desktop, wider desktop, and 390px mobile widths with no
+  console errors or horizontal overflow.
+
 ## v1.2.1 - 2026-08-19
 
 ### Fixed

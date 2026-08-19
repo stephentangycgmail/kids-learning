@@ -1,6 +1,6 @@
 # Deployment Guide
 
-This guide documents the current production deployment process for Kids Learning v1.0.0 and later maintenance releases.
+This guide documents the current production deployment process for Kids Learning v1.0.0 and later maintenance releases, including the `v1.2.2` Grammar navigation corrective release.
 
 The immutable `v1.0.0` tag and the current later Pages deployment are distinct.
 See [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md). Follow

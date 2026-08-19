@@ -6,6 +6,17 @@ Verified tag and deployment identities are maintained in
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md). A production deployment is not
 automatically an official release.
 
+## v1.2.2 - 19 August 2026
+
+Corrective UI maintenance release:
+
+- Grammar lesson tabs now wrap responsively as Question Words and Quantifiers
+  are included.
+- Quiz and Dictation actions remain fully visible at desktop and mobile widths.
+- No Grammar lesson content or practice behavior was changed.
+- Desktop and 390px mobile layouts were smoke-tested with no horizontal
+  overflow.
+
 ## v1.2.1 - 19 August 2026
 
 Fix:

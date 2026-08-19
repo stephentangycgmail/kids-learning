@@ -5,14 +5,16 @@ This is the highest-level project specification for `stephentangycgmail/kids-lea
 ## Project Status
 
 Kids Learning has an immutable `v1.0.0` tagged baseline and current official
-release `v1.1.0`. GitHub Pages serves `main`; `develop` may contain unreleased
-maintenance or UAT work. The project is in maintenance mode.
+release `v1.2.1`; `develop` contains the `v1.2.2` corrective Grammar navigation
+release candidate. GitHub Pages serves `main`. The project is in maintenance
+mode.
 
 Production is static hosting from GitHub Pages. Azure, FastAPI, and backend APIs are not part of the current production deployment process.
 
-The current release candidate adds production Question Words (50 questions)
-and Quantifiers (54 questions), with 12-question Practice and 10-question Quiz
-choice modes backed by browser-local Grammar Practice History.
+The current release candidate corrects responsive Grammar lesson navigation.
+Lesson tabs wrap naturally and keep Quiz/Dictation controls visible without
+horizontal overflow. Existing Question Words (50 questions) and Quantifiers
+(54 questions) behavior remains unchanged.
 
 ## Project Vision
 
@@ -101,7 +103,8 @@ Before changes are accepted:
 ## Release and Deployment
 
 GitHub Pages is the official production deployment method. The current official
-release is `v1.1.0`; `v1.0.0` remains an immutable baseline. See
+release is `v1.2.1`; `v1.0.0` remains an immutable baseline. The `v1.2.2`
+candidate adds only the responsive Grammar navigation fix. See
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
 
 Release preparation must confirm:

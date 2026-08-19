@@ -11,12 +11,10 @@ Kids Learning is a child-friendly static website for English, Chinese, and
 Math learning. It uses committed HTML, CSS, JavaScript, and reviewed JSON;
 students do not need a login, production backend, Azure service, or paid API.
 
-The current official production release is `v1.1.0`, tagged at
-`67bf0d38282fa50e761b7c437cc40d12ac71a8f0`. `v1.0.0` remains an immutable
-prior baseline at `c2cbcba61a680c809ad31c9f7696f74318dee7a4`. Production is
-stable on `main`; `develop` contains the approved Grammar Question Words and
-Quantifiers release work. Confirm the live Git state before making release
-claims.
+The current official production release is `v1.2.1`, tagged at
+`d66eaf79b7c2e022a8a89eb28e6fa0b7bd56477b`. `v1.0.0` remains an immutable
+prior baseline. `develop` contains the `v1.2.2` corrective Grammar navigation
+release candidate. Confirm the live Git state before making release claims.
 
 ## Branch Model and Deployment
 
@@ -61,6 +59,9 @@ they do not silently override the current authorities above.
   tests are under `tests/` and generation/validation tools under `tools/`.
 - Released Grammar lessons use `frontend/grammar.html` and
   `frontend/data/grammar_catalog.json`.
+- Grammar lesson tabs wrap at constrained widths so Question Words and
+  Quantifiers do not displace the Quiz or Dictation actions; the navigation
+  layout has been smoke-tested at desktop and 390px mobile widths.
 - Choice Grammar Practice uses `frontend/grammar_practice_choice.html`,
   `frontend/js/grammar_practice_choice.js`, and
   `frontend/data/grammar_practice_choice.json`.

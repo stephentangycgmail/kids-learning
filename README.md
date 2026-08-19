@@ -14,8 +14,8 @@ The production site uses committed HTML, CSS, JavaScript, and JSON files. It doe
 - Student-facing content lives mainly in `frontend/` and `frontend/data/`.
 - Backend files are legacy/local-only tooling and are not part of the current production deployment.
 - AI Teacher remains disabled for static production use while live API usage is paused.
-- Current official release: `v1.1.0`, deployed from commit
-  `67bf0d38282fa50e761b7c437cc40d12ac71a8f0`.
+- Current release candidate: `v1.2.2`, a corrective Grammar navigation fix
+  prepared on `develop`.
 - See [Release Manifest](docs/RELEASE_MANIFEST.md) for verified release and
   deployment evidence.
 
@@ -29,6 +29,9 @@ The production site uses committed HTML, CSS, JavaScript, and JSON files. It doe
 - Grammar lessons: `frontend/grammar.html`
 - Grammar includes released Question Words and Quantifiers lessons, each with
   visual bilingual learning cards and an 8-question guided mini-practice.
+- Grammar lesson navigation wraps responsively so new topics do not push Quiz
+  or Dictation actions off-screen; desktop and mobile layouts have been
+  validated without horizontal overflow.
 - English Grammar Practice: `frontend/grammar_practice.html`
 - Question Words and Quantifiers Practice / Quiz: `frontend/grammar_practice_choice.html`
 - Practice history and results: `frontend/grammar_practice_history.html`, `frontend/grammar_practice_result.html`

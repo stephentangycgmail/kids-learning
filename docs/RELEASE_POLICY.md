@@ -85,12 +85,9 @@ For production recovery:
 
 ## Current Verified State
 
-- Current release: `v1.1.0`
-- Tagged commit: `67bf0d38282fa50e761b7c437cc40d12ac71a8f0`
-- Tag date: 2026-07-31
-- Current verified Pages deployment commit:
-  `67bf0d38282fa50e761b7c437cc40d12ac71a8f0`
-- Current deployment date: 2026-07-31
-- GitHub Release for `v1.1.0`: published
+- Current release: `v1.2.1`
+- Tagged commit: `d66eaf79b7c2e022a8a89eb28e6fa0b7bd56477b`
+- Current verified Pages deployment: `v1.2.1` from `main`
+- GitHub Release for `v1.2.1`: published
 
 The immutable `v1.0.0` tag remains the prior release baseline.
