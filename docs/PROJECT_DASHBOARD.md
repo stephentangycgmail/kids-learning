@@ -33,6 +33,10 @@ P1:
 - Maintain JSON catalogs and validation.
 - Add small, backward-compatible improvements.
 
+The next release candidate includes Question Words and Quantifiers lessons and
+choice Practice / Quiz modes. Preview/UAT assets have been retired from the
+production tree.
+
 ## Completed
 
 - v1.0.0 GitHub Pages release.

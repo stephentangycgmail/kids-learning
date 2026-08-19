@@ -20,7 +20,7 @@
     if (typeof session.sessionId !== "string" || !session.sessionId) throw new Error("Practice record has no ID.");
     if (session.schemaVersion !== 1) throw new Error("Unsupported practice record version.");
     if (!["in_progress", "submitted", "abandoned"].includes(session.status)) throw new Error("Invalid practice status.");
-    if (!["short_long", "rearrangement", "mixed"].includes(session.mode)) throw new Error("Invalid practice mode.");
+    if (!["short_long", "rearrangement", "mixed", "choice_practice", "choice_quiz"].includes(session.mode)) throw new Error("Invalid practice mode.");
     if (typeof session.topic !== "string" || !session.topic) throw new Error("Practice record has no topic.");
     if (!session.answers || typeof session.answers !== "object" || Array.isArray(session.answers)) {
       throw new Error("Practice record has invalid answers.");

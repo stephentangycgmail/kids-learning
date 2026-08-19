@@ -178,3 +178,35 @@ test("manifest paths resolve under the GitHub Pages frontend subpath", () => {
     assert.equal(fs.existsSync(path.join(root, "frontend", page)), true);
   }
 });
+
+test("choice sessions select unique questions and retain bilingual review", () => {
+  const choiceBank = JSON.parse(fs.readFileSync(path.join(dataDir, manifest.banks.choice), "utf8"));
+  const topic = choiceBank.topics.find((item) => item.id === "question-words");
+  const questions = topic.questionBank;
+  const selected = core.selectChoiceQuestions(questions, 12, predictableRandom);
+  assert.equal(selected.length, 12);
+  assert.equal(new Set(selected.map((item) => item.id)).size, 12);
+  const session = core.createChoiceSession({ mode: "choice_practice", topic, questions: selected,
+    now: new Date("2026-08-19T01:02:03.000Z") });
+  session.answers[selected[0].id] = { selected: selected[0].answer };
+  session.answers[selected[1].id] = { selected: "definitely-wrong" };
+  const submitted = core.submitChoiceSession(session, new Date("2026-08-19T01:03:03.000Z"));
+  assert.equal(submitted.status, "submitted");
+  assert.equal(submitted.scoreSummary.totalQuestions, 12);
+  assert.equal(submitted.scoreSummary.fullyCorrect, 1);
+  assert.equal(submitted.scoreSummary.unansweredQuestions, 10);
+  assert.equal(submitted.review[1].selectedAnswer, "definitely-wrong");
+  assert.equal(typeof submitted.review[1].explanation, "string");
+  assert.equal(typeof submitted.review[1].explanationZh, "string");
+  assert.throws(() => core.submitChoiceSession(submitted), /already locked/);
+});
+
+test("choice quiz selection supports ten unique questions", () => {
+  const choiceBank = JSON.parse(fs.readFileSync(path.join(dataDir, manifest.banks.choice), "utf8"));
+  const topic = choiceBank.topics.find((item) => item.id === "quantifiers");
+  const questions = topic.questionBank;
+  const selected = core.selectChoiceQuestions(questions, 10, () => 0.9);
+  assert.equal(selected.length, 10);
+  assert.equal(new Set(selected.map((item) => item.id)).size, 10);
+  assert.equal(core.createChoiceSession({ mode: "choice_quiz", topic, questions: selected }).scoreSummary, null);
+});

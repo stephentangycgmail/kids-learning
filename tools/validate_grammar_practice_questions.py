@@ -267,6 +267,7 @@ def main() -> int:
     expected_files = {
         "short_long": SHORT_PATH.name,
         "rearrangement": REARRANGEMENT_PATH.name,
+        "choice": "grammar_practice_choice.json",
     }
     if manifest.get("banks") != expected_files:
         errors.append("manifest: bank filenames do not match generated files")

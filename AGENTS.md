@@ -61,7 +61,9 @@ is historical, audit, or release work.
 ## Durable Maintenance Constraints
 
 - Preserve the static GitHub Pages runtime and existing JSON compatibility.
-- Grammar Practice sessions contain 20 questions; submitted and abandoned
+- Existing Grammar Practice sessions contain 20 questions. Released Question
+  Words and Quantifiers choice Practice sessions contain 12 questions and Quiz
+  / Challenge sessions contain 10; submitted and abandoned
   records remain locked. Submitted records retain score, review, and duration
   evidence. Abandoned records remain distinguishable and retain duration, but
   do not receive a score summary or completed-answer review unless the current

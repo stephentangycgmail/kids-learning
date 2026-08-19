@@ -40,22 +40,9 @@ Grammar lessons are loaded from the committed lesson catalog. Select lesson
 tabs, review examples and practice, use a quiz when the lesson provides one,
 or follow the Dictation link for the selected lesson.
 
-On the `develop` branch, Question Words and Quantifiers are available in the
-normal Grammar lesson tabs for testing. They include visual learning cards and
-short guided practice with immediate feedback. They are not yet released to
-the `main` production branch.
-
-### TEST / Preview Grammar
-
-The English menu includes a clearly marked temporary TEST / Preview entry for
-user acceptance testing. It currently offers visual Question Words and
-Quantifiers learning followed by short progressive practice. Preview completion
-is stored only in the current browser and is separate from released Grammar
-lessons and Grammar Practice History.
-
-The Preview remains available during the migration comparison. Its larger
-Practice and Quiz / Challenge integration is still pending Phase 3 work for
-the released Grammar lessons.
+Question Words and Quantifiers include visual learning cards and an 8-question
+guided mini-practice with immediate bilingual feedback. Quantifiers explains
+Countable and Uncountable nouns and compares 18% and 85% water in the same glass.
 
 ### English Grammar Practice
 
@@ -72,6 +59,11 @@ read-only.
 Practice history stays on the current browser and device. There is no account
 sync or cloud backup. Clearing browser site data permanently removes local
 practice history.
+
+Question Words and Quantifiers also provide a separate choice Practice and
+Quiz / Challenge entry. Practice selects 12 unique questions and shows feedback
+before Next. Quiz selects 10 unique questions, keeps answers hidden until the
+end, then shows score, percentage, and bilingual wrong-answer review.
 
 ### Placeholder and Disabled Areas
 

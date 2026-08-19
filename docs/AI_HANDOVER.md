@@ -14,8 +14,9 @@ students do not need a login, production backend, Azure service, or paid API.
 The current official production release is `v1.1.0`, tagged at
 `67bf0d38282fa50e761b7c437cc40d12ac71a8f0`. `v1.0.0` remains an immutable
 prior baseline at `c2cbcba61a680c809ad31c9f7696f74318dee7a4`. Production is
-stable on `main`; `develop` currently contains unreleased Grammar Preview UAT
-work. Confirm the live Git state before making release claims.
+stable on `main`; `develop` contains the approved Grammar Question Words and
+Quantifiers release work. Confirm the live Git state before making release
+claims.
 
 ## Branch Model and Deployment
 
@@ -60,30 +61,28 @@ they do not silently override the current authorities above.
   tests are under `tests/` and generation/validation tools under `tools/`.
 - Released Grammar lessons use `frontend/grammar.html` and
   `frontend/data/grammar_catalog.json`.
-- Grammar Preview uses `frontend/grammar_preview.html`,
-  `frontend/css/grammar_preview.css`, `frontend/js/grammar_preview.js`, and
-  `frontend/data/grammar_preview_topics.json`.
+- Choice Grammar Practice uses `frontend/grammar_practice_choice.html`,
+  `frontend/js/grammar_practice_choice.js`, and
+  `frontend/data/grammar_practice_choice.json`.
 - `backend/` and the Dockerfile are not the production path. Docker support is
   undecided because its referenced application module is absent.
 
-## Grammar Preview / UAT
+## Grammar Question Words and Quantifiers
 
-Grammar Preview is an unreleased, UAT-only page linked from `frontend/eng.html`.
-Its JSON is intentionally absent from `grammar_catalog.json`, and it does not
-modify released Grammar lessons or Grammar Practice question banks.
+Question Words and Quantifiers are production Grammar lessons and choice-based
+Grammar Practice topics. The former Preview page and assets are retired.
 
 - **Question Words:** eight visual learning cards for What, Who, Where, When,
   Why, Which, Whose, and How, plus a 50-question UAT bank with unique IDs and
-  concise Traditional Chinese explanations. A production lesson is implemented
-  on `develop` with visual cards and an 8-question guided mini-practice, but is
-  not released to `main`.
+  concise Traditional Chinese explanations. The lesson includes an 8-question
+  guided mini-practice and choice Practice / Quiz modes.
 - **Quantifiers:** six visual learning cards for `some`, `any`, `a few`, `a
   little`, `many`, and `much`; `a lot of`, `few`, and `little` are not preview
-  target items. Its 54-question UAT bank includes six Countable / Uncountable
+  target items. Its 54-question bank includes six Countable / Uncountable
   questions. It introduces countable versus uncountable nouns and compares the
   same large glass at 18% water for `a little` and 85% water for `much`. A
-  production lesson is implemented on `develop` with the same visual teaching
-  and an 8-question guided mini-practice, but is not released to `main`.
+  lesson includes the same visual teaching, an 8-question guided mini-practice,
+  and choice Practice / Quiz modes.
 - Traditional Chinese support is present for topic subtitles and introductions,
   card meanings, and examples. Visual teaching uses emoji cards plus the water
   comparison for the two uncountable-water terms.
@@ -95,33 +94,26 @@ modify released Grammar lessons or Grammar Practice question banks.
   correctness during the session; completion shows score, percentage, and a
   review of wrong answers with selected answer, correct answer, and bilingual
   explanation. The released Grammar lesson quizzes in `grammar.html` remain a
-  different feature. `tests/grammar_preview_validation.js` validates bank IDs
-  and required coverage; rendered browser behavior remains a UAT check.
+  different feature. `tests/grammar_practice_choice_validation.js` validates
+  bank IDs and required coverage; rendered browser behavior remains a smoke
+  check.
 
 ## Practice and History Storage
 
 Released Grammar Practice stores sessions primarily in IndexedDB database
 `kidsLearningGrammarPractice`, with localStorage fallback key
-`kidsLearning.grammarPractice.sessions.v1`. Preview completion is separate:
-`kidsLearning.grammarPreview.progress.v2` in localStorage stores topic-scoped
-session records with mode, completion time, score, total, and percentage.
-Clearing browser site data removes these local records; no history is sent to a
-server. Preview completion never appears in released Grammar Practice History.
+`kidsLearning.grammarPractice.sessions.v1`. Choice completion uses the same
+history and stores mode, topic, completion time, score, total, and percentage
+where applicable. Existing 20-question records remain compatible; choice
+Practice uses 12 questions and choice Quiz uses 10. Clearing browser site data
+removes these local records; no history is sent to a server.
 
-## Pending UAT Work and Resume Point
+## Current Resume Point
 
-The Preview page has not been accepted or released and remains available for
-comparison. Phase 2 has added production Grammar lessons for Question Words
-and Quantifiers on `develop`, including visual cards and guided mini-practice.
-Phase 3, which would integrate the larger Preview Practice and Quiz / Challenge
-flows into released Grammar, remains pending. The new lessons are not yet on
-`main` or the production site.
-
-Resume by reviewing the current `develop` diff from `main`, then test
-`frontend/grammar_preview.html` with its JSON data and confirm acceptance
-before proposing any production integration. Do not add preview data to
-`grammar_catalog.json` or released Grammar Practice history without explicit
-approval.
+Phase 3 implementation is complete on `develop` pending final release gates:
+validation, local and production smoke tests, merge to `main`, Pages
+verification, and the approved release tag. Do not claim production release
+until those gates are verified.
 
 ## Content Rules
 

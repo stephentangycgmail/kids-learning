@@ -9,18 +9,17 @@ From the repository root:
 
 ```powershell
 node --test tests/grammar_practice.test.js tests/static_site.test.js
-node tests/grammar_preview_validation.js
+node tests/grammar_practice_choice_validation.js
 python -m unittest tests/test_grammar_practice_questions.py
 python tools/validate_grammar_practice_questions.py
 ```
 
 The committed tests cover Grammar Practice selection, storage, scoring,
 history, static paths, question-bank structure, and local page references.
-They do not currently cover the UAT-only Grammar Preview page; manually test
-its randomized question flow, immediate feedback, separate localStorage progress, responsive
-layout, Quiz answer hiding, and JSON loading manually when it changes. The
-Preview validation script checks its question-bank size, IDs, target coverage,
-and Chinese explanations.
+The choice-bank validation checks Question Words and Quantifiers sizes, IDs,
+coverage, bilingual fields, 12/10 unique selection, and feedback contracts.
+Manually test its rendered Practice feedback, Quiz answer hiding, results, and
+responsive layout when it changes.
 
 ## JSON Validation
 

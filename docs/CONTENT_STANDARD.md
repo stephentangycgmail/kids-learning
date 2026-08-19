@@ -71,20 +71,16 @@ Rules:
 - New Grammar lessons should require one lesson JSON file plus one catalog entry.
 - Do not create duplicate visible lesson titles.
 
-### Temporary Preview Grammar Data
+### Grammar Practice Choice Banks
 
-File: `frontend/data/grammar_preview_topics.json`
+File: `frontend/data/grammar_practice_choice.json`
 
-This file is reserved for temporary user-acceptance-test content shown only by
-`frontend/grammar_preview.html`. It is intentionally not referenced from
-`grammar_catalog.json` and must not change released Grammar lessons or English
-Grammar Practice question banks.
-
-Preview topic data contains a `preview: true` marker, a `topics` array, visual
-learning cards, and staged multiple-choice practice questions with an answer
-and an explanation for each choice set. Preview completion may be stored only
-in browser-local storage under a separate key; it must not be mixed into the
-released Grammar Practice history schema.
+This production bank contains Question Words and Quantifiers multiple-choice
+questions. Each question has a stable `id`, `prompt`, `prompt_zh`, unique
+`options`, `answer`, `why`, and `why_zh`. Question Words has 50 questions and
+Quantifiers has 54; only `some`, `any`, `a few`, `a little`, `many`, and `much`
+may be Quantifier targets. The bank is used by production Practice and Quiz,
+not lesson JSON.
 
 ## Vocabulary
 
@@ -263,6 +259,7 @@ Files:
 - `grammar_practice_manifest.json`
 - `grammar_practice_short_long.json`
 - `grammar_practice_rearrangement.json`
+- `grammar_practice_choice.json`
 
 Manifest fields include:
 
@@ -277,7 +274,8 @@ Manifest fields include:
 Question bank rules:
 
 - Question banks must remain committed static JSON.
-- Current total is 630 questions: 315 short/long and 315 rearrangement.
+- The original banks total 630 questions: 315 short/long and 315 rearrangement.
+  The separate choice bank adds 50 Question Words and 54 Quantifiers questions.
 - Validate generated or edited banks with `tools/validate_grammar_practice_questions.py`.
 - Do not generate questions at runtime in the browser.
 - Browser history is stored locally with IndexedDB and a localStorage fallback; it is not part of committed content.

@@ -9,6 +9,7 @@
   const SESSION_SIZE = 20;
   const LOCKED_STATUSES = new Set(["submitted", "abandoned"]);
   const VALID_MODES = new Set(["short_long", "rearrangement", "mixed"]);
+  const CHOICE_MODES = new Set(["choice_practice", "choice_quiz"]);
 
   function clone(value) {
     return JSON.parse(JSON.stringify(value));
@@ -181,6 +182,40 @@
     };
   }
 
+  function selectChoiceQuestions(questions, count, rng) {
+    const selected = shuffle(questions, rng).slice(0, count);
+    if (selected.length !== count || new Set(selected.map((item) => item.id)).size !== count) throw new Error(`Not enough unique questions to create a ${count}-question session.`);
+    return selected;
+  }
+
+  function createChoiceSession(options) {
+    const now = options.now || new Date(); const questions = options.questions.map(clone);
+    return { sessionId: options.sessionId || randomId(now), schemaVersion: SESSION_SCHEMA_VERSION, mode: options.mode,
+      topic: options.topic.id, topicLabel: options.topic.label, questionIds: questions.map((item) => item.id),
+      questionSnapshots: questions, answers: {}, currentQuestionIndex: 0, startedAt: now.toISOString(), lastSavedAt: now.toISOString(),
+      submittedAt: null, abandonedAt: null, status: "in_progress", scoreSummary: null, review: null };
+  }
+
+  function scoreChoiceSession(session) {
+    const review = session.questionSnapshots.map((question, index) => {
+      const selected = session.answers[question.id] && session.answers[question.id].selected;
+      return { questionNumber: index + 1, questionId: question.id, type: "choice", originalQuestion: question.prompt,
+        selectedAnswer: selected || "No answer", submittedAnswer: selected || "No answer", correctAnswer: question.answer,
+        correct: selected === question.answer, answered: Boolean(selected), explanation: question.why, explanationZh: question.why_zh || "" };
+    });
+    const correct = review.filter((item) => item.correct).length; const unanswered = review.filter((item) => !item.answered).length;
+    return { summary: { totalQuestions: review.length, fullyCorrect: correct, correctQuestions: correct,
+      incorrectQuestions: review.length - correct - unanswered, unansweredQuestions: unanswered, correctSections: 0, totalSections: 0,
+      percentage: Math.round(correct / review.length * 100) }, review };
+  }
+
+  function submitChoiceSession(session, now) {
+    if (session.status !== "in_progress") throw new Error("This practice is already locked.");
+    const submitted = clone(session); const finished = now || new Date(); const result = scoreChoiceSession(submitted);
+    submitted.status = "submitted"; submitted.submittedAt = finished.toISOString(); submitted.lastSavedAt = submitted.submittedAt;
+    submitted.scoreSummary = result.summary; submitted.review = result.review; return submitted;
+  }
+
   function sectionAnswer(question, section, answer) {
     const values = answer && answer.sections && answer.sections[section.id]
       ? answer.sections[section.id]
@@ -343,20 +378,25 @@
     SESSION_SCHEMA_VERSION,
     SESSION_SIZE,
     VALID_MODES,
+    CHOICE_MODES,
     abandonSession,
     answeredCount,
     availableTopics,
     clone,
     createSession,
+    createChoiceSession,
     durationSeconds,
     formatDuration,
     matchesTopic,
     recentQuestionIds,
     scoreSession,
+    scoreChoiceSession,
+    selectChoiceQuestions,
     selectQuestions,
     sentenceFromTokenIds,
     shuffle,
     shuffledTokenIds,
     submitSession,
+    submitChoiceSession,
   };
 });

@@ -309,7 +309,7 @@
     elements.startButton.disabled = true;
     try {
       const existing = await store.getActive();
-      if (existing) {
+      if (existing && !core.CHOICE_MODES.has(existing.mode)) {
         activeSession = existing;
         showResume(existing);
         return;

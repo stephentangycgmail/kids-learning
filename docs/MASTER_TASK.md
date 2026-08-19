@@ -10,6 +10,10 @@ maintenance or UAT work. The project is in maintenance mode.
 
 Production is static hosting from GitHub Pages. Azure, FastAPI, and backend APIs are not part of the current production deployment process.
 
+The current release candidate adds production Question Words (50 questions)
+and Quantifiers (54 questions), with 12-question Practice and 10-question Quiz
+choice modes backed by browser-local Grammar Practice History.
+
 ## Project Vision
 
 Kids Learning is a long-term educational platform for child-friendly learning activities. It should stay simple to host, easy to maintain, safe for students, and practical for reviewed content growth.

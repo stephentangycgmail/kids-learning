@@ -35,6 +35,7 @@ class GrammarPracticeQuestionBankTests(unittest.TestCase):
         manifest = json.loads((DATA_DIR / "grammar_practice_manifest.json").read_text(encoding="utf-8"))
         self.assertEqual(manifest["sessionQuestionCount"], 20)
         self.assertEqual(manifest["mixedTypeCount"], 10)
+        self.assertEqual(manifest["banks"]["choice"], "grammar_practice_choice.json")
         for filename in manifest["banks"].values():
             self.assertNotIn("/", filename)
             self.assertTrue((DATA_DIR / filename).is_file())

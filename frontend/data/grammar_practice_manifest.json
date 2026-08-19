@@ -65,9 +65,22 @@
   },
   "banks": {
     "short_long": "grammar_practice_short_long.json",
-    "rearrangement": "grammar_practice_rearrangement.json"
+    "rearrangement": "grammar_practice_rearrangement.json",
+    "choice": "grammar_practice_choice.json"
   },
   "topics": [
+    {
+      "id": "question-words",
+      "label": "Question Words",
+      "labelZh": "疑問詞",
+      "practiceType": "choice"
+    },
+    {
+      "id": "quantifiers",
+      "label": "Quantifiers",
+      "labelZh": "數量詞",
+      "practiceType": "choice"
+    },
     {
       "id": "all",
       "label": "All Topics",

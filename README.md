@@ -27,14 +27,11 @@ The production site uses committed HTML, CSS, JavaScript, and JSON files. It doe
 - English Dictation Practice: `frontend/dictation_practice.html`
 - Chinese Dictation: `frontend/cn_dictation.html`
 - Grammar lessons: `frontend/grammar.html`
-- On `develop`, the released Grammar architecture also contains unreleased
-  Question Words and Quantifiers lessons with visual cards and guided
-  mini-practice. They are not yet on `main`; the TEST / Preview Grammar page is
-  retained for migration comparison while Phase 3 Practice/Quiz integration is
-  pending.
+- Grammar includes released Question Words and Quantifiers lessons, each with
+  visual bilingual learning cards and an 8-question guided mini-practice.
 - English Grammar Practice: `frontend/grammar_practice.html`
+- Question Words and Quantifiers Practice / Quiz: `frontend/grammar_practice_choice.html`
 - Practice history and results: `frontend/grammar_practice_history.html`, `frontend/grammar_practice_result.html`
-- TEST / Preview Grammar: `frontend/grammar_preview.html` (temporary UAT content; not part of released Grammar)
 
 ## Repository Structure
 
@@ -84,7 +81,8 @@ The site reads static JSON from `frontend/data/`.
 - `catalog.json` lists English dictation lessons.
 - `grammar_catalog.json` lists Grammar lesson JSON files.
 - Grammar Gold Lessons use one object per file with examples, practice questions, answer keys, and optional quiz data.
-- Grammar Practice uses `grammar_practice_manifest.json` plus committed question banks.
+- Grammar Practice uses `grammar_practice_manifest.json` plus committed question banks,
+  including 50 Question Words and 54 Quantifiers choice questions.
 - Vocabulary uses `vocab.json` and `vocab_ai.json`.
 
 See [docs/CONTENT_STANDARD.md](docs/CONTENT_STANDARD.md) for the current schemas and compatibility rules.

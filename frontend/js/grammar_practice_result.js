@@ -20,7 +20,7 @@
     return value ? new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeStyle: "medium" }).format(new Date(value)) : "—";
   }
   function modeLabel(mode) {
-    return { short_long: "Short & Long Answer", rearrangement: "Sentence Rearrangement", mixed: "Mixed Practice" }[mode] || mode;
+    return { short_long: "Short & Long Answer", rearrangement: "Sentence Rearrangement", mixed: "Mixed Practice", choice_practice: "Question Words / Quantifiers Practice", choice_quiz: "Question Words / Quantifiers Quiz" }[mode] || mode;
   }
   function showError(message, error) {
     const panel = byId("resultMessage");
@@ -37,6 +37,7 @@
     addDefinition(scoreDetails, "Correct questions", String(summary.correctQuestions));
     addDefinition(scoreDetails, "Incorrect questions", String(summary.incorrectQuestions));
     addDefinition(scoreDetails, "Unanswered questions", String(summary.unansweredQuestions));
+    if (Number.isFinite(summary.percentage)) addDefinition(scoreDetails, "Percentage", `${summary.percentage}%`);
     if (summary.totalSections) {
       addDefinition(scoreDetails, "Correct answer sections", `${summary.correctSections} / ${summary.totalSections}`);
     }
@@ -96,6 +97,12 @@
         card.appendChild(sectionNote);
       }
       card.appendChild(explanation);
+      if (item.explanationZh) {
+        const explanationZh = document.createElement("p");
+        explanationZh.className = "zh-text";
+        explanationZh.textContent = item.explanationZh;
+        card.appendChild(explanationZh);
+      }
       list.appendChild(card);
     });
   }
