@@ -3,18 +3,18 @@
 This manifest records verified repository and production evidence. It does not
 create or redefine a release.
 
-## v1.2.2 Release Candidate
+## v1.2.2 Official Release
 
 | Field | Verified value |
 | --- | --- |
 | Version | `1.2.2` |
-| Preparation branch | `develop` |
-| Preparation commit | Grammar navigation fix `f0c20ca422a00c0a45803bf5351f4ba6ecf11b6d` plus release documentation |
+| Production branch | `main` |
+| Production commit | `1890638bd247be449606e5c2cc9c8ea42d2e66d9` |
 | Scope | Responsive Grammar lesson navigation only |
 | Validation | Desktop 1024px/wider desktop and 390px mobile smoke tests; no horizontal overflow or console errors |
-| Status | Pending merge, Pages deployment, tag, and production verification |
+| Status | Published, tagged, Pages-deployed, and production-verified |
 
-## Current Official Release: v1.2.1
+## v1.2.1 Historical Release
 
 | Field | Verified value |
 | --- | --- |

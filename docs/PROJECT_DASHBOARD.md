@@ -2,9 +2,9 @@
 
 ## Current Version
 
-Current official release: `v1.2.1` (`v1.2.2` corrective release candidate on `develop`)
+Current official release: `v1.2.2`
 
-Current Pages state: verified `v1.2.1` deployment. See
+Current Pages state: verified `v1.2.2` deployment. See
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
 
 ## Current Status
