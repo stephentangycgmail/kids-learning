@@ -4,9 +4,9 @@ This is the highest-level project specification for `stephentangycgmail/kids-lea
 
 ## Project Status
 
-Kids Learning has an immutable `v1.0.0` tagged baseline. GitHub Pages currently
-serves a later untagged `main` deployment that includes post-tag changes. The
-project is in maintenance mode.
+Kids Learning has an immutable `v1.0.0` tagged baseline and current official
+release `v1.1.0`. GitHub Pages serves `main`; `develop` may contain unreleased
+maintenance or UAT work. The project is in maintenance mode.
 
 Production is static hosting from GitHub Pages. Azure, FastAPI, and backend APIs are not part of the current production deployment process.
 
@@ -96,9 +96,9 @@ Before changes are accepted:
 
 ## Release and Deployment
 
-GitHub Pages is the official production deployment method. The current tagged
-release baseline is `v1.0.0`; the current Pages deployment is newer and
-untagged. See [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
+GitHub Pages is the official production deployment method. The current official
+release is `v1.1.0`; `v1.0.0` remains an immutable baseline. See
+[`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
 
 Release preparation must confirm:
 

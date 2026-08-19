@@ -23,6 +23,10 @@ Durable instructions for future Codex work in the Kids Learning repository.
 ## Change Discipline
 
 - Inspect the relevant repository documentation and code before editing.
+- Treat the tracked implementation and committed current documentation as the
+  source of truth; do not rely on previous chat or session memory.
+- If current documentation and implementation materially disagree, stop and
+  report the discrepancy before making assumptions or broad changes.
 - Make the smallest reasonable change that satisfies the request.
 - Do not modify unrelated files.
 - Preserve backward compatibility unless the user explicitly approves a breaking change.

@@ -8,8 +8,8 @@ weaken those rules.
 
 ## Current Context
 
-- Kids Learning has a `v1.0.0` tagged baseline and a later untagged Pages
-  deployment.
+- Kids Learning has an immutable `v1.0.0` baseline and current official
+  `v1.1.0` release.
 - Production is static hosting from `main`.
 - Normal maintenance and development work happens on `develop` or a focused branch.
 - Azure and backend APIs are not part of the current production deployment process.
