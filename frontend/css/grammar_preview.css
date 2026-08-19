@@ -54,6 +54,13 @@ body { margin: 0; }
 .feedback.try { background: #ffe5e1; color: #8d2d25; }
 .next-button { background: #2176c5; color: #fff; margin-top: 16px; padding: 13px 18px; }
 .next-button:hover { background: #145a9e; }
+.secondary-button { background: #49657c; }
+.mode-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.mode-actions .next-button { margin-top: 0; }
+.mistake-list { display: grid; gap: 12px; margin: 18px 0; text-align: left; }
+.mistake-list article { background: #fff5f2; border: 1px solid #edb5aa; border-radius: 12px; padding: 12px 15px; }
+.mistake-list p { line-height: 1.45; margin: 5px 0; }
+.score-summary { font-size: 1.4rem; font-weight: 800; }
 .completion-card { background: #e9f8ec; border-color: #69b47a; text-align: center; }
 .completion-card .picture { font-size: 4rem; }
 @media (max-width: 650px) { .site-header { align-items: flex-start; flex-direction: column; } .back-link { order: 2; } .water-glass { height: 200px; max-width: 155px; } .zh-copy { font-size: .98rem; } .water-comparison { padding: 15px; } .water-comparison > div { gap: 12px; } }

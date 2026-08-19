@@ -73,43 +73,44 @@ Its JSON is intentionally absent from `grammar_catalog.json`, and it does not
 modify released Grammar lessons or Grammar Practice question banks.
 
 - **Question Words:** eight visual learning cards for What, Who, Where, When,
-  Why, Which, Whose, and How. It has four fixed-order stages with two
-  multiple-choice questions each (eight total): Visual choice, Match the
-  information, Sentence choice, and Mixed practice.
+  Why, Which, Whose, and How, plus a 50-question UAT bank with unique IDs and
+  concise Traditional Chinese explanations.
 - **Quantifiers:** six visual learning cards for `some`, `any`, `a few`, `a
   little`, `many`, and `much`; `a lot of`, `few`, and `little` are not preview
-  target items. It has the same four fixed-order, two-question stages (eight
-  total). It introduces countable versus uncountable nouns and compares the
+  target items. Its 54-question UAT bank includes six Countable / Uncountable
+  questions. It introduces countable versus uncountable nouns and compares the
   same large glass at 18% water for `a little` and 85% water for `much`.
 - Traditional Chinese support is present for topic subtitles and introductions,
   card meanings, and examples. Visual teaching uses emoji cards plus the water
   comparison for the two uncountable-water terms.
-- Practice gives immediate feedback after each answer: all choices are locked,
-  the correct answer is shown, an incorrect choice is marked, and the stored
-  explanation is displayed before Next. Questions and choices are not
-  randomized.
-- There is no separate Preview Quiz or Challenge mode. The released Grammar
-  lesson quizzes in `grammar.html` are a different feature. No automated test
-  currently targets the Preview page or data.
+- Practice randomly selects 12 unique questions and safely randomizes answer
+  option order. It gives immediate feedback after each answer: all choices are
+  locked, the correct answer is shown, an incorrect choice is marked, and the
+  English/Traditional Chinese explanation is displayed before Next.
+- Quiz / Challenge randomly selects 10 unique questions. It does not show
+  correctness during the session; completion shows score, percentage, and a
+  review of wrong answers with selected answer, correct answer, and bilingual
+  explanation. The released Grammar lesson quizzes in `grammar.html` remain a
+  different feature. `tests/grammar_preview_validation.js` validates bank IDs
+  and required coverage; rendered browser behavior remains a UAT check.
 
 ## Practice and History Storage
 
 Released Grammar Practice stores sessions primarily in IndexedDB database
 `kidsLearningGrammarPractice`, with localStorage fallback key
 `kidsLearning.grammarPractice.sessions.v1`. Preview completion is separate:
-`kidsLearning.grammarPreview.progress.v1` in localStorage stores topic,
-completion time, and score. Clearing browser site data removes these local
-records; no history is sent to a server. Preview completion never appears in
-released Grammar Practice History.
+`kidsLearning.grammarPreview.progress.v2` in localStorage stores topic-scoped
+session records with mode, completion time, score, total, and percentage.
+Clearing browser site data removes these local records; no history is sent to a
+server. Preview completion never appears in released Grammar Practice History.
 
 ## Pending UAT Work and Resume Point
 
 The Preview page has not been accepted or released. Its outstanding work is
 UAT of Question Words and Quantifiers, including child-facing visual and
-Traditional Chinese review, immediate-feedback behavior, responsive/browser
-smoke testing, and a decision on the desired Practice/Quiz or Challenge
-expansion. No additional preview Practice/Quiz expansion is implemented in the
-current code; treat it as pending until the user defines and accepts it.
+Traditional Chinese review, immediate-feedback and Quiz review behavior, and
+responsive/browser smoke testing. Practice and Quiz / Challenge expansion are
+implemented but remain unreleased until user acceptance is complete.
 
 Resume by reviewing the current `develop` diff from `main`, then test
 `frontend/grammar_preview.html` with its JSON data and confirm acceptance

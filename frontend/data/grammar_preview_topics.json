@@ -11,43 +11,881 @@
         "intro": "Question words are helper words at the start of a question. Look at the picture first, then choose the word that asks for the missing information.",
         "intro_zh": "問句詞放在問題的開頭，幫助我們詢問想知道的資料。先看圖片，再選擇最合適的問句詞。",
         "cards": [
-          {"word": "What", "picture": "🎁", "meaning": "Ask about a thing or an action.", "meaning_zh": "詢問「甚麼」：事物或動作。", "example": "What is in the box?", "example_zh": "盒子裡有甚麼？"},
-          {"word": "Who", "picture": "🧑‍🤝‍🧑", "meaning": "Ask about a person.", "meaning_zh": "詢問「誰」：人物。", "example": "Who is your teacher?", "example_zh": "誰是你的老師？"},
-          {"word": "Where", "picture": "🏫", "meaning": "Ask about a place.", "meaning_zh": "詢問「哪裡」：地方。", "example": "Where is the library?", "example_zh": "圖書館在哪裡？"},
-          {"word": "When", "picture": "🕒", "meaning": "Ask about a time or day.", "meaning_zh": "詢問「何時／甚麼時候」：時間或日子。", "example": "When is your birthday?", "example_zh": "你的生日在甚麼時候？"},
-          {"word": "Why", "picture": "🤔", "meaning": "Ask for a reason.", "meaning_zh": "詢問「為甚麼」：原因。", "example": "Why are you smiling?", "example_zh": "你為甚麼在笑？"},
-          {"word": "Which", "picture": "🍎🍌", "meaning": "Choose from choices.", "meaning_zh": "詢問「哪一個」：從選項中選擇。", "example": "Which fruit do you want?", "example_zh": "你想要哪一種水果？"},
-          {"word": "Whose", "picture": "🎒", "meaning": "Ask who owns something.", "meaning_zh": "詢問「誰的」：物件屬於誰。", "example": "Whose bag is this?", "example_zh": "這是誰的書包？"},
-          {"word": "How", "picture": "🚌", "meaning": "Ask about a way, condition or amount.", "meaning_zh": "詢問「怎樣／如何」：方法、情況或程度。", "example": "How do you get to school?", "example_zh": "你怎樣去上學？"}
+          {
+            "word": "What",
+            "picture": "🎁",
+            "meaning": "Ask about a thing or an action.",
+            "meaning_zh": "詢問「甚麼」：事物或動作。",
+            "example": "What is in the box?",
+            "example_zh": "盒子裡有甚麼？"
+          },
+          {
+            "word": "Who",
+            "picture": "🧑‍🤝‍🧑",
+            "meaning": "Ask about a person.",
+            "meaning_zh": "詢問「誰」：人物。",
+            "example": "Who is your teacher?",
+            "example_zh": "誰是你的老師？"
+          },
+          {
+            "word": "Where",
+            "picture": "🏫",
+            "meaning": "Ask about a place.",
+            "meaning_zh": "詢問「哪裡」：地方。",
+            "example": "Where is the library?",
+            "example_zh": "圖書館在哪裡？"
+          },
+          {
+            "word": "When",
+            "picture": "🕒",
+            "meaning": "Ask about a time or day.",
+            "meaning_zh": "詢問「何時／甚麼時候」：時間或日子。",
+            "example": "When is your birthday?",
+            "example_zh": "你的生日在甚麼時候？"
+          },
+          {
+            "word": "Why",
+            "picture": "🤔",
+            "meaning": "Ask for a reason.",
+            "meaning_zh": "詢問「為甚麼」：原因。",
+            "example": "Why are you smiling?",
+            "example_zh": "你為甚麼在笑？"
+          },
+          {
+            "word": "Which",
+            "picture": "🍎🍌",
+            "meaning": "Choose from choices.",
+            "meaning_zh": "詢問「哪一個」：從選項中選擇。",
+            "example": "Which fruit do you want?",
+            "example_zh": "你想要哪一種水果？"
+          },
+          {
+            "word": "Whose",
+            "picture": "🎒",
+            "meaning": "Ask who owns something.",
+            "meaning_zh": "詢問「誰的」：物件屬於誰。",
+            "example": "Whose bag is this?",
+            "example_zh": "這是誰的書包？"
+          },
+          {
+            "word": "How",
+            "picture": "🚌",
+            "meaning": "Ask about a way, condition or amount.",
+            "meaning_zh": "詢問「怎樣／如何」：方法、情況或程度。",
+            "example": "How do you get to school?",
+            "example_zh": "你怎樣去上學？"
+          }
         ]
       },
+      "questionBank": [
+        {
+          "id": "qw-what-01",
+          "stage": "What questions",
+          "visual": "🎒",
+          "prompt": "What is in your lunch box?",
+          "options": [
+            "What",
+            "Who",
+            "Where"
+          ],
+          "answer": "What",
+          "why": "What asks about a thing or action.",
+          "why_zh": "What 用來詢問事物或動作。"
+        },
+        {
+          "id": "qw-what-02",
+          "stage": "What questions",
+          "visual": "🎨",
+          "prompt": "What do you draw with crayons?",
+          "options": [
+            "What",
+            "Who",
+            "Where"
+          ],
+          "answer": "What",
+          "why": "What asks about a thing or action.",
+          "why_zh": "What 用來詢問事物或動作。"
+        },
+        {
+          "id": "qw-what-03",
+          "stage": "What questions",
+          "visual": "👟",
+          "prompt": "What do you wear on your feet?",
+          "options": [
+            "What",
+            "Who",
+            "Where"
+          ],
+          "answer": "What",
+          "why": "What asks about a thing or action.",
+          "why_zh": "What 用來詢問事物或動作。"
+        },
+        {
+          "id": "qw-what-04",
+          "stage": "What questions",
+          "visual": "🔎",
+          "prompt": "What did Mia find under the sofa?",
+          "options": [
+            "What",
+            "Who",
+            "Where"
+          ],
+          "answer": "What",
+          "why": "What asks about a thing or action.",
+          "why_zh": "What 用來詢問事物或動作。"
+        },
+        {
+          "id": "qw-what-05",
+          "stage": "What questions",
+          "visual": "📚",
+          "prompt": "What is your favourite school subject?",
+          "options": [
+            "What",
+            "Who",
+            "Where"
+          ],
+          "answer": "What",
+          "why": "What asks about a thing or action.",
+          "why_zh": "What 用來詢問事物或動作。"
+        },
+        {
+          "id": "qw-what-06",
+          "stage": "What questions",
+          "visual": "🧩",
+          "prompt": "What are the children making?",
+          "options": [
+            "What",
+            "Who",
+            "Where"
+          ],
+          "answer": "What",
+          "why": "What asks about a thing or action.",
+          "why_zh": "What 用來詢問事物或動作。"
+        },
+        {
+          "id": "qw-what-07",
+          "stage": "What questions",
+          "visual": "✏️",
+          "prompt": "What do you need for the art lesson?",
+          "options": [
+            "What",
+            "Who",
+            "Where"
+          ],
+          "answer": "What",
+          "why": "What asks about a thing or action.",
+          "why_zh": "What 用來詢問事物或動作。"
+        },
+        {
+          "id": "qw-who-01",
+          "stage": "Who questions",
+          "visual": "🎒",
+          "prompt": "Who helps you cross the road?",
+          "options": [
+            "Who",
+            "Whose",
+            "What"
+          ],
+          "answer": "Who",
+          "why": "Who asks about a person.",
+          "why_zh": "Who 用來詢問人物。"
+        },
+        {
+          "id": "qw-who-02",
+          "stage": "Who questions",
+          "visual": "🎨",
+          "prompt": "Who is baking cookies in the kitchen?",
+          "options": [
+            "Who",
+            "Whose",
+            "What"
+          ],
+          "answer": "Who",
+          "why": "Who asks about a person.",
+          "why_zh": "Who 用來詢問人物。"
+        },
+        {
+          "id": "qw-who-03",
+          "stage": "Who questions",
+          "visual": "👟",
+          "prompt": "Who teaches your class?",
+          "options": [
+            "Who",
+            "Whose",
+            "What"
+          ],
+          "answer": "Who",
+          "why": "Who asks about a person.",
+          "why_zh": "Who 用來詢問人物。"
+        },
+        {
+          "id": "qw-who-04",
+          "stage": "Who questions",
+          "visual": "🔎",
+          "prompt": "Who scored the winning goal?",
+          "options": [
+            "Who",
+            "Whose",
+            "What"
+          ],
+          "answer": "Who",
+          "why": "Who asks about a person.",
+          "why_zh": "Who 用來詢問人物。"
+        },
+        {
+          "id": "qw-who-05",
+          "stage": "Who questions",
+          "visual": "📚",
+          "prompt": "Who has borrowed my blue pen?",
+          "options": [
+            "Who",
+            "Whose",
+            "What"
+          ],
+          "answer": "Who",
+          "why": "Who asks about a person.",
+          "why_zh": "Who 用來詢問人物。"
+        },
+        {
+          "id": "qw-who-06",
+          "stage": "Who questions",
+          "visual": "🧩",
+          "prompt": "Who is knocking at the door?",
+          "options": [
+            "Who",
+            "Whose",
+            "What"
+          ],
+          "answer": "Who",
+          "why": "Who asks about a person.",
+          "why_zh": "Who 用來詢問人物。"
+        },
+        {
+          "id": "qw-where-01",
+          "stage": "Where questions",
+          "visual": "🎒",
+          "prompt": "Where do you keep your toothbrush?",
+          "options": [
+            "Where",
+            "When",
+            "Why"
+          ],
+          "answer": "Where",
+          "why": "Where asks about a place.",
+          "why_zh": "Where 用來詢問地方。"
+        },
+        {
+          "id": "qw-where-02",
+          "stage": "Where questions",
+          "visual": "🎨",
+          "prompt": "Where can we borrow storybooks?",
+          "options": [
+            "Where",
+            "When",
+            "Why"
+          ],
+          "answer": "Where",
+          "why": "Where asks about a place.",
+          "why_zh": "Where 用來詢問地方。"
+        },
+        {
+          "id": "qw-where-03",
+          "stage": "Where questions",
+          "visual": "👟",
+          "prompt": "Where is the playground?",
+          "options": [
+            "Where",
+            "When",
+            "Why"
+          ],
+          "answer": "Where",
+          "why": "Where asks about a place.",
+          "why_zh": "Where 用來詢問地方。"
+        },
+        {
+          "id": "qw-where-04",
+          "stage": "Where questions",
+          "visual": "🔎",
+          "prompt": "Where did Leo leave his cap?",
+          "options": [
+            "Where",
+            "When",
+            "Why"
+          ],
+          "answer": "Where",
+          "why": "Where asks about a place.",
+          "why_zh": "Where 用來詢問地方。"
+        },
+        {
+          "id": "qw-where-05",
+          "stage": "Where questions",
+          "visual": "📚",
+          "prompt": "Where do fish live?",
+          "options": [
+            "Where",
+            "When",
+            "Why"
+          ],
+          "answer": "Where",
+          "why": "Where asks about a place.",
+          "why_zh": "Where 用來詢問地方。"
+        },
+        {
+          "id": "qw-where-06",
+          "stage": "Where questions",
+          "visual": "🧩",
+          "prompt": "Where should we put the recycling?",
+          "options": [
+            "Where",
+            "When",
+            "Why"
+          ],
+          "answer": "Where",
+          "why": "Where asks about a place.",
+          "why_zh": "Where 用來詢問地方。"
+        },
+        {
+          "id": "qw-when-01",
+          "stage": "When questions",
+          "visual": "🎒",
+          "prompt": "When do you eat breakfast?",
+          "options": [
+            "When",
+            "Where",
+            "Why"
+          ],
+          "answer": "When",
+          "why": "When asks about a time or day.",
+          "why_zh": "When 用來詢問時間或日子。"
+        },
+        {
+          "id": "qw-when-02",
+          "stage": "When questions",
+          "visual": "🎨",
+          "prompt": "When is the school concert?",
+          "options": [
+            "When",
+            "Where",
+            "Why"
+          ],
+          "answer": "When",
+          "why": "When asks about a time or day.",
+          "why_zh": "When 用來詢問時間或日子。"
+        },
+        {
+          "id": "qw-when-03",
+          "stage": "When questions",
+          "visual": "👟",
+          "prompt": "When should we water the plants?",
+          "options": [
+            "When",
+            "Where",
+            "Why"
+          ],
+          "answer": "When",
+          "why": "When asks about a time or day.",
+          "why_zh": "When 用來詢問時間或日子。"
+        },
+        {
+          "id": "qw-when-04",
+          "stage": "When questions",
+          "visual": "🔎",
+          "prompt": "When did you finish your homework?",
+          "options": [
+            "When",
+            "Where",
+            "Why"
+          ],
+          "answer": "When",
+          "why": "When asks about a time or day.",
+          "why_zh": "When 用來詢問時間或日子。"
+        },
+        {
+          "id": "qw-when-05",
+          "stage": "When questions",
+          "visual": "📚",
+          "prompt": "When can we open the birthday present?",
+          "options": [
+            "When",
+            "Where",
+            "Why"
+          ],
+          "answer": "When",
+          "why": "When asks about a time or day.",
+          "why_zh": "When 用來詢問時間或日子。"
+        },
+        {
+          "id": "qw-when-06",
+          "stage": "When questions",
+          "visual": "🧩",
+          "prompt": "When do buses usually arrive?",
+          "options": [
+            "When",
+            "Where",
+            "Why"
+          ],
+          "answer": "When",
+          "why": "When asks about a time or day.",
+          "why_zh": "When 用來詢問時間或日子。"
+        },
+        {
+          "id": "qw-why-01",
+          "stage": "Why questions",
+          "visual": "🎒",
+          "prompt": "Why are you wearing a raincoat?",
+          "options": [
+            "Why",
+            "When",
+            "How"
+          ],
+          "answer": "Why",
+          "why": "Why asks for a reason.",
+          "why_zh": "Why 用來詢問原因。"
+        },
+        {
+          "id": "qw-why-02",
+          "stage": "Why questions",
+          "visual": "🎨",
+          "prompt": "Why did the baby bird chirp?",
+          "options": [
+            "Why",
+            "When",
+            "How"
+          ],
+          "answer": "Why",
+          "why": "Why asks for a reason.",
+          "why_zh": "Why 用來詢問原因。"
+        },
+        {
+          "id": "qw-why-03",
+          "stage": "Why questions",
+          "visual": "👟",
+          "prompt": "Why should we wash our hands?",
+          "options": [
+            "Why",
+            "When",
+            "How"
+          ],
+          "answer": "Why",
+          "why": "Why asks for a reason.",
+          "why_zh": "Why 用來詢問原因。"
+        },
+        {
+          "id": "qw-why-04",
+          "stage": "Why questions",
+          "visual": "🔎",
+          "prompt": "Why is Ben carrying an umbrella?",
+          "options": [
+            "Why",
+            "When",
+            "How"
+          ],
+          "answer": "Why",
+          "why": "Why asks for a reason.",
+          "why_zh": "Why 用來詢問原因。"
+        },
+        {
+          "id": "qw-why-05",
+          "stage": "Why questions",
+          "visual": "📚",
+          "prompt": "Why do plants need sunlight?",
+          "options": [
+            "Why",
+            "When",
+            "How"
+          ],
+          "answer": "Why",
+          "why": "Why asks for a reason.",
+          "why_zh": "Why 用來詢問原因。"
+        },
+        {
+          "id": "qw-why-06",
+          "stage": "Why questions",
+          "visual": "🧩",
+          "prompt": "Why did the class clap?",
+          "options": [
+            "Why",
+            "When",
+            "How"
+          ],
+          "answer": "Why",
+          "why": "Why asks for a reason.",
+          "why_zh": "Why 用來詢問原因。"
+        },
+        {
+          "id": "qw-which-01",
+          "stage": "Which questions",
+          "visual": "🎒",
+          "prompt": "Which pencil do you want, red or green?",
+          "options": [
+            "Which",
+            "What",
+            "Who"
+          ],
+          "answer": "Which",
+          "why": "Which is used when choosing from options.",
+          "why_zh": "Which 用於在選項中作選擇。"
+        },
+        {
+          "id": "qw-which-02",
+          "stage": "Which questions",
+          "visual": "🎨",
+          "prompt": "Which bus goes to the museum?",
+          "options": [
+            "Which",
+            "What",
+            "Who"
+          ],
+          "answer": "Which",
+          "why": "Which is used when choosing from options.",
+          "why_zh": "Which 用於在選項中作選擇。"
+        },
+        {
+          "id": "qw-which-03",
+          "stage": "Which questions",
+          "visual": "👟",
+          "prompt": "Which game shall we play first?",
+          "options": [
+            "Which",
+            "What",
+            "Who"
+          ],
+          "answer": "Which",
+          "why": "Which is used when choosing from options.",
+          "why_zh": "Which 用於在選項中作選擇。"
+        },
+        {
+          "id": "qw-which-04",
+          "stage": "Which questions",
+          "visual": "🔎",
+          "prompt": "Which jacket belongs to you?",
+          "options": [
+            "Which",
+            "What",
+            "Who"
+          ],
+          "answer": "Which",
+          "why": "Which is used when choosing from options.",
+          "why_zh": "Which 用於在選項中作選擇。"
+        },
+        {
+          "id": "qw-which-05",
+          "stage": "Which questions",
+          "visual": "📚",
+          "prompt": "Which fruit would you like for snack?",
+          "options": [
+            "Which",
+            "What",
+            "Who"
+          ],
+          "answer": "Which",
+          "why": "Which is used when choosing from options.",
+          "why_zh": "Which 用於在選項中作選擇。"
+        },
+        {
+          "id": "qw-which-06",
+          "stage": "Which questions",
+          "visual": "🧩",
+          "prompt": "Which book should I read tonight?",
+          "options": [
+            "Which",
+            "What",
+            "Who"
+          ],
+          "answer": "Which",
+          "why": "Which is used when choosing from options.",
+          "why_zh": "Which 用於在選項中作選擇。"
+        },
+        {
+          "id": "qw-whose-01",
+          "stage": "Whose questions",
+          "visual": "🎒",
+          "prompt": "Whose lunch box is on the table?",
+          "options": [
+            "Whose",
+            "Who",
+            "Which"
+          ],
+          "answer": "Whose",
+          "why": "Whose asks who owns something.",
+          "why_zh": "Whose 用來詢問物件屬於誰。"
+        },
+        {
+          "id": "qw-whose-02",
+          "stage": "Whose questions",
+          "visual": "🎨",
+          "prompt": "Whose shoes are by the door?",
+          "options": [
+            "Whose",
+            "Who",
+            "Which"
+          ],
+          "answer": "Whose",
+          "why": "Whose asks who owns something.",
+          "why_zh": "Whose 用來詢問物件屬於誰。"
+        },
+        {
+          "id": "qw-whose-03",
+          "stage": "Whose questions",
+          "visual": "👟",
+          "prompt": "Whose turn is it to roll the dice?",
+          "options": [
+            "Whose",
+            "Who",
+            "Which"
+          ],
+          "answer": "Whose",
+          "why": "Whose asks who owns something.",
+          "why_zh": "Whose 用來詢問物件屬於誰。"
+        },
+        {
+          "id": "qw-whose-04",
+          "stage": "Whose questions",
+          "visual": "🔎",
+          "prompt": "Whose dog is wearing the red collar?",
+          "options": [
+            "Whose",
+            "Who",
+            "Which"
+          ],
+          "answer": "Whose",
+          "why": "Whose asks who owns something.",
+          "why_zh": "Whose 用來詢問物件屬於誰。"
+        },
+        {
+          "id": "qw-whose-05",
+          "stage": "Whose questions",
+          "visual": "📚",
+          "prompt": "Whose drawing won the prize?",
+          "options": [
+            "Whose",
+            "Who",
+            "Which"
+          ],
+          "answer": "Whose",
+          "why": "Whose asks who owns something.",
+          "why_zh": "Whose 用來詢問物件屬於誰。"
+        },
+        {
+          "id": "qw-whose-06",
+          "stage": "Whose questions",
+          "visual": "🧩",
+          "prompt": "Whose scarf did you find?",
+          "options": [
+            "Whose",
+            "Who",
+            "Which"
+          ],
+          "answer": "Whose",
+          "why": "Whose asks who owns something.",
+          "why_zh": "Whose 用來詢問物件屬於誰。"
+        },
+        {
+          "id": "qw-how-01",
+          "stage": "How questions",
+          "visual": "🎒",
+          "prompt": "How do you get to school?",
+          "options": [
+            "How",
+            "Why",
+            "What"
+          ],
+          "answer": "How",
+          "why": "How asks about a way, condition or amount.",
+          "why_zh": "How 用來詢問方法、情況或數量。"
+        },
+        {
+          "id": "qw-how-02",
+          "stage": "How questions",
+          "visual": "🎨",
+          "prompt": "How can we make the room tidy?",
+          "options": [
+            "How",
+            "Why",
+            "What"
+          ],
+          "answer": "How",
+          "why": "How asks about a way, condition or amount.",
+          "why_zh": "How 用來詢問方法、情況或數量。"
+        },
+        {
+          "id": "qw-how-03",
+          "stage": "How questions",
+          "visual": "👟",
+          "prompt": "How did the glass break?",
+          "options": [
+            "How",
+            "Why",
+            "What"
+          ],
+          "answer": "How",
+          "why": "How asks about a way, condition or amount.",
+          "why_zh": "How 用來詢問方法、情況或數量。"
+        },
+        {
+          "id": "qw-how-04",
+          "stage": "How questions",
+          "visual": "🔎",
+          "prompt": "How many stickers do you have?",
+          "options": [
+            "How",
+            "Why",
+            "What"
+          ],
+          "answer": "How",
+          "why": "How asks about a way, condition or amount.",
+          "why_zh": "How 用來詢問方法、情況或數量。"
+        },
+        {
+          "id": "qw-how-05",
+          "stage": "How questions",
+          "visual": "📚",
+          "prompt": "How often do you practise the piano?",
+          "options": [
+            "How",
+            "Why",
+            "What"
+          ],
+          "answer": "How",
+          "why": "How asks about a way, condition or amount.",
+          "why_zh": "How 用來詢問方法、情況或數量。"
+        },
+        {
+          "id": "qw-how-06",
+          "stage": "How questions",
+          "visual": "🧩",
+          "prompt": "How does this toy work?",
+          "options": [
+            "How",
+            "Why",
+            "What"
+          ],
+          "answer": "How",
+          "why": "How asks about a way, condition or amount.",
+          "why_zh": "How 用來詢問方法、情況或數量。"
+        },
+        {
+          "id": "qw-how-07",
+          "stage": "How questions",
+          "visual": "✏️",
+          "prompt": "How are you feeling today?",
+          "options": [
+            "How",
+            "Why",
+            "What"
+          ],
+          "answer": "How",
+          "why": "How asks about a way, condition or amount.",
+          "why_zh": "How 用來詢問方法、情況或數量。"
+        }
+      ],
       "stages": [
         {
           "title": "1. Visual choice",
           "questions": [
-            {"visual": "🎂", "prompt": "You want to ask about the day of a birthday. Which word do you use?", "options": ["When", "Where", "Who"], "answer": "When", "why": "When asks about time or a day."},
-            {"visual": "🏠", "prompt": "You want to ask about the place where Sam lives. Which word do you use?", "options": ["Where", "What", "Why"], "answer": "Where", "why": "Where asks about a place."}
+            {
+              "visual": "🎂",
+              "prompt": "You want to ask about the day of a birthday. Which word do you use?",
+              "options": [
+                "When",
+                "Where",
+                "Who"
+              ],
+              "answer": "When",
+              "why": "When asks about time or a day."
+            },
+            {
+              "visual": "🏠",
+              "prompt": "You want to ask about the place where Sam lives. Which word do you use?",
+              "options": [
+                "Where",
+                "What",
+                "Why"
+              ],
+              "answer": "Where",
+              "why": "Where asks about a place."
+            }
           ]
         },
         {
           "title": "2. Match the information",
           "questions": [
-            {"visual": "👩‍🏫", "prompt": "Which question word asks for the name of a person?", "options": ["Who", "Whose", "How"], "answer": "Who", "why": "Who asks about a person. Whose asks who owns something."},
-            {"visual": "🧥", "prompt": "Which question word asks who owns this coat?", "options": ["Whose", "Which", "What"], "answer": "Whose", "why": "Whose asks about ownership."}
+            {
+              "visual": "👩‍🏫",
+              "prompt": "Which question word asks for the name of a person?",
+              "options": [
+                "Who",
+                "Whose",
+                "How"
+              ],
+              "answer": "Who",
+              "why": "Who asks about a person. Whose asks who owns something."
+            },
+            {
+              "visual": "🧥",
+              "prompt": "Which question word asks who owns this coat?",
+              "options": [
+                "Whose",
+                "Which",
+                "What"
+              ],
+              "answer": "Whose",
+              "why": "Whose asks about ownership."
+            }
           ]
         },
         {
           "title": "3. Sentence choice",
           "questions": [
-            {"visual": "🚲", "prompt": "___ do you ride your bicycle to school?", "options": ["How", "Why", "Which"], "answer": "How", "why": "How asks about the way you do something."},
-            {"visual": "😊", "prompt": "___ are you happy today?", "options": ["Why", "Where", "When"], "answer": "Why", "why": "Why asks for a reason."}
+            {
+              "visual": "🚲",
+              "prompt": "___ do you ride your bicycle to school?",
+              "options": [
+                "How",
+                "Why",
+                "Which"
+              ],
+              "answer": "How",
+              "why": "How asks about the way you do something."
+            },
+            {
+              "visual": "😊",
+              "prompt": "___ are you happy today?",
+              "options": [
+                "Why",
+                "Where",
+                "When"
+              ],
+              "answer": "Why",
+              "why": "Why asks for a reason."
+            }
           ]
         },
         {
           "title": "4. Mixed practice",
           "questions": [
-            {"visual": "🍎🍌", "prompt": "___ snack would you like: an apple or a banana?", "options": ["Which", "What", "Who"], "answer": "Which", "why": "Which is used when there is a choice."},
-            {"visual": "📚", "prompt": "___ are you reading?", "options": ["What", "When", "Whose"], "answer": "What", "why": "What asks about the thing or action."}
+            {
+              "visual": "🍎🍌",
+              "prompt": "___ snack would you like: an apple or a banana?",
+              "options": [
+                "Which",
+                "What",
+                "Who"
+              ],
+              "answer": "Which",
+              "why": "Which is used when there is a choice."
+            },
+            {
+              "visual": "📚",
+              "prompt": "___ are you reading?",
+              "options": [
+                "What",
+                "When",
+                "Whose"
+              ],
+              "answer": "What",
+              "why": "What asks about the thing or action."
+            }
           ]
         }
       ]
@@ -60,45 +898,930 @@
       "learning": {
         "intro": "First, sort the noun. Countable nouns can be counted one by one. Uncountable nouns are measured as an amount. Then choose a quantifier.",
         "intro_zh": "先分辨名詞。可數名詞可以逐一數；不可數名詞用份量來量度。然後選擇合適的數量詞。",
-        "countable": ["apples", "books", "students", "grapes"],
-        "uncountable": ["water", "milk", "rice", "money", "time"],
+        "countable": [
+          "apples",
+          "books",
+          "students",
+          "grapes"
+        ],
+        "uncountable": [
+          "water",
+          "milk",
+          "rice",
+          "money",
+          "time"
+        ],
         "cards": [
-          {"word": "a few", "picture": "🍎🍎🍎", "meaning": "a small number of countable things", "meaning_zh": "少量可數的東西／幾個", "example": "We have a few apples.", "example_zh": "我們有幾個蘋果。"},
-          {"word": "many", "picture": "🍎🍎🍎🍎🍎🍎🍎🍎", "meaning": "many countable things", "meaning_zh": "很多可數的東西", "example": "There are many apples.", "example_zh": "這裡有很多蘋果。"},
-          {"word": "a little", "visual": "water-glass", "water_level": 18, "meaning": "a small amount of uncountable things", "meaning_zh": "少量不可數的東西", "example": "There is a little water in the large glass.", "example_zh": "這個大玻璃杯裡只有少量水。"},
-          {"word": "much", "visual": "water-glass", "water_level": 85, "meaning": "a large amount of an uncountable quantity", "meaning_zh": "很多／大量不可數的東西", "example": "There is much water in the large glass.", "example_zh": "這個大玻璃杯裡有很多水。"},
-          {"word": "some", "picture": "🛒", "meaning": "usually used in positive statements", "meaning_zh": "通常用於肯定句，表示「一些」", "example": "I have some grapes.", "example_zh": "我有一些葡萄。"},
-          {"word": "any", "picture": "❓", "meaning": "usually used in questions and negative statements", "meaning_zh": "通常用於問句和否定句，表示「一些／任何」", "example": "Do you have any milk?", "example_zh": "你有一些牛奶嗎？"}
+          {
+            "word": "a few",
+            "picture": "🍎🍎🍎",
+            "meaning": "a small number of countable things",
+            "meaning_zh": "少量可數的東西／幾個",
+            "example": "We have a few apples.",
+            "example_zh": "我們有幾個蘋果。"
+          },
+          {
+            "word": "many",
+            "picture": "🍎🍎🍎🍎🍎🍎🍎🍎",
+            "meaning": "many countable things",
+            "meaning_zh": "很多可數的東西",
+            "example": "There are many apples.",
+            "example_zh": "這裡有很多蘋果。"
+          },
+          {
+            "word": "a little",
+            "visual": "water-glass",
+            "water_level": 18,
+            "meaning": "a small amount of uncountable things",
+            "meaning_zh": "少量不可數的東西",
+            "example": "There is a little water in the large glass.",
+            "example_zh": "這個大玻璃杯裡只有少量水。"
+          },
+          {
+            "word": "much",
+            "visual": "water-glass",
+            "water_level": 85,
+            "meaning": "a large amount of an uncountable quantity",
+            "meaning_zh": "很多／大量不可數的東西",
+            "example": "There is much water in the large glass.",
+            "example_zh": "這個大玻璃杯裡有很多水。"
+          },
+          {
+            "word": "some",
+            "picture": "🛒",
+            "meaning": "usually used in positive statements",
+            "meaning_zh": "通常用於肯定句，表示「一些」",
+            "example": "I have some grapes.",
+            "example_zh": "我有一些葡萄。"
+          },
+          {
+            "word": "any",
+            "picture": "❓",
+            "meaning": "usually used in questions and negative statements",
+            "meaning_zh": "通常用於問句和否定句，表示「一些／任何」",
+            "example": "Do you have any milk?",
+            "example_zh": "你有一些牛奶嗎？"
+          }
         ]
       },
       "stages": [
         {
           "title": "1. Visual choice",
           "questions": [
-            {"visual": "🍎🍎🍎", "prompt": "Choose the best words: We have ___ apples.", "options": ["a few", "a little", "much"], "answer": "a few", "why": "Apples are countable, and the picture shows a small number."},
-            {"visual": "🥛", "prompt": "A large glass has only a small amount of water. Choose the best words.", "options": ["a little", "a few", "many"], "answer": "a little", "why": "Water is uncountable. A little means a small amount."}
+            {
+              "visual": "🍎🍎🍎",
+              "prompt": "Choose the best words: We have ___ apples.",
+              "options": [
+                "a few",
+                "a little",
+                "much"
+              ],
+              "answer": "a few",
+              "why": "Apples are countable, and the picture shows a small number."
+            },
+            {
+              "visual": "🥛",
+              "prompt": "A large glass has only a small amount of water. Choose the best words.",
+              "options": [
+                "a little",
+                "a few",
+                "many"
+              ],
+              "answer": "a little",
+              "why": "Water is uncountable. A little means a small amount."
+            }
           ]
         },
         {
           "title": "2. Countable or uncountable",
           "questions": [
-            {"visual": "📚", "prompt": "Books are ...", "options": ["Countable", "Uncountable"], "answer": "Countable", "why": "Books can be counted one by one."},
-            {"visual": "🍚", "prompt": "Rice is ...", "options": ["Uncountable", "Countable"], "answer": "Uncountable", "why": "Rice is treated as an amount in this lesson."}
+            {
+              "visual": "📚",
+              "prompt": "Books are ...",
+              "options": [
+                "Countable",
+                "Uncountable"
+              ],
+              "answer": "Countable",
+              "why": "Books can be counted one by one."
+            },
+            {
+              "visual": "🍚",
+              "prompt": "Rice is ...",
+              "options": [
+                "Uncountable",
+                "Countable"
+              ],
+              "answer": "Uncountable",
+              "why": "Rice is treated as an amount in this lesson."
+            }
           ]
         },
         {
           "title": "3. Sentence choice",
           "questions": [
-            {"visual": "❓🥛", "prompt": "Do you have ___ milk?", "options": ["any", "some", "many"], "answer": "any", "why": "Any is usually used in questions and negative statements."},
-            {"visual": "🍇🍇🍇🍇🍇🍇🍇", "prompt": "There are ___ grapes in the bowl.", "options": ["many", "much", "a little"], "answer": "many", "why": "Grapes are countable, so many is the best choice."}
+            {
+              "visual": "❓🥛",
+              "prompt": "Do you have ___ milk?",
+              "options": [
+                "any",
+                "some",
+                "many"
+              ],
+              "answer": "any",
+              "why": "Any is usually used in questions and negative statements."
+            },
+            {
+              "visual": "🍇🍇🍇🍇🍇🍇🍇",
+              "prompt": "There are ___ grapes in the bowl.",
+              "options": [
+                "many",
+                "much",
+                "a little"
+              ],
+              "answer": "many",
+              "why": "Grapes are countable, so many is the best choice."
+            }
           ]
         },
         {
           "title": "4. Mixed practice",
           "questions": [
-            {"visual": "🧃", "prompt": "We need ___ juice for the picnic.", "options": ["some", "any", "a few"], "answer": "some", "why": "This is a positive statement, so some is the usual choice."},
-            {"visual": "⏰", "prompt": "We do not have ___ time.", "options": ["much", "many", "a few"], "answer": "much", "why": "Time is uncountable, so much is the best choice here."}
+            {
+              "visual": "🧃",
+              "prompt": "We need ___ juice for the picnic.",
+              "options": [
+                "some",
+                "any",
+                "a few"
+              ],
+              "answer": "some",
+              "why": "This is a positive statement, so some is the usual choice."
+            },
+            {
+              "visual": "⏰",
+              "prompt": "We do not have ___ time.",
+              "options": [
+                "much",
+                "many",
+                "a few"
+              ],
+              "answer": "much",
+              "why": "Time is uncountable, so much is the best choice here."
+            }
           ]
+        }
+      ],
+      "questionBank": [
+        {
+          "id": "q-some-01",
+          "stage": "Quantifier choice",
+          "visual": "🧺",
+          "prompt": "I packed ___ sandwiches for the picnic.",
+          "options": [
+            "some",
+            "any",
+            "many"
+          ],
+          "answer": "some",
+          "why": "Some is common in positive sentences.",
+          "why_zh": "Some 常用於肯定句，表示一些。"
+        },
+        {
+          "id": "q-some-02",
+          "stage": "Quantifier choice",
+          "visual": "🥣",
+          "prompt": "There are ___ crayons in the box.",
+          "options": [
+            "some",
+            "any",
+            "many"
+          ],
+          "answer": "some",
+          "why": "Some is common in positive sentences.",
+          "why_zh": "Some 常用於肯定句，表示一些。"
+        },
+        {
+          "id": "q-some-03",
+          "stage": "Quantifier choice",
+          "visual": "🚌",
+          "prompt": "We need ___ flour for the cake.",
+          "options": [
+            "some",
+            "any",
+            "many"
+          ],
+          "answer": "some",
+          "why": "Some is common in positive sentences.",
+          "why_zh": "Some 常用於肯定句，表示一些。"
+        },
+        {
+          "id": "q-some-04",
+          "stage": "Quantifier choice",
+          "visual": "🍎",
+          "prompt": "She bought ___ apples at the market.",
+          "options": [
+            "some",
+            "any",
+            "many"
+          ],
+          "answer": "some",
+          "why": "Some is common in positive sentences.",
+          "why_zh": "Some 常用於肯定句，表示一些。"
+        },
+        {
+          "id": "q-some-05",
+          "stage": "Quantifier choice",
+          "visual": "⏰",
+          "prompt": "Would you like ___ soup?",
+          "options": [
+            "some",
+            "any",
+            "many"
+          ],
+          "answer": "some",
+          "why": "Some is common in positive sentences.",
+          "why_zh": "Some 常用於肯定句，表示一些。"
+        },
+        {
+          "id": "q-some-06",
+          "stage": "Quantifier choice",
+          "visual": "🥛",
+          "prompt": "The teacher gave us ___ paper.",
+          "options": [
+            "some",
+            "any",
+            "many"
+          ],
+          "answer": "some",
+          "why": "Some is common in positive sentences.",
+          "why_zh": "Some 常用於肯定句，表示一些。"
+        },
+        {
+          "id": "q-some-07",
+          "stage": "Quantifier choice",
+          "visual": "🌱",
+          "prompt": "I have ___ good news for you.",
+          "options": [
+            "some",
+            "any",
+            "many"
+          ],
+          "answer": "some",
+          "why": "Some is common in positive sentences.",
+          "why_zh": "Some 常用於肯定句，表示一些。"
+        },
+        {
+          "id": "q-some-08",
+          "stage": "Quantifier choice",
+          "visual": "🧃",
+          "prompt": "We saw ___ colourful fish.",
+          "options": [
+            "some",
+            "any",
+            "many"
+          ],
+          "answer": "some",
+          "why": "Some is common in positive sentences.",
+          "why_zh": "Some 常用於肯定句，表示一些。"
+        },
+        {
+          "id": "q-any-01",
+          "stage": "Quantifier choice",
+          "visual": "🧺",
+          "prompt": "Do you have ___ questions?",
+          "options": [
+            "any",
+            "some",
+            "much"
+          ],
+          "answer": "any",
+          "why": "Any is common in questions and negative sentences.",
+          "why_zh": "Any 常用於問句和否定句。"
+        },
+        {
+          "id": "q-any-02",
+          "stage": "Quantifier choice",
+          "visual": "🥣",
+          "prompt": "There isn't ___ cheese left.",
+          "options": [
+            "any",
+            "some",
+            "much"
+          ],
+          "answer": "any",
+          "why": "Any is common in questions and negative sentences.",
+          "why_zh": "Any 常用於問句和否定句。"
+        },
+        {
+          "id": "q-any-03",
+          "stage": "Quantifier choice",
+          "visual": "🚌",
+          "prompt": "Did you see ___ stars last night?",
+          "options": [
+            "any",
+            "some",
+            "much"
+          ],
+          "answer": "any",
+          "why": "Any is common in questions and negative sentences.",
+          "why_zh": "Any 常用於問句和否定句。"
+        },
+        {
+          "id": "q-any-04",
+          "stage": "Quantifier choice",
+          "visual": "🍎",
+          "prompt": "We don't need ___ more chairs.",
+          "options": [
+            "any",
+            "some",
+            "much"
+          ],
+          "answer": "any",
+          "why": "Any is common in questions and negative sentences.",
+          "why_zh": "Any 常用於問句和否定句。"
+        },
+        {
+          "id": "q-any-05",
+          "stage": "Quantifier choice",
+          "visual": "⏰",
+          "prompt": "Are there ___ clean cups?",
+          "options": [
+            "any",
+            "some",
+            "much"
+          ],
+          "answer": "any",
+          "why": "Any is common in questions and negative sentences.",
+          "why_zh": "Any 常用於問句和否定句。"
+        },
+        {
+          "id": "q-any-06",
+          "stage": "Quantifier choice",
+          "visual": "🥛",
+          "prompt": "I cannot find ___ glue.",
+          "options": [
+            "any",
+            "some",
+            "much"
+          ],
+          "answer": "any",
+          "why": "Any is common in questions and negative sentences.",
+          "why_zh": "Any 常用於問句和否定句。"
+        },
+        {
+          "id": "q-any-07",
+          "stage": "Quantifier choice",
+          "visual": "🌱",
+          "prompt": "Would you like ___ help?",
+          "options": [
+            "any",
+            "some",
+            "much"
+          ],
+          "answer": "any",
+          "why": "Any is common in questions and negative sentences.",
+          "why_zh": "Any 常用於問句和否定句。"
+        },
+        {
+          "id": "q-any-08",
+          "stage": "Quantifier choice",
+          "visual": "🧃",
+          "prompt": "Have you got ___ homework today?",
+          "options": [
+            "any",
+            "some",
+            "much"
+          ],
+          "answer": "any",
+          "why": "Any is common in questions and negative sentences.",
+          "why_zh": "Any 常用於問句和否定句。"
+        },
+        {
+          "id": "q-a-few-01",
+          "stage": "Quantifier choice",
+          "visual": "🧺",
+          "prompt": "I read ___ pages before bed.",
+          "options": [
+            "a few",
+            "a little",
+            "much"
+          ],
+          "answer": "a few",
+          "why": "A few means a small number of countable things.",
+          "why_zh": "A few 表示少量可數的東西。"
+        },
+        {
+          "id": "q-a-few-02",
+          "stage": "Quantifier choice",
+          "visual": "🥣",
+          "prompt": "There are ___ ducks on the pond.",
+          "options": [
+            "a few",
+            "a little",
+            "much"
+          ],
+          "answer": "a few",
+          "why": "A few means a small number of countable things.",
+          "why_zh": "A few 表示少量可數的東西。"
+        },
+        {
+          "id": "q-a-few-03",
+          "stage": "Quantifier choice",
+          "visual": "🚌",
+          "prompt": "We need ___ volunteers for the game.",
+          "options": [
+            "a few",
+            "a little",
+            "much"
+          ],
+          "answer": "a few",
+          "why": "A few means a small number of countable things.",
+          "why_zh": "A few 表示少量可數的東西。"
+        },
+        {
+          "id": "q-a-few-04",
+          "stage": "Quantifier choice",
+          "visual": "🍎",
+          "prompt": "She put ___ coins in her pocket.",
+          "options": [
+            "a few",
+            "a little",
+            "much"
+          ],
+          "answer": "a few",
+          "why": "A few means a small number of countable things.",
+          "why_zh": "A few 表示少量可數的東西。"
+        },
+        {
+          "id": "q-a-few-05",
+          "stage": "Quantifier choice",
+          "visual": "⏰",
+          "prompt": "Only ___ children stayed after class.",
+          "options": [
+            "a few",
+            "a little",
+            "much"
+          ],
+          "answer": "a few",
+          "why": "A few means a small number of countable things.",
+          "why_zh": "A few 表示少量可數的東西。"
+        },
+        {
+          "id": "q-a-few-06",
+          "stage": "Quantifier choice",
+          "visual": "🥛",
+          "prompt": "I picked ___ flowers for Mum.",
+          "options": [
+            "a few",
+            "a little",
+            "much"
+          ],
+          "answer": "a few",
+          "why": "A few means a small number of countable things.",
+          "why_zh": "A few 表示少量可數的東西。"
+        },
+        {
+          "id": "q-a-few-07",
+          "stage": "Quantifier choice",
+          "visual": "🌱",
+          "prompt": "He has ___ pencils left.",
+          "options": [
+            "a few",
+            "a little",
+            "much"
+          ],
+          "answer": "a few",
+          "why": "A few means a small number of countable things.",
+          "why_zh": "A few 表示少量可數的東西。"
+        },
+        {
+          "id": "q-a-few-08",
+          "stage": "Quantifier choice",
+          "visual": "🧃",
+          "prompt": "We have ___ minutes before the bell.",
+          "options": [
+            "a few",
+            "a little",
+            "much"
+          ],
+          "answer": "a few",
+          "why": "A few means a small number of countable things.",
+          "why_zh": "A few 表示少量可數的東西。"
+        },
+        {
+          "id": "q-a-little-01",
+          "stage": "Quantifier choice",
+          "visual": "🧺",
+          "prompt": "Please add ___ milk to my tea.",
+          "options": [
+            "a little",
+            "a few",
+            "many"
+          ],
+          "answer": "a little",
+          "why": "A little means a small amount of an uncountable thing.",
+          "why_zh": "A little 表示少量不可數的東西。"
+        },
+        {
+          "id": "q-a-little-02",
+          "stage": "Quantifier choice",
+          "visual": "🥣",
+          "prompt": "There is ___ water in the glass.",
+          "options": [
+            "a little",
+            "a few",
+            "many"
+          ],
+          "answer": "a little",
+          "why": "A little means a small amount of an uncountable thing.",
+          "why_zh": "A little 表示少量不可數的東西。"
+        },
+        {
+          "id": "q-a-little-03",
+          "stage": "Quantifier choice",
+          "visual": "🚌",
+          "prompt": "I need ___ time to finish.",
+          "options": [
+            "a little",
+            "a few",
+            "many"
+          ],
+          "answer": "a little",
+          "why": "A little means a small amount of an uncountable thing.",
+          "why_zh": "A little 表示少量不可數的東西。"
+        },
+        {
+          "id": "q-a-little-04",
+          "stage": "Quantifier choice",
+          "visual": "🍎",
+          "prompt": "Put ___ salt in the soup.",
+          "options": [
+            "a little",
+            "a few",
+            "many"
+          ],
+          "answer": "a little",
+          "why": "A little means a small amount of an uncountable thing.",
+          "why_zh": "A little 表示少量不可數的東西。"
+        },
+        {
+          "id": "q-a-little-05",
+          "stage": "Quantifier choice",
+          "visual": "⏰",
+          "prompt": "She has ___ money in her purse.",
+          "options": [
+            "a little",
+            "a few",
+            "many"
+          ],
+          "answer": "a little",
+          "why": "A little means a small amount of an uncountable thing.",
+          "why_zh": "A little 表示少量不可數的東西。"
+        },
+        {
+          "id": "q-a-little-06",
+          "stage": "Quantifier choice",
+          "visual": "🥛",
+          "prompt": "The plant needs ___ sunlight.",
+          "options": [
+            "a little",
+            "a few",
+            "many"
+          ],
+          "answer": "a little",
+          "why": "A little means a small amount of an uncountable thing.",
+          "why_zh": "A little 表示少量不可數的東西。"
+        },
+        {
+          "id": "q-a-little-07",
+          "stage": "Quantifier choice",
+          "visual": "🌱",
+          "prompt": "We have ___ rice left.",
+          "options": [
+            "a little",
+            "a few",
+            "many"
+          ],
+          "answer": "a little",
+          "why": "A little means a small amount of an uncountable thing.",
+          "why_zh": "A little 表示少量不可數的東西。"
+        },
+        {
+          "id": "q-a-little-08",
+          "stage": "Quantifier choice",
+          "visual": "🧃",
+          "prompt": "He drank ___ juice after running.",
+          "options": [
+            "a little",
+            "a few",
+            "many"
+          ],
+          "answer": "a little",
+          "why": "A little means a small amount of an uncountable thing.",
+          "why_zh": "A little 表示少量不可數的東西。"
+        },
+        {
+          "id": "q-many-01",
+          "stage": "Quantifier choice",
+          "visual": "🧺",
+          "prompt": "How ___ books are on the shelf?",
+          "options": [
+            "many",
+            "much",
+            "a few"
+          ],
+          "answer": "many",
+          "why": "Many is used with plural countable nouns.",
+          "why_zh": "Many 用於複數可數名詞。"
+        },
+        {
+          "id": "q-many-02",
+          "stage": "Quantifier choice",
+          "visual": "🥣",
+          "prompt": "There are ___ stars in the sky.",
+          "options": [
+            "many",
+            "much",
+            "a few"
+          ],
+          "answer": "many",
+          "why": "Many is used with plural countable nouns.",
+          "why_zh": "Many 用於複數可數名詞。"
+        },
+        {
+          "id": "q-many-03",
+          "stage": "Quantifier choice",
+          "visual": "🚌",
+          "prompt": "She has ___ stickers.",
+          "options": [
+            "many",
+            "much",
+            "a few"
+          ],
+          "answer": "many",
+          "why": "Many is used with plural countable nouns.",
+          "why_zh": "Many 用於複數可數名詞。"
+        },
+        {
+          "id": "q-many-04",
+          "stage": "Quantifier choice",
+          "visual": "🍎",
+          "prompt": "How ___ students joined the club?",
+          "options": [
+            "many",
+            "much",
+            "a few"
+          ],
+          "answer": "many",
+          "why": "Many is used with plural countable nouns.",
+          "why_zh": "Many 用於複數可數名詞。"
+        },
+        {
+          "id": "q-many-05",
+          "stage": "Quantifier choice",
+          "visual": "⏰",
+          "prompt": "We saw ___ shells on the beach.",
+          "options": [
+            "many",
+            "much",
+            "a few"
+          ],
+          "answer": "many",
+          "why": "Many is used with plural countable nouns.",
+          "why_zh": "Many 用於複數可數名詞。"
+        },
+        {
+          "id": "q-many-06",
+          "stage": "Quantifier choice",
+          "visual": "🥛",
+          "prompt": "There aren't ___ buses today.",
+          "options": [
+            "many",
+            "much",
+            "a few"
+          ],
+          "answer": "many",
+          "why": "Many is used with plural countable nouns.",
+          "why_zh": "Many 用於複數可數名詞。"
+        },
+        {
+          "id": "q-many-07",
+          "stage": "Quantifier choice",
+          "visual": "🌱",
+          "prompt": "He made ___ new friends.",
+          "options": [
+            "many",
+            "much",
+            "a few"
+          ],
+          "answer": "many",
+          "why": "Many is used with plural countable nouns.",
+          "why_zh": "Many 用於複數可數名詞。"
+        },
+        {
+          "id": "q-many-08",
+          "stage": "Quantifier choice",
+          "visual": "🧃",
+          "prompt": "How ___ eggs do we need?",
+          "options": [
+            "many",
+            "much",
+            "a few"
+          ],
+          "answer": "many",
+          "why": "Many is used with plural countable nouns.",
+          "why_zh": "Many 用於複數可數名詞。"
+        },
+        {
+          "id": "q-much-01",
+          "stage": "Quantifier choice",
+          "visual": "🧺",
+          "prompt": "How ___ water should I drink?",
+          "options": [
+            "much",
+            "many",
+            "a little"
+          ],
+          "answer": "much",
+          "why": "Much is used with uncountable amounts, especially in questions and negatives.",
+          "why_zh": "Much 用於不可數份量，尤其是問句和否定句。"
+        },
+        {
+          "id": "q-much-02",
+          "stage": "Quantifier choice",
+          "visual": "🥣",
+          "prompt": "There isn't ___ time before lunch.",
+          "options": [
+            "much",
+            "many",
+            "a little"
+          ],
+          "answer": "much",
+          "why": "Much is used with uncountable amounts, especially in questions and negatives.",
+          "why_zh": "Much 用於不可數份量，尤其是問句和否定句。"
+        },
+        {
+          "id": "q-much-03",
+          "stage": "Quantifier choice",
+          "visual": "🚌",
+          "prompt": "How ___ rice would you like?",
+          "options": [
+            "much",
+            "many",
+            "a little"
+          ],
+          "answer": "much",
+          "why": "Much is used with uncountable amounts, especially in questions and negatives.",
+          "why_zh": "Much 用於不可數份量，尤其是問句和否定句。"
+        },
+        {
+          "id": "q-much-04",
+          "stage": "Quantifier choice",
+          "visual": "🍎",
+          "prompt": "We do not have ___ money today.",
+          "options": [
+            "much",
+            "many",
+            "a little"
+          ],
+          "answer": "much",
+          "why": "Much is used with uncountable amounts, especially in questions and negatives.",
+          "why_zh": "Much 用於不可數份量，尤其是問句和否定句。"
+        },
+        {
+          "id": "q-much-05",
+          "stage": "Quantifier choice",
+          "visual": "⏰",
+          "prompt": "Did you use ___ glue?",
+          "options": [
+            "much",
+            "many",
+            "a little"
+          ],
+          "answer": "much",
+          "why": "Much is used with uncountable amounts, especially in questions and negatives.",
+          "why_zh": "Much 用於不可數份量，尤其是問句和否定句。"
+        },
+        {
+          "id": "q-much-06",
+          "stage": "Quantifier choice",
+          "visual": "🥛",
+          "prompt": "How ___ milk is in the jug?",
+          "options": [
+            "much",
+            "many",
+            "a little"
+          ],
+          "answer": "much",
+          "why": "Much is used with uncountable amounts, especially in questions and negatives.",
+          "why_zh": "Much 用於不可數份量，尤其是問句和否定句。"
+        },
+        {
+          "id": "q-much-07",
+          "stage": "Quantifier choice",
+          "visual": "🌱",
+          "prompt": "There isn't ___ traffic at this hour.",
+          "options": [
+            "much",
+            "many",
+            "a little"
+          ],
+          "answer": "much",
+          "why": "Much is used with uncountable amounts, especially in questions and negatives.",
+          "why_zh": "Much 用於不可數份量，尤其是問句和否定句。"
+        },
+        {
+          "id": "q-much-08",
+          "stage": "Quantifier choice",
+          "visual": "🧃",
+          "prompt": "How ___ homework is left?",
+          "options": [
+            "much",
+            "many",
+            "a little"
+          ],
+          "answer": "much",
+          "why": "Much is used with uncountable amounts, especially in questions and negatives.",
+          "why_zh": "Much 用於不可數份量，尤其是問句和否定句。"
+        },
+        {
+          "id": "q-countable-01",
+          "stage": "Countable or uncountable",
+          "visual": "📚",
+          "prompt": "Books are ...",
+          "options": [
+            "Countable",
+            "Uncountable"
+          ],
+          "answer": "Countable",
+          "why": "Books can be counted one by one.",
+          "why_zh": "書本可以逐一本數，是可數的。"
+        },
+        {
+          "id": "q-countable-02",
+          "stage": "Countable or uncountable",
+          "visual": "🍚",
+          "prompt": "Rice is ...",
+          "options": [
+            "Uncountable",
+            "Countable"
+          ],
+          "answer": "Uncountable",
+          "why": "Rice is treated as an amount in this lesson.",
+          "why_zh": "米飯在本課中視為一種份量，是不可數的。"
+        },
+        {
+          "id": "q-countable-03",
+          "stage": "Countable or uncountable",
+          "visual": "⏰",
+          "prompt": "Time is ...",
+          "options": [
+            "Uncountable",
+            "Countable"
+          ],
+          "answer": "Uncountable",
+          "why": "Time is measured as an amount.",
+          "why_zh": "時間用份量來量度，是不可數的。"
+        },
+        {
+          "id": "q-countable-04",
+          "stage": "Countable or uncountable",
+          "visual": "🍇",
+          "prompt": "Grapes are ...",
+          "options": [
+            "Countable",
+            "Uncountable"
+          ],
+          "answer": "Countable",
+          "why": "Grapes can be counted one by one.",
+          "why_zh": "葡萄可以逐粒數，是可數的。"
+        },
+        {
+          "id": "q-countable-05",
+          "stage": "Countable or uncountable",
+          "visual": "💧",
+          "prompt": "Water is ...",
+          "options": [
+            "Uncountable",
+            "Countable"
+          ],
+          "answer": "Uncountable",
+          "why": "Water is measured as an amount.",
+          "why_zh": "水用份量來量度，是不可數的。"
+        },
+        {
+          "id": "q-countable-06",
+          "stage": "Countable or uncountable",
+          "visual": "👩‍🎓",
+          "prompt": "Students are ...",
+          "options": [
+            "Countable",
+            "Uncountable"
+          ],
+          "answer": "Countable",
+          "why": "Students can be counted one by one.",
+          "why_zh": "學生可以逐一數，是可數的。"
         }
       ]
     }
