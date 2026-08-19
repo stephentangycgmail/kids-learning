@@ -201,6 +201,16 @@ test("choice sessions select unique questions and retain bilingual review", () =
   assert.throws(() => core.submitChoiceSession(submitted), /already locked/);
 });
 
+test("choice sessions remain valid when submitting the final question", () => {
+  const choiceBank = JSON.parse(fs.readFileSync(path.join(dataDir, manifest.banks.choice), "utf8"));
+  const topic = choiceBank.topics.find((item) => item.id === "question-words");
+  const session = core.createChoiceSession({ mode: "choice_quiz", topic, questions: topic.questionBank.slice(0, 10) });
+  session.currentQuestionIndex = session.questionSnapshots.length - 1;
+  const submitted = core.submitChoiceSession(session);
+  assert.equal(submitted.currentQuestionIndex, 9);
+  assert.doesNotThrow(() => storageApi.validateSession(submitted));
+});
+
 test("choice quiz selection supports ten unique questions", () => {
   const choiceBank = JSON.parse(fs.readFileSync(path.join(dataDir, manifest.banks.choice), "utf8"));
   const topic = choiceBank.topics.find((item) => item.id === "quantifiers");

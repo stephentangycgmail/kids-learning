@@ -3,6 +3,14 @@
 Release identity and deployment evidence are maintained in
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
 
+## v1.2.1 - 2026-08-19
+
+### Fixed
+
+- Corrected choice Practice and Quiz completion so the final answer is saved
+  without moving the session index beyond its valid range.
+- Added regression coverage for final-question submission.
+
 ## v1.2.0 - 2026-08-19
 
 ### Added
