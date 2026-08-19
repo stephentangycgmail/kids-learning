@@ -222,7 +222,7 @@
           "id": "qw-who-04",
           "stage": "Who questions",
           "visual": "🔎",
-          "prompt": "Who scored the winning goal?",
+          "prompt": "Who kicked the ball into the goal?",
           "options": [
             "Who",
             "Whose",
@@ -334,7 +334,7 @@
           "id": "qw-where-06",
           "stage": "Where questions",
           "visual": "🧩",
-          "prompt": "Where should we put the recycling?",
+          "prompt": "Where should we put the recycling bin?",
           "options": [
             "Where",
             "When",
@@ -712,7 +712,7 @@
           "id": "qw-how-03",
           "stage": "How questions",
           "visual": "👟",
-          "prompt": "How did the glass break?",
+          "prompt": "How did the glass break after Ben dropped it?",
           "options": [
             "How",
             "Why",
@@ -1133,7 +1133,7 @@
           "id": "q-some-05",
           "stage": "Quantifier choice",
           "visual": "⏰",
-          "prompt": "Would you like ___ soup?",
+          "prompt": "I made soup for you. Would you like ___?",
           "options": [
             "some",
             "any",
@@ -1273,7 +1273,7 @@
           "id": "q-any-07",
           "stage": "Quantifier choice",
           "visual": "🌱",
-          "prompt": "Would you like ___ help?",
+          "prompt": "You don't need ___ help with this puzzle.",
           "options": [
             "any",
             "some",
@@ -1287,11 +1287,11 @@
           "id": "q-any-08",
           "stage": "Quantifier choice",
           "visual": "🧃",
-          "prompt": "Have you got ___ homework today?",
+          "prompt": "You do not have ___ homework today.",
           "options": [
             "any",
             "some",
-            "much"
+            "a few"
           ],
           "answer": "any",
           "why": "Any is common in questions and negative sentences.",
@@ -1775,14 +1775,14 @@
           "id": "q-countable-03",
           "stage": "Countable or uncountable",
           "visual": "⏰",
-          "prompt": "Time is ...",
+          "prompt": "Time, as an amount, is ...",
           "options": [
             "Uncountable",
             "Countable"
           ],
           "answer": "Uncountable",
-          "why": "Time is measured as an amount.",
-          "why_zh": "時間用份量來量度，是不可數的。"
+          "why": "When we mean an amount of time, it is uncountable.",
+          "why_zh": "當我們說一段時間的份量時，time 是不可數的。"
         },
         {
           "id": "q-countable-04",
