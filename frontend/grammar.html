@@ -93,6 +93,14 @@
             padding-right: 16px;
             scrollbar-width: none;
         }
+        .tense-tabs {
+            flex-wrap: wrap;
+            overflow-x: visible;
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
         .grammar-main-tabs::-webkit-scrollbar, .tense-tabs::-webkit-scrollbar { display: none; }
 
         .grammar-main-tab, .tense-tab, .lesson-nav-button {
@@ -114,6 +122,11 @@
             padding-bottom: 10px;
         }
 
+        .lesson-navigation .lesson-nav-button {
+            flex: 1 1 0;
+            min-width: 0;
+        }
+
         .lesson-nav-button:disabled {
             cursor: not-allowed;
             opacity: 0.45;
@@ -123,11 +136,15 @@
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            justify-content: center;
+            justify-content: flex-start;
             padding: 16px 0 24px;
         }
 
         .lesson-practice-action .lesson-nav-button {
+            flex: 1 1 180px;
+            min-width: 0;
+            max-width: 240px;
+            text-align: center;
             text-decoration: none;
         }
 
