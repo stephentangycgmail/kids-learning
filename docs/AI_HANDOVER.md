@@ -74,12 +74,16 @@ modify released Grammar lessons or Grammar Practice question banks.
 
 - **Question Words:** eight visual learning cards for What, Who, Where, When,
   Why, Which, Whose, and How, plus a 50-question UAT bank with unique IDs and
-  concise Traditional Chinese explanations.
+  concise Traditional Chinese explanations. A production lesson is implemented
+  on `develop` with visual cards and an 8-question guided mini-practice, but is
+  not released to `main`.
 - **Quantifiers:** six visual learning cards for `some`, `any`, `a few`, `a
   little`, `many`, and `much`; `a lot of`, `few`, and `little` are not preview
   target items. Its 54-question UAT bank includes six Countable / Uncountable
   questions. It introduces countable versus uncountable nouns and compares the
-  same large glass at 18% water for `a little` and 85% water for `much`.
+  same large glass at 18% water for `a little` and 85% water for `much`. A
+  production lesson is implemented on `develop` with the same visual teaching
+  and an 8-question guided mini-practice, but is not released to `main`.
 - Traditional Chinese support is present for topic subtitles and introductions,
   card meanings, and examples. Visual teaching uses emoji cards plus the water
   comparison for the two uncountable-water terms.
@@ -106,11 +110,12 @@ server. Preview completion never appears in released Grammar Practice History.
 
 ## Pending UAT Work and Resume Point
 
-The Preview page has not been accepted or released. Its outstanding work is
-UAT of Question Words and Quantifiers, including child-facing visual and
-Traditional Chinese review, immediate-feedback and Quiz review behavior, and
-responsive/browser smoke testing. Practice and Quiz / Challenge expansion are
-implemented but remain unreleased until user acceptance is complete.
+The Preview page has not been accepted or released and remains available for
+comparison. Phase 2 has added production Grammar lessons for Question Words
+and Quantifiers on `develop`, including visual cards and guided mini-practice.
+Phase 3, which would integrate the larger Preview Practice and Quiz / Challenge
+flows into released Grammar, remains pending. The new lessons are not yet on
+`main` or the production site.
 
 Resume by reviewing the current `develop` diff from `main`, then test
 `frontend/grammar_preview.html` with its JSON data and confirm acceptance

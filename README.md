@@ -27,6 +27,11 @@ The production site uses committed HTML, CSS, JavaScript, and JSON files. It doe
 - English Dictation Practice: `frontend/dictation_practice.html`
 - Chinese Dictation: `frontend/cn_dictation.html`
 - Grammar lessons: `frontend/grammar.html`
+- On `develop`, the released Grammar architecture also contains unreleased
+  Question Words and Quantifiers lessons with visual cards and guided
+  mini-practice. They are not yet on `main`; the TEST / Preview Grammar page is
+  retained for migration comparison while Phase 3 Practice/Quiz integration is
+  pending.
 - English Grammar Practice: `frontend/grammar_practice.html`
 - Practice history and results: `frontend/grammar_practice_history.html`, `frontend/grammar_practice_result.html`
 - TEST / Preview Grammar: `frontend/grammar_preview.html` (temporary UAT content; not part of released Grammar)

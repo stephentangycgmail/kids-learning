@@ -188,6 +188,12 @@ Optional top-level fields:
 
 - `optional_extension`
 - `quiz`
+- `visual_learning`: additive visual cards with English and Traditional Chinese
+  text. A card may use `picture`, or `visual: "water-glass"` with a numeric
+  `water_level` from 0 to 100.
+- `guided_practice`: a short multiple-choice mini-practice. Each item contains
+  `question`, unique `options`, `answer`, `why`, and `why_zh`; the renderer
+  gives immediate feedback.
 
 Gold Lesson expectations:
 
@@ -231,6 +237,8 @@ Compatibility:
 
 - Keep `examples`, `practice`, `answer_key`, and `quiz` arrays stable.
 - Quiz rendering is optional; lessons without `quiz` remain valid.
+- Visual learning and guided practice are optional; lessons without these
+  additive fields retain their existing rendering.
 - Do not modify `grammar.html` for content-only lesson additions unless the schema changes.
 
 ## Legacy Grammar/Tenses Data

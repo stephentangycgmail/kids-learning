@@ -40,6 +40,11 @@ Grammar lessons are loaded from the committed lesson catalog. Select lesson
 tabs, review examples and practice, use a quiz when the lesson provides one,
 or follow the Dictation link for the selected lesson.
 
+On the `develop` branch, Question Words and Quantifiers are available in the
+normal Grammar lesson tabs for testing. They include visual learning cards and
+short guided practice with immediate feedback. They are not yet released to
+the `main` production branch.
+
 ### TEST / Preview Grammar
 
 The English menu includes a clearly marked temporary TEST / Preview entry for
@@ -47,6 +52,10 @@ user acceptance testing. It currently offers visual Question Words and
 Quantifiers learning followed by short progressive practice. Preview completion
 is stored only in the current browser and is separate from released Grammar
 lessons and Grammar Practice History.
+
+The Preview remains available during the migration comparison. Its larger
+Practice and Quiz / Challenge integration is still pending Phase 3 work for
+the released Grammar lessons.
 
 ### English Grammar Practice
 

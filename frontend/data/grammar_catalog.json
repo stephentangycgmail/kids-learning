@@ -47,6 +47,18 @@
       "id": "there-is-are",
       "title": "There is / There are",
       "file": "grammar_there_is_are_lesson.json"
+    },
+    {
+      "category": "tenses",
+      "id": "question-words",
+      "title": "Question Words",
+      "file": "grammar_question_words_lesson.json"
+    },
+    {
+      "category": "tenses",
+      "id": "quantifiers",
+      "title": "Quantifiers",
+      "file": "grammar_quantifiers_lesson.json"
     }
   ]
 }
