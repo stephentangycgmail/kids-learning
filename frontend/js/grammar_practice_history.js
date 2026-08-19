@@ -10,7 +10,7 @@
     return value ? new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeStyle: "short" }).format(new Date(value)) : "—";
   }
   function modeLabel(mode) {
-    return { short_long: "Short & Long Answer", rearrangement: "Sentence Rearrangement", mixed: "Mixed Practice" }[mode] || mode;
+    return { short_long: "Short & Long Answer", rearrangement: "Sentence Rearrangement", mixed: "Mixed Practice", choice_practice: "Question Words / Quantifiers Practice", choice_quiz: "Question Words / Quantifiers Quiz" }[mode] || mode;
   }
   function statusLabel(status) {
     return { submitted: "Submitted", in_progress: "In Progress", abandoned: "Abandoned" }[status] || status;
@@ -59,7 +59,7 @@
       card.appendChild(detailBlock("Started", dateTime(record.startedAt)));
       card.appendChild(detailBlock(record.status === "submitted" ? "Completed" : record.status === "abandoned" ? "Abandoned" : "Last saved", dateTime(record.submittedAt || record.abandonedAt || record.lastSavedAt)));
       const result = record.status === "submitted" && record.scoreSummary
-        ? `${record.scoreSummary.fullyCorrect} / ${record.scoreSummary.totalQuestions}`
+        ? `${record.scoreSummary.fullyCorrect} / ${record.scoreSummary.totalQuestions}${Number.isFinite(record.scoreSummary.percentage) ? ` (${record.scoreSummary.percentage}%)` : ""}`
         : "—";
       card.appendChild(detailBlock("Score / Duration", `${result} · ${core.formatDuration(core.durationSeconds(record))}`));
       const action = document.createElement("a");

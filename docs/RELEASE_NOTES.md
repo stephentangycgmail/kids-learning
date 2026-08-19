@@ -6,6 +6,24 @@ Verified tag and deployment identities are maintained in
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md). A production deployment is not
 automatically an official release.
 
+## v1.2.0 - 19 August 2026
+
+Focus:
+
+- Promote Question Words and Quantifiers into production Grammar.
+- Add 12-question randomized Practice and 10-question Quiz / Challenge modes.
+- Keep Practice feedback immediate, while Quiz correctness and mistake review
+  appear only after completion.
+- Preserve browser-local history and the existing 20-question Grammar modes.
+- Retire the unreleased Grammar Preview assets and TEST navigation.
+
+Quality:
+
+- Question Words bank: 50 questions.
+- Quantifiers bank: 54 questions.
+- Choice-bank validation, Node/Python regression tests, JSON parsing, Markdown
+  link validation, and local static smoke testing passed.
+
 ## v1.1.0 - 31 July 2026
 
 Focus:

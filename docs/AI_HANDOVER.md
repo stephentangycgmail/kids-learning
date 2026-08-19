@@ -1,21 +1,37 @@
 # AI Handover
 
-This is the fresh-agent entry point for maintaining Kids Learning. Root
-[`AGENTS.md`](../AGENTS.md) remains authoritative; use its task-based routing
-instead of reading every document.
+This is the fresh-session handover and resume point for Kids Learning. Read
+root [`AGENTS.md`](../AGENTS.md) first, then inspect the relevant current
+documentation and implementation. The repository, not prior chat or session
+memory, is the source of truth.
 
-## Current State
+## Project Overview and Current Version
 
-- Production is a static GitHub Pages site served from `main`.
-- Normal maintenance uses a focused branch based on `develop`, then integrates
-  through `develop`.
-- `v1.0.0` is immutable; current Pages content is a later untagged deployment.
-- The next official release is planned as `v1.1.0`; verify the release manifest
-  and Git state before treating it as completed.
-- The project is in maintenance mode. Prefer focused fixes and compatible
-  content improvements over redesign or broad refactoring.
-- Student use requires no login, production backend, paid API, or Azure
-  service. AI Teacher remains disabled.
+Kids Learning is a child-friendly static website for English, Chinese, and
+Math learning. It uses committed HTML, CSS, JavaScript, and reviewed JSON;
+students do not need a login, production backend, Azure service, or paid API.
+
+The current official production release is `v1.1.0`, tagged at
+`67bf0d38282fa50e761b7c437cc40d12ac71a8f0`. `v1.0.0` remains an immutable
+prior baseline at `c2cbcba61a680c809ad31c9f7696f74318dee7a4`. Production is
+stable on `main`; `develop` contains the approved Grammar Question Words and
+Quantifiers release work. Confirm the live Git state before making release
+claims.
+
+## Branch Model and Deployment
+
+- `main` is the production branch served by GitHub Pages.
+- `develop` is the normal integration branch for maintenance and approved work.
+- Use focused `feature/*`, `fix/*`, or `docs/*` branches when appropriate, then
+  integrate through `develop`.
+- Release flow is reviewed `develop -> main`, then an explicitly approved tag,
+  GitHub Release, Pages verification, and production smoke test.
+
+GitHub Pages is the only production deployment path. It serves repository-root
+static content, whose root `index.html` redirects to `frontend/index.html`.
+Azure, FastAPI, Docker, backend endpoints, and `/api/health` are not part of
+production. Do not merge, tag, publish, or deploy without explicit user
+instruction.
 
 ## Where to Start
 
@@ -36,17 +52,75 @@ Historical architecture, `.specs/`, sprint reports, completed Codex tasks,
 changelog entries, validation evidence, and dated audits explain prior state;
 they do not silently override the current authorities above.
 
-## Runtime and Data Map
+## Architecture and Important Files
 
 - Root `index.html` redirects to `frontend/index.html`.
 - Student pages and scripts are under `frontend/`.
 - Reviewed content and catalogs are under `frontend/data/`.
 - Grammar Practice behavior is split across `frontend/js/grammar_practice_*`;
   tests are under `tests/` and generation/validation tools under `tools/`.
-- Browser-local progress uses IndexedDB with localStorage fallback. Clearing
-  site data removes local history and preferences.
+- Released Grammar lessons use `frontend/grammar.html` and
+  `frontend/data/grammar_catalog.json`.
+- Choice Grammar Practice uses `frontend/grammar_practice_choice.html`,
+  `frontend/js/grammar_practice_choice.js`, and
+  `frontend/data/grammar_practice_choice.json`.
 - `backend/` and the Dockerfile are not the production path. Docker support is
   undecided because its referenced application module is absent.
+
+## Grammar Question Words and Quantifiers
+
+Question Words and Quantifiers are production Grammar lessons and choice-based
+Grammar Practice topics. The former Preview page and assets are retired.
+
+- **Question Words:** eight visual learning cards for What, Who, Where, When,
+  Why, Which, Whose, and How, plus a 50-question UAT bank with unique IDs and
+  concise Traditional Chinese explanations. The lesson includes an 8-question
+  guided mini-practice and choice Practice / Quiz modes.
+- **Quantifiers:** six visual learning cards for `some`, `any`, `a few`, `a
+  little`, `many`, and `much`; `a lot of`, `few`, and `little` are not preview
+  target items. Its 54-question bank includes six Countable / Uncountable
+  questions. It introduces countable versus uncountable nouns and compares the
+  same large glass at 18% water for `a little` and 85% water for `much`. A
+  lesson includes the same visual teaching, an 8-question guided mini-practice,
+  and choice Practice / Quiz modes.
+- Traditional Chinese support is present for topic subtitles and introductions,
+  card meanings, and examples. Visual teaching uses emoji cards plus the water
+  comparison for the two uncountable-water terms.
+- Practice randomly selects 12 unique questions and safely randomizes answer
+  option order. It gives immediate feedback after each answer: all choices are
+  locked, the correct answer is shown, an incorrect choice is marked, and the
+  English/Traditional Chinese explanation is displayed before Next.
+- Quiz / Challenge randomly selects 10 unique questions. It does not show
+  correctness during the session; completion shows score, percentage, and a
+  review of wrong answers with selected answer, correct answer, and bilingual
+  explanation. The released Grammar lesson quizzes in `grammar.html` remain a
+  different feature. `tests/grammar_practice_choice_validation.js` validates
+  bank IDs and required coverage; rendered browser behavior remains a smoke
+  check.
+
+## Practice and History Storage
+
+Released Grammar Practice stores sessions primarily in IndexedDB database
+`kidsLearningGrammarPractice`, with localStorage fallback key
+`kidsLearning.grammarPractice.sessions.v1`. Choice completion uses the same
+history and stores mode, topic, completion time, score, total, and percentage
+where applicable. Existing 20-question records remain compatible; choice
+Practice uses 12 questions and choice Quiz uses 10. Clearing browser site data
+removes these local records; no history is sent to a server.
+
+## Current Resume Point
+
+Phase 3 implementation is complete on `develop` pending final release gates:
+validation, local and production smoke tests, merge to `main`, Pages
+verification, and the approved release tag. Do not claim production release
+until those gates are verified.
+
+## Content Rules
+
+Follow [`CONTENT_STANDARD.md`](CONTENT_STANDARD.md). Keep reviewed content in
+`frontend/data/`, preserve JSON compatibility and catalog updates, use
+Traditional Chinese where the current lesson family provides Chinese support,
+and validate JSON after content changes.
 
 ## Validation and Delivery
 
@@ -55,11 +129,22 @@ known baseline failures are in [`TESTING_GUIDE.md`](TESTING_GUIDE.md).
 Documentation changes require the Markdown-link workflow equivalent and
 `git diff --check`. Content changes require JSON parsing plus applicable
 catalog, generator, validator, and consumer checks. Student-facing changes
-require a static-site smoke test.
+require a static-site smoke test. The existing automated suite covers released
+Grammar Practice and static local paths, not Grammar Preview behavior.
 
 Do not merge to `main`, tag, create a GitHub Release, or deploy without
 explicit approval. The normal release path is reviewed `develop -> main`,
 followed by Pages verification and production smoke testing.
+
+## AI / Codex Operating Rules and Release Safety
+
+Read `AGENTS.md` before editing, inspect applicable documentation and code,
+and do not depend on chat memory. Keep documentation synchronized whenever
+functionality changes. When current documentation and implementation disagree,
+stop and report the evidence before making a broad change. Never put API keys,
+tokens, credentials, endpoints, or secrets in this repository. No merge to
+`main`, push to `main`, tag, GitHub Release, or deployment is authorized unless
+the user explicitly instructs it.
 
 ## Known Boundaries
 

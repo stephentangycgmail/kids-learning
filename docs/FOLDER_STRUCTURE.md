@@ -47,6 +47,7 @@ frontend/
 +-- cn_dictation.html
 +-- grammar.html
 +-- grammar_practice.html
++-- grammar_practice_choice.html
 +-- grammar_practice_history.html
 +-- grammar_practice_result.html
 +-- vocab.html
@@ -77,7 +78,8 @@ Current categories:
 - English Dictation catalog and JSON files.
 - Chinese Dictation JSON files.
 - Grammar lesson catalog and Gold Lesson JSON files.
-- English Grammar Practice manifest and question banks.
+- English Grammar Practice manifest, standard banks, and the Question Words /
+  Quantifiers choice bank.
 - Vocabulary JSON and vocabulary hint JSON.
 - Legacy/reference tenses JSON and source text files.
 
@@ -136,6 +138,7 @@ Automated tests and validation checks for local development.
 Current tests:
 
 - `grammar_practice.test.js`
+- `grammar_practice_choice_validation.js`
 - `test_grammar_practice_questions.py`
 
 ## `backend/`

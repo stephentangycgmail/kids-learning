@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Question Words and Quantifiers | Kids Learning</title><link rel="stylesheet" href="css/grammar_practice.css"></head>
+<body>
+  <header class="site-header"><a class="back-link" href="grammar_practice.html">← Grammar Practice</a><div><p class="eyebrow">Grammar Practice</p><h1>Question Words &amp; Quantifiers</h1><p class="zh-text">疑問詞及數量詞練習</p></div><a class="header-link" href="grammar_practice_history.html">Practice History</a></header>
+  <main class="page-shell">
+    <div id="choiceMessage" class="notice notice-error" role="alert" hidden></div>
+    <section id="choiceSetup" class="setup-panel"><div class="section-heading"><div><p class="eyebrow">Choose a session</p><h2>Learn, practise, then challenge yourself</h2></div><p>Records stay only in this browser and device.</p></div>
+      <label class="field-label" for="choiceTopic">Grammar topic</label><select id="choiceTopic" class="select-control"></select>
+      <fieldset><legend>Mode</legend><div class="mode-grid"><label class="mode-option"><input type="radio" name="choiceMode" value="choice_practice" checked><span class="mode-icon">✓</span><strong>Practice</strong><small>12 questions with immediate feedback.</small></label><label class="mode-option"><input type="radio" name="choiceMode" value="choice_quiz"><span class="mode-icon">?</span><strong>Quiz / Challenge</strong><small>10 questions. Answers appear after completion.</small></label></div></fieldset>
+      <div class="setup-actions"><a id="learningLink" class="button button-secondary" href="grammar.html">Back to Learning</a><button id="choiceStart" class="button button-primary button-large" type="button">Start Practice</button></div>
+    </section>
+    <section id="choicePanel" class="practice-panel" hidden><div class="practice-toolbar"><div><p id="choiceMeta" class="eyebrow"></p><h2 id="choicePosition">Question</h2></div><div class="progress-copy"><strong id="choiceProgress"></strong><span id="choiceSave" aria-live="polite">Saved</span></div></div><article id="choiceQuestion" class="question-card" aria-live="polite"></article></section>
+  </main>
+  <script src="js/grammar_practice_core.js"></script><script src="js/grammar_practice_storage.js"></script><script src="js/grammar_practice_choice.js"></script>
+</body></html>

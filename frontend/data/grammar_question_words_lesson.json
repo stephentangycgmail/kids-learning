@@ -1,0 +1,57 @@
+{
+  "id": "P4_QUESTION_WORDS",
+  "title": "Question Words",
+  "level": "Primary 4",
+  "explanation_en": "Question words help us ask for the information we need.",
+  "explanation_zh": "問句詞幫助我們詢問想知道的資料。",
+  "structure": {
+    "learning_objective_en": "I can choose a question word for a person, place, time, reason, thing, choice, owner or way.",
+    "learning_objective_zh": "我能為人物、地方、時間、原因、事物、選擇、物主或方法選擇合適的問句詞。",
+    "positive": "Question word + helping word + subject + verb?",
+    "negative": "Use the question word that asks for the missing information.",
+    "question": "What / Who / Where / When / Why / Which / Whose / How ...?"
+  },
+  "spelling_rules": [],
+  "signal_words": ["What", "Who", "Where", "When", "Why", "Which", "Whose", "How"],
+  "common_mistakes": [
+    {"wrong": "Who bag is this?", "correct": "Whose bag is this?"},
+    {"wrong": "What bus goes to the museum?", "correct": "Which bus goes to the museum?"}
+  ],
+  "keywords": ["What", "Who", "Where", "When", "Why", "Which", "Whose", "How"],
+  "visual_learning": {
+    "intro_en": "Look at each card. The picture helps you remember what information the question word asks for.",
+    "intro_zh": "看看每張卡。圖片幫助你記住每個問句詞詢問甚麼資料。",
+    "cards": [
+      {"word": "What", "picture": "🎁", "meaning": "Ask about a thing or an action.", "meaning_zh": "詢問「甚麼」：事物或動作。", "example": "What is in the box?", "example_zh": "盒子裡有甚麼？"},
+      {"word": "Who", "picture": "🧑‍🤝‍🧑", "meaning": "Ask about a person.", "meaning_zh": "詢問「誰」：人物。", "example": "Who is your teacher?", "example_zh": "誰是你的老師？"},
+      {"word": "Where", "picture": "🏫", "meaning": "Ask about a place.", "meaning_zh": "詢問「哪裡」：地方。", "example": "Where is the library?", "example_zh": "圖書館在哪裡？"},
+      {"word": "When", "picture": "🕒", "meaning": "Ask about a time or day.", "meaning_zh": "詢問「何時／甚麼時候」：時間或日子。", "example": "When is your birthday?", "example_zh": "你的生日在甚麼時候？"},
+      {"word": "Why", "picture": "🤔", "meaning": "Ask for a reason.", "meaning_zh": "詢問「為甚麼」：原因。", "example": "Why are you smiling?", "example_zh": "你為甚麼在笑？"},
+      {"word": "Which", "picture": "🍎🍌", "meaning": "Choose from choices.", "meaning_zh": "詢問「哪一個」：從選項中選擇。", "example": "Which fruit do you want?", "example_zh": "你想要哪一種水果？"},
+      {"word": "Whose", "picture": "🎒", "meaning": "Ask who owns something.", "meaning_zh": "詢問「誰的」：物件屬於誰。", "example": "Whose bag is this?", "example_zh": "這是誰的書包？"},
+      {"word": "How", "picture": "🚌", "meaning": "Ask about a way, condition or amount.", "meaning_zh": "詢問「怎樣／如何」：方法、情況或程度。", "example": "How do you get to school?", "example_zh": "你怎樣去上學？"}
+    ]
+  },
+  "examples": [
+    {"english": "What is in your lunch box?", "chinese": "你的午餐盒裡有甚麼？", "reason_cn": "What 用來詢問事物。", "time_keywords": ["What"]},
+    {"english": "Who teaches your class?", "chinese": "誰教你們班？", "reason_cn": "Who 用來詢問人物。", "time_keywords": ["Who"]},
+    {"english": "Where do fish live?", "chinese": "魚住在哪裡？", "reason_cn": "Where 用來詢問地方。", "time_keywords": ["Where"]},
+    {"english": "When is the school concert?", "chinese": "學校音樂會是甚麼時候？", "reason_cn": "When 用來詢問時間。", "time_keywords": ["When"]},
+    {"english": "Why should we wash our hands?", "chinese": "我們為甚麼應該洗手？", "reason_cn": "Why 用來詢問原因。", "time_keywords": ["Why"]},
+    {"english": "Which pencil do you want, red or green?", "chinese": "你想要哪一枝鉛筆，紅色還是綠色？", "reason_cn": "Which 用於有選擇時。", "time_keywords": ["Which"]},
+    {"english": "Whose lunch box is on the table?", "chinese": "桌上的午餐盒是誰的？", "reason_cn": "Whose 用來詢問物主。", "time_keywords": ["Whose"]},
+    {"english": "How do you get to school?", "chinese": "你怎樣去學校？", "reason_cn": "How 用來詢問方法。", "time_keywords": ["How"]}
+  ],
+  "guided_practice": [
+    {"id": 1, "question": "___ is in your lunch box?", "options": ["What", "Who", "Where"], "answer": "What", "why": "What asks about a thing.", "why_zh": "What 用來詢問事物。"},
+    {"id": 2, "question": "___ teaches your class?", "options": ["Who", "Whose", "What"], "answer": "Who", "why": "Who asks about a person.", "why_zh": "Who 用來詢問人物。"},
+    {"id": 3, "question": "___ do fish live?", "options": ["Where", "When", "Why"], "answer": "Where", "why": "Where asks about a place.", "why_zh": "Where 用來詢問地方。"},
+    {"id": 4, "question": "___ is the school concert?", "options": ["When", "Where", "How"], "answer": "When", "why": "When asks about a time or day.", "why_zh": "When 用來詢問時間或日子。"},
+    {"id": 5, "question": "___ are you wearing a raincoat?", "options": ["Why", "Who", "Which"], "answer": "Why", "why": "Why asks for a reason.", "why_zh": "Why 用來詢問原因。"},
+    {"id": 6, "question": "___ snack would you like: an apple or a banana?", "options": ["Which", "What", "Whose"], "answer": "Which", "why": "Which is used when there is a choice.", "why_zh": "Which 用於有選擇時。"},
+    {"id": 7, "question": "___ bag is this?", "options": ["Whose", "Who", "Where"], "answer": "Whose", "why": "Whose asks who owns something.", "why_zh": "Whose 用來詢問物主。"},
+    {"id": 8, "question": "___ do you get to school?", "options": ["How", "Why", "When"], "answer": "How", "why": "How asks about the way you do something.", "why_zh": "How 用來詢問做事的方法。"}
+  ],
+  "practice": [],
+  "answer_key": []
+}

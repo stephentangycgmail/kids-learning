@@ -71,6 +71,17 @@ Rules:
 - New Grammar lessons should require one lesson JSON file plus one catalog entry.
 - Do not create duplicate visible lesson titles.
 
+### Grammar Practice Choice Banks
+
+File: `frontend/data/grammar_practice_choice.json`
+
+This production bank contains Question Words and Quantifiers multiple-choice
+questions. Each question has a stable `id`, `prompt`, `prompt_zh`, unique
+`options`, `answer`, `why`, and `why_zh`. Question Words has 50 questions and
+Quantifiers has 54; only `some`, `any`, `a few`, `a little`, `many`, and `much`
+may be Quantifier targets. The bank is used by production Practice and Quiz,
+not lesson JSON.
+
 ## Vocabulary
 
 ### `vocab.json`
@@ -173,6 +184,12 @@ Optional top-level fields:
 
 - `optional_extension`
 - `quiz`
+- `visual_learning`: additive visual cards with English and Traditional Chinese
+  text. A card may use `picture`, or `visual: "water-glass"` with a numeric
+  `water_level` from 0 to 100.
+- `guided_practice`: a short multiple-choice mini-practice. Each item contains
+  `question`, unique `options`, `answer`, `why`, and `why_zh`; the renderer
+  gives immediate feedback.
 
 Gold Lesson expectations:
 
@@ -216,6 +233,8 @@ Compatibility:
 
 - Keep `examples`, `practice`, `answer_key`, and `quiz` arrays stable.
 - Quiz rendering is optional; lessons without `quiz` remain valid.
+- Visual learning and guided practice are optional; lessons without these
+  additive fields retain their existing rendering.
 - Do not modify `grammar.html` for content-only lesson additions unless the schema changes.
 
 ## Legacy Grammar/Tenses Data
@@ -240,6 +259,7 @@ Files:
 - `grammar_practice_manifest.json`
 - `grammar_practice_short_long.json`
 - `grammar_practice_rearrangement.json`
+- `grammar_practice_choice.json`
 
 Manifest fields include:
 
@@ -254,7 +274,8 @@ Manifest fields include:
 Question bank rules:
 
 - Question banks must remain committed static JSON.
-- Current total is 630 questions: 315 short/long and 315 rearrangement.
+- The original banks total 630 questions: 315 short/long and 315 rearrangement.
+  The separate choice bank adds 50 Question Words and 54 Quantifiers questions.
 - Validate generated or edited banks with `tools/validate_grammar_practice_questions.py`.
 - Do not generate questions at runtime in the browser.
 - Browser history is stored locally with IndexedDB and a localStorage fallback; it is not part of committed content.

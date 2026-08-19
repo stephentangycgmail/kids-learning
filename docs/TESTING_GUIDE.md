@@ -9,12 +9,17 @@ From the repository root:
 
 ```powershell
 node --test tests/grammar_practice.test.js tests/static_site.test.js
+node tests/grammar_practice_choice_validation.js
 python -m unittest tests/test_grammar_practice_questions.py
 python tools/validate_grammar_practice_questions.py
 ```
 
 The committed tests cover Grammar Practice selection, storage, scoring,
 history, static paths, question-bank structure, and local page references.
+The choice-bank validation checks Question Words and Quantifiers sizes, IDs,
+coverage, bilingual fields, 12/10 unique selection, and feedback contracts.
+Manually test its rendered Practice feedback, Quiz answer hiding, results, and
+responsive layout when it changes.
 
 ## JSON Validation
 

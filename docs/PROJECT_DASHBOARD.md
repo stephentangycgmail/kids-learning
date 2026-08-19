@@ -2,7 +2,7 @@
 
 ## Current Version
 
-Current official release: `v1.1.0`
+Current official release: `v1.1.0` (v1.2.0 release candidate on `develop`)
 
 Current Pages state: verified `v1.1.0` deployment. See
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
@@ -32,6 +32,10 @@ P1:
 - Improve reviewed lesson content.
 - Maintain JSON catalogs and validation.
 - Add small, backward-compatible improvements.
+
+The next release candidate includes Question Words and Quantifiers lessons and
+choice Practice / Quiz modes. Preview/UAT assets have been retired from the
+production tree.
 
 ## Completed
 

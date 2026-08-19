@@ -1,0 +1,57 @@
+{
+  "id": "P4_QUANTIFIERS",
+  "title": "Quantifiers",
+  "level": "Primary 4",
+  "explanation_en": "First decide whether a noun is countable or uncountable. Then choose a word for a number or an amount.",
+  "explanation_zh": "先分辨名詞是可數還是不可數，然後選擇表示數量或份量的詞。",
+  "structure": {
+    "learning_objective_en": "I can choose some, any, a few, a little, many or much.",
+    "learning_objective_zh": "我能選擇 some、any、a few、a little、many 或 much。",
+    "positive": "Use some in positive statements. Use a few or many with countable nouns.",
+    "negative": "Use any in most negative statements. Use much with uncountable nouns, especially in questions and negative statements.",
+    "question": "Use any in most questions. Use much for an uncountable amount."
+  },
+  "spelling_rules": [],
+  "signal_words": ["some", "any", "a few", "a little", "many", "much"],
+  "common_mistakes": [
+    {"wrong": "There are much apples.", "correct": "There are many apples."},
+    {"wrong": "There is a few water.", "correct": "There is a little water."}
+  ],
+  "keywords": ["countable", "uncountable", "some", "any", "a few", "a little", "many", "much"],
+  "visual_learning": {
+    "intro_en": "Countable nouns can be counted one by one. Uncountable nouns are measured as an amount.",
+    "intro_zh": "可數名詞可以逐一數；不可數名詞用份量來量度。",
+    "countable": ["apples", "books", "students", "grapes"],
+    "uncountable": ["water", "milk", "rice", "money", "time"],
+    "cards": [
+      {"word": "a few", "picture": "🍎🍎🍎", "meaning": "a small number of countable things", "meaning_zh": "少量可數的東西／幾個", "example": "We have a few apples.", "example_zh": "我們有幾個蘋果。"},
+      {"word": "many", "picture": "🍎🍎🍎🍎🍎🍎🍎🍎", "meaning": "many countable things", "meaning_zh": "很多可數的東西", "example": "There are many apples.", "example_zh": "這裡有很多蘋果。"},
+      {"word": "a little", "visual": "water-glass", "water_level": 18, "meaning": "a small amount of uncountable things", "meaning_zh": "少量不可數的東西", "example": "There is a little water in the large glass.", "example_zh": "這個大玻璃杯裡只有少量水。"},
+      {"word": "much", "visual": "water-glass", "water_level": 85, "meaning": "a large amount of an uncountable quantity", "meaning_zh": "很多／大量不可數的東西", "example": "We do not have much time today.", "example_zh": "我們今天沒有很多時間。"},
+      {"word": "some", "picture": "🛒", "meaning": "usually used in positive statements", "meaning_zh": "通常用於肯定句，表示「一些」", "example": "I have some grapes.", "example_zh": "我有一些葡萄。"},
+      {"word": "any", "picture": "❓", "meaning": "usually used in questions and negative statements", "meaning_zh": "通常用於問句和否定句，表示「一些／任何」", "example": "Do you have any milk?", "example_zh": "你有一些牛奶嗎？"}
+    ]
+  },
+  "examples": [
+    {"english": "We have a few apples.", "chinese": "我們有幾個蘋果。", "reason_cn": "Apples 是可數名詞；a few 表示少量。", "time_keywords": ["a few"]},
+    {"english": "There is a little water in the glass.", "chinese": "玻璃杯裡有一點水。", "reason_cn": "Water 是不可數名詞；a little 表示少量。", "time_keywords": ["a little"]},
+    {"english": "There are many books on the shelf.", "chinese": "書架上有很多書。", "reason_cn": "Books 是可數名詞，所以用 many。", "time_keywords": ["many"]},
+    {"english": "How much milk is in the jug?", "chinese": "壺裡有多少牛奶？", "reason_cn": "Milk 是不可數名詞；問數量時用 much。", "time_keywords": ["much"]},
+    {"english": "I packed some sandwiches for the picnic.", "chinese": "我為野餐準備了一些三文治。", "reason_cn": "肯定句通常用 some。", "time_keywords": ["some"]},
+    {"english": "Do you have any questions?", "chinese": "你有任何問題嗎？", "reason_cn": "問句通常用 any。", "time_keywords": ["any"]},
+    {"english": "We do not have much time before lunch.", "chinese": "午餐前我們沒有很多時間。", "reason_cn": "否定句中的不可數名詞 time 用 much。", "time_keywords": ["much"]},
+    {"english": "There are some crayons in the box.", "chinese": "盒子裡有一些蠟筆。", "reason_cn": "肯定句通常用 some。", "time_keywords": ["some"]}
+  ],
+  "guided_practice": [
+    {"id": 1, "question": "We have ___ apples.", "options": ["a few", "a little", "much"], "answer": "a few", "why": "Apples are countable, and a few means a small number.", "why_zh": "Apples 是可數名詞；a few 表示少量。"},
+    {"id": 2, "question": "There is ___ water in the glass.", "options": ["a little", "a few", "many"], "answer": "a little", "why": "Water is uncountable, and a little means a small amount.", "why_zh": "Water 是不可數名詞；a little 表示少量。"},
+    {"id": 3, "question": "There are ___ books on the shelf.", "options": ["many", "much", "a little"], "answer": "many", "why": "Books are countable, so many is the best choice.", "why_zh": "Books 是可數名詞，所以 many 最合適。"},
+    {"id": 4, "question": "How ___ milk is in the jug?", "options": ["much", "many", "a few"], "answer": "much", "why": "Milk is uncountable, so use much in this question.", "why_zh": "Milk 是不可數名詞，這個問句用 much。"},
+    {"id": 5, "question": "I packed ___ sandwiches for the picnic.", "options": ["some", "any", "much"], "answer": "some", "why": "Some is usual in a positive statement.", "why_zh": "肯定句通常用 some。"},
+    {"id": 6, "question": "Do you have ___ questions?", "options": ["any", "some", "much"], "answer": "any", "why": "Any is usual in a question.", "why_zh": "問句通常用 any。"},
+    {"id": 7, "question": "We do not have ___ time before lunch.", "options": ["much", "many", "a few"], "answer": "much", "why": "Time is uncountable, so much is the best choice in this negative sentence.", "why_zh": "Time 是不可數名詞；否定句中 much 最合適。"},
+    {"id": 8, "question": "There are ___ crayons in the box.", "options": ["some", "any", "much"], "answer": "some", "why": "Some is usual in a positive statement.", "why_zh": "肯定句通常用 some。"}
+  ],
+  "practice": [],
+  "answer_key": []
+}

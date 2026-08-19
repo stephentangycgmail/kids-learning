@@ -139,6 +139,72 @@
             padding: 16px;
         }
 
+        .visual-learning, .guided-practice {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            margin: 0 0 20px;
+            padding: 16px;
+        }
+
+        .visual-learning-intro, .guided-feedback .zh-copy, .visual-card .zh-copy {
+            color: #94a3b8;
+        }
+
+        .visual-card-grid {
+            display: grid;
+            gap: 12px;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        }
+
+        .visual-card {
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 14px;
+            text-align: center;
+        }
+
+        .visual-card h3 { margin: 8px 0; color: #f8fafc; }
+        .visual-card p { margin: 8px 0; line-height: 1.45; }
+        .visual-picture { font-size: 2.3rem; min-height: 54px; display: grid; place-items: center; }
+
+        .water-glass {
+            width: 58px;
+            height: 82px;
+            border: 3px solid #cbd5e1;
+            border-top: 0;
+            border-radius: 0 0 12px 12px;
+            display: inline-flex;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+
+        .water-glass-fill { width: 100%; background: #38bdf8; min-height: 2px; }
+
+        .countable-comparison {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin: 0 0 14px;
+        }
+
+        .countable-comparison div { border-left: 3px solid #38bdf8; padding-left: 10px; }
+        .countable-comparison p { margin: 5px 0; }
+
+        .guided-question { border-top: 1px solid #334155; padding: 14px 0; }
+        .guided-question:first-of-type { border-top: 0; }
+        .guided-options { display: flex; flex-wrap: wrap; gap: 8px; }
+        .guided-option { background: #0f172a; border: 1px solid #475569; border-radius: 6px; color: #e2e8f0; cursor: pointer; padding: 8px 12px; }
+        .guided-option:disabled { cursor: default; opacity: 0.85; }
+        .guided-option.correct { background: #166534; border-color: #22c55e; }
+        .guided-option.wrong { background: #991b1b; border-color: #f87171; }
+        .guided-feedback { margin: 10px 0 0; line-height: 1.45; }
+
+        @media (max-width: 480px) {
+            .countable-comparison { grid-template-columns: 1fr; }
+            .guided-option { flex: 1 1 auto; }
+        }
+
         .quiz-question {
             border-bottom: 1px solid #334155;
             margin-bottom: 16px;
@@ -469,15 +535,128 @@
 
     function normalizeLessonData(data) {
         if (Array.isArray(data)) {
-            return { examples: data, explanation_en: "", explanation_zh: "", keywords: [], quiz: [] };
+            return { examples: data, explanation_en: "", explanation_zh: "", keywords: [], quiz: [], visual_learning: null, guided_practice: [] };
         }
         return {
             examples: Array.isArray(data && data.examples) ? data.examples : [],
             explanation_en: data && data.explanation_en ? data.explanation_en : "",
             explanation_zh: data && data.explanation_zh ? data.explanation_zh : "",
             keywords: Array.isArray(data && data.keywords) ? data.keywords : [],
-            quiz: Array.isArray(data && data.quiz) ? data.quiz : []
+            quiz: Array.isArray(data && data.quiz) ? data.quiz : [],
+            visual_learning: data && data.visual_learning && Array.isArray(data.visual_learning.cards) ? data.visual_learning : null,
+            guided_practice: Array.isArray(data && data.guided_practice) ? data.guided_practice : []
         };
+    }
+
+    function appendTextElement(parent, tag, text, className) {
+        if (!text) return null;
+        const element = document.createElement(tag);
+        if (className) element.className = className;
+        element.textContent = text;
+        parent.appendChild(element);
+        return element;
+    }
+
+    function renderVisualLearning(lessonId, visualLearning) {
+        const panel = document.querySelector(`[data-tense-panel="${lessonId}"]`);
+        const container = panel && panel.querySelector(".visual-learning-slot");
+        if (!container) return;
+        container.innerHTML = "";
+        if (!visualLearning) return;
+
+        const section = document.createElement("section");
+        section.className = "visual-learning";
+        appendTextElement(section, "h3", "Look, say and read");
+        appendTextElement(section, "p", visualLearning.intro_en, "visual-learning-intro");
+        appendTextElement(section, "p", visualLearning.intro_zh, "zh-copy");
+        if (Array.isArray(visualLearning.countable) || Array.isArray(visualLearning.uncountable)) {
+            const comparison = document.createElement("div");
+            comparison.className = "countable-comparison";
+            const countable = document.createElement("div");
+            appendTextElement(countable, "strong", "Countable");
+            appendTextElement(countable, "p", (visualLearning.countable || []).join(", "));
+            const uncountable = document.createElement("div");
+            appendTextElement(uncountable, "strong", "Uncountable");
+            appendTextElement(uncountable, "p", (visualLearning.uncountable || []).join(", "));
+            comparison.append(countable, uncountable);
+            section.appendChild(comparison);
+        }
+
+        const grid = document.createElement("div");
+        grid.className = "visual-card-grid";
+        visualLearning.cards.forEach(card => {
+            const article = document.createElement("article");
+            article.className = "visual-card";
+            const visual = document.createElement("div");
+            visual.className = "visual-picture";
+            if (card.visual === "water-glass") {
+                const glass = document.createElement("span");
+                glass.className = "water-glass";
+                glass.setAttribute("role", "img");
+                glass.setAttribute("aria-label", `A large glass with ${card.water_level}% water`);
+                const fill = document.createElement("span");
+                fill.className = "water-glass-fill";
+                fill.style.height = `${Math.max(0, Math.min(100, Number(card.water_level) || 0))}%`;
+                glass.appendChild(fill);
+                visual.appendChild(glass);
+            } else {
+                visual.textContent = card.picture || "";
+            }
+            article.appendChild(visual);
+            appendTextElement(article, "h3", card.word);
+            appendTextElement(article, "p", card.meaning);
+            appendTextElement(article, "p", card.meaning_zh, "zh-copy");
+            appendTextElement(article, "p", card.example);
+            appendTextElement(article, "p", card.example_zh, "zh-copy");
+            grid.appendChild(article);
+        });
+        section.appendChild(grid);
+        container.appendChild(section);
+    }
+
+    function renderGuidedPractice(lessonId, guidedPractice) {
+        const panel = document.querySelector(`[data-tense-panel="${lessonId}"]`);
+        const container = panel && panel.querySelector(".guided-practice-slot");
+        if (!container) return;
+        container.innerHTML = "";
+        const questions = guidedPractice.filter(item => item && item.question && Array.isArray(item.options) && item.options.includes(item.answer));
+        if (!questions.length) return;
+        const section = document.createElement("section");
+        section.className = "guided-practice";
+        appendTextElement(section, "h3", "Guided practice");
+        appendTextElement(section, "p", "Choose an answer. You will see feedback straight away.");
+        appendTextElement(section, "p", "選擇答案後會立即看到提示。", "zh-copy");
+        questions.forEach((item, index) => {
+            const question = document.createElement("div");
+            question.className = "guided-question";
+            appendTextElement(question, "p", `${index + 1}. ${item.question}`);
+            const options = document.createElement("div");
+            options.className = "guided-options";
+            const feedback = document.createElement("p");
+            feedback.className = "guided-feedback";
+            item.options.forEach(option => {
+                const button = document.createElement("button");
+                button.type = "button";
+                button.className = "guided-option";
+                button.textContent = option;
+                button.addEventListener("click", () => {
+                    options.querySelectorAll("button").forEach(choice => {
+                        choice.disabled = true;
+                        if (choice.textContent === item.answer) choice.classList.add("correct");
+                    });
+                    const correct = option === item.answer;
+                    if (!correct) button.classList.add("wrong");
+                    feedback.innerHTML = "";
+                    appendTextElement(feedback, "strong", correct ? "Correct! 做得好！" : `Incorrect. The answer is ${item.answer}.`);
+                    appendTextElement(feedback, "span", ` ${item.why || ""}`);
+                    appendTextElement(feedback, "span", item.why_zh || "", "zh-copy");
+                });
+                options.appendChild(button);
+            });
+            question.append(options, feedback);
+            section.appendChild(question);
+        });
+        container.appendChild(section);
     }
 
     function renderLessonQuiz(lessonId, quiz) {
@@ -579,6 +758,8 @@
         const lessonData = normalizeLessonData(data);
         renderLessonSummary(tenseKey, lessonData);
         renderLessonQuiz(tenseKey, lessonData.quiz);
+        renderVisualLearning(tenseKey, lessonData.visual_learning);
+        renderGuidedPractice(tenseKey, lessonData.guided_practice);
 
         if (lessonData.examples.length === 0) {
             container.innerHTML = '<p class="no-data">No sentences in JSON yet.</p>';
@@ -711,7 +892,9 @@
                     <div class="tense-tip"></div>
                 </div>
                 <div class="scroll-content">
+                    <div class="visual-learning-slot"></div>
                     <div id="sentences-${lesson.id}" class="sentence-list"></div>
+                    <div class="guided-practice-slot"></div>
                     <div class="lesson-practice-action">
                         <button class="lesson-nav-button take-quiz-button" type="button" hidden>Take Quiz</button>
                         <a class="lesson-nav-button" href="dictation_practice.html?grammar=${encodeURIComponent(lesson.id)}">Practice Dictation</a>

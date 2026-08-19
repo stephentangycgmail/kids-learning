@@ -40,6 +40,10 @@ Grammar lessons are loaded from the committed lesson catalog. Select lesson
 tabs, review examples and practice, use a quiz when the lesson provides one,
 or follow the Dictation link for the selected lesson.
 
+Question Words and Quantifiers include visual learning cards and an 8-question
+guided mini-practice with immediate bilingual feedback. Quantifiers explains
+Countable and Uncountable nouns and compares 18% and 85% water in the same glass.
+
 ### English Grammar Practice
 
 Grammar Practice provides:
@@ -55,6 +59,11 @@ read-only.
 Practice history stays on the current browser and device. There is no account
 sync or cloud backup. Clearing browser site data permanently removes local
 practice history.
+
+Question Words and Quantifiers also provide a separate choice Practice and
+Quiz / Challenge entry. Practice selects 12 unique questions and shows feedback
+before Next. Quiz selects 10 unique questions, keeps answers hidden until the
+end, then shows score, percentage, and bilingual wrong-answer review.
 
 ### Placeholder and Disabled Areas
 

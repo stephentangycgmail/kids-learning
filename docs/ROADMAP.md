@@ -6,8 +6,8 @@ belongs in [`PROJECT_DASHBOARD.md`](PROJECT_DASHBOARD.md).
 
 ## Current Phase: Maintenance
 
-Kids Learning has a `v1.0.0` tagged baseline and a later untagged GitHub Pages
-deployment. Current priorities are:
+Kids Learning has an immutable `v1.0.0` baseline and current official `v1.1.0`
+release. Current priorities are:
 
 - preserve production stability and GitHub Pages compatibility;
 - fix verified runtime defects through focused implementation tasks;

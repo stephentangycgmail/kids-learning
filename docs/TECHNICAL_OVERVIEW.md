@@ -1,6 +1,8 @@
 # Technical Overview
 
-This document describes the current v1.0.0 implementation of Kids Learning.
+This document describes the current Kids Learning implementation. The current
+official production release is `v1.1.0`; `v1.0.0` is an immutable prior
+baseline.
 
 ## Runtime Model
 
@@ -27,8 +29,8 @@ in [`SYSTEM_ARCHITECTURE_V1.md`](SYSTEM_ARCHITECTURE_V1.md) and
 | English menu | `frontend/eng.html` | Links to Vocabulary, Dictation, Grammar, Grammar Practice, and disabled AI Teacher. |
 | English Dictation | `frontend/dictation_practice.html` | Uses `catalog.json`, dictation JSON, browser SpeechSynthesis, settings persistence, and Grammar deep links. |
 | Chinese Dictation | `frontend/cn_dictation.html` | Uses static Chinese dictation JSON and browser SpeechSynthesis. |
-| Grammar lessons | `frontend/grammar.html` | Loads lesson tabs from `grammar_catalog.json`; supports lesson quizzes and Dictation deep links. |
-| English Grammar Practice | `frontend/grammar_practice.html` | Loads static question banks; stores progress/history in browser storage. |
+| Grammar lessons | `frontend/grammar.html` | Loads lesson tabs from `grammar_catalog.json`; includes released Question Words and Quantifiers visual learning and guided mini-practice. |
+| English Grammar Practice | `frontend/grammar_practice.html` | Loads static question banks; the choice Practice / Quiz entry is `grammar_practice_choice.html`; all results use browser-local history. |
 | Practice history | `frontend/grammar_practice_history.html` | Reads browser-local practice records. |
 | Practice result | `frontend/grammar_practice_result.html` | Displays one stored practice result. |
 | Vocabulary | `frontend/vocab.html` | Uses static vocabulary JSON lookup. |
@@ -40,7 +42,8 @@ All reviewed production content is committed under `frontend/data/`.
 
 - `catalog.json`: English Dictation lesson catalog.
 - `grammar_catalog.json`: Grammar lesson catalog and lesson order.
-- `grammar_*_lesson.json`: catalog-driven Grammar Gold Lessons.
+- `grammar_*_lesson.json`: catalog-driven Grammar Gold Lessons, including released Question Words and Quantifiers with visual learning and guided mini-practice.
+- `grammar_practice_choice.json`: 50 Question Words and 54 Quantifiers production choice questions with bilingual support.
 - `grammar_practice_manifest.json`: Grammar Practice topic and bank metadata.
 - `grammar_practice_short_long.json`: short/long answer question bank.
 - `grammar_practice_rearrangement.json`: sentence rearrangement question bank.
