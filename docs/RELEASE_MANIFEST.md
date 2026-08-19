@@ -9,7 +9,7 @@ create or redefine a release.
 | --- | --- |
 | Version | `1.2.0` |
 | Preparation branch | `develop` |
-| Preparation commit | `a88fcdb` |
+| Preparation commit | `09ebc98` |
 | Production platform | GitHub Pages static hosting |
 | Question Words bank | 50 questions |
 | Quantifiers bank | 54 questions |
