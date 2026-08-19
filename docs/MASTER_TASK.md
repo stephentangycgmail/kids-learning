@@ -5,8 +5,7 @@ This is the highest-level project specification for `stephentangycgmail/kids-lea
 ## Project Status
 
 Kids Learning has an immutable `v1.0.0` tagged baseline and current official
-release `v1.2.1`; `develop` contains the `v1.2.2` corrective Grammar navigation
-release candidate. GitHub Pages serves `main`. The project is in maintenance
+release `v1.2.2`. GitHub Pages serves `main`. The project is in maintenance
 mode.
 
 Production is static hosting from GitHub Pages. Azure, FastAPI, and backend APIs are not part of the current production deployment process.
