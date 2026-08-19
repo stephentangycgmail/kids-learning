@@ -6,6 +6,13 @@ Verified tag and deployment identities are maintained in
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md). A production deployment is not
 automatically an official release.
 
+## v1.2.1 - 19 August 2026
+
+Fix:
+
+- Corrected final-question submission in the Question Words and Quantifiers
+  choice Practice / Quiz flow. This patch supersedes `v1.2.0`.
+
 ## v1.2.0 - 19 August 2026
 
 Focus:
