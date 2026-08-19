@@ -4,7 +4,7 @@ Durable instructions for future Codex work in the Kids Learning repository.
 
 ## Project Status
 
-- Kids Learning `v1.1.0` is the current official release. The immutable
+- Kids Learning `v1.2.0` is the current official release. The immutable
   `v1.0.0` tag remains the prior baseline; see `docs/RELEASE_MANIFEST.md`.
 - Production is static hosting from GitHub Pages.
 - Azure is not part of the current deployment process. Backend and Azure-related code is legacy/local-only unless a future approved task says otherwise.

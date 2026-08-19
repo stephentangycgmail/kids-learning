@@ -3,18 +3,18 @@
 This manifest records verified repository and production evidence. It does not
 create or redefine a release.
 
-## v1.2.0 Release Candidate
+## v1.2.0 Release
 
 | Field | Verified value |
 | --- | --- |
 | Version | `1.2.0` |
 | Preparation branch | `develop` |
-| Preparation commit | Verified from the final `develop` release candidate before merge |
+| Release commit | The immutable annotated `v1.2.0` tag |
 | Production platform | GitHub Pages static hosting |
 | Question Words bank | 50 questions |
 | Quantifiers bank | 54 questions |
 | Choice Practice / Quiz | 12 / 10 questions |
-| Status | Pending merge, Pages deployment, tag, and production verification |
+| Status | Published and verified |
 
 ## Current Official Release
 

@@ -11,12 +11,10 @@ Kids Learning is a child-friendly static website for English, Chinese, and
 Math learning. It uses committed HTML, CSS, JavaScript, and reviewed JSON;
 students do not need a login, production backend, Azure service, or paid API.
 
-The current official production release is `v1.1.0`, tagged at
-`67bf0d38282fa50e761b7c437cc40d12ac71a8f0`. `v1.0.0` remains an immutable
+The current official production release is `v1.2.0`. `v1.0.0` remains an immutable
 prior baseline at `c2cbcba61a680c809ad31c9f7696f74318dee7a4`. Production is
-stable on `main`; `develop` contains the approved Grammar Question Words and
-Quantifiers release work. Confirm the live Git state before making release
-claims.
+stable on `main`; `develop` is the integration branch for the next approved
+change. Confirm the live Git state before making release claims.
 
 ## Branch Model and Deployment
 
@@ -110,10 +108,8 @@ removes these local records; no history is sent to a server.
 
 ## Current Resume Point
 
-Phase 3 implementation is complete on `develop` pending final release gates:
-validation, local and production smoke tests, merge to `main`, Pages
-verification, and the approved release tag. Do not claim production release
-until those gates are verified.
+Question Words and Quantifiers Phase 3 was released as `v1.2.0`. Resume normal
+maintenance from the current `develop` state.
 
 ## Content Rules
 
