@@ -3,6 +3,23 @@
 Release identity and deployment evidence are maintained in
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
 
+## v1.2.0 - 2026-08-19
+
+### Added
+
+- Released Question Words and Quantifiers Grammar lessons with 50 and 54
+  reviewed choice questions.
+- Added randomized 12-question Practice with immediate bilingual feedback and
+  an explicit Next button.
+- Added randomized 10-question Quiz / Challenge with hidden answers during the
+  session, percentage scoring, and bilingual mistake review.
+- Integrated choice results with browser-local Grammar Practice History.
+
+### Changed
+
+- Retired the unreleased Grammar Preview page and its TEST navigation card.
+- Preserved existing 20-question Grammar Practice modes and production banks.
+
 ## v1.1.0 - 2026-07-31
 
 ### Added
