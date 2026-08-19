@@ -93,11 +93,16 @@
     renderQuestion();
   }
 
+  function displayPrompt(question) {
+    if (activeTopic.id !== "question-words") return question.prompt;
+    return question.prompt.replace(new RegExp(`^${question.answer}\\b`, "i"), "___");
+  }
+
   function renderQuestion() {
     const question = sessionQuestions[questionIndex];
     const heading = mode === "quiz" ? "Quiz / Challenge" : "Practice";
     const options = shuffle(question.options);
-    byId("lesson").innerHTML = `<section class="practice-card"><div class="practice-header"><div><p class="step-label">${heading}</p><h2>${escapeHtml(question.stage || "Question")}</h2></div><p class="progress">Question ${questionIndex + 1} of ${sessionQuestions.length}</p></div><div class="question-visual" aria-hidden="true">${question.visual}</div><p class="prompt">${escapeHtml(question.prompt)}</p><div id="choices" class="choice-list"></div><div id="feedback" aria-live="polite"></div></section>`;
+    byId("lesson").innerHTML = `<section class="practice-card"><div class="practice-header"><div><p class="step-label">${heading}</p><h2>${escapeHtml(activeTopic.title)}</h2></div><p class="progress">Question ${questionIndex + 1} of ${sessionQuestions.length}</p></div><div class="question-visual" aria-hidden="true">${question.visual}</div><p class="prompt">${escapeHtml(displayPrompt(question))}</p><div id="choices" class="choice-list"></div><div id="feedback" aria-live="polite"></div></section>`;
     const choices = byId("choices");
     options.forEach((option) => {
       const button = document.createElement("button");
@@ -114,11 +119,15 @@
     byId("choices").querySelectorAll("button").forEach((choice) => { choice.disabled = true; if (mode === "practice" && choice.textContent === question.answer) choice.classList.add("correct"); });
     if (isCorrect) score += 1;
     answers.push({ id: question.id, selected: option, correct: question.answer, isCorrect, question });
-    if (mode === "quiz") return nextQuestion();
-    if (!isCorrect) button.classList.add("wrong");
     const feedback = byId("feedback");
-    feedback.className = `feedback ${isCorrect ? "good" : "try"}`;
-    feedback.innerHTML = `<strong>${isCorrect ? "Correct! 做得好！" : `Incorrect. 正確答案是「${escapeHtml(question.answer)}」。`}</strong> ${escapeHtml(question.why)}${question.why_zh ? `<br><span class="zh-copy">${escapeHtml(question.why_zh)}</span>` : ""}`;
+    if (mode === "quiz") {
+      feedback.className = "feedback";
+      feedback.innerHTML = `<strong>Answer saved.</strong> <span class="zh-copy">答案已儲存。</span>`;
+    } else {
+      if (!isCorrect) button.classList.add("wrong");
+      feedback.className = `feedback ${isCorrect ? "good" : "try"}`;
+      feedback.innerHTML = `<strong>${isCorrect ? "Correct! 做得好！" : `Incorrect. 正確答案是「${escapeHtml(question.answer)}」。`}</strong> ${escapeHtml(question.why)}${question.why_zh ? `<br><span class="zh-copy">${escapeHtml(question.why_zh)}</span>` : ""}`;
+    }
     const next = document.createElement("button");
     next.className = "next-button";
     next.type = "button";
