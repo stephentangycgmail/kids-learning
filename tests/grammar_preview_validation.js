@@ -51,6 +51,11 @@ const previewScript = fs.readFileSync("frontend/js/grammar_preview.js", "utf8");
 assert.match(previewScript, /sessionQuestions = shuffle\(questionBank\(activeTopic\)\)\.slice\(0, mode === "quiz" \? 10 : 12\);/);
 assert.match(previewScript, /const options = shuffle\(question\.options\);/);
 assert.match(previewScript, /function displayPrompt\(question\)/);
+assert.match(previewScript, /const promptTranslations = \{/);
+assert.match(previewScript, /function promptMeaning\(question\)/);
+for (const question of [...questionWords, ...quantifiers]) {
+  assert.ok(previewScript.includes(JSON.stringify(question.prompt)), `${question.id} needs a Traditional Chinese sentence meaning`);
+}
 assert.match(previewScript, /return question\.prompt\.replace\(new RegExp\(`\^\$\{question\.answer\}\\\\b`, "i"\), "___"\);/);
 assert.match(previewScript, /<h2>\$\{escapeHtml\(activeTopic\.title\)\}<\/h2>/);
 assert.doesNotMatch(previewScript, /escapeHtml\(question\.stage/);
