@@ -40,6 +40,10 @@ Grammar lessons are loaded from the committed lesson catalog. Select lesson
 tabs, review examples and practice, use a quiz when the lesson provides one,
 or follow the Dictation link for the selected lesson.
 
+Lesson tabs wrap to additional rows on narrower screens. Question Words and
+Quantifiers therefore remain reachable without pushing Quiz or Dictation
+actions off-screen.
+
 Question Words and Quantifiers include visual learning cards and an 8-question
 guided mini-practice with immediate bilingual feedback. Quantifiers explains
 Countable and Uncountable nouns and compares 18% and 85% water in the same glass.

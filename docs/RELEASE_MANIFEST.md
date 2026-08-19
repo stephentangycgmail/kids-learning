@@ -3,6 +3,30 @@
 This manifest records verified repository and production evidence. It does not
 create or redefine a release.
 
+## v1.2.2 Release Candidate
+
+| Field | Verified value |
+| --- | --- |
+| Version | `1.2.2` |
+| Preparation branch | `develop` |
+| Preparation commit | Grammar navigation fix `f0c20ca422a00c0a45803bf5351f4ba6ecf11b6d` plus release documentation |
+| Scope | Responsive Grammar lesson navigation only |
+| Validation | Desktop 1024px/wider desktop and 390px mobile smoke tests; no horizontal overflow or console errors |
+| Status | Pending merge, Pages deployment, tag, and production verification |
+
+## Current Official Release: v1.2.1
+
+| Field | Verified value |
+| --- | --- |
+| Version | `1.2.1` |
+| Tag | `v1.2.1` (annotated) |
+| Status | Published and verified before the `v1.2.2` merge |
+| Release commit | `d66eaf79b7c2e022a8a89eb28e6fa0b7bd56477b` |
+| Production platform | GitHub Pages static hosting |
+| GitHub Release | Published 2026-08-19 |
+| Scope | Corrected final-question completion in choice Practice / Quiz |
+| Rollback baseline | `v1.2.1` |
+
 ## v1.2.0 Release
 
 | Field | Verified value |
@@ -16,7 +40,7 @@ create or redefine a release.
 | Choice Practice / Quiz | 12 / 10 questions |
 | Status | Published and verified |
 
-## Current Official Release
+## v1.1.0 Release
 
 | Field | Verified value |
 | --- | --- |

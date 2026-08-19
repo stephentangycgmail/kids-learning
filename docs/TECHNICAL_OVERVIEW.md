@@ -1,8 +1,9 @@
 # Technical Overview
 
 This document describes the current Kids Learning implementation. The current
-official production release is `v1.1.0`; `v1.0.0` is an immutable prior
-baseline.
+official production release is `v1.2.1`; `v1.0.0` is an immutable prior
+baseline. The `v1.2.2` corrective release candidate contains the responsive
+Grammar lesson navigation fix.
 
 ## Runtime Model
 

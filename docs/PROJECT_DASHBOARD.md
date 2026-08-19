@@ -2,9 +2,9 @@
 
 ## Current Version
 
-Current official release: `v1.2.0`
+Current official release: `v1.2.1` (`v1.2.2` corrective release candidate on `develop`)
 
-Current Pages state: verified `v1.2.0` deployment. See
+Current Pages state: verified `v1.2.1` deployment. See
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
 
 ## Current Status
@@ -34,7 +34,10 @@ P1:
 - Add small, backward-compatible improvements.
 
 Question Words and Quantifiers lessons and choice Practice / Quiz modes are
-released. Preview/UAT assets are retired from the production tree.
+released. The `v1.2.2` candidate fixes responsive Grammar lesson navigation:
+tabs wrap naturally, Quiz and Dictation actions remain visible, and desktop
+and 390px mobile smoke tests show no horizontal overflow. Preview/UAT assets
+are retired from the production tree.
 
 ## Completed
 
