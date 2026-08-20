@@ -74,6 +74,8 @@ unique questions and keeps answers, feedback, hints, and Chinese translations
 hidden until completion. A selected answer receives a neutral highlight and
 may be changed before selecting Next. The Result page then shows score, percentage, the
 correct answer, and a full bilingual explanation of each wrong answer.
+Each Quiz review also shows the completed English sentence, its Chinese
+translation, and the meaning of both the correct choice and an incorrect choice.
 Completed topic quizzes use the same Practice History and Result pages as the
 normal 20-question modes.
 

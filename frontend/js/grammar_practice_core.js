@@ -196,12 +196,39 @@
       submittedAt: null, abandonedAt: null, status: "in_progress", scoreSummary: null, review: null };
   }
 
+  const CHOICE_TERM_MEANINGS = {
+    What: { en: "asks about a thing or an action", zh: "問甚麼：用來詢問事物或動作" },
+    Who: { en: "asks about a person", zh: "問誰：用來詢問人物" },
+    Where: { en: "asks about a place", zh: "問哪裡：用來詢問地方" },
+    When: { en: "asks about a time or day", zh: "問何時：用來詢問時間或日子" },
+    Why: { en: "asks for a reason", zh: "問為甚麼：用來詢問原因" },
+    Which: { en: "asks someone to choose from options", zh: "問哪一個：用來在選項中作選擇" },
+    Whose: { en: "asks who owns something", zh: "問誰的：用來詢問物主" },
+    How: { en: "asks about a way, condition, or amount", zh: "問怎樣：用來詢問方法、情況或程度" },
+    some: { en: "means an unspecified amount or number", zh: "表示一些，數量不確定" },
+    any: { en: "means an unspecified amount or number, often in questions and negatives", zh: "表示任何一些，常用於疑問句和否定句" },
+    "a few": { en: "means a small number of countable things", zh: "表示少量可數的東西" },
+    "a little": { en: "means a small amount of an uncountable thing", zh: "表示少量不可數的東西" },
+    many: { en: "means a large number of countable things", zh: "表示很多可數的東西" },
+    much: { en: "means a large amount of an uncountable thing", zh: "表示很多不可數的東西" },
+  };
+
+  function choiceTermMeaning(answer) {
+    return CHOICE_TERM_MEANINGS[answer] || null;
+  }
+
+  function completedChoiceSentence(question) {
+    return question.prompt.includes("___") ? question.prompt.replace("___", question.answer) : question.prompt;
+  }
+
   function scoreChoiceSession(session) {
     const review = session.questionSnapshots.map((question, index) => {
       const selected = session.answers[question.id] && session.answers[question.id].selected;
       return { questionNumber: index + 1, questionId: question.id, type: "choice", originalQuestion: question.prompt,
         selectedAnswer: selected || "No answer", submittedAnswer: selected || "No answer", correctAnswer: question.answer,
-        correct: selected === question.answer, answered: Boolean(selected), explanation: question.why, explanationZh: question.why_zh || "" };
+        correct: selected === question.answer, answered: Boolean(selected), explanation: question.why, explanationZh: question.why_zh || "",
+        completedSentence: completedChoiceSentence(question), completedSentenceZh: question.prompt_zh || "",
+        correctAnswerMeaning: choiceTermMeaning(question.answer), selectedAnswerMeaning: choiceTermMeaning(selected) };
     });
     const correct = review.filter((item) => item.correct).length; const unanswered = review.filter((item) => !item.answered).length;
     return { summary: { totalQuestions: review.length, fullyCorrect: correct, correctQuestions: correct,
@@ -383,6 +410,8 @@
     answeredCount,
     availableTopics,
     clone,
+    choiceTermMeaning,
+    completedChoiceSentence,
     createSession,
     createChoiceSession,
     durationSeconds,

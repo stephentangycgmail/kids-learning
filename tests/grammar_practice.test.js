@@ -211,6 +211,9 @@ test("choice sessions select unique questions and retain bilingual review", () =
   assert.equal(submitted.review[1].selectedAnswer, "definitely-wrong");
   assert.equal(typeof submitted.review[1].explanation, "string");
   assert.equal(typeof submitted.review[1].explanationZh, "string");
+  assert.equal(submitted.review[1].completedSentence, selected[1].prompt);
+  assert.equal(submitted.review[1].completedSentenceZh, selected[1].prompt_zh);
+  assert.equal(submitted.review[1].correctAnswerMeaning.en.length > 0, true);
   assert.throws(() => core.submitChoiceSession(submitted), /already locked/);
 });
 

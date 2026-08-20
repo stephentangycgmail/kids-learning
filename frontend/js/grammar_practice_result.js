@@ -90,6 +90,45 @@
       explanation.className = "explanation";
       explanation.textContent = item.correct ? `Hint: ${item.explanation}` : `Why this answer is incorrect: ${item.explanation}`;
       card.append(heading, comparison);
+      if (item.type === "choice") {
+        if (item.completedSentence) {
+          const completedSentence = document.createElement("p");
+          completedSentence.className = "completed-sentence";
+          completedSentence.textContent = `Complete sentence: ${item.completedSentence}`;
+          card.appendChild(completedSentence);
+        }
+        if (item.completedSentenceZh) {
+          const completedSentenceZh = document.createElement("p");
+          completedSentenceZh.className = "zh-text";
+          completedSentenceZh.textContent = `中文解譯：${item.completedSentenceZh}`;
+          card.appendChild(completedSentenceZh);
+        }
+        const correctMeaning = item.correctAnswerMeaning || core.choiceTermMeaning(item.correctAnswer);
+        const selectedMeaning = item.selectedAnswerMeaning || core.choiceTermMeaning(item.selectedAnswer);
+        if (correctMeaning || (!item.correct && selectedMeaning)) {
+          const meanings = document.createElement("div");
+          meanings.className = "term-meanings";
+          if (correctMeaning) {
+            const meaning = document.createElement("p");
+            meaning.textContent = `${item.correctAnswer} means ${correctMeaning.en}.`;
+            meanings.appendChild(meaning);
+            const meaningZh = document.createElement("p");
+            meaningZh.className = "zh-text";
+            meaningZh.textContent = `${item.correctAnswer}：${correctMeaning.zh}。`;
+            meanings.appendChild(meaningZh);
+          }
+          if (!item.correct && selectedMeaning) {
+            const selectedMeaningText = document.createElement("p");
+            selectedMeaningText.textContent = `Your choice, ${item.selectedAnswer}, means ${selectedMeaning.en}.`;
+            meanings.appendChild(selectedMeaningText);
+            const selectedMeaningZh = document.createElement("p");
+            selectedMeaningZh.className = "zh-text";
+            selectedMeaningZh.textContent = `你選擇的 ${item.selectedAnswer}：${selectedMeaning.zh}。`;
+            meanings.appendChild(selectedMeaningZh);
+          }
+          card.appendChild(meanings);
+        }
+      }
       if (item.type === "short_long" && item.sectionResults.some((section) => !section.correct)) {
         const sectionNote = document.createElement("p");
         sectionNote.className = "warning-copy";
