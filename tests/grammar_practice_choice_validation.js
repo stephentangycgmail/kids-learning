@@ -36,6 +36,7 @@ assert.match(script, /const selectedMode = "choice_quiz"/);
 assert.match(script, /const count = 10/);
 assert.match(script, /if \(!quiz && button\.textContent === question\.answer\)/);
 assert.match(script, /if \(quiz\) feedback\.textContent = "Answer saved\. 答案已儲存。"/);
+assert.doesNotMatch(script, /prompt_zh/);
 assert.match(script, /submitChoiceSession/);
 assert.match(script, /"Finish" : "Next →"/);
 assert.doesNotMatch(fs.readFileSync("frontend/grammar_practice.html", "utf8"), /Open Practice &amp; Quiz/);

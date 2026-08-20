@@ -88,7 +88,7 @@
       comparison.append(submitted, correct);
       const explanation = document.createElement("p");
       explanation.className = "explanation";
-      explanation.textContent = `Hint: ${item.explanation}`;
+      explanation.textContent = item.correct ? `Hint: ${item.explanation}` : `Why this answer is incorrect: ${item.explanation}`;
       card.append(heading, comparison);
       if (item.type === "short_long" && item.sectionResults.some((section) => !section.correct)) {
         const sectionNote = document.createElement("p");
@@ -100,7 +100,7 @@
       if (item.explanationZh) {
         const explanationZh = document.createElement("p");
         explanationZh.className = "zh-text";
-        explanationZh.textContent = item.explanationZh;
+        explanationZh.textContent = item.correct ? item.explanationZh : `錯誤原因：${item.explanationZh}`;
         card.appendChild(explanationZh);
       }
       list.appendChild(card);
