@@ -63,6 +63,10 @@ they do not silently override the current authorities above.
   tests are under `tests/` and generation/validation tools under `tools/`.
 - Released Grammar lessons use `frontend/grammar.html` and
   `frontend/data/grammar_catalog.json`.
+- Grammar category tabs are driven by catalog `category` values. Lesson tabs
+  show only lessons in the selected category; Previous/Next stays within that
+  category. Parts of Speech remains reserved until a true word-class lesson is
+  added.
 - Grammar lesson tabs wrap at constrained widths so Question Words and
   Quantifiers do not displace the Quiz or Dictation actions; the navigation
   layout has been smoke-tested at desktop and 390px mobile widths.

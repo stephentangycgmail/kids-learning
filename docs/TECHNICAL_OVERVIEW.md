@@ -33,7 +33,7 @@ see [`WEBSITE_ARCHITECTURE.md`](WEBSITE_ARCHITECTURE.md).
 | English menu | `frontend/eng.html` | Links to Vocabulary, Dictation, Grammar, Grammar Practice, and disabled AI Teacher. |
 | English Dictation | `frontend/dictation_practice.html` | Uses `catalog.json`, dictation JSON, browser SpeechSynthesis, settings persistence, and Grammar deep links. |
 | Chinese Dictation | `frontend/cn_dictation.html` | Uses static Chinese dictation JSON and browser SpeechSynthesis. |
-| Grammar lessons | `frontend/grammar.html` | Loads lesson tabs from `grammar_catalog.json`; includes released Question Words and Quantifiers visual learning and guided mini-practice. |
+| Grammar lessons | `frontend/grammar.html` | Loads category tabs and category-filtered lesson tabs from `grammar_catalog.json`; includes released Question Words and Quantifiers visual learning and guided mini-practice. |
 | English Grammar Practice | `frontend/grammar_practice.html` | Loads static question banks; the choice Practice / Quiz entry is `grammar_practice_choice.html`; all results use browser-local history. |
 | Practice history | `frontend/grammar_practice_history.html` | Reads browser-local practice records. |
 | Practice result | `frontend/grammar_practice_result.html` | Displays one stored practice result. |
@@ -45,7 +45,8 @@ see [`WEBSITE_ARCHITECTURE.md`](WEBSITE_ARCHITECTURE.md).
 All reviewed production content is committed under `frontend/data/`.
 
 - `catalog.json`: English Dictation lesson catalog.
-- `grammar_catalog.json`: Grammar lesson catalog and lesson order.
+- `grammar_catalog.json`: Grammar lesson catalog, primary taxonomy category, and
+  lesson order within each category.
 - `grammar_*_lesson.json`: catalog-driven Grammar Gold Lessons, including released Question Words and Quantifiers with visual learning and guided mini-practice.
 - `grammar_practice_choice.json`: 50 Question Words and 54 Quantifiers production choice questions with bilingual support.
 - `grammar_practice_manifest.json`: Grammar Practice topic and bank metadata.

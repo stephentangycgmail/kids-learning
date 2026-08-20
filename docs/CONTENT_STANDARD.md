@@ -67,7 +67,10 @@ Rules:
 
 - `id` is used for lesson navigation and deep links.
 - `file` is relative to `frontend/data/`.
-- Catalog order controls lesson tab and previous/next order.
+- `category` is the lesson's single primary taxonomy key. Current production
+  keys are `tenses`, `be-structures`, `modal-structures`,
+  `sentence-patterns`, `question-forms`, and `quantity-determiners`.
+- Catalog order controls lesson tab and Previous/Next order within a category.
 - New Grammar lessons should require one lesson JSON file plus one catalog entry.
 - Do not create duplicate visible lesson titles.
 

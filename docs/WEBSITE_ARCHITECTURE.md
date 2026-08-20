@@ -127,29 +127,26 @@ lesson was added is not a valid classification rule.
 
 ## Current production lesson classification
 
-The current catalog is `frontend/data/grammar_catalog.json`. At the time of this
-review, every record declares `category: "tenses"`; therefore the current
-classification column below reflects the data, not the recommended production
-taxonomy.
+The current catalog is `frontend/data/grammar_catalog.json`. It now uses the
+approved taxonomy keys, and the classification column below records the
+implemented category assignments.
 
 | Lesson ID | Visible title | Grammatical concept | Recommended category | Current category | Current classification correct? | Practice / Quiz / Dictation relationship |
 | --- | --- | --- | --- | --- | --- | --- |
 | `present-simple` | Present Simple | Present-time routines, habits, facts, and third-person `-s` forms | Tenses | Tenses | Yes | Lesson guided practice and optional lesson quiz; eligible for Grammar Practice banks; Grammar Dictation deep link where examples are supplied. |
-| `verb-to-be` | Verb to be | Forms and uses of the be verb (`am`, `is`, `are`) | Be Verbs and Core Structures | Tenses | No; misleading | Lesson guided practice and optional lesson quiz; may link to Dictation and larger Practice independently. |
+| `verb-to-be` | Verb to be | Forms and uses of the be verb (`am`, `is`, `are`) | Be Verbs / Core Structures | Be Verbs / Core Structures | Yes | Lesson guided practice and optional lesson quiz; may link to Dictation and larger Practice independently. |
 | `present-continuous` | Present Continuous | Actions happening now; `be` + verb-`ing` | Tenses | Tenses | Yes | Lesson guided practice and optional lesson quiz; eligible for Practice and Grammar Dictation. |
 | `past-simple` | Past Simple | Completed past actions and regular/irregular past forms | Tenses | Tenses | Yes | Lesson guided practice and optional lesson quiz; eligible for Practice and Grammar Dictation. |
 | `future-simple` | Future Simple (will) | Future predictions, decisions, and `will` forms | Tenses | Tenses | Yes | Lesson guided practice and optional lesson quiz; eligible for Practice and Grammar Dictation. |
-| `can-cant` | Can / Can't | Modal ability and inability using `can` / `can't` | Modal Verbs and Core Structures | Tenses | No; misleading | Lesson guided practice and optional lesson quiz; may be represented in Practice banks and linked to Dictation. |
-| `must-mustnt` | Must / Mustn't | Modal obligation and prohibition using `must` / `mustn't` | Modal Verbs and Core Structures | Tenses | No; misleading | Lesson guided practice and optional lesson quiz; may be represented in Practice banks and linked to Dictation. |
-| `there-is-are` | There is / There are | Existential sentence pattern and singular/plural agreement | Sentence Patterns and Core Structures | Tenses | No; misleading | Lesson guided practice and optional lesson quiz; may be represented in Practice banks and linked to Dictation. |
-| `question-words` | Question Words | Information questions using `what`, `who`, `where`, `when`, `why`, `which`, `whose`, and `how` | Question Forms | Tenses | No; incorrect | Lesson guided practice and optional lesson quiz; dedicated choice Practice (12) and Quiz/Challenge (10), with 50-bank questions; Grammar Dictation deep link may use lesson examples. |
-| `quantifiers` | Quantifiers | Quantity words for countable and uncountable nouns (`some`, `any`, `many`, `much`, etc.) | Quantity and Determiners | Tenses | No; incorrect | Lesson guided practice and optional lesson quiz; dedicated choice Practice (12) and Quiz/Challenge (10), with 54-bank questions; Grammar Dictation deep link may use lesson examples. |
+| `can-cant` | Can / Can't | Modal ability and inability using `can` / `can't` | Modal Verbs / Core Structures | Modal Verbs / Core Structures | Yes | Lesson guided practice and optional lesson quiz; may be represented in Practice banks and linked to Dictation. |
+| `must-mustnt` | Must / Mustn't | Modal obligation and prohibition using `must` / `mustn't` | Modal Verbs / Core Structures | Modal Verbs / Core Structures | Yes | Lesson guided practice and optional lesson quiz; may be represented in Practice banks and linked to Dictation. |
+| `there-is-are` | There is / There are | Existential sentence pattern and singular/plural agreement | Sentence Patterns | Sentence Patterns | Yes | Lesson guided practice and optional lesson quiz; may be represented in Practice banks and linked to Dictation. |
+| `question-words` | Question Words | Information questions using `what`, `who`, `where`, `when`, `why`, `which`, `whose`, and `how` | Question Forms | Question Forms | Yes | Lesson guided practice and optional lesson quiz; dedicated choice Practice (12) and Quiz/Challenge (10), with 50-bank questions; Grammar Dictation deep link may use lesson examples. |
+| `quantifiers` | Quantifiers | Quantity words for countable and uncountable nouns (`some`, `any`, `many`, `much`, etc.) | Quantity / Determiners | Quantity / Determiners | Yes | Lesson guided practice and optional lesson quiz; dedicated choice Practice (12) and Quiz/Challenge (10), with 54-bank questions; Grammar Dictation deep link may use lesson examples. |
 
-"Recommended category" names are a semantic recommendation for the next
-navigation implementation, not an instruction to silently rewrite the current
-catalog. In particular, `Verb to be`, the modal lessons, and `There is / There
-are` should not be forced into Tenses merely because the current UI has no
-implemented alternative.
+The category keys are stable data values while the visible labels remain
+child-friendly. The renderer filters lessons by these catalog values; it does
+not maintain a second hard-coded lesson list.
 
 ## Recommended production taxonomy
 
@@ -160,8 +157,8 @@ quantity/determiner concepts, modal verbs, or the be verb. A primary-school
 friendly extensible taxonomy should begin with these groups:
 
 1. **Tenses:** Present Simple, Present Continuous, Past Simple, Future Simple.
-2. **Be Verbs and Core Structures:** Verb to be.
-3. **Modal Verbs and Core Structures:** Can / Can't; Must / Mustn't.
+2. **Be Verbs / Core Structures:** Verb to be.
+3. **Modal Verbs / Core Structures:** Can / Can't; Must / Mustn't.
 4. **Sentence Patterns:** There is / There are.
 5. **Question Forms:** Question Words.
 6. **Quantity and Determiners:** Quantifiers.
@@ -434,9 +431,10 @@ other page actions.
 1. **Header:** back link to English, page title, learning prompt, and the
    current category-level controls. The header must remain available while the
    lesson content scrolls.
-2. **Grammar Category Navigation:** top-level category tabs. Tenses is the
-   currently implemented tab; Parts of Speech and Sentence Patterns are
-   placeholders. Category selection is a filter layer, not a lesson selector.
+2. **Grammar Category Navigation:** top-level category tabs for Tenses, Be
+   Verbs / Core Structures, Modal Verbs / Core Structures, Sentence Patterns,
+   Question Forms, Quantity / Determiners, and reserved Parts of Speech.
+   Category selection is a filter layer, not a lesson selector.
 3. **Lesson Topic Navigation:** catalog-generated lesson tabs for the selected
    category. Catalog order determines the active lesson and Previous/Next order;
    a category must never show topics assigned to another category.

@@ -36,9 +36,11 @@ and voice quality vary by device and browser.
 
 ### Grammar Lessons
 
-Grammar lessons are loaded from the committed lesson catalog. Select lesson
-tabs, review examples and practice, use a quiz when the lesson provides one,
-or follow the Dictation link for the selected lesson.
+Grammar lessons are loaded from the committed lesson catalog. Select a Grammar
+category first, then choose one of the lesson tabs shown for that category.
+Review examples and practice, use a quiz when the lesson provides one, or
+follow the Dictation link for the selected lesson. Previous and Next stay
+within the selected category.
 
 Lesson tabs wrap to additional rows on narrower screens. Question Words and
 Quantifiers therefore remain reachable without pushing Quiz or Dictation

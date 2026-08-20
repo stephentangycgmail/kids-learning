@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Grammar - Tenses Practice</title>
+    <title>Grammar Practice</title>
     <!-- PWA 與手機適配設定 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="theme-color" content="#0f172a"> <!-- 讓瀏覽器網址列也變深色 -->
@@ -84,8 +84,8 @@
 
         .grammar-main-tabs, .tense-tabs {
             display: flex;
-            flex-wrap: nowrap;
-            overflow-x: auto;
+            flex-wrap: wrap;
+            overflow-x: hidden;
             gap: 10px;
             padding-bottom: 6px;
             margin: 0 -16px 2px -16px;
@@ -391,19 +391,23 @@
         
         <header>
             <h1>Kids English – Grammar</h1>
-            <p>Look at keywords to choose the tense.</p>
+            <p>Choose a grammar idea, then learn one lesson at a time.</p>
         </header>
 
         <!-- Main Tabs -->
         <div class="grammar-main-tabs">
             <button class="grammar-main-tab active" data-section="tenses">Tenses (時態)</button>
-            <button class="grammar-main-tab" data-section="parts-of-speech">Parts of Speech (詞性)</button>
+            <button class="grammar-main-tab" data-section="be-structures">Be Verbs / Core Structures</button>
+            <button class="grammar-main-tab" data-section="modal-structures">Modal Verbs / Core Structures</button>
             <button class="grammar-main-tab" data-section="sentence-patterns">Sentence Patterns (句型)</button>
+            <button class="grammar-main-tab" data-section="question-forms">Question Forms</button>
+            <button class="grammar-main-tab" data-section="quantity-determiners">Quantity / Determiners</button>
+            <button class="grammar-main-tab" data-section="parts-of-speech">Parts of Speech (詞性)</button>
         </div>
     </div>
 
-    <!-- Tenses Section -->
-    <div class="grammar-section active" data-section-panel="tenses">
+    <!-- Selected Grammar Category -->
+    <div class="grammar-section active" data-section-panel="grammar-lessons">
 
         <!-- Grammar lesson tabs are generated from grammar_catalog.json. -->
         <div style="background: #0f172a; padding: 0 16px; flex: 0 0 auto;">
@@ -418,22 +422,12 @@
         </div>
     </div>
 
-    <!-- Parts of Speech Placeholder -->
-    <div class="grammar-section" data-section-panel="parts-of-speech">
+    <!-- Category Placeholder -->
+    <div class="grammar-section" data-section-panel="category-placeholder">
         <div class="scroll-content">
             <div class="coming-soon-box">
-                <h2>Parts of Speech（詞性）</h2>
-                <p>Nouns, verbs, adjectives, adverbs...</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Sentence Patterns Placeholder -->
-    <div class="grammar-section" data-section-panel="sentence-patterns">
-        <div class="scroll-content">
-            <div class="coming-soon-box">
-                <h2>Sentence Patterns（句型）</h2>
-                <p>S + V + O, There is / There are...</p>
+                <h2></h2>
+                <p>This category is reserved for future lessons.</p>
             </div>
         </div>
     </div>
@@ -442,6 +436,16 @@
 <script>
     const GRAMMAR_CATALOG_PATH = "data/grammar_catalog.json";
     let grammarLessons = [];
+    let currentCategory = "tenses";
+    const grammarCategoryLabels = {
+        tenses: "Tenses (時態)",
+        "be-structures": "Be Verbs / Core Structures",
+        "modal-structures": "Modal Verbs / Core Structures",
+        "sentence-patterns": "Sentence Patterns (句型)",
+        "question-forms": "Question Forms",
+        "quantity-determiners": "Quantity / Determiners",
+        "parts-of-speech": "Parts of Speech (詞性)"
+    };
     let currentLessonIndex = -1;
     const tenseDataCache = {};
 
@@ -883,14 +887,18 @@
 
     function createGrammarLessonControls(lessons) {
         const tabs = document.getElementById("grammarLessonTabs");
-        const section = document.querySelector('[data-section-panel="tenses"]');
+        const section = document.querySelector('[data-section-panel="grammar-lessons"]');
         const status = document.getElementById("grammarLessonStatus");
         const previousButton = document.getElementById("previousLessonButton");
         const nextButton = document.getElementById("nextLessonButton");
         tabs.innerHTML = "";
-        status.remove();
-        previousButton.addEventListener("click", () => navigateLesson(-1));
-        nextButton.addEventListener("click", () => navigateLesson(1));
+        section.querySelectorAll(".tense-panel").forEach(panel => panel.remove());
+        if (status) status.remove();
+        if (!previousButton.dataset.bound) {
+            previousButton.addEventListener("click", () => navigateLesson(-1));
+            nextButton.addEventListener("click", () => navigateLesson(1));
+            previousButton.dataset.bound = "true";
+        }
 
         lessons.forEach((lesson, index) => {
             const tab = document.createElement("button");
@@ -931,12 +939,10 @@
                 return res.json();
             })
             .then(catalog => {
-                grammarLessons = Array.isArray(catalog.lessons)
-                    ? catalog.lessons.filter(lesson => lesson.category === "tenses" && lesson.id && lesson.title && lesson.file)
+                window.grammarCatalogLessons = Array.isArray(catalog.lessons)
+                    ? catalog.lessons.filter(lesson => lesson.category && lesson.id && lesson.title && lesson.file)
                     : [];
-                if (!grammarLessons.length) throw new Error("No grammar lessons configured");
-                createGrammarLessonControls(grammarLessons);
-                activateGrammarLesson(grammarLessons[0]);
+                selectGrammarCategory(currentCategory);
             })
             .catch(err => {
                 console.error("Failed to load grammar catalog", err);
@@ -949,31 +955,49 @@
 
     document.addEventListener("DOMContentLoaded", function () {
         const mainTabs = document.querySelectorAll(".grammar-main-tab");
-        const sections = document.querySelectorAll(".grammar-section");
 
         mainTabs.forEach(tab => {
             tab.addEventListener("click", () => {
                 const sectionKey = tab.dataset.section;
 
-                mainTabs.forEach(t => t.classList.remove("active"));
-                tab.classList.add("active");
-
-                sections.forEach(sec => {
-                    if (sec.dataset.sectionPanel === sectionKey) {
-                        sec.classList.add("active");
-                    } else {
-                        sec.classList.remove("active");
-                    }
-                });
-
-                if (sectionKey !== "tenses") {
-                    stopReading();
-                }
+                selectGrammarCategory(sectionKey);
             });
         });
 
         loadGrammarCatalog();
     });
+
+    function selectGrammarCategory(category) {
+        currentCategory = category;
+        const lessons = (window.grammarCatalogLessons || []).filter(lesson => lesson.category === category);
+        document.querySelectorAll(".grammar-main-tab").forEach(tab => {
+            tab.classList.toggle("active", tab.dataset.section === category);
+        });
+        const lessonSection = document.querySelector('[data-section-panel="grammar-lessons"]');
+        const placeholder = document.querySelector('[data-section-panel="category-placeholder"]');
+        const isPlaceholder = category === "parts-of-speech";
+        lessonSection.classList.toggle("active", !isPlaceholder);
+        placeholder.classList.toggle("active", isPlaceholder);
+        if (isPlaceholder) {
+            placeholder.querySelector("h2").textContent = grammarCategoryLabels[category];
+            stopReading();
+            return;
+        }
+        grammarLessons = lessons;
+        if (!grammarLessons.length) {
+            const status = document.createElement("div");
+            status.id = "grammarLessonStatus";
+            status.className = "panel-fixed-header";
+            status.innerHTML = '<p class="no-data">No lessons are configured for this category yet.</p>';
+            lessonSection.appendChild(status);
+            currentLessonIndex = -1;
+            updateLessonNavigation();
+            stopReading();
+            return;
+        }
+        createGrammarLessonControls(grammarLessons);
+        activateGrammarLesson(grammarLessons[0]);
+    }
 </script>
 </body>
 </html>

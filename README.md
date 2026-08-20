@@ -25,7 +25,7 @@ The production site uses committed HTML, CSS, JavaScript, and JSON files. It doe
 - Vocabulary: `frontend/vocab.html`
 - English Dictation Practice: `frontend/dictation_practice.html`
 - Chinese Dictation: `frontend/cn_dictation.html`
-- Grammar lessons: `frontend/grammar.html`
+- Grammar lessons: `frontend/grammar.html` (category-filtered lesson navigation)
 - Grammar includes released Question Words and Quantifiers lessons, each with
   visual bilingual learning cards and an 8-question guided mini-practice.
 - Grammar lesson navigation wraps responsively so new topics do not push Quiz
