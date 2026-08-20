@@ -204,7 +204,7 @@ Result and History. Dictation is a related destination, not a Grammar category.
 | Grammar Practice | `frontend/grammar_practice.html` | Separate 20-question Practice Mode and Grammar Topic Quiz / Challenge setup, autosave, navigation, and submission. |
 | Grammar Topic Quiz / Challenge | `frontend/grammar_practice_choice.html` | Question Words and Quantifiers 10-question Quiz / Challenge. |
 | Practice History | `frontend/grammar_practice_history.html` | Browser-local list/filter of in-progress, submitted, and abandoned sessions. |
-| Practice Result | `frontend/grammar_practice_result.html` | Locked submitted-session score and answer review. |
+| Practice Result | `frontend/grammar_practice_result.html` | Locked submitted-session score and teaching review. |
 
 ## Legacy / Internal / Placeholder Pages
 
@@ -451,11 +451,14 @@ other page actions.
    explanation, pattern/reason text, full-sentence speech, and clickable word
    speech.
 8. **Guided Mini-Practice:** optional `guided_practice` multiple-choice items.
-   Answering disables the item and gives immediate English/Traditional Chinese
-   correctness and explanation feedback. Question Words and Quantifiers reuse
-   their approved choice banks for one whole-set refresh control; it replaces
-   every displayed item, resets all feedback, and is learning-only, with no
-   Practice History record. This is lesson-level practice.
+   Answering locks that item and gives immediate English/Traditional Chinese
+   feedback. For the refreshed Question Words and Quantifiers sets, an incorrect
+   answer identifies in English and Traditional Chinese why the selected word
+   does not fit, why the correct word fits, the completed correct English
+   sentence, and its Chinese meaning; a
+   correct answer reinforces the completed sentence. The whole-set refresh
+   control replaces all eight displayed items and resets answers and feedback.
+   This is learning-only and never writes a Practice History record.
 9. **Practice / Quiz Actions:** the lesson's optional five-question `quiz`
    appears through Take Quiz and reports `n/5` through Check Score. Larger
    randomized Practice/Quiz belongs to `grammar_practice.html` or the choice
@@ -573,10 +576,12 @@ current student entry launches `choice_quiz` only.
 2. Topic selector populated from manifest topics whose `practiceType` is
    `choice`, plus a learning link to the selected Grammar lesson.
 3. Start action selects 10 unique Quiz / Challenge questions.
-4. Question panel shows visual, English prompt, Traditional Chinese prompt,
-   shuffled answer buttons, position/progress, and save status.
-5. Quiz disables answers and says only that the answer was saved; correctness
-   and bilingual explanations remain hidden until submission.
+4. Question panel shows visual, English prompt with the answer blanked,
+   shuffled answer buttons, position/progress, and save status. Chinese
+   translations are hidden during Quiz / Challenge.
+5. A neutral selected-answer highlight shows the stored choice without revealing
+   correctness. The student may change the answer before Next; correctness,
+   hints, and bilingual explanations remain hidden until completion.
 6. Next advances; the final Next is Finish, scores and stores the locked record,
    then redirects to Result.
 
@@ -626,7 +631,8 @@ navigation, not scoring or answer mutation.
 
 ### Purpose
 
-Display a locked submitted session's score and review evidence.
+Display a locked submitted session as both a score page and a child-friendly
+review/learning page.
 
 ### Page Sections
 
@@ -637,13 +643,18 @@ Display a locked submitted session's score and review evidence.
 3. Review controls for Wrong Answers and All Questions.
 4. Review cards: original question, learner answer, correct answer, section
    checks where applicable, English explanation, and Traditional Chinese
-   explanation.
+   explanation. Choice review additionally shows the completed correct English
+   sentence, Chinese translation, correct-term meaning, selected-term meaning
+   when incorrect, and a context-specific explanation of why the selection did
+   not fit and why the correct answer does.
 
 ### Data Sources / Browser Storage
 
 The `id` query parameter identifies a stored submitted record. The page reads
 the complete snapshot/review from IndexedDB or localStorage and never rebuilds
-answers from a changed question bank.
+answers from a changed question bank. For compatible older choice records that
+lack newer derived review fields, it uses the stored question snapshot to fill
+the completed sentence, Chinese translation, and contextual explanation.
 
 ### Outbound Navigation / Design Rules
 
@@ -685,7 +696,7 @@ link. No Math data, practice, storage, or active controls exist.
 | Grammar lesson navigation/order | `frontend/grammar.html` | `data/grammar_catalog.json`, inline Grammar JS |
 | Grammar lesson content | `frontend/grammar.html` | `data/grammar_*_lesson.json` |
 | Grammar visual learning | `frontend/grammar.html` | Lesson JSON `visual_learning` |
-| Grammar guided mini-practice | `frontend/grammar.html` | Lesson JSON `guided_practice` and inline renderer |
+| Grammar guided mini-practice | `frontend/grammar.html` | Lesson JSON `guided_practice`, choice bank refresh source, and inline renderer |
 | Lesson quiz | `frontend/grammar.html` | Lesson JSON `quiz` |
 | Grammar lesson Dictation deep link | `frontend/grammar.html`, `frontend/dictation_practice.html` | `grammar_catalog.json`, selected lesson JSON |
 | Production Grammar Practice setup/flow | `frontend/grammar_practice.html` | `js/grammar_practice.js`, `js/grammar_practice_core.js`, `grammar_practice_manifest.json` |
@@ -693,7 +704,7 @@ link. No Math data, practice, storage, or active controls exist.
 | Question Words / Quantifiers choice flow | `frontend/grammar_practice_choice.html` | `js/grammar_practice_choice.js`, `grammar_practice_choice.json` |
 | Practice persistence/locking | Shared Practice modules | `js/grammar_practice_storage.js` |
 | History list/filter | `frontend/grammar_practice_history.html` | `js/grammar_practice_history.js` |
-| Result/review | `frontend/grammar_practice_result.html` | `js/grammar_practice_result.js`, stored session snapshot |
+| Result/review and legacy fallback | `frontend/grammar_practice_result.html` | `js/grammar_practice_result.js`, `grammar_practice_core.js`, stored session snapshot |
 | English Dictation | `frontend/dictation_practice.html` | `data/catalog.json`, dictation JSON, inline JS |
 | Chinese Dictation | `frontend/cn_dictation.html` | `cn_dictation*.json`, inline JS |
 | Vocabulary | `frontend/vocab.html` | `js/vocab.js`, `vocab.json`, `vocab_ai.json` |
@@ -724,6 +735,9 @@ link. No Math data, practice, storage, or active controls exist.
 - Completed, abandoned, and in-progress session listing belongs in History;
   score/review rendering belongs in Result; persistence belongs in the storage
   module.
+- Detailed teaching review belongs in Result: the completed sentence,
+  translation, answer comparison, word meanings, and contextual explanation do
+  not belong in History or the in-progress Quiz screen.
 - Dictation functionality belongs in the English or Chinese Dictation page.
   Grammar may link to English Dictation intentionally, but Dictation controls
   must not be embedded into Grammar lessons.

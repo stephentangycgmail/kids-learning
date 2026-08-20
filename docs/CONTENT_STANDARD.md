@@ -85,6 +85,12 @@ Quantifiers has 54; only `some`, `any`, `a few`, `a little`, `many`, and `much`
 may be Quantifier targets. The bank is used by production Practice and Quiz,
 not lesson JSON.
 
+Submitted choice-session review snapshots retain the source prompt, answer,
+`prompt_zh`, and explanation fields so Result can display the completed correct
+sentence, Traditional Chinese meaning, term meanings, and contextual reasoning.
+Older review records may omit newer derived fields; Result uses their stored
+question snapshot as a compatible fallback without changing the record.
+
 ## Vocabulary
 
 ### `vocab.json`

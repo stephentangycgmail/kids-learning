@@ -675,6 +675,47 @@
         return item.prompt.replace(new RegExp(`^${escapedAnswer}\\b`, "i"), "___");
     }
 
+    const guidedChoiceMeanings = {
+        What: "asks about a thing or action", Who: "asks about a person", Where: "asks about a place",
+        When: "asks about a time or day", Why: "asks for a reason", Which: "asks someone to choose from options",
+        Whose: "asks who owns something", How: "asks about a way, condition, or amount",
+        some: "an unspecified amount or number", any: "an unspecified amount or number, often in questions and negatives",
+        "a few": "a small number of countable things", "a little": "a small amount of an uncountable thing",
+        many: "a large number of countable things", much: "a large amount of an uncountable thing"
+    };
+    const guidedChoiceMeaningsZh = {
+        What: "詢問事物或動作", Who: "詢問人物", Where: "詢問地方", When: "詢問時間或日子",
+        Why: "詢問原因", Which: "在選項中作選擇", Whose: "詢問物主", How: "詢問方法、情況或程度",
+        some: "表示一些不確定的數量", any: "表示任何一些，常用於疑問句和否定句",
+        "a few": "表示少量可數的東西", "a little": "表示少量不可數的東西",
+        many: "表示很多可數的東西", much: "表示很多不可數的東西"
+    };
+
+    function guidedChoiceExplanation(item, selected) {
+        const selectedMeaning = guidedChoiceMeanings[selected];
+        const answerMeaning = guidedChoiceMeanings[item.answer];
+        if (!selectedMeaning || !answerMeaning) return "";
+        const noun = (item.question.match(/___\s+([A-Za-z]+)/) || [])[1];
+        if (noun) {
+            const label = noun.charAt(0).toUpperCase() + noun.slice(1);
+            const muchNote = item.answer === "a little" ? " Much is also for uncountable nouns, but it means a large amount; this sentence needs a small amount." : "";
+            return `${label} is the noun in this sentence. ${selected} is used for ${selectedMeaning}, so it does not fit here. ${item.answer} is used for ${answerMeaning}, which matches this sentence.${muchNote}`;
+        }
+        return `${selected} ${selectedMeaning}, but this question needs ${item.answer}, which ${answerMeaning}.`;
+    }
+
+    function guidedChoiceExplanationZh(item, selected) {
+        const selectedMeaning = guidedChoiceMeaningsZh[selected];
+        const answerMeaning = guidedChoiceMeaningsZh[item.answer];
+        if (!selectedMeaning || !answerMeaning) return "";
+        const noun = (item.question.match(/___\s+([A-Za-z]+)/) || [])[1];
+        if (noun) {
+            const muchNote = item.answer === "a little" ? "much 也可用於不可數名詞，但表示大量；本句需要表示少量。" : "";
+            return `${noun} 是本句的名詞。${selected} ${selectedMeaning}，所以不適合本句。${item.answer} ${answerMeaning}，符合本句。${muchNote}`;
+        }
+        return `${selected} ${selectedMeaning}，但本題需要 ${item.answer}，因為它${answerMeaning}。`;
+    }
+
     function chooseGuidedPracticeSet(lessonId, questions) {
         const count = Math.min(8, questions.length);
         let nextSet = shuffleItems(questions).slice(0, count);
@@ -741,6 +782,8 @@
                         } else {
                             appendTextElement(feedback, "span", ` ${item.why || ""}`);
                             appendTextElement(feedback, "span", `你選擇「${option}」，但它不適合這句所需要的資料。正確答案是「${item.answer}」；${item.why_zh || ""}`, "zh-copy");
+                            appendTextElement(feedback, "span", ` ${guidedChoiceExplanation(item, option)}`);
+                            appendTextElement(feedback, "span", ` ${guidedChoiceExplanationZh(item, option)}`, "zh-copy");
                             appendTextElement(feedback, "span", ` Correct sentence: ${sentence}`);
                             appendTextElement(feedback, "span", ` 中文意思：${item.sentence_zh || ""}`, "zh-copy");
                         }

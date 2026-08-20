@@ -11,9 +11,9 @@ Kids Learning is a child-friendly static website for English, Chinese, and
 Math learning. It uses committed HTML, CSS, JavaScript, and reviewed JSON;
 students do not need a login, production backend, Azure service, or paid API.
 
-The current official production release is `v1.2.2`, tagged at
-`1890638bd247be449606e5c2cc9c8ea42d2e66d9`. `v1.0.0` remains an immutable
-prior baseline. Confirm the live Git state before making release claims.
+The current official production release is `v1.3.0`. `v1.0.0` remains an
+immutable prior baseline. Confirm the live Git state before making release
+claims.
 
 ## Branch Model and Deployment
 
@@ -100,17 +100,18 @@ Grammar Practice topics. The former Preview page and assets are retired.
 - Traditional Chinese support is present for topic subtitles and introductions,
   card meanings, and examples. Visual teaching uses emoji cards plus the water
   comparison for the two uncountable-water terms.
-- Practice randomly selects 12 unique questions and safely randomizes answer
-  option order. It gives immediate feedback after each answer: all choices are
-  locked, the correct answer is shown, an incorrect choice is marked, and the
-  English/Traditional Chinese explanation is displayed before Next.
-- Quiz / Challenge randomly selects 10 unique questions. It does not show
-  correctness during the session; completion shows score, percentage, and a
-  review of wrong answers with selected answer, correct answer, and bilingual
-  explanation. The released Grammar lesson quizzes in `grammar.html` remain a
-  different feature. `tests/grammar_practice_choice_validation.js` validates
-  bank IDs and required coverage; rendered browser behavior remains a smoke
-  check.
+- The current choice-page entry is Quiz / Challenge only: it selects 10 unique
+  questions, safely randomizes option order, hides Chinese translations and
+  correctness during the session, and keeps a neutral selected-answer state.
+  Students may change that selection before Next; only the final selection is
+  stored. Earlier 12-question `choice_practice` records remain readable.
+- Quiz completion shows score, percentage, answer comparison, completed English
+  sentence, Traditional Chinese sentence meaning, correct and selected-term
+  meanings, and child-friendly context-specific reasoning. Quantifier reviews
+  explain countability and amount, such as why `a little` fits uncountable water
+  while `many` does not. Legacy records use stored question snapshots as a
+  compatible fallback where review fields predate these additions. The released
+  lesson quizzes in `grammar.html` remain a different feature.
 
 ## Practice and History Storage
 
@@ -124,8 +125,9 @@ removes these local records; no history is sent to a server.
 
 ## Current Resume Point
 
-Question Words and Quantifiers Phase 3 was released as `v1.2.0`. Resume normal
-maintenance from the current `develop` state.
+Question Words and Quantifiers learning, Topic Quiz / Challenge, and teaching
+Result improvements were released as `v1.3.0`. Resume normal maintenance from
+the current `develop` state.
 
 ## Content Rules
 

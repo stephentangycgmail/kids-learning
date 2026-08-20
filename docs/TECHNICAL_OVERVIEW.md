@@ -1,9 +1,8 @@
 # Technical Overview
 
 This document describes the current Kids Learning implementation. The current
-official production release is `v1.2.1`; `v1.0.0` is an immutable prior
-baseline. The `v1.2.2` corrective release candidate contains the responsive
-Grammar lesson navigation fix.
+official production release is `v1.3.0`; `v1.0.0` is an immutable prior
+baseline.
 
 ## Runtime Model
 
@@ -36,7 +35,7 @@ see [`WEBSITE_ARCHITECTURE.md`](WEBSITE_ARCHITECTURE.md).
 | Grammar lessons | `frontend/grammar.html` | Loads category tabs and category-filtered lesson tabs from `grammar_catalog.json`; includes released Question Words and Quantifiers visual learning and guided mini-practice. |
 | English Grammar Practice | `frontend/grammar_practice.html` | Separates the three normal 20-question modes from the manifest-driven Grammar Topic Quiz / Challenge entry; all results use browser-local history. |
 | Practice history | `frontend/grammar_practice_history.html` | Reads browser-local practice records. |
-| Practice result | `frontend/grammar_practice_result.html` | Displays one stored practice result. |
+| Practice result | `frontend/grammar_practice_result.html` | Displays one locked result as a teaching review, including compatible choice-record fallbacks. |
 | Vocabulary | `frontend/vocab.html` | Uses static vocabulary JSON lookup. |
 | AI Teacher | `frontend/ai_teacher.html` | Preserved but disabled for static production. |
 
@@ -66,6 +65,13 @@ English Grammar Practice stores student progress locally in the browser.
 - Stored data is local to the browser and is not committed to the repository.
 
 Dictation settings use localStorage for read mode, speech rate, and pause values.
+
+For Topic Quiz / Challenge sessions, `grammar_practice_core.js` stores immutable
+question snapshots and review fields. `grammar_practice_result.js` renders the
+answer comparison, completed correct sentence, Chinese translation, correct and
+selected term meanings, and contextual explanation. It falls back to the stored
+question snapshot for compatible legacy records that lack newer derived review
+fields.
 
 ## Speech and Audio
 

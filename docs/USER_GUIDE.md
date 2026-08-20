@@ -50,6 +50,10 @@ Question Words and Quantifiers include visual learning cards and an 8-question
 guided mini-practice with immediate bilingual feedback. Quantifiers explains
 Countable and Uncountable nouns and compares 18% and 85% water in the same glass.
 Guided Practice is learning-only and does not create a Practice History record.
+When an answer is incorrect, it identifies the correct answer, explains why the
+selected answer does not fit, gives the complete correct sentence, and provides
+its Chinese meaning. Correct answers reinforce the completed sentence without a
+long review.
 
 ### English Grammar Practice
 

@@ -6,6 +6,21 @@ Verified tag and deployment identities are maintained in
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md). A production deployment is not
 automatically an official release.
 
+## v1.3.0 - 20 August 2026
+
+Student learning and review release:
+
+- Reclassified Grammar lessons under a child-friendly taxonomy and made category
+  selection filter the available lesson tabs.
+- Added refreshed Question Words and Quantifiers Guided Practice learning sets
+  with immediate bilingual feedback, correct sentences, and Chinese meanings.
+- Separated the normal 20-question Practice modes from the 10-question Grammar
+  Topic Quiz / Challenge.
+- Added Topic Quiz History integration and richer teaching Results, including
+  contextual Quantifier explanations such as countable/uncountable usage.
+- Kept Quiz translations and correctness hidden until completion, while letting
+  students change their selected answer before Next.
+
 ## v1.2.2 - 19 August 2026
 
 Corrective UI maintenance release:
