@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grammar Practice | Kids Learning</title>
+  <link rel="icon" href="favicon.svg">
   <link rel="stylesheet" href="css/grammar_practice.css">
 </head>
 <body>
@@ -31,7 +32,8 @@
       </div>
     </section>
 
-    <section id="setupPanel" class="setup-panel" aria-labelledby="setupTitle">
+    <section id="setupPanel" aria-labelledby="setupTitle">
+      <div class="setup-panel practice-mode-section">
       <div class="section-heading">
         <div>
           <p class="eyebrow">New Practice</p>
@@ -64,20 +66,34 @@
         </div>
       </fieldset>
 
-      <label class="field-label" for="topicSelect">Grammar topic</label>
-      <select id="topicSelect" class="select-control" disabled>
-        <option>Loading topics...</option>
-      </select>
-
       <div class="setup-actions">
-        <p class="privacy-note">Records stay only in this browser and device.</p>
+        <span></span>
         <button id="startButton" class="button button-primary button-large" type="button" disabled>Start 20 Questions →</button>
       </div>
-      <aside class="choice-topic-callout">
-        <strong>Question Words &amp; Quantifiers</strong>
-        <span>Practise 12 questions with feedback, or take a 10-question Quiz / Challenge.</span>
-        <a class="button button-secondary" href="grammar_practice_choice.html">Open Practice &amp; Quiz</a>
-      </aside>
+      </div>
+
+      <div class="setup-panel topic-quiz-section" aria-labelledby="topicQuizTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Grammar Topic</p>
+            <h2 id="topicQuizTitle">Grammar Topic Quiz / Challenge</h2>
+            <p class="zh-text">文法主題測驗 / 挑戰</p>
+          </div>
+          <p>10 questions. Answers appear after completion.</p>
+        </div>
+        <label class="field-label" for="grammarTopicSelect">Grammar Topic</label>
+        <select id="grammarTopicSelect" class="select-control" disabled>
+          <option>Loading topics...</option>
+        </select>
+        <div class="setup-actions">
+          <span></span>
+          <button id="topicQuizButton" class="button button-accent button-large" type="button" disabled>
+            Quiz / Challenge<br><span class="button-zh">測驗 / 挑戰</span>
+          </button>
+        </div>
+      </div>
+
+      <p class="privacy-note setup-privacy-note">Records stay only in this browser and device.</p>
     </section>
 
     <section id="practicePanel" class="practice-panel" aria-labelledby="practiceTitle" hidden>

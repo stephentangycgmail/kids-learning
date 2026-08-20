@@ -32,9 +32,11 @@ for (const bank of [questionWords, quantifiers]) for (const count of [12, 10]) {
   assert.equal(selected.length, count); assert.equal(new Set(selected.map((item) => item.id)).size, count);
 }
 const script = fs.readFileSync("frontend/js/grammar_practice_choice.js", "utf8");
-assert.match(script, /selectedMode === "choice_quiz" \? 10 : 12/);
+assert.match(script, /const selectedMode = "choice_quiz"/);
+assert.match(script, /const count = 10/);
 assert.match(script, /if \(!quiz && button\.textContent === question\.answer\)/);
 assert.match(script, /if \(quiz\) feedback\.textContent = "Answer saved\. 答案已儲存。"/);
 assert.match(script, /submitChoiceSession/);
 assert.match(script, /"Finish" : "Next →"/);
+assert.doesNotMatch(fs.readFileSync("frontend/grammar_practice.html", "utf8"), /Open Practice &amp; Quiz/);
 console.log("Grammar Practice choice banks: Question Words 50; Quantifiers 54; session and feedback contracts valid.");

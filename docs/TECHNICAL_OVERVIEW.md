@@ -34,7 +34,7 @@ see [`WEBSITE_ARCHITECTURE.md`](WEBSITE_ARCHITECTURE.md).
 | English Dictation | `frontend/dictation_practice.html` | Uses `catalog.json`, dictation JSON, browser SpeechSynthesis, settings persistence, and Grammar deep links. |
 | Chinese Dictation | `frontend/cn_dictation.html` | Uses static Chinese dictation JSON and browser SpeechSynthesis. |
 | Grammar lessons | `frontend/grammar.html` | Loads category tabs and category-filtered lesson tabs from `grammar_catalog.json`; includes released Question Words and Quantifiers visual learning and guided mini-practice. |
-| English Grammar Practice | `frontend/grammar_practice.html` | Loads static question banks; the choice Practice / Quiz entry is `grammar_practice_choice.html`; all results use browser-local history. |
+| English Grammar Practice | `frontend/grammar_practice.html` | Separates the three normal 20-question modes from the manifest-driven Grammar Topic Quiz / Challenge entry; all results use browser-local history. |
 | Practice history | `frontend/grammar_practice_history.html` | Reads browser-local practice records. |
 | Practice result | `frontend/grammar_practice_result.html` | Displays one stored practice result. |
 | Vocabulary | `frontend/vocab.html` | Uses static vocabulary JSON lookup. |

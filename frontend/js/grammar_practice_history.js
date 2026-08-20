@@ -10,7 +10,7 @@
     return value ? new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeStyle: "short" }).format(new Date(value)) : "—";
   }
   function modeLabel(mode) {
-    return { short_long: "Short & Long Answer", rearrangement: "Sentence Rearrangement", mixed: "Mixed Practice", choice_practice: "Question Words / Quantifiers Practice", choice_quiz: "Question Words / Quantifiers Quiz" }[mode] || mode;
+    return { short_long: "Short & Long Answer", rearrangement: "Sentence Rearrangement", mixed: "Mixed Practice", choice_practice: "Legacy Topic Practice", choice_quiz: "Quiz / Challenge" }[mode] || mode;
   }
   function statusLabel(status) {
     return { submitted: "Submitted", in_progress: "In Progress", abandoned: "Abandoned" }[status] || status;
@@ -48,7 +48,9 @@
       card.className = "history-card";
       const identity = document.createElement("div");
       const heading = document.createElement("h2");
-      heading.textContent = modeLabel(record.mode);
+      heading.textContent = record.mode === "choice_quiz"
+        ? `${record.topicLabel || record.topic} — ${modeLabel(record.mode)}`
+        : modeLabel(record.mode);
       const topic = document.createElement("p");
       topic.textContent = record.topicLabel || record.topic;
       const badge = document.createElement("span");

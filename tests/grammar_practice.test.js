@@ -64,6 +64,19 @@ test("memory storage autosaves answers and restores an unfinished session", asyn
   assert.equal(restored.answers[question.id].sections.short_yes.sy_pronoun, question.expectedPronoun);
 });
 
+test("a missing record returns null without reporting invalid stored data", async () => {
+  const store = storageApi.createMemoryStore();
+  const originalError = console.error;
+  const messages = [];
+  console.error = (...args) => messages.push(args);
+  try {
+    assert.equal(await store.get("missing-session"), null);
+    assert.deepEqual(messages, []);
+  } finally {
+    console.error = originalError;
+  }
+});
+
 test("storage ignores malformed records when restoring history", async () => {
   const valid = core.createSession({ mode: "short_long", topic: allTopic, questions: [banks.shortLong[0]] });
   const store = storageApi.createMemoryStore([valid, { sessionId: "broken", status: "in_progress" }]);
@@ -219,4 +232,23 @@ test("choice quiz selection supports ten unique questions", () => {
   assert.equal(selected.length, 10);
   assert.equal(new Set(selected.map((item) => item.id)).size, 10);
   assert.equal(core.createChoiceSession({ mode: "choice_quiz", topic, questions: selected }).scoreSummary, null);
+});
+
+test("choice quiz records retain topic, timing, score, percentage, and review", () => {
+  const choiceBank = JSON.parse(fs.readFileSync(path.join(dataDir, manifest.banks.choice), "utf8"));
+  const topic = manifest.topics.find((item) => item.id === "question-words");
+  const questions = choiceBank.topics.find((item) => item.id === topic.id).questionBank.slice(0, 10);
+  const session = core.createChoiceSession({
+    mode: "choice_quiz", topic, questions,
+    now: new Date("2026-08-20T01:00:00.000Z"),
+  });
+  session.answers[session.questionIds[0]] = { selected: session.questionSnapshots[0].answer };
+  const submitted = core.submitChoiceSession(session, new Date("2026-08-20T01:02:00.000Z"));
+  assert.equal(submitted.topicLabel, "Question Words");
+  assert.equal(submitted.mode, "choice_quiz");
+  assert.equal(submitted.startedAt, "2026-08-20T01:00:00.000Z");
+  assert.equal(submitted.submittedAt, "2026-08-20T01:02:00.000Z");
+  assert.equal(submitted.scoreSummary.totalQuestions, 10);
+  assert.equal(submitted.scoreSummary.percentage, 10);
+  assert.equal(submitted.review.length, 10);
 });

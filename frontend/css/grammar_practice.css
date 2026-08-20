@@ -59,6 +59,10 @@ button:focus-visible, select:focus-visible, a:focus-visible, input:focus-visible
   background: var(--surface);
 }
 .setup-panel, .practice-panel { padding: clamp(18px, 3vw, 32px); }
+.practice-mode-section, .topic-quiz-section { margin-bottom: 22px; }
+.topic-quiz-section { border-color: #805f2e; }
+.setup-privacy-note { margin: 0; text-align: center; }
+.button-zh { font-size: .82rem; font-weight: 700; }
 
 .section-heading, .practice-toolbar, .setup-actions, .practice-actions, .button-row, .review-controls {
   display: flex;
@@ -102,8 +106,6 @@ legend, .field-label { display: block; margin-bottom: 10px; font-weight: 800; }
 }
 .select-compact { width: min(100%, 320px); }
 .setup-actions { margin-top: 26px; }
-.choice-topic-callout { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--border); }
-.choice-topic-callout span { color: var(--muted); flex: 1 1 260px; }
 .privacy-note { color: var(--muted); font-size: .9rem; }
 
 .button {

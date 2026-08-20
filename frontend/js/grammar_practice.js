@@ -13,7 +13,7 @@
   function getElements() {
     [
       "appMessage", "resumePanel", "continueButton", "abandonButton", "setupPanel",
-      "topicSelect", "startButton", "practicePanel", "practiceMeta", "questionPosition",
+      "startButton", "grammarTopicSelect", "topicQuizButton", "practicePanel", "practiceMeta", "questionPosition",
       "answeredProgress", "saveStatus", "questionNavigator", "questionContainer",
       "previousButton", "nextButton", "submitReviewButton", "submitDialog",
       "submitSummary", "unansweredSummary", "confirmSubmitButton",
@@ -49,17 +49,19 @@
     };
   }
 
-  function updateTopicOptions() {
-    const topics = core.availableTopics(manifest, banks, selectedMode());
-    elements.topicSelect.textContent = "";
-    topics.forEach((topic) => {
+  function updateSetupControls() {
+    const practiceTopic = topicById("all");
+    elements.startButton.disabled = !practiceTopic || Boolean(activeSession);
+    const quizTopics = (manifest.topics || []).filter((topic) => topic.practiceType === "choice");
+    elements.grammarTopicSelect.textContent = "";
+    quizTopics.forEach((topic) => {
       const option = document.createElement("option");
       option.value = topic.id;
       option.textContent = `${topic.label} · ${topic.labelZh}`;
-      elements.topicSelect.appendChild(option);
+      elements.grammarTopicSelect.appendChild(option);
     });
-    elements.topicSelect.disabled = topics.length === 0;
-    elements.startButton.disabled = topics.length === 0 || Boolean(activeSession);
+    elements.grammarTopicSelect.disabled = quizTopics.length === 0;
+    elements.topicQuizButton.disabled = quizTopics.length === 0;
   }
 
   function topicById(topicId) {
@@ -315,7 +317,7 @@
         return;
       }
       const mode = selectedMode();
-      const topic = topicById(elements.topicSelect.value);
+      const topic = topicById("all");
       const previousSessions = await store.getAll();
       const recentIds = core.recentQuestionIds(previousSessions, 5);
       const questions = core.selectQuestions({ mode, topic, banks, recentIds });
@@ -343,7 +345,7 @@
       await store.save(abandoned);
       activeSession = null;
       elements.resumePanel.hidden = true;
-      updateTopicOptions();
+      updateSetupControls();
     } catch (error) {
       showError("The practice could not be abandoned. Please try again.", error);
     }
@@ -378,10 +380,12 @@
   }
 
   function bindEvents() {
-    document.querySelectorAll('input[name="practiceMode"]').forEach((input) => {
-      input.addEventListener("change", updateTopicOptions);
-    });
     elements.startButton.addEventListener("click", startPractice);
+    elements.topicQuizButton.addEventListener("click", () => {
+      const topicId = elements.grammarTopicSelect.value;
+      if (!topicId) return;
+      window.location.assign(`grammar_practice_choice.html?topic=${encodeURIComponent(topicId)}&mode=choice_quiz`);
+    });
     elements.continueButton.addEventListener("click", () => showPractice(activeSession));
     elements.abandonButton.addEventListener("click", abandonActivePractice);
     elements.previousButton.addEventListener("click", () => goToQuestion(activeSession.currentQuestionIndex - 1));
@@ -400,7 +404,7 @@
       ]);
       const unfinished = await store.getActive();
       if (unfinished) showResume(unfinished);
-      updateTopicOptions();
+      updateSetupControls();
     } catch (error) {
       showError("Grammar Practice is unavailable in this browser. Please reload the page.", error);
     }

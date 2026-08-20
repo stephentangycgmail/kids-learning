@@ -20,7 +20,7 @@
     return value ? new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeStyle: "medium" }).format(new Date(value)) : "—";
   }
   function modeLabel(mode) {
-    return { short_long: "Short & Long Answer", rearrangement: "Sentence Rearrangement", mixed: "Mixed Practice", choice_practice: "Question Words / Quantifiers Practice", choice_quiz: "Question Words / Quantifiers Quiz" }[mode] || mode;
+    return { short_long: "Short & Long Answer", rearrangement: "Sentence Rearrangement", mixed: "Mixed Practice", choice_practice: "Legacy Topic Practice", choice_quiz: "Quiz / Challenge" }[mode] || mode;
   }
   function showError(message, error) {
     const panel = byId("resultMessage");

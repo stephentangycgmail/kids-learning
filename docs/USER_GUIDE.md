@@ -49,10 +49,12 @@ actions off-screen.
 Question Words and Quantifiers include visual learning cards and an 8-question
 guided mini-practice with immediate bilingual feedback. Quantifiers explains
 Countable and Uncountable nouns and compares 18% and 85% water in the same glass.
+Guided Practice is learning-only and does not create a Practice History record.
 
 ### English Grammar Practice
 
-Grammar Practice provides:
+Grammar appears before Grammar Practice on the English menu. The Practice Mode
+section provides:
 
 - Short and Long Answer
 - Sentence Rearrangement
@@ -66,10 +68,11 @@ Practice history stays on the current browser and device. There is no account
 sync or cloud backup. Clearing browser site data permanently removes local
 practice history.
 
-Question Words and Quantifiers also provide a separate choice Practice and
-Quiz / Challenge entry. Practice selects 12 unique questions and shows feedback
-before Next. Quiz selects 10 unique questions, keeps answers hidden until the
-end, then shows score, percentage, and bilingual wrong-answer review.
+The separate Grammar Topic Quiz / Challenge section lets the learner select
+Question Words or Quantifiers from the production manifest. It selects 10
+unique questions, keeps answers hidden until the end, then shows score,
+percentage, and bilingual wrong-answer review. Completed topic quizzes use the
+same Practice History and Result pages as the normal 20-question modes.
 
 ### Placeholder and Disabled Areas
 

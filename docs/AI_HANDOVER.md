@@ -73,6 +73,11 @@ they do not silently override the current authorities above.
 - Choice Grammar Practice uses `frontend/grammar_practice_choice.html`,
   `frontend/js/grammar_practice_choice.js`, and
   `frontend/data/grammar_practice_choice.json`.
+- The English Hub lists Grammar before Grammar Practice. Grammar Practice keeps
+  its three 20-question modes in one section and provides a separate,
+  manifest-driven Grammar Topic Quiz / Challenge section. Topic quizzes write
+  `choice_quiz` records to the same History/Result system; Guided Practice does
+  not write history.
 - `backend/` and the Dockerfile are not the production path. Docker support is
   undecided because its referenced application module is absent.
 
@@ -84,14 +89,14 @@ Grammar Practice topics. The former Preview page and assets are retired.
 - **Question Words:** eight visual learning cards for What, Who, Where, When,
   Why, Which, Whose, and How, plus a 50-question UAT bank with unique IDs and
   concise Traditional Chinese explanations. The lesson includes an 8-question
-  guided mini-practice and choice Practice / Quiz modes.
+  guided mini-practice and a Grammar Topic Quiz / Challenge mode.
 - **Quantifiers:** six visual learning cards for `some`, `any`, `a few`, `a
   little`, `many`, and `much`; `a lot of`, `few`, and `little` are not preview
   target items. Its 54-question bank includes six Countable / Uncountable
   questions. It introduces countable versus uncountable nouns and compares the
   same large glass at 18% water for `a little` and 85% water for `much`. A
   lesson includes the same visual teaching, an 8-question guided mini-practice,
-  and choice Practice / Quiz modes.
+  and a Grammar Topic Quiz / Challenge mode.
 - Traditional Chinese support is present for topic subtitles and introductions,
   card meanings, and examples. Visual teaching uses emoji cards plus the water
   comparison for the two uncountable-water terms.

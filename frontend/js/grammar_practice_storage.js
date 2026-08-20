@@ -55,6 +55,7 @@
   }
 
   function safeRecord(record) {
+    if (record == null) return null;
     try {
       return clone(validateSession(record));
     } catch (error) {

@@ -54,10 +54,10 @@ server progress sync.
   five-question lesson quiz, Previous/Next Lesson, and Dictation deep link.
 - **English Grammar Practice:** Short & Long Answer, Sentence Rearrangement,
   and Mixed Practice. Sessions contain 20 questions and autosave locally.
-- **Question Words / Quantifiers Practice:** separate choice Practice (12
-  questions, immediate feedback) and Quiz/Challenge (10 questions, feedback
-  withheld until submission). Production banks contain 50 Question Words and
-  54 Quantifiers questions.
+- **Question Words / Quantifiers Quiz:** separate 10-question Quiz / Challenge
+  with feedback withheld until submission. Production banks contain 50
+  Question Words and 54 Quantifiers questions. Earlier 12-question choice
+  Practice records remain readable but have no current launch action.
 - **Practice History and Result:** local session list, status filtering,
   locked submitted/abandoned records, score summaries, answer review, wrong
   answers, explanations, and navigation to a new or resumed session.
@@ -99,12 +99,14 @@ Root index.html
     └── frontend/math.html (placeholder)
 ```
 
-The normal Grammar flow is English → Grammar → select a catalog lesson → read
+The English Hub lists Grammar before Grammar Practice. The normal Grammar flow
+is English → Grammar → select a catalog lesson → read
 the explanation/visual cards/examples → optional guided mini-practice or
 lesson quiz → Previous/Next Lesson or lesson Dictation. The separate Practice
-flow is English → Grammar Practice → choose mode/topic → answer and autosave →
+flow is English → Grammar Practice → choose a 20-question mode or a Grammar
+Topic Quiz / Challenge → answer and autosave →
 submit → Result → History or new practice. Question Words and Quantifiers have
-their own choice Practice/Quiz entry from Grammar Practice.
+their own Grammar Topic Quiz / Challenge entry from Grammar Practice.
 
 # Content and Navigation Taxonomy
 
@@ -141,8 +143,8 @@ implemented category assignments.
 | `can-cant` | Can / Can't | Modal ability and inability using `can` / `can't` | Modal Verbs / Core Structures | Modal Verbs / Core Structures | Yes | Lesson guided practice and optional lesson quiz; may be represented in Practice banks and linked to Dictation. |
 | `must-mustnt` | Must / Mustn't | Modal obligation and prohibition using `must` / `mustn't` | Modal Verbs / Core Structures | Modal Verbs / Core Structures | Yes | Lesson guided practice and optional lesson quiz; may be represented in Practice banks and linked to Dictation. |
 | `there-is-are` | There is / There are | Existential sentence pattern and singular/plural agreement | Sentence Patterns | Sentence Patterns | Yes | Lesson guided practice and optional lesson quiz; may be represented in Practice banks and linked to Dictation. |
-| `question-words` | Question Words | Information questions using `what`, `who`, `where`, `when`, `why`, `which`, `whose`, and `how` | Question Forms | Question Forms | Yes | Lesson guided practice and optional lesson quiz; dedicated choice Practice (12) and Quiz/Challenge (10), with 50-bank questions; Grammar Dictation deep link may use lesson examples. |
-| `quantifiers` | Quantifiers | Quantity words for countable and uncountable nouns (`some`, `any`, `many`, `much`, etc.) | Quantity / Determiners | Quantity / Determiners | Yes | Lesson guided practice and optional lesson quiz; dedicated choice Practice (12) and Quiz/Challenge (10), with 54-bank questions; Grammar Dictation deep link may use lesson examples. |
+| `question-words` | Question Words | Information questions using `what`, `who`, `where`, `when`, `why`, `which`, `whose`, and `how` | Question Forms | Question Forms | Yes | Lesson guided practice and optional lesson quiz; dedicated Quiz/Challenge (10), with 50 bank questions; earlier choice Practice records remain readable. |
+| `quantifiers` | Quantifiers | Quantity words for countable and uncountable nouns (`some`, `any`, `many`, `much`, etc.) | Quantity / Determiners | Quantity / Determiners | Yes | Lesson guided practice and optional lesson quiz; dedicated Quiz/Challenge (10), with 54 bank questions; earlier choice Practice records remain readable. |
 
 The category keys are stable data values while the visible labels remain
 child-friendly. The renderer filters lessons by these catalog values; it does
@@ -199,8 +201,8 @@ Result and History. Dictation is a related destination, not a Grammar category.
 | Vocabulary | `frontend/vocab.html` | Local vocabulary list and explanation lookup. |
 | English Dictation | `frontend/dictation_practice.html` | Catalog-driven English dictation, playback, hide/show, and word help. |
 | Grammar | `frontend/grammar.html` | Catalog-driven Grammar Gold Lessons, examples, guided practice, and lesson quiz. |
-| Grammar Practice | `frontend/grammar_practice.html` | Setup, topic/mode selection, 20-question practice, autosave, navigation, and submission. |
-| Choice Grammar Practice | `frontend/grammar_practice_choice.html` | Question Words and Quantifiers choice Practice or Quiz/Challenge. |
+| Grammar Practice | `frontend/grammar_practice.html` | Separate 20-question Practice Mode and Grammar Topic Quiz / Challenge setup, autosave, navigation, and submission. |
+| Grammar Topic Quiz / Challenge | `frontend/grammar_practice_choice.html` | Question Words and Quantifiers 10-question Quiz / Challenge. |
 | Practice History | `frontend/grammar_practice_history.html` | Browser-local list/filter of in-progress, submitted, and abandoned sessions. |
 | Practice Result | `frontend/grammar_practice_result.html` | Locked submitted-session score and answer review. |
 
@@ -227,7 +229,7 @@ the student sitemap.
 | `frontend/index.html` | Root redirect | `cn.html`, `eng.html`, `math.html` | None. |
 | `frontend/cn.html` | Home | `cn_dictation.html` | Back to `index.html`. |
 | `frontend/cn_dictation.html` | Chinese Hub | `data/cn_dictation01.json`, `data/cn_dictation02.json` | Back to `cn.html`. |
-| `frontend/eng.html` | Home | Vocabulary, Dictation, Grammar, Grammar Practice, choice Practice, placeholders, AI Teacher | Back to `index.html`. |
+| `frontend/eng.html` | Home | Vocabulary, Dictation, Grammar, Grammar Practice, placeholders, AI Teacher | Back to `index.html`. |
 | `frontend/grammar.html` | English Hub | Catalog lesson panels; `grammar.html?lesson=<id>`; lesson quiz; `dictation_practice.html?grammar=<id>` | Back to `eng.html`; lesson tabs and Previous/Next stay in page. |
 | `frontend/dictation_practice.html` | English Hub or Grammar lesson | `data/catalog.json`; grammar deep-link lesson from `grammar_catalog.json`; dictation JSON | Back to English or back to Grammar when the `grammar` query/referrer is present. |
 | `frontend/grammar_practice.html` | English Hub | `grammar_practice_choice.html`; History; Result after submit | Back to `eng.html`; History link; resume/abandon current session. |
@@ -518,13 +520,15 @@ English Hub; Practice History can return to New Practice or Resume.
 1. Header/back link and Practice History link.
 2. Resume panel when an unfinished non-choice session exists, with Continue or
    Abandon. Abandoned records remain in History and are locked.
-3. Setup panel with mode selection (Short & Long Answer, Sentence
-   Rearrangement, Mixed Practice), topic selection derived from the manifest,
-   and Start Practice.
-4. Active practice panel with mode/topic metadata, question position,
+3. Practice Mode section with Short & Long Answer, Sentence Rearrangement, and
+   Mixed Practice. Start 20 Questions applies only to these three modes and
+   uses the existing all-topics 20-question banks.
+4. Separate Grammar Topic Quiz / Challenge section with a manifest-driven
+   Question Words or Quantifiers selector and a Quiz / Challenge action.
+5. Active practice panel with mode/topic metadata, question position,
    answered progress, question navigator, answer controls, Previous/Next, save
    status, and Submit for Review.
-5. Submission dialog summarizes answered/unanswered questions and permits
+6. Submission dialog summarizes answered/unanswered questions and permits
    Submit Anyway or normal submission.
 
 ### Behavior
@@ -551,29 +555,28 @@ general session is supported; submitted and abandoned records are read-only.
 
 ### Outbound Navigation / Design Rules
 
-Back to English, History, choice Practice/Quiz, Resume/Abandon, and Result after
+Back to English, History, Grammar Topic Quiz / Challenge, Resume/Abandon, and Result after
 submission. Keep this module separate from lesson guided practice and from the
 placeholder `quiz.html`.
 
-## Choice Grammar Practice — `frontend/grammar_practice_choice.html`
+## Grammar Topic Quiz / Challenge — `frontend/grammar_practice_choice.html`
 
 ### Purpose
 
-Run production choice Practice and Quiz/Challenge for Question Words and
-Quantifiers.
+Run the production 10-question Quiz / Challenge for the Grammar Topic selected
+on Grammar Practice. Legacy `choice_practice` records remain readable, but the
+current student entry launches `choice_quiz` only.
 
 ### Page Sections and Behavior
 
 1. Header with back-to-Grammar-Practice and History links.
 2. Topic selector populated from manifest topics whose `practiceType` is
-   `choice`, plus Practice/Quiz mode controls and a learning link to the
-   selected Grammar lesson.
-3. Start action: Practice selects 12 unique bank questions; Quiz selects 10.
+   `choice`, plus a learning link to the selected Grammar lesson.
+3. Start action selects 10 unique Quiz / Challenge questions.
 4. Question panel shows visual, English prompt, Traditional Chinese prompt,
    shuffled answer buttons, position/progress, and save status.
-5. Practice immediately marks correct/wrong, shows the correct answer and
-   bilingual `why` explanation. Quiz disables answers but says only that the
-   answer was saved; feedback is hidden until submission.
+5. Quiz disables answers and says only that the answer was saved; correctness
+   and bilingual explanations remain hidden until submission.
 6. Next advances; the final Next is Finish, scores and stores the locked record,
    then redirects to Result.
 
@@ -581,14 +584,15 @@ Quantifiers.
 
 Loads `grammar_practice_manifest.json` and `grammar_practice_choice.json`.
 Question Words has 50 questions; Quantifiers has 54. It uses the same core and
-storage modules as general Practice and writes `choice_practice` or
-`choice_quiz` records.
+storage modules as general Practice and writes `choice_quiz` records to the
+same Practice History. Existing `choice_practice` records remain compatible.
 
 ### Outbound Navigation / Design Rules
 
 Back to Grammar Practice, learning link to `grammar.html?lesson=question-words`
 or `quantifiers`, History, and Result. Do not merge these choice banks into the
-general 20-question banks or into lesson guided practice.
+general 20-question banks. Grammar Guided Practice may read the approved bank
+for learning-only refresh sets, but it never writes Practice History.
 
 ## Grammar Practice History — `frontend/grammar_practice_history.html`
 
@@ -606,9 +610,11 @@ Show browser-local practice records to the learner, parent, or teacher.
 
 ### Data Sources / Browser Storage
 
-Reads all validated records through `grammar_practice_storage.js` from IndexedDB
+Reads all validated normal Practice and Grammar Topic Quiz / Challenge records
+through `grammar_practice_storage.js` from IndexedDB
 or localStorage fallback. Records are sorted newest first and remain local to
-the browser/device; no cloud sync exists.
+the browser/device; no cloud sync exists. Topic quiz cards identify records as
+`<Topic> — Quiz / Challenge`.
 
 ### Outbound Navigation / Design Rules
 
@@ -711,9 +717,10 @@ link. No Math data, practice, storage, or active controls exist.
   not whichever area has available space.
 - Large randomized 20-question Practice/Quiz behavior belongs in
   `grammar_practice.html` and its practice banks/core.
-- Question Words and Quantifiers 12-question Practice and 10-question Quiz
-  behavior belongs in `grammar_practice_choice.html` and the choice bank; do
-  not duplicate it inside a lesson or the general placeholder Quiz page.
+- Question Words and Quantifiers 10-question Quiz / Challenge behavior belongs
+  in `grammar_practice_choice.html` and the choice bank; do not duplicate it
+  inside a lesson or the general placeholder Quiz page. Historical 12-question
+  `choice_practice` records remain readable but are not a current launch mode.
 - Completed, abandoned, and in-progress session listing belongs in History;
   score/review rendering belongs in Result; persistence belongs in the storage
   module.
