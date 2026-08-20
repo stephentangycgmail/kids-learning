@@ -164,6 +164,23 @@
             padding: 16px;
         }
 
+        .guided-practice-heading {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
+        .guided-practice-heading h3 {
+            margin: 0;
+        }
+
+        .guided-practice-refresh {
+            flex: 0 1 auto;
+            white-space: normal;
+        }
+
         .visual-learning-intro, .guided-feedback .zh-copy, .visual-card .zh-copy {
             color: #94a3b8;
         }
@@ -435,6 +452,8 @@
 
 <script>
     const GRAMMAR_CATALOG_PATH = "data/grammar_catalog.json";
+    const GRAMMAR_PRACTICE_CHOICE_PATH = "data/grammar_practice_choice.json";
+    const REFRESHABLE_GUIDED_PRACTICE_LESSONS = new Set(["question-words", "quantifiers"]);
     let grammarLessons = [];
     let currentCategory = "tenses";
     const grammarCategoryLabels = {
@@ -448,6 +467,8 @@
     };
     let currentLessonIndex = -1;
     const tenseDataCache = {};
+    const guidedPracticeChoiceCache = {};
+    const guidedPracticeSetIds = {};
 
     /* ========= SIMPLE SLOW TTS (NO HIGHLIGHT) ========= */
 
@@ -635,7 +656,33 @@
         container.appendChild(section);
     }
 
-    function renderGuidedPractice(lessonId, guidedPractice) {
+    function shuffleItems(items) {
+        const shuffled = [...items];
+        for (let index = shuffled.length - 1; index > 0; index--) {
+            const swapIndex = Math.floor(Math.random() * (index + 1));
+            [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+        }
+        return shuffled;
+    }
+
+    function completeGuidedSentence(item) {
+        return item.full_sentence || item.question.replace("___", item.answer);
+    }
+
+    function chooseGuidedPracticeSet(lessonId, questions) {
+        const count = Math.min(8, questions.length);
+        let nextSet = shuffleItems(questions).slice(0, count);
+        const previousSet = guidedPracticeSetIds[lessonId] || [];
+        const sameSet = nextSet.map(item => item.id).sort().join("|") === [...previousSet].sort().join("|");
+        if (questions.length > count && sameSet) {
+            const replacement = shuffleItems(questions.filter(item => !nextSet.some(selected => selected.id === item.id)))[0];
+            nextSet = [...nextSet.slice(1), replacement];
+        }
+        guidedPracticeSetIds[lessonId] = nextSet.map(item => item.id);
+        return nextSet;
+    }
+
+    function renderGuidedPractice(lessonId, guidedPractice, refreshable = false) {
         const panel = document.querySelector(`[data-tense-panel="${lessonId}"]`);
         const container = panel && panel.querySelector(".guided-practice-slot");
         if (!container) return;
@@ -644,7 +691,18 @@
         if (!questions.length) return;
         const section = document.createElement("section");
         section.className = "guided-practice";
-        appendTextElement(section, "h3", "Guided practice");
+        const heading = document.createElement("div");
+        heading.className = "guided-practice-heading";
+        appendTextElement(heading, "h3", "Guided practice");
+        if (refreshable) {
+            const refresh = document.createElement("button");
+            refresh.type = "button";
+            refresh.className = "lesson-nav-button guided-practice-refresh";
+            refresh.textContent = "New Practice 換一組題目";
+            refresh.addEventListener("click", () => loadRefreshableGuidedPractice(lessonId));
+            heading.appendChild(refresh);
+        }
+        section.appendChild(heading);
         appendTextElement(section, "p", "Choose an answer. You will see feedback straight away.");
         appendTextElement(section, "p", "選擇答案後會立即看到提示。", "zh-copy");
         questions.forEach((item, index) => {
@@ -669,8 +727,21 @@
                     if (!correct) button.classList.add("wrong");
                     feedback.innerHTML = "";
                     appendTextElement(feedback, "strong", correct ? "Correct! 做得好！" : `Incorrect. The answer is ${item.answer}.`);
-                    appendTextElement(feedback, "span", ` ${item.why || ""}`);
-                    appendTextElement(feedback, "span", item.why_zh || "", "zh-copy");
+                    if (refreshable) {
+                        const sentence = completeGuidedSentence(item);
+                        if (correct) {
+                            appendTextElement(feedback, "span", ` Correct sentence: ${sentence}`);
+                            appendTextElement(feedback, "span", ` 中文意思：${item.sentence_zh || ""}`, "zh-copy");
+                        } else {
+                            appendTextElement(feedback, "span", ` ${item.why || ""}`);
+                            appendTextElement(feedback, "span", `你選擇「${option}」，但它不適合這句所需要的資料。正確答案是「${item.answer}」；${item.why_zh || ""}`, "zh-copy");
+                            appendTextElement(feedback, "span", ` Correct sentence: ${sentence}`);
+                            appendTextElement(feedback, "span", ` 中文意思：${item.sentence_zh || ""}`, "zh-copy");
+                        }
+                    } else {
+                        appendTextElement(feedback, "span", ` ${item.why || ""}`);
+                        appendTextElement(feedback, "span", item.why_zh || "", "zh-copy");
+                    }
                 });
                 options.appendChild(button);
             });
@@ -678,6 +749,40 @@
             section.appendChild(question);
         });
         container.appendChild(section);
+    }
+
+    function loadRefreshableGuidedPractice(lessonId) {
+        const render = questions => renderGuidedPractice(lessonId, chooseGuidedPracticeSet(lessonId, questions), true);
+        if (guidedPracticeChoiceCache[lessonId]) {
+            render(guidedPracticeChoiceCache[lessonId]);
+            return;
+        }
+        fetch(GRAMMAR_PRACTICE_CHOICE_PATH)
+            .then(res => {
+                if (!res.ok) throw new Error("HTTP " + res.status);
+                return res.json();
+            })
+            .then(bank => {
+                const topic = Array.isArray(bank.topics) && bank.topics.find(item => item.id === lessonId);
+                const questions = topic && Array.isArray(topic.questionBank)
+                    ? topic.questionBank.filter(item => item && item.id && item.prompt && Array.isArray(item.options) && item.options.includes(item.answer)).map(item => ({
+                        id: item.id,
+                        question: item.prompt,
+                        options: item.options,
+                        answer: item.answer,
+                        why: item.why,
+                        why_zh: item.why_zh,
+                        full_sentence: item.prompt.replace("___", item.answer),
+                        sentence_zh: item.prompt_zh
+                    }))
+                    : [];
+                if (!questions.length) throw new Error("No refreshable guided practice questions configured");
+                guidedPracticeChoiceCache[lessonId] = questions;
+                render(questions);
+            })
+            .catch(err => {
+                console.error("Failed to load refreshable guided practice for", lessonId, err);
+            });
     }
 
     function renderLessonQuiz(lessonId, quiz) {
@@ -780,7 +885,11 @@
         renderLessonSummary(tenseKey, lessonData);
         renderLessonQuiz(tenseKey, lessonData.quiz);
         renderVisualLearning(tenseKey, lessonData.visual_learning);
-        renderGuidedPractice(tenseKey, lessonData.guided_practice);
+        if (REFRESHABLE_GUIDED_PRACTICE_LESSONS.has(tenseKey)) {
+            loadRefreshableGuidedPractice(tenseKey);
+        } else {
+            renderGuidedPractice(tenseKey, lessonData.guided_practice);
+        }
 
         if (lessonData.examples.length === 0) {
             container.innerHTML = '<p class="no-data">No sentences in JSON yet.</p>';
@@ -911,6 +1020,9 @@
             const panel = document.createElement("section");
             panel.className = "tense-panel" + (index === 0 ? " active" : "");
             panel.dataset.tensePanel = lesson.id;
+            const dictationAction = REFRESHABLE_GUIDED_PRACTICE_LESSONS.has(lesson.id)
+                ? ""
+                : `<a class="lesson-nav-button" href="dictation_practice.html?grammar=${encodeURIComponent(lesson.id)}">Practice Dictation</a>`;
             panel.innerHTML = `
                 <div class="panel-fixed-header">
                     <h2 class="tense-title"></h2>
@@ -922,7 +1034,7 @@
                     <div class="guided-practice-slot"></div>
                     <div class="lesson-practice-action">
                         <button class="lesson-nav-button take-quiz-button" type="button" hidden>Take Quiz</button>
-                        <a class="lesson-nav-button" href="dictation_practice.html?grammar=${encodeURIComponent(lesson.id)}">Practice Dictation</a>
+                        ${dictationAction}
                     </div>
                     <div class="lesson-quiz" hidden></div>
                 </div>

@@ -67,5 +67,9 @@ assert.match(grammarRenderer, /function renderVisualLearning/);
 assert.match(grammarRenderer, /function renderGuidedPractice/);
 assert.match(grammarRenderer, /water-glass-fill/);
 assert.match(grammarRenderer, /lesson\.category === category/);
+assert.match(grammarRenderer, /REFRESHABLE_GUIDED_PRACTICE_LESSONS/);
+assert.match(grammarRenderer, /function loadRefreshableGuidedPractice/);
+assert.match(grammarRenderer, /New Practice 換一組題目/);
+assert.match(grammarRenderer, /const dictationAction = REFRESHABLE_GUIDED_PRACTICE_LESSONS\.has\(lesson\.id\)/);
 
 console.log("Production Grammar catalog, visual learning cards, water comparison, and guided mini-practice contracts valid.");

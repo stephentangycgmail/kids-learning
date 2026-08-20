@@ -450,14 +450,18 @@ other page actions.
    speech.
 8. **Guided Mini-Practice:** optional `guided_practice` multiple-choice items.
    Answering disables the item and gives immediate English/Traditional Chinese
-   correctness and explanation feedback. This is lesson-level practice.
+   correctness and explanation feedback. Question Words and Quantifiers reuse
+   their approved choice banks for one whole-set refresh control; it replaces
+   every displayed item, resets all feedback, and is learning-only, with no
+   Practice History record. This is lesson-level practice.
 9. **Practice / Quiz Actions:** the lesson's optional five-question `quiz`
    appears through Take Quiz and reports `n/5` through Check Score. Larger
    randomized Practice/Quiz belongs to `grammar_practice.html` or the choice
    page, not this section.
 10. **Dictation Action:** where lesson examples support it, open
-    `dictation_practice.html?grammar=<id>`. Dictation remains a destination;
-    its controls do not become Grammar lesson content.
+    `dictation_practice.html?grammar=<id>`. Question Words and Quantifiers do
+    not show this lesson action. Dictation remains a destination; its controls
+    do not become Grammar lesson content.
 11. **Previous Lesson / Next Lesson:** navigate adjacent lessons in the
     selected category and catalog order. Navigation must not cross a category
     boundary unless a future taxonomy explicitly defines that behavior.
