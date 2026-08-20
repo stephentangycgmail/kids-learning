@@ -106,6 +106,89 @@ flow is English → Grammar Practice → choose mode/topic → answer and autosa
 submit → Result → History or new practice. Question Words and Quantifiers have
 their own choice Practice/Quiz entry from Grammar Practice.
 
+# Content and Navigation Taxonomy
+
+This section is the source of truth for the semantic relationship between
+Grammar categories, lesson topics, and practice destinations. Navigation labels
+must describe the learning concept; available UI space or the order in which a
+lesson was added is not a valid classification rule.
+
+## Taxonomy principles
+
+- Category navigation and lesson/topic navigation are different layers. A
+  category selects a semantic group; a lesson selects one topic within that
+  group.
+- Every production lesson has one clearly defined primary category. A lesson
+  may have related Practice, Quiz, or Dictation destinations, but those do not
+  change its primary category.
+- Selecting a category must display only lessons belonging to that category.
+- New lessons require a taxonomy decision and an update to this document before
+  their catalog entry is treated as complete.
+
+## Current production lesson classification
+
+The current catalog is `frontend/data/grammar_catalog.json`. At the time of this
+review, every record declares `category: "tenses"`; therefore the current
+classification column below reflects the data, not the recommended production
+taxonomy.
+
+| Lesson ID | Visible title | Grammatical concept | Recommended category | Current category | Current classification correct? | Practice / Quiz / Dictation relationship |
+| --- | --- | --- | --- | --- | --- | --- |
+| `present-simple` | Present Simple | Present-time routines, habits, facts, and third-person `-s` forms | Tenses | Tenses | Yes | Lesson guided practice and optional lesson quiz; eligible for Grammar Practice banks; Grammar Dictation deep link where examples are supplied. |
+| `verb-to-be` | Verb to be | Forms and uses of the be verb (`am`, `is`, `are`) | Be Verbs and Core Structures | Tenses | No; misleading | Lesson guided practice and optional lesson quiz; may link to Dictation and larger Practice independently. |
+| `present-continuous` | Present Continuous | Actions happening now; `be` + verb-`ing` | Tenses | Tenses | Yes | Lesson guided practice and optional lesson quiz; eligible for Practice and Grammar Dictation. |
+| `past-simple` | Past Simple | Completed past actions and regular/irregular past forms | Tenses | Tenses | Yes | Lesson guided practice and optional lesson quiz; eligible for Practice and Grammar Dictation. |
+| `future-simple` | Future Simple (will) | Future predictions, decisions, and `will` forms | Tenses | Tenses | Yes | Lesson guided practice and optional lesson quiz; eligible for Practice and Grammar Dictation. |
+| `can-cant` | Can / Can't | Modal ability and inability using `can` / `can't` | Modal Verbs and Core Structures | Tenses | No; misleading | Lesson guided practice and optional lesson quiz; may be represented in Practice banks and linked to Dictation. |
+| `must-mustnt` | Must / Mustn't | Modal obligation and prohibition using `must` / `mustn't` | Modal Verbs and Core Structures | Tenses | No; misleading | Lesson guided practice and optional lesson quiz; may be represented in Practice banks and linked to Dictation. |
+| `there-is-are` | There is / There are | Existential sentence pattern and singular/plural agreement | Sentence Patterns and Core Structures | Tenses | No; misleading | Lesson guided practice and optional lesson quiz; may be represented in Practice banks and linked to Dictation. |
+| `question-words` | Question Words | Information questions using `what`, `who`, `where`, `when`, `why`, `which`, `whose`, and `how` | Question Forms | Tenses | No; incorrect | Lesson guided practice and optional lesson quiz; dedicated choice Practice (12) and Quiz/Challenge (10), with 50-bank questions; Grammar Dictation deep link may use lesson examples. |
+| `quantifiers` | Quantifiers | Quantity words for countable and uncountable nouns (`some`, `any`, `many`, `much`, etc.) | Quantity and Determiners | Tenses | No; incorrect | Lesson guided practice and optional lesson quiz; dedicated choice Practice (12) and Quiz/Challenge (10), with 54-bank questions; Grammar Dictation deep link may use lesson examples. |
+
+"Recommended category" names are a semantic recommendation for the next
+navigation implementation, not an instruction to silently rewrite the current
+catalog. In particular, `Verb to be`, the modal lessons, and `There is / There
+are` should not be forced into Tenses merely because the current UI has no
+implemented alternative.
+
+## Recommended production taxonomy
+
+The current top-level set of Tenses, Parts of Speech, and Sentence Patterns is
+not sufficient. Tenses is useful, but the other two labels are too broad for
+the current lessons and do not provide a clear home for question forms,
+quantity/determiner concepts, modal verbs, or the be verb. A primary-school
+friendly extensible taxonomy should begin with these groups:
+
+1. **Tenses:** Present Simple, Present Continuous, Past Simple, Future Simple.
+2. **Be Verbs and Core Structures:** Verb to be.
+3. **Modal Verbs and Core Structures:** Can / Can't; Must / Mustn't.
+4. **Sentence Patterns:** There is / There are.
+5. **Question Forms:** Question Words.
+6. **Quantity and Determiners:** Quantifiers.
+7. **Parts of Speech:** reserved for lessons that teach a word class, not a
+   catch-all for the current records.
+
+This keeps each lesson concept understandable to a child, leaves room for
+future lessons, and avoids representing a question or quantity lesson as a
+time tense. The final visible labels may be shortened for the UI, but their
+semantic ownership must remain equivalent.
+
+## Grammar navigation map
+
+```text
+Grammar
+-> Category
+-> Lesson
+-> Learning
+-> Guided Practice
+-> Practice / Quiz
+-> Result / History
+```
+
+The Grammar page owns learning and lesson-level actions. Larger randomized
+sessions are owned by Grammar Practice; completed session evidence is owned by
+Result and History. Dictation is a related destination, not a Grammar category.
+
 # Sitemap
 
 ## Active Student-Facing Pages
@@ -346,34 +429,44 @@ quiz, speech, and navigation to adjacent lessons or Dictation.
 English Hub, or a deep link `grammar.html?lesson=<lesson-id>` from Practice or
 other page actions.
 
-### Page Sections
+### Internal functional sections
 
-1. **Header/navigation:** Back link, page title, learning prompt, and main
-   category tabs. Tenses is implemented; Parts of Speech and Sentence Patterns
-   remain explicit placeholders.
-2. **Lesson/topic tabs:** generated from `grammar_catalog.json`; catalog order
-   determines active lesson and Previous/Next order. Each lesson panel owns a
-   lesson title, status, and navigation controls.
-3. **Learning/introduction:** `explanation_en`, `explanation_zh`, learning
-   objective, bilingual summary, keywords/signal words, and structure/rules.
-4. **Bilingual explanation and rule content:** structure, spelling rules,
-   common mistakes, and Traditional Chinese supporting text from the lesson
-   JSON.
-5. **Visual learning:** optional `visual_learning` intro, bilingual cards,
-   countable/uncountable comparison, emoji pictures, or water-glass visuals.
-   Question Words has eight cards; Quantifiers has six cards and the 18%/85%
-   water comparison.
-6. **Examples:** lesson examples render English sentences, highlighted keyword
-   spans, Chinese explanation, reason/pattern text, full-sentence Play, and
-   clickable word speech.
-7. **Guided mini-practice:** optional `guided_practice` questions render as
-   short multiple-choice items. Selecting an answer disables the item and shows
-   immediate English/Traditional Chinese feedback and explanation.
-8. **Lesson quiz:** optional five-question `quiz` array. The Take Quiz action
-   reveals radio-choice questions; Check Score displays `n/5` in the lesson.
-9. **Lesson actions:** Previous Lesson and Next Lesson navigate the catalog;
-   Quiz is only visible when the lesson has five valid quiz items; Dictation
-   opens `dictation_practice.html?grammar=<id>`.
+1. **Header:** back link to English, page title, learning prompt, and the
+   current category-level controls. The header must remain available while the
+   lesson content scrolls.
+2. **Grammar Category Navigation:** top-level category tabs. Tenses is the
+   currently implemented tab; Parts of Speech and Sentence Patterns are
+   placeholders. Category selection is a filter layer, not a lesson selector.
+3. **Lesson Topic Navigation:** catalog-generated lesson tabs for the selected
+   category. Catalog order determines the active lesson and Previous/Next order;
+   a category must never show topics assigned to another category.
+4. **Learning Introduction:** `explanation_en`, `explanation_zh`, learning
+   objective, and bilingual summary establish the concept before practice.
+5. **Rules / Pattern Area:** structure, spelling rules, signal words, keywords,
+   common mistakes, and Traditional Chinese support from the lesson JSON.
+6. **Visual Learning Area:** optional `visual_learning` introduction and
+   bilingual cards, including the eight Question Words cards and Quantifiers'
+   countable/uncountable and 18%/85% water comparison.
+7. **Examples:** English examples with highlighted keywords, Chinese
+   explanation, pattern/reason text, full-sentence speech, and clickable word
+   speech.
+8. **Guided Mini-Practice:** optional `guided_practice` multiple-choice items.
+   Answering disables the item and gives immediate English/Traditional Chinese
+   correctness and explanation feedback. This is lesson-level practice.
+9. **Practice / Quiz Actions:** the lesson's optional five-question `quiz`
+   appears through Take Quiz and reports `n/5` through Check Score. Larger
+   randomized Practice/Quiz belongs to `grammar_practice.html` or the choice
+   page, not this section.
+10. **Dictation Action:** where lesson examples support it, open
+    `dictation_practice.html?grammar=<id>`. Dictation remains a destination;
+    its controls do not become Grammar lesson content.
+11. **Previous Lesson / Next Lesson:** navigate adjacent lessons in the
+    selected category and catalog order. Navigation must not cross a category
+    boundary unless a future taxonomy explicitly defines that behavior.
+12. **Responsive behavior:** topic tabs wrap at constrained widths, action
+    controls remain visible, and the page must not overflow horizontally. Keep
+    the fixed header, scrollable lesson content, and mobile 390px behavior
+    validated by the project.
 
 ### Data Sources
 
@@ -580,13 +673,15 @@ link. No Math data, practice, storage, or active controls exist.
 | Subject navigation | `frontend/index.html` | Inline HTML/CSS |
 | English activity navigation | `frontend/eng.html` | Inline HTML/CSS |
 | Chinese activity navigation | `frontend/cn.html` | Inline HTML/CSS |
-| Grammar lesson tabs/order | `frontend/grammar.html` | `data/grammar_catalog.json`, inline Grammar JS |
+| Grammar category navigation/filtering | `frontend/grammar.html` | `data/grammar_catalog.json`, inline Grammar JS |
+| Grammar lesson navigation/order | `frontend/grammar.html` | `data/grammar_catalog.json`, inline Grammar JS |
 | Grammar lesson content | `frontend/grammar.html` | `data/grammar_*_lesson.json` |
-| Grammar visual learning/guided practice | `frontend/grammar.html` | Lesson JSON `visual_learning`, `guided_practice` |
+| Grammar visual learning | `frontend/grammar.html` | Lesson JSON `visual_learning` |
+| Grammar guided mini-practice | `frontend/grammar.html` | Lesson JSON `guided_practice` and inline renderer |
 | Lesson quiz | `frontend/grammar.html` | Lesson JSON `quiz` |
 | Grammar lesson Dictation deep link | `frontend/grammar.html`, `frontend/dictation_practice.html` | `grammar_catalog.json`, selected lesson JSON |
-| General Grammar Practice setup/flow | `frontend/grammar_practice.html` | `js/grammar_practice.js`, `js/grammar_practice_core.js` |
-| General Practice selection/scoring | `frontend/js/grammar_practice_core.js` | `grammar_practice_manifest.json`, short/long and rearrangement banks |
+| Production Grammar Practice setup/flow | `frontend/grammar_practice.html` | `js/grammar_practice.js`, `js/grammar_practice_core.js`, `grammar_practice_manifest.json` |
+| Production Practice selection/scoring | `frontend/js/grammar_practice_core.js` | `grammar_practice_manifest.json`, short/long and rearrangement banks |
 | Question Words / Quantifiers choice flow | `frontend/grammar_practice_choice.html` | `js/grammar_practice_choice.js`, `grammar_practice_choice.json` |
 | Practice persistence/locking | Shared Practice modules | `js/grammar_practice_storage.js` |
 | History list/filter | `frontend/grammar_practice_history.html` | `js/grammar_practice_history.js` |
@@ -601,6 +696,17 @@ link. No Math data, practice, storage, or active controls exist.
 - Grammar explanations, rules, visual cards, examples, lesson guided
   mini-practice, and lesson-specific five-question quizzes belong in
   `grammar.html` and its lesson JSON.
+- Category Navigation and Lesson Navigation are separate layers. Category
+  filtering belongs to the catalog-driven Grammar navigation; lesson content
+  belongs to the selected lesson JSON.
+- Selecting a category must display only lessons in that category, and each
+  lesson must have one primary category. Question Words must not appear under
+  Tenses without an explicit documented pedagogical reason; Quantifiers must
+  not appear under Tenses.
+- Adding a Grammar lesson requires updating the taxonomy and architecture
+  documentation. UI space must not determine semantic classification, and new
+  features must be placed according to Page Architecture and Content Taxonomy,
+  not whichever area has available space.
 - Large randomized 20-question Practice/Quiz behavior belongs in
   `grammar_practice.html` and its practice banks/core.
 - Question Words and Quantifiers 12-question Practice and 10-question Quiz
@@ -627,12 +733,15 @@ Future Codex sessions must:
 
 1. Read `docs/WEBSITE_ARCHITECTURE.md` before changing navigation, page
    structure, or major feature placement.
-2. Identify the page's Purpose, Page Sections, data sources, storage, and
+2. For a Grammar navigation or lesson change, read Content and Navigation
+   Taxonomy, confirm the lesson's primary category, and distinguish category
+   filtering from lesson selection.
+3. Identify the page's Purpose, Page Sections, data sources, storage, and
    outbound navigation here.
-3. Inspect the parent/child relationships and Functional Ownership Map.
-4. Confirm the requested behavior belongs on that page rather than a related
+4. Inspect the parent/child relationships and Functional Ownership Map.
+5. Confirm the requested behavior belongs on that page rather than a related
    page or module.
-5. Preserve responsive rules, deep links, browser storage contracts, and
+6. Preserve responsive rules, deep links, browser storage contracts, and
    locked-result/history behavior.
-6. Update this document when page architecture, navigation, ownership, or
+7. Update this document when page architecture, navigation, ownership, or
    boundaries change.
