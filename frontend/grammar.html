@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Grammar - Tenses Practice</title>
+    <title>Grammar Practice</title>
     <!-- PWA 與手機適配設定 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="theme-color" content="#0f172a"> <!-- 讓瀏覽器網址列也變深色 -->
@@ -84,8 +84,8 @@
 
         .grammar-main-tabs, .tense-tabs {
             display: flex;
-            flex-wrap: nowrap;
-            overflow-x: auto;
+            flex-wrap: wrap;
+            overflow-x: hidden;
             gap: 10px;
             padding-bottom: 6px;
             margin: 0 -16px 2px -16px;
@@ -162,6 +162,23 @@
             border-radius: 8px;
             margin: 0 0 20px;
             padding: 16px;
+        }
+
+        .guided-practice-heading {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
+        .guided-practice-heading h3 {
+            margin: 0;
+        }
+
+        .guided-practice-refresh {
+            flex: 0 1 auto;
+            white-space: normal;
         }
 
         .visual-learning-intro, .guided-feedback .zh-copy, .visual-card .zh-copy {
@@ -391,19 +408,23 @@
         
         <header>
             <h1>Kids English – Grammar</h1>
-            <p>Look at keywords to choose the tense.</p>
+            <p>Choose a grammar idea, then learn one lesson at a time.</p>
         </header>
 
         <!-- Main Tabs -->
         <div class="grammar-main-tabs">
             <button class="grammar-main-tab active" data-section="tenses">Tenses (時態)</button>
-            <button class="grammar-main-tab" data-section="parts-of-speech">Parts of Speech (詞性)</button>
+            <button class="grammar-main-tab" data-section="be-structures">Be Verbs / Core Structures</button>
+            <button class="grammar-main-tab" data-section="modal-structures">Modal Verbs / Core Structures</button>
             <button class="grammar-main-tab" data-section="sentence-patterns">Sentence Patterns (句型)</button>
+            <button class="grammar-main-tab" data-section="question-forms">Question Forms</button>
+            <button class="grammar-main-tab" data-section="quantity-determiners">Quantity / Determiners</button>
+            <button class="grammar-main-tab" data-section="parts-of-speech">Parts of Speech (詞性)</button>
         </div>
     </div>
 
-    <!-- Tenses Section -->
-    <div class="grammar-section active" data-section-panel="tenses">
+    <!-- Selected Grammar Category -->
+    <div class="grammar-section active" data-section-panel="grammar-lessons">
 
         <!-- Grammar lesson tabs are generated from grammar_catalog.json. -->
         <div style="background: #0f172a; padding: 0 16px; flex: 0 0 auto;">
@@ -418,22 +439,12 @@
         </div>
     </div>
 
-    <!-- Parts of Speech Placeholder -->
-    <div class="grammar-section" data-section-panel="parts-of-speech">
+    <!-- Category Placeholder -->
+    <div class="grammar-section" data-section-panel="category-placeholder">
         <div class="scroll-content">
             <div class="coming-soon-box">
-                <h2>Parts of Speech（詞性）</h2>
-                <p>Nouns, verbs, adjectives, adverbs...</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Sentence Patterns Placeholder -->
-    <div class="grammar-section" data-section-panel="sentence-patterns">
-        <div class="scroll-content">
-            <div class="coming-soon-box">
-                <h2>Sentence Patterns（句型）</h2>
-                <p>S + V + O, There is / There are...</p>
+                <h2></h2>
+                <p>This category is reserved for future lessons.</p>
             </div>
         </div>
     </div>
@@ -441,9 +452,23 @@
 
 <script>
     const GRAMMAR_CATALOG_PATH = "data/grammar_catalog.json";
+    const GRAMMAR_PRACTICE_CHOICE_PATH = "data/grammar_practice_choice.json";
+    const REFRESHABLE_GUIDED_PRACTICE_LESSONS = new Set(["question-words", "quantifiers"]);
     let grammarLessons = [];
+    let currentCategory = "tenses";
+    const grammarCategoryLabels = {
+        tenses: "Tenses (時態)",
+        "be-structures": "Be Verbs / Core Structures",
+        "modal-structures": "Modal Verbs / Core Structures",
+        "sentence-patterns": "Sentence Patterns (句型)",
+        "question-forms": "Question Forms",
+        "quantity-determiners": "Quantity / Determiners",
+        "parts-of-speech": "Parts of Speech (詞性)"
+    };
     let currentLessonIndex = -1;
     const tenseDataCache = {};
+    const guidedPracticeChoiceCache = {};
+    const guidedPracticeSetIds = {};
 
     /* ========= SIMPLE SLOW TTS (NO HIGHLIGHT) ========= */
 
@@ -631,7 +656,80 @@
         container.appendChild(section);
     }
 
-    function renderGuidedPractice(lessonId, guidedPractice) {
+    function shuffleItems(items) {
+        const shuffled = [...items];
+        for (let index = shuffled.length - 1; index > 0; index--) {
+            const swapIndex = Math.floor(Math.random() * (index + 1));
+            [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+        }
+        return shuffled;
+    }
+
+    function completeGuidedSentence(item) {
+        return item.full_sentence || item.question.replace("___", item.answer);
+    }
+
+    function choicePromptWithBlank(item) {
+        if (item.prompt.includes("___")) return item.prompt;
+        const escapedAnswer = item.answer.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        return item.prompt.replace(new RegExp(`^${escapedAnswer}\\b`, "i"), "___");
+    }
+
+    const guidedChoiceMeanings = {
+        What: "asks about a thing or action", Who: "asks about a person", Where: "asks about a place",
+        When: "asks about a time or day", Why: "asks for a reason", Which: "asks someone to choose from options",
+        Whose: "asks who owns something", How: "asks about a way, condition, or amount",
+        some: "an unspecified amount or number", any: "an unspecified amount or number, often in questions and negatives",
+        "a few": "a small number of countable things", "a little": "a small amount of an uncountable thing",
+        many: "a large number of countable things", much: "a large amount of an uncountable thing"
+    };
+    const guidedChoiceMeaningsZh = {
+        What: "詢問事物或動作", Who: "詢問人物", Where: "詢問地方", When: "詢問時間或日子",
+        Why: "詢問原因", Which: "在選項中作選擇", Whose: "詢問物主", How: "詢問方法、情況或程度",
+        some: "表示一些不確定的數量", any: "表示任何一些，常用於疑問句和否定句",
+        "a few": "表示少量可數的東西", "a little": "表示少量不可數的東西",
+        many: "表示很多可數的東西", much: "表示很多不可數的東西"
+    };
+
+    function guidedChoiceExplanation(item, selected) {
+        const selectedMeaning = guidedChoiceMeanings[selected];
+        const answerMeaning = guidedChoiceMeanings[item.answer];
+        if (!selectedMeaning || !answerMeaning) return "";
+        const noun = (item.question.match(/___\s+([A-Za-z]+)/) || [])[1];
+        if (noun) {
+            const label = noun.charAt(0).toUpperCase() + noun.slice(1);
+            const muchNote = item.answer === "a little" ? " Much is also for uncountable nouns, but it means a large amount; this sentence needs a small amount." : "";
+            return `${label} is the noun in this sentence. ${selected} is used for ${selectedMeaning}, so it does not fit here. ${item.answer} is used for ${answerMeaning}, which matches this sentence.${muchNote}`;
+        }
+        return `${selected} ${selectedMeaning}, but this question needs ${item.answer}, which ${answerMeaning}.`;
+    }
+
+    function guidedChoiceExplanationZh(item, selected) {
+        const selectedMeaning = guidedChoiceMeaningsZh[selected];
+        const answerMeaning = guidedChoiceMeaningsZh[item.answer];
+        if (!selectedMeaning || !answerMeaning) return "";
+        const noun = (item.question.match(/___\s+([A-Za-z]+)/) || [])[1];
+        if (noun) {
+            const muchNote = item.answer === "a little" ? "much 也可用於不可數名詞，但表示大量；本句需要表示少量。" : "";
+            return `${noun} 是本句的名詞。${selected} ${selectedMeaning}，所以不適合本句。${item.answer} ${answerMeaning}，符合本句。${muchNote}`;
+        }
+        return `${selected} ${selectedMeaning}，但本題需要 ${item.answer}，因為它${answerMeaning}。`;
+    }
+
+    function chooseGuidedPracticeSet(lessonId, questions) {
+        const count = Math.min(8, questions.length);
+        let nextSet = shuffleItems(questions).slice(0, count);
+        const previousSet = guidedPracticeSetIds[lessonId] || [];
+        const sameSet = nextSet.map(item => item.id).sort().join("|") === [...previousSet].sort().join("|");
+        if (questions.length > count && sameSet) {
+            const replacement = shuffleItems(questions.filter(item => !nextSet.some(selected => selected.id === item.id)))[0];
+            nextSet = [...nextSet.slice(1), replacement];
+        }
+        guidedPracticeSetIds[lessonId] = nextSet.map(item => item.id);
+        return nextSet;
+    }
+
+    function renderGuidedPractice(lessonId, guidedPractice, refreshable = false) {
         const panel = document.querySelector(`[data-tense-panel="${lessonId}"]`);
         const container = panel && panel.querySelector(".guided-practice-slot");
         if (!container) return;
@@ -640,7 +738,18 @@
         if (!questions.length) return;
         const section = document.createElement("section");
         section.className = "guided-practice";
-        appendTextElement(section, "h3", "Guided practice");
+        const heading = document.createElement("div");
+        heading.className = "guided-practice-heading";
+        appendTextElement(heading, "h3", "Guided practice");
+        if (refreshable) {
+            const refresh = document.createElement("button");
+            refresh.type = "button";
+            refresh.className = "lesson-nav-button guided-practice-refresh";
+            refresh.textContent = "New Practice 換一組題目";
+            refresh.addEventListener("click", () => loadRefreshableGuidedPractice(lessonId));
+            heading.appendChild(refresh);
+        }
+        section.appendChild(heading);
         appendTextElement(section, "p", "Choose an answer. You will see feedback straight away.");
         appendTextElement(section, "p", "選擇答案後會立即看到提示。", "zh-copy");
         questions.forEach((item, index) => {
@@ -665,8 +774,23 @@
                     if (!correct) button.classList.add("wrong");
                     feedback.innerHTML = "";
                     appendTextElement(feedback, "strong", correct ? "Correct! 做得好！" : `Incorrect. The answer is ${item.answer}.`);
-                    appendTextElement(feedback, "span", ` ${item.why || ""}`);
-                    appendTextElement(feedback, "span", item.why_zh || "", "zh-copy");
+                    if (refreshable) {
+                        const sentence = completeGuidedSentence(item);
+                        if (correct) {
+                            appendTextElement(feedback, "span", ` Correct sentence: ${sentence}`);
+                            appendTextElement(feedback, "span", ` 中文意思：${item.sentence_zh || ""}`, "zh-copy");
+                        } else {
+                            appendTextElement(feedback, "span", ` ${item.why || ""}`);
+                            appendTextElement(feedback, "span", `你選擇「${option}」，但它不適合這句所需要的資料。正確答案是「${item.answer}」；${item.why_zh || ""}`, "zh-copy");
+                            appendTextElement(feedback, "span", ` ${guidedChoiceExplanation(item, option)}`);
+                            appendTextElement(feedback, "span", ` ${guidedChoiceExplanationZh(item, option)}`, "zh-copy");
+                            appendTextElement(feedback, "span", ` Correct sentence: ${sentence}`);
+                            appendTextElement(feedback, "span", ` 中文意思：${item.sentence_zh || ""}`, "zh-copy");
+                        }
+                    } else {
+                        appendTextElement(feedback, "span", ` ${item.why || ""}`);
+                        appendTextElement(feedback, "span", item.why_zh || "", "zh-copy");
+                    }
                 });
                 options.appendChild(button);
             });
@@ -674,6 +798,40 @@
             section.appendChild(question);
         });
         container.appendChild(section);
+    }
+
+    function loadRefreshableGuidedPractice(lessonId) {
+        const render = questions => renderGuidedPractice(lessonId, chooseGuidedPracticeSet(lessonId, questions), true);
+        if (guidedPracticeChoiceCache[lessonId]) {
+            render(guidedPracticeChoiceCache[lessonId]);
+            return;
+        }
+        fetch(GRAMMAR_PRACTICE_CHOICE_PATH)
+            .then(res => {
+                if (!res.ok) throw new Error("HTTP " + res.status);
+                return res.json();
+            })
+            .then(bank => {
+                const topic = Array.isArray(bank.topics) && bank.topics.find(item => item.id === lessonId);
+                const questions = topic && Array.isArray(topic.questionBank)
+                    ? topic.questionBank.filter(item => item && item.id && item.prompt && Array.isArray(item.options) && item.options.includes(item.answer)).map(item => ({
+                        id: item.id,
+                        question: choicePromptWithBlank(item),
+                        options: item.options,
+                        answer: item.answer,
+                        why: item.why,
+                        why_zh: item.why_zh,
+                        full_sentence: item.prompt.includes("___") ? item.prompt.replace("___", item.answer) : item.prompt,
+                        sentence_zh: item.prompt_zh
+                    }))
+                    : [];
+                if (!questions.length) throw new Error("No refreshable guided practice questions configured");
+                guidedPracticeChoiceCache[lessonId] = questions;
+                render(questions);
+            })
+            .catch(err => {
+                console.error("Failed to load refreshable guided practice for", lessonId, err);
+            });
     }
 
     function renderLessonQuiz(lessonId, quiz) {
@@ -776,7 +934,11 @@
         renderLessonSummary(tenseKey, lessonData);
         renderLessonQuiz(tenseKey, lessonData.quiz);
         renderVisualLearning(tenseKey, lessonData.visual_learning);
-        renderGuidedPractice(tenseKey, lessonData.guided_practice);
+        if (REFRESHABLE_GUIDED_PRACTICE_LESSONS.has(tenseKey)) {
+            loadRefreshableGuidedPractice(tenseKey);
+        } else {
+            renderGuidedPractice(tenseKey, lessonData.guided_practice);
+        }
 
         if (lessonData.examples.length === 0) {
             container.innerHTML = '<p class="no-data">No sentences in JSON yet.</p>';
@@ -883,14 +1045,18 @@
 
     function createGrammarLessonControls(lessons) {
         const tabs = document.getElementById("grammarLessonTabs");
-        const section = document.querySelector('[data-section-panel="tenses"]');
+        const section = document.querySelector('[data-section-panel="grammar-lessons"]');
         const status = document.getElementById("grammarLessonStatus");
         const previousButton = document.getElementById("previousLessonButton");
         const nextButton = document.getElementById("nextLessonButton");
         tabs.innerHTML = "";
-        status.remove();
-        previousButton.addEventListener("click", () => navigateLesson(-1));
-        nextButton.addEventListener("click", () => navigateLesson(1));
+        section.querySelectorAll(".tense-panel").forEach(panel => panel.remove());
+        if (status) status.remove();
+        if (!previousButton.dataset.bound) {
+            previousButton.addEventListener("click", () => navigateLesson(-1));
+            nextButton.addEventListener("click", () => navigateLesson(1));
+            previousButton.dataset.bound = "true";
+        }
 
         lessons.forEach((lesson, index) => {
             const tab = document.createElement("button");
@@ -903,6 +1069,9 @@
             const panel = document.createElement("section");
             panel.className = "tense-panel" + (index === 0 ? " active" : "");
             panel.dataset.tensePanel = lesson.id;
+            const dictationAction = REFRESHABLE_GUIDED_PRACTICE_LESSONS.has(lesson.id)
+                ? ""
+                : `<a class="lesson-nav-button" href="dictation_practice.html?grammar=${encodeURIComponent(lesson.id)}">Practice Dictation</a>`;
             panel.innerHTML = `
                 <div class="panel-fixed-header">
                     <h2 class="tense-title"></h2>
@@ -914,7 +1083,7 @@
                     <div class="guided-practice-slot"></div>
                     <div class="lesson-practice-action">
                         <button class="lesson-nav-button take-quiz-button" type="button" hidden>Take Quiz</button>
-                        <a class="lesson-nav-button" href="dictation_practice.html?grammar=${encodeURIComponent(lesson.id)}">Practice Dictation</a>
+                        ${dictationAction}
                     </div>
                     <div class="lesson-quiz" hidden></div>
                 </div>
@@ -931,12 +1100,10 @@
                 return res.json();
             })
             .then(catalog => {
-                grammarLessons = Array.isArray(catalog.lessons)
-                    ? catalog.lessons.filter(lesson => lesson.category === "tenses" && lesson.id && lesson.title && lesson.file)
+                window.grammarCatalogLessons = Array.isArray(catalog.lessons)
+                    ? catalog.lessons.filter(lesson => lesson.category && lesson.id && lesson.title && lesson.file)
                     : [];
-                if (!grammarLessons.length) throw new Error("No grammar lessons configured");
-                createGrammarLessonControls(grammarLessons);
-                activateGrammarLesson(grammarLessons[0]);
+                selectGrammarCategory(currentCategory);
             })
             .catch(err => {
                 console.error("Failed to load grammar catalog", err);
@@ -949,31 +1116,49 @@
 
     document.addEventListener("DOMContentLoaded", function () {
         const mainTabs = document.querySelectorAll(".grammar-main-tab");
-        const sections = document.querySelectorAll(".grammar-section");
 
         mainTabs.forEach(tab => {
             tab.addEventListener("click", () => {
                 const sectionKey = tab.dataset.section;
 
-                mainTabs.forEach(t => t.classList.remove("active"));
-                tab.classList.add("active");
-
-                sections.forEach(sec => {
-                    if (sec.dataset.sectionPanel === sectionKey) {
-                        sec.classList.add("active");
-                    } else {
-                        sec.classList.remove("active");
-                    }
-                });
-
-                if (sectionKey !== "tenses") {
-                    stopReading();
-                }
+                selectGrammarCategory(sectionKey);
             });
         });
 
         loadGrammarCatalog();
     });
+
+    function selectGrammarCategory(category) {
+        currentCategory = category;
+        const lessons = (window.grammarCatalogLessons || []).filter(lesson => lesson.category === category);
+        document.querySelectorAll(".grammar-main-tab").forEach(tab => {
+            tab.classList.toggle("active", tab.dataset.section === category);
+        });
+        const lessonSection = document.querySelector('[data-section-panel="grammar-lessons"]');
+        const placeholder = document.querySelector('[data-section-panel="category-placeholder"]');
+        const isPlaceholder = category === "parts-of-speech";
+        lessonSection.classList.toggle("active", !isPlaceholder);
+        placeholder.classList.toggle("active", isPlaceholder);
+        if (isPlaceholder) {
+            placeholder.querySelector("h2").textContent = grammarCategoryLabels[category];
+            stopReading();
+            return;
+        }
+        grammarLessons = lessons;
+        if (!grammarLessons.length) {
+            const status = document.createElement("div");
+            status.id = "grammarLessonStatus";
+            status.className = "panel-fixed-header";
+            status.innerHTML = '<p class="no-data">No lessons are configured for this category yet.</p>';
+            lessonSection.appendChild(status);
+            currentLessonIndex = -1;
+            updateLessonNavigation();
+            stopReading();
+            return;
+        }
+        createGrammarLessonControls(grammarLessons);
+        activateGrammarLesson(grammarLessons[0]);
+    }
 </script>
 </body>
 </html>

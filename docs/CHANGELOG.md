@@ -3,6 +3,28 @@
 Release identity and deployment evidence are maintained in
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
 
+## v1.3.0 - 2026-08-20
+
+### Added
+
+- Added category-filtered Grammar navigation for the approved Tenses, core
+  structures, sentence patterns, Question Forms, and Quantity / Determiners
+  taxonomy.
+- Added refreshed eight-question, learning-only Guided Practice sets for
+  Question Words and Quantifiers with bilingual feedback and completed-sentence
+  review.
+- Added a separate 10-question Grammar Topic Quiz / Challenge for Question
+  Words and Quantifiers, integrated with local History and Result records.
+- Expanded Topic Quiz Results into teaching reviews with completed sentences,
+  Chinese translations, word meanings, and contextual grammar explanations.
+
+### Changed
+
+- Placed Grammar before Grammar Practice on the English Hub.
+- Kept normal 20-question Practice modes separate from Topic Quiz / Challenge.
+- Topic Quiz now hides translations and correctness until completion and permits
+  answer changes before Next.
+
 ## v1.2.2 - 2026-08-19
 
 ### Fixed

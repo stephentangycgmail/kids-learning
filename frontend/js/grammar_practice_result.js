@@ -20,7 +20,7 @@
     return value ? new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeStyle: "medium" }).format(new Date(value)) : "—";
   }
   function modeLabel(mode) {
-    return { short_long: "Short & Long Answer", rearrangement: "Sentence Rearrangement", mixed: "Mixed Practice", choice_practice: "Question Words / Quantifiers Practice", choice_quiz: "Question Words / Quantifiers Quiz" }[mode] || mode;
+    return { short_long: "Short & Long Answer", rearrangement: "Sentence Rearrangement", mixed: "Mixed Practice", choice_practice: "Legacy Topic Practice", choice_quiz: "Quiz / Challenge" }[mode] || mode;
   }
   function showError(message, error) {
     const panel = byId("resultMessage");
@@ -65,6 +65,7 @@
       return;
     }
     records.forEach((item) => {
+      const sourceQuestion = session.questionSnapshots && session.questionSnapshots.find((question) => question.id === item.questionId);
       const card = document.createElement("article");
       card.className = `review-card ${item.correct ? "correct" : "incorrect"}`;
       const heading = document.createElement("h3");
@@ -88,8 +89,57 @@
       comparison.append(submitted, correct);
       const explanation = document.createElement("p");
       explanation.className = "explanation";
-      explanation.textContent = `Hint: ${item.explanation}`;
+      explanation.textContent = item.correct ? `Hint: ${item.explanation}` : `Why this answer is incorrect: ${item.explanation}`;
       card.append(heading, comparison);
+      if (item.type === "choice") {
+        const completedSentenceValue = item.completedSentence || (sourceQuestion && core.completedChoiceSentence(sourceQuestion));
+        const completedSentenceZh = item.completedSentenceZh || (sourceQuestion && sourceQuestion.prompt_zh);
+        if (completedSentenceValue) {
+          const completedSentence = document.createElement("p");
+          completedSentence.className = "completed-sentence";
+          completedSentence.textContent = `Complete sentence: ${completedSentenceValue}`;
+          card.appendChild(completedSentence);
+        }
+        if (completedSentenceZh) {
+          const completedSentenceZhElement = document.createElement("p");
+          completedSentenceZhElement.className = "zh-text";
+          completedSentenceZhElement.textContent = `中文解譯：${completedSentenceZh}`;
+          card.appendChild(completedSentenceZhElement);
+        }
+        const correctMeaning = item.correctAnswerMeaning || core.choiceTermMeaning(item.correctAnswer);
+        const selectedMeaning = item.selectedAnswerMeaning || core.choiceTermMeaning(item.selectedAnswer);
+        const contextExplanation = item.contextExplanation || (sourceQuestion && core.choiceContextExplanation(sourceQuestion, item.selectedAnswer));
+        if (correctMeaning || (!item.correct && selectedMeaning)) {
+          const meanings = document.createElement("div");
+          meanings.className = "term-meanings";
+          if (correctMeaning) {
+            const meaning = document.createElement("p");
+            meaning.textContent = `${item.correctAnswer} means ${correctMeaning.en}.`;
+            meanings.appendChild(meaning);
+            const meaningZh = document.createElement("p");
+            meaningZh.className = "zh-text";
+            meaningZh.textContent = `${item.correctAnswer}：${correctMeaning.zh}。`;
+            meanings.appendChild(meaningZh);
+          }
+          if (!item.correct && selectedMeaning) {
+            const selectedMeaningText = document.createElement("p");
+            selectedMeaningText.textContent = `Your choice, ${item.selectedAnswer}, means ${selectedMeaning.en}.`;
+            meanings.appendChild(selectedMeaningText);
+            const selectedMeaningZh = document.createElement("p");
+            selectedMeaningZh.className = "zh-text";
+            selectedMeaningZh.textContent = `你選擇的 ${item.selectedAnswer}：${selectedMeaning.zh}。`;
+            meanings.appendChild(selectedMeaningZh);
+          }
+          card.appendChild(meanings);
+        }
+        if (contextExplanation) {
+          const context = document.createElement("div");
+          context.className = "context-explanation";
+          const contextEn = document.createElement("p"); contextEn.textContent = `Why in this sentence: ${contextExplanation.en}`;
+          const contextZh = document.createElement("p"); contextZh.className = "zh-text"; contextZh.textContent = `本句原因：${contextExplanation.zh}`;
+          context.append(contextEn, contextZh); card.appendChild(context);
+        }
+      }
       if (item.type === "short_long" && item.sectionResults.some((section) => !section.correct)) {
         const sectionNote = document.createElement("p");
         sectionNote.className = "warning-copy";
@@ -100,7 +150,7 @@
       if (item.explanationZh) {
         const explanationZh = document.createElement("p");
         explanationZh.className = "zh-text";
-        explanationZh.textContent = item.explanationZh;
+        explanationZh.textContent = item.correct ? item.explanationZh : `錯誤原因：${item.explanationZh}`;
         card.appendChild(explanationZh);
       }
       list.appendChild(card);

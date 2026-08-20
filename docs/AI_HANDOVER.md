@@ -11,9 +11,9 @@ Kids Learning is a child-friendly static website for English, Chinese, and
 Math learning. It uses committed HTML, CSS, JavaScript, and reviewed JSON;
 students do not need a login, production backend, Azure service, or paid API.
 
-The current official production release is `v1.2.2`, tagged at
-`1890638bd247be449606e5c2cc9c8ea42d2e66d9`. `v1.0.0` remains an immutable
-prior baseline. Confirm the live Git state before making release claims.
+The current official production release is `v1.3.0`. `v1.0.0` remains an
+immutable prior baseline. Confirm the live Git state before making release
+claims.
 
 ## Branch Model and Deployment
 
@@ -31,6 +31,11 @@ production. Do not merge, tag, publish, or deploy without explicit user
 instruction.
 
 ## Where to Start
+
+For page, navigation, or major feature-placement work, read
+[`WEBSITE_ARCHITECTURE.md`](WEBSITE_ARCHITECTURE.md) after this handover. It is
+the current product-level source of truth for the sitemap, page relationships,
+page sections, and functional ownership boundaries.
 
 | Need | Current authority |
 | --- | --- |
@@ -58,12 +63,21 @@ they do not silently override the current authorities above.
   tests are under `tests/` and generation/validation tools under `tools/`.
 - Released Grammar lessons use `frontend/grammar.html` and
   `frontend/data/grammar_catalog.json`.
+- Grammar category tabs are driven by catalog `category` values. Lesson tabs
+  show only lessons in the selected category; Previous/Next stays within that
+  category. Parts of Speech remains reserved until a true word-class lesson is
+  added.
 - Grammar lesson tabs wrap at constrained widths so Question Words and
   Quantifiers do not displace the Quiz or Dictation actions; the navigation
   layout has been smoke-tested at desktop and 390px mobile widths.
 - Choice Grammar Practice uses `frontend/grammar_practice_choice.html`,
   `frontend/js/grammar_practice_choice.js`, and
   `frontend/data/grammar_practice_choice.json`.
+- The English Hub lists Grammar before Grammar Practice. Grammar Practice keeps
+  its three 20-question modes in one section and provides a separate,
+  manifest-driven Grammar Topic Quiz / Challenge section. Topic quizzes write
+  `choice_quiz` records to the same History/Result system; Guided Practice does
+  not write history.
 - `backend/` and the Dockerfile are not the production path. Docker support is
   undecided because its referenced application module is absent.
 
@@ -75,28 +89,29 @@ Grammar Practice topics. The former Preview page and assets are retired.
 - **Question Words:** eight visual learning cards for What, Who, Where, When,
   Why, Which, Whose, and How, plus a 50-question UAT bank with unique IDs and
   concise Traditional Chinese explanations. The lesson includes an 8-question
-  guided mini-practice and choice Practice / Quiz modes.
+  guided mini-practice and a Grammar Topic Quiz / Challenge mode.
 - **Quantifiers:** six visual learning cards for `some`, `any`, `a few`, `a
   little`, `many`, and `much`; `a lot of`, `few`, and `little` are not preview
   target items. Its 54-question bank includes six Countable / Uncountable
   questions. It introduces countable versus uncountable nouns and compares the
   same large glass at 18% water for `a little` and 85% water for `much`. A
   lesson includes the same visual teaching, an 8-question guided mini-practice,
-  and choice Practice / Quiz modes.
+  and a Grammar Topic Quiz / Challenge mode.
 - Traditional Chinese support is present for topic subtitles and introductions,
   card meanings, and examples. Visual teaching uses emoji cards plus the water
   comparison for the two uncountable-water terms.
-- Practice randomly selects 12 unique questions and safely randomizes answer
-  option order. It gives immediate feedback after each answer: all choices are
-  locked, the correct answer is shown, an incorrect choice is marked, and the
-  English/Traditional Chinese explanation is displayed before Next.
-- Quiz / Challenge randomly selects 10 unique questions. It does not show
-  correctness during the session; completion shows score, percentage, and a
-  review of wrong answers with selected answer, correct answer, and bilingual
-  explanation. The released Grammar lesson quizzes in `grammar.html` remain a
-  different feature. `tests/grammar_practice_choice_validation.js` validates
-  bank IDs and required coverage; rendered browser behavior remains a smoke
-  check.
+- The current choice-page entry is Quiz / Challenge only: it selects 10 unique
+  questions, safely randomizes option order, hides Chinese translations and
+  correctness during the session, and keeps a neutral selected-answer state.
+  Students may change that selection before Next; only the final selection is
+  stored. Earlier 12-question `choice_practice` records remain readable.
+- Quiz completion shows score, percentage, answer comparison, completed English
+  sentence, Traditional Chinese sentence meaning, correct and selected-term
+  meanings, and child-friendly context-specific reasoning. Quantifier reviews
+  explain countability and amount, such as why `a little` fits uncountable water
+  while `many` does not. Legacy records use stored question snapshots as a
+  compatible fallback where review fields predate these additions. The released
+  lesson quizzes in `grammar.html` remain a different feature.
 
 ## Practice and History Storage
 
@@ -110,8 +125,9 @@ removes these local records; no history is sent to a server.
 
 ## Current Resume Point
 
-Question Words and Quantifiers Phase 3 was released as `v1.2.0`. Resume normal
-maintenance from the current `develop` state.
+Question Words and Quantifiers learning, Topic Quiz / Challenge, and teaching
+Result improvements were released as `v1.3.0`. Resume normal maintenance from
+the current `develop` state.
 
 ## Content Rules
 

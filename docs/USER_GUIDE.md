@@ -36,9 +36,11 @@ and voice quality vary by device and browser.
 
 ### Grammar Lessons
 
-Grammar lessons are loaded from the committed lesson catalog. Select lesson
-tabs, review examples and practice, use a quiz when the lesson provides one,
-or follow the Dictation link for the selected lesson.
+Grammar lessons are loaded from the committed lesson catalog. Select a Grammar
+category first, then choose one of the lesson tabs shown for that category.
+Review examples and practice, use a quiz when the lesson provides one, or
+follow the Dictation link for the selected lesson. Previous and Next stay
+within the selected category.
 
 Lesson tabs wrap to additional rows on narrower screens. Question Words and
 Quantifiers therefore remain reachable without pushing Quiz or Dictation
@@ -47,10 +49,16 @@ actions off-screen.
 Question Words and Quantifiers include visual learning cards and an 8-question
 guided mini-practice with immediate bilingual feedback. Quantifiers explains
 Countable and Uncountable nouns and compares 18% and 85% water in the same glass.
+Guided Practice is learning-only and does not create a Practice History record.
+When an answer is incorrect, it identifies the correct answer, explains why the
+selected answer does not fit, gives the complete correct sentence, and provides
+its Chinese meaning. Correct answers reinforce the completed sentence without a
+long review.
 
 ### English Grammar Practice
 
-Grammar Practice provides:
+Grammar appears before Grammar Practice on the English menu. The Practice Mode
+section provides:
 
 - Short and Long Answer
 - Sentence Rearrangement
@@ -64,10 +72,18 @@ Practice history stays on the current browser and device. There is no account
 sync or cloud backup. Clearing browser site data permanently removes local
 practice history.
 
-Question Words and Quantifiers also provide a separate choice Practice and
-Quiz / Challenge entry. Practice selects 12 unique questions and shows feedback
-before Next. Quiz selects 10 unique questions, keeps answers hidden until the
-end, then shows score, percentage, and bilingual wrong-answer review.
+The separate Grammar Topic Quiz / Challenge section lets the learner select
+Question Words or Quantifiers from the production manifest. It selects 10
+unique questions and keeps answers, feedback, hints, and Chinese translations
+hidden until completion. A selected answer receives a neutral highlight and
+may be changed before selecting Next. The Result page then shows score, percentage, the
+correct answer, and a full bilingual explanation of each wrong answer.
+Each Quiz review also shows the completed English sentence, its Chinese
+translation, and the meaning of both the correct choice and an incorrect choice.
+For Quantifiers, the review also explains the noun's countability and why the
+chosen quantifier does or does not match the amount required by the sentence.
+Completed topic quizzes use the same Practice History and Result pages as the
+normal 20-question modes.
 
 ### Placeholder and Disabled Areas
 

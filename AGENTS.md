@@ -4,7 +4,7 @@ Durable instructions for future Codex work in the Kids Learning repository.
 
 ## Project Status
 
-- Kids Learning `v1.2.0` is the current official release. The immutable
+- Kids Learning `v1.3.0` is the current official release. The immutable
   `v1.0.0` tag remains the prior baseline; see `docs/RELEASE_MANIFEST.md`.
 - Production is static hosting from GitHub Pages.
 - Azure is not part of the current deployment process. Backend and Azure-related code is legacy/local-only unless a future approved task says otherwise.
@@ -134,6 +134,12 @@ change is required.
   - production smoke tests pass
 
 ## Documentation
+
+Before adding a page, changing navigation, changing page structure, moving
+functionality between pages, redesigning a major page, or adding a major
+learning area, read [`docs/WEBSITE_ARCHITECTURE.md`](docs/WEBSITE_ARCHITECTURE.md).
+It is the authoritative reference for product navigation, page sections,
+feature ownership, deep links, storage boundaries, and page placement.
 
 - Documentation authority:
   - this file: durable repository and AI-agent rules

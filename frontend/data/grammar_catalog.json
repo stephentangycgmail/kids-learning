@@ -7,7 +7,7 @@
       "file": "grammar_present_simple_lesson.json"
     },
     {
-      "category": "tenses",
+      "category": "be-structures",
       "id": "verb-to-be",
       "title": "Verb to be",
       "file": "grammar_verb_to_be_lesson.json"
@@ -31,31 +31,31 @@
       "file": "grammar_future_simple_lesson.json"
     },
     {
-      "category": "tenses",
+      "category": "modal-structures",
       "id": "can-cant",
       "title": "Can / Can't",
       "file": "grammar_can_cant_lesson.json"
     },
     {
-      "category": "tenses",
+      "category": "modal-structures",
       "id": "must-mustnt",
       "title": "Must / Mustn't",
       "file": "grammar_must_mustnt_lesson.json"
     },
     {
-      "category": "tenses",
+      "category": "sentence-patterns",
       "id": "there-is-are",
       "title": "There is / There are",
       "file": "grammar_there_is_are_lesson.json"
     },
     {
-      "category": "tenses",
+      "category": "question-forms",
       "id": "question-words",
       "title": "Question Words",
       "file": "grammar_question_words_lesson.json"
     },
     {
-      "category": "tenses",
+      "category": "quantity-determiners",
       "id": "quantifiers",
       "title": "Quantifiers",
       "file": "grammar_quantifiers_lesson.json"

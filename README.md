@@ -14,7 +14,8 @@ The production site uses committed HTML, CSS, JavaScript, and JSON files. It doe
 - Student-facing content lives mainly in `frontend/` and `frontend/data/`.
 - Backend files are legacy/local-only tooling and are not part of the current production deployment.
 - AI Teacher remains disabled for static production use while live API usage is paused.
-- Current release: `v1.2.2`, a corrective Grammar navigation fix.
+- Current release: `v1.3.0`, with approved Grammar navigation, learning,
+  Quiz / Challenge, and teaching-result improvements.
 - See [Release Manifest](docs/RELEASE_MANIFEST.md) for verified release and
   deployment evidence.
 
@@ -25,7 +26,7 @@ The production site uses committed HTML, CSS, JavaScript, and JSON files. It doe
 - Vocabulary: `frontend/vocab.html`
 - English Dictation Practice: `frontend/dictation_practice.html`
 - Chinese Dictation: `frontend/cn_dictation.html`
-- Grammar lessons: `frontend/grammar.html`
+- Grammar lessons: `frontend/grammar.html` (category-filtered lesson navigation)
 - Grammar includes released Question Words and Quantifiers lessons, each with
   visual bilingual learning cards and an 8-question guided mini-practice.
 - Grammar lesson navigation wraps responsively so new topics do not push Quiz
@@ -58,6 +59,7 @@ The canonical folder reference is [docs/FOLDER_STRUCTURE.md](docs/FOLDER_STRUCTU
 
 - [Master Task](docs/MASTER_TASK.md)
 - [Technical Overview](docs/TECHNICAL_OVERVIEW.md)
+- [Website Architecture](docs/WEBSITE_ARCHITECTURE.md)
 - [AI Handover](docs/AI_HANDOVER.md)
 - [User Guide](docs/USER_GUIDE.md)
 - [Build and Local Run Guide](docs/BUILD_GUIDE.md)

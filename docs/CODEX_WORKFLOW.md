@@ -16,6 +16,9 @@ weaken those rules.
 
 ## Recommended Process
 
+For any page, navigation, or major feature-placement task, read
+[`WEBSITE_ARCHITECTURE.md`](WEBSITE_ARCHITECTURE.md) before planning the change.
+
 ```text
 1. User describes the change request.
 2. Codex reads AGENTS.md and relevant repository docs.

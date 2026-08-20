@@ -11,6 +11,23 @@ assert.ok(Array.isArray(catalog.lessons));
 assert.equal(new Set(catalog.lessons.map((lesson) => lesson.id)).size, catalog.lessons.length, "Grammar catalog IDs must be unique");
 assert.equal(new Set(catalog.lessons.map((lesson) => lesson.title)).size, catalog.lessons.length, "Grammar catalog titles must be unique");
 
+const expectedCategories = {
+  "present-simple": "tenses",
+  "present-continuous": "tenses",
+  "past-simple": "tenses",
+  "future-simple": "tenses",
+  "verb-to-be": "be-structures",
+  "can-cant": "modal-structures",
+  "must-mustnt": "modal-structures",
+  "there-is-are": "sentence-patterns",
+  "question-words": "question-forms",
+  "quantifiers": "quantity-determiners"
+};
+
+for (const entry of catalog.lessons) {
+  assert.equal(entry.category, expectedCategories[entry.id], `${entry.id} must retain its approved primary category`);
+}
+
 for (const entry of catalog.lessons) {
   assert.ok(fs.existsSync(path.join(dataDirectory, entry.file)), `${entry.id} must reference an existing lesson file`);
   const lesson = require(path.join(dataDirectory, entry.file));
@@ -49,5 +66,16 @@ assert.match(grammarRenderer, /visual_learning: data && data\.visual_learning/);
 assert.match(grammarRenderer, /function renderVisualLearning/);
 assert.match(grammarRenderer, /function renderGuidedPractice/);
 assert.match(grammarRenderer, /water-glass-fill/);
+assert.match(grammarRenderer, /lesson\.category === category/);
+assert.match(grammarRenderer, /REFRESHABLE_GUIDED_PRACTICE_LESSONS/);
+assert.match(grammarRenderer, /function loadRefreshableGuidedPractice/);
+assert.match(grammarRenderer, /function choicePromptWithBlank/);
+assert.match(grammarRenderer, /function guidedChoiceExplanation/);
+assert.match(grammarRenderer, /function guidedChoiceExplanationZh/);
+assert.match(grammarRenderer, /guidedChoiceExplanation\(item, option\)/);
+assert.match(grammarRenderer, /guidedChoiceExplanationZh\(item, option\)/);
+assert.match(grammarRenderer, /question: choicePromptWithBlank\(item\)/);
+assert.match(grammarRenderer, /New Practice 換一組題目/);
+assert.match(grammarRenderer, /const dictationAction = REFRESHABLE_GUIDED_PRACTICE_LESSONS\.has\(lesson\.id\)/);
 
 console.log("Production Grammar catalog, visual learning cards, water comparison, and guided mini-practice contracts valid.");

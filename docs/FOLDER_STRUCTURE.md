@@ -175,6 +175,7 @@ Project governance, architecture, workflow, standards, and planning documents.
 
 Core documents:
 
+- [WEBSITE_ARCHITECTURE.md](WEBSITE_ARCHITECTURE.md)
 - [MASTER_TASK.md](MASTER_TASK.md)
 - [AI_HANDOVER.md](AI_HANDOVER.md)
 - [TECHNICAL_OVERVIEW.md](TECHNICAL_OVERVIEW.md)

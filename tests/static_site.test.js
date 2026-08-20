@@ -38,3 +38,20 @@ test("dictation playback preserves pause position and resets only on stop or com
   assert.match(source, /stop\.onclick=\(\)=>\{playbackPositions\[i\]=0;stopEverything\(false\)\}/);
   assert.match(source, /function finishPlayback\(sentenceIndex,generation\)\{[\s\S]*?playbackPositions\[sentenceIndex\]=0/);
 });
+
+test("English menu and Grammar Practice preserve the learning-first navigation hierarchy", () => {
+  const englishMenu = fs.readFileSync(path.join(root, "frontend", "eng.html"), "utf8");
+  assert.ok(englishMenu.indexOf('href="grammar.html"') < englishMenu.indexOf('href="grammar_practice.html"'));
+
+  const practicePage = fs.readFileSync(path.join(root, "frontend", "grammar_practice.html"), "utf8");
+  const practiceSection = practicePage.slice(
+    practicePage.indexOf('class="setup-panel practice-mode-section"'),
+    practicePage.indexOf('class="setup-panel topic-quiz-section"')
+  );
+  assert.match(practiceSection, /Start 20 Questions/);
+  assert.doesNotMatch(practiceSection, /Grammar Topic|grammarTopicSelect/);
+  assert.match(practicePage, /Grammar Topic Quiz \/ Challenge/);
+  assert.match(practicePage, /id="grammarTopicSelect"/);
+  assert.match(practicePage, /Quiz \/ Challenge/);
+  assert.doesNotMatch(practicePage, /Open Practice &amp; Quiz/);
+});

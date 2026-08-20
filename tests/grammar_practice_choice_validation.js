@@ -32,9 +32,23 @@ for (const bank of [questionWords, quantifiers]) for (const count of [12, 10]) {
   assert.equal(selected.length, count); assert.equal(new Set(selected.map((item) => item.id)).size, count);
 }
 const script = fs.readFileSync("frontend/js/grammar_practice_choice.js", "utf8");
-assert.match(script, /selectedMode === "choice_quiz" \? 10 : 12/);
-assert.match(script, /if \(!quiz && button\.textContent === question\.answer\)/);
-assert.match(script, /if \(quiz\) feedback\.textContent = "Answer saved\. 答案已儲存。"/);
+assert.match(script, /const selectedMode = "choice_quiz"/);
+assert.match(script, /const count = 10/);
+assert.match(script, /function selectQuizAnswer/);
+assert.match(script, /classList\.toggle\("selected"/);
+assert.match(script, /You can change your choice before continuing/);
+assert.match(script, /quiz \? selectQuizAnswer/);
+assert.doesNotMatch(script, /button\.disabled = true; if \(!quiz/);
+assert.doesNotMatch(script, /prompt_zh/);
 assert.match(script, /submitChoiceSession/);
 assert.match(script, /"Finish" : "Next →"/);
+const resultScript = fs.readFileSync("frontend/js/grammar_practice_result.js", "utf8");
+assert.match(resultScript, /Complete sentence/);
+assert.match(resultScript, /中文解譯/);
+assert.match(resultScript, /completedSentenceZhElement\.textContent = `中文解譯：\$\{completedSentenceZh\}`/);
+assert.doesNotMatch(resultScript, /const completedSentenceZh = document\.createElement/);
+assert.match(resultScript, /Your choice,/);
+assert.match(resultScript, /Why in this sentence/);
+assert.match(resultScript, /sourceQuestion/);
+assert.doesNotMatch(fs.readFileSync("frontend/grammar_practice.html", "utf8"), /Open Practice &amp; Quiz/);
 console.log("Grammar Practice choice banks: Question Words 50; Quantifiers 54; session and feedback contracts valid.");

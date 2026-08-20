@@ -67,7 +67,10 @@ Rules:
 
 - `id` is used for lesson navigation and deep links.
 - `file` is relative to `frontend/data/`.
-- Catalog order controls lesson tab and previous/next order.
+- `category` is the lesson's single primary taxonomy key. Current production
+  keys are `tenses`, `be-structures`, `modal-structures`,
+  `sentence-patterns`, `question-forms`, and `quantity-determiners`.
+- Catalog order controls lesson tab and Previous/Next order within a category.
 - New Grammar lessons should require one lesson JSON file plus one catalog entry.
 - Do not create duplicate visible lesson titles.
 
@@ -81,6 +84,12 @@ questions. Each question has a stable `id`, `prompt`, `prompt_zh`, unique
 Quantifiers has 54; only `some`, `any`, `a few`, `a little`, `many`, and `much`
 may be Quantifier targets. The bank is used by production Practice and Quiz,
 not lesson JSON.
+
+Submitted choice-session review snapshots retain the source prompt, answer,
+`prompt_zh`, and explanation fields so Result can display the completed correct
+sentence, Traditional Chinese meaning, term meanings, and contextual reasoning.
+Older review records may omit newer derived fields; Result uses their stored
+question snapshot as a compatible fallback without changing the record.
 
 ## Vocabulary
 
