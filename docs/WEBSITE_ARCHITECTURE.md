@@ -636,4 +636,3 @@ Future Codex sessions must:
    locked-result/history behavior.
 6. Update this document when page architecture, navigation, ownership, or
    boundaries change.
-
