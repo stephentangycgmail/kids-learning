@@ -46,5 +46,7 @@ const resultScript = fs.readFileSync("frontend/js/grammar_practice_result.js", "
 assert.match(resultScript, /Complete sentence/);
 assert.match(resultScript, /中文解譯/);
 assert.match(resultScript, /Your choice,/);
+assert.match(resultScript, /Why in this sentence/);
+assert.match(resultScript, /sourceQuestion/);
 assert.doesNotMatch(fs.readFileSync("frontend/grammar_practice.html", "utf8"), /Open Practice &amp; Quiz/);
 console.log("Grammar Practice choice banks: Question Words 50; Quantifiers 54; session and feedback contracts valid.");

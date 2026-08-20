@@ -237,6 +237,20 @@ test("choice quiz selection supports ten unique questions", () => {
   assert.equal(core.createChoiceSession({ mode: "choice_quiz", topic, questions: selected }).scoreSummary, null);
 });
 
+test("choice quantifier reviews explain countability and quantity in context", () => {
+  const choiceBank = JSON.parse(fs.readFileSync(path.join(dataDir, manifest.banks.choice), "utf8"));
+  const topic = choiceBank.topics.find((item) => item.id === "quantifiers");
+  const question = topic.questionBank.find((item) => item.id === "q-a-little-02");
+  const session = core.createChoiceSession({ mode: "choice_quiz", topic, questions: [question] });
+  session.answers[question.id] = { selected: "many" };
+  const review = core.submitChoiceSession(session).review[0];
+  assert.equal(review.completedSentence, "There is a little water in the glass.");
+  assert.equal(review.completedSentenceZh, "杯子裡有一點水。");
+  assert.match(review.contextExplanation.en, /Water is the noun/);
+  assert.match(review.contextExplanation.en, /Much is also used with uncountable nouns/);
+  assert.match(review.contextExplanation.zh, /不可數名詞/);
+});
+
 test("choice quiz records retain topic, timing, score, percentage, and review", () => {
   const choiceBank = JSON.parse(fs.readFileSync(path.join(dataDir, manifest.banks.choice), "utf8"));
   const topic = manifest.topics.find((item) => item.id === "question-words");

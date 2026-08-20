@@ -76,6 +76,8 @@ may be changed before selecting Next. The Result page then shows score, percenta
 correct answer, and a full bilingual explanation of each wrong answer.
 Each Quiz review also shows the completed English sentence, its Chinese
 translation, and the meaning of both the correct choice and an incorrect choice.
+For Quantifiers, the review also explains the noun's countability and why the
+chosen quantifier does or does not match the amount required by the sentence.
 Completed topic quizzes use the same Practice History and Result pages as the
 normal 20-question modes.
 

@@ -205,12 +205,12 @@
     Which: { en: "asks someone to choose from options", zh: "問哪一個：用來在選項中作選擇" },
     Whose: { en: "asks who owns something", zh: "問誰的：用來詢問物主" },
     How: { en: "asks about a way, condition, or amount", zh: "問怎樣：用來詢問方法、情況或程度" },
-    some: { en: "means an unspecified amount or number", zh: "表示一些，數量不確定" },
-    any: { en: "means an unspecified amount or number, often in questions and negatives", zh: "表示任何一些，常用於疑問句和否定句" },
-    "a few": { en: "means a small number of countable things", zh: "表示少量可數的東西" },
-    "a little": { en: "means a small amount of an uncountable thing", zh: "表示少量不可數的東西" },
-    many: { en: "means a large number of countable things", zh: "表示很多可數的東西" },
-    much: { en: "means a large amount of an uncountable thing", zh: "表示很多不可數的東西" },
+    some: { en: "an unspecified amount or number", zh: "表示一些，數量不確定" },
+    any: { en: "an unspecified amount or number, often in questions and negatives", zh: "表示任何一些，常用於疑問句和否定句" },
+    "a few": { en: "a small number of countable things", zh: "表示少量可數的東西" },
+    "a little": { en: "a small amount of an uncountable thing", zh: "表示少量不可數的東西" },
+    many: { en: "a large number of countable things", zh: "表示很多可數的東西" },
+    much: { en: "a large amount of an uncountable thing", zh: "表示很多不可數的東西" },
   };
 
   function choiceTermMeaning(answer) {
@@ -221,6 +221,22 @@
     return question.prompt.includes("___") ? question.prompt.replace("___", question.answer) : question.prompt;
   }
 
+  function choiceContextExplanation(question, selected) {
+    if (!selected || selected === question.answer) return null;
+    const selectedMeaning = choiceTermMeaning(selected); const correctMeaning = choiceTermMeaning(question.answer);
+    if (!selectedMeaning || !correctMeaning || !question.prompt.includes("___")) return null;
+    const noun = (question.prompt.match(/___\s+([A-Za-z]+)/) || [])[1];
+    if (!noun) return null;
+    const nounLabel = noun.charAt(0).toUpperCase() + noun.slice(1);
+    const extra = question.answer === "a little"
+      ? " Much is also used with uncountable nouns, but it means a large amount; this sentence needs a small amount."
+      : "";
+    return {
+      en: `${nounLabel} is the noun in this sentence. ${selected} is used for ${selectedMeaning.en}, so it does not fit here. ${question.answer} is used for ${correctMeaning.en}, which matches this sentence.${extra}`,
+      zh: `${nounLabel} 是本句的名詞。${selected} 用於${selectedMeaning.zh.replace("表示", "")}，所以不適合本句。${question.answer} 用於${correctMeaning.zh.replace("表示", "")}，符合本句。${question.answer === "a little" ? "much 也可用於不可數名詞，但表示大量；本句需要表示少量。" : ""}`
+    };
+  }
+
   function scoreChoiceSession(session) {
     const review = session.questionSnapshots.map((question, index) => {
       const selected = session.answers[question.id] && session.answers[question.id].selected;
@@ -228,7 +244,8 @@
         selectedAnswer: selected || "No answer", submittedAnswer: selected || "No answer", correctAnswer: question.answer,
         correct: selected === question.answer, answered: Boolean(selected), explanation: question.why, explanationZh: question.why_zh || "",
         completedSentence: completedChoiceSentence(question), completedSentenceZh: question.prompt_zh || "",
-        correctAnswerMeaning: choiceTermMeaning(question.answer), selectedAnswerMeaning: choiceTermMeaning(selected) };
+        correctAnswerMeaning: choiceTermMeaning(question.answer), selectedAnswerMeaning: choiceTermMeaning(selected),
+        contextExplanation: choiceContextExplanation(question, selected) };
     });
     const correct = review.filter((item) => item.correct).length; const unanswered = review.filter((item) => !item.answered).length;
     return { summary: { totalQuestions: review.length, fullyCorrect: correct, correctQuestions: correct,
@@ -411,6 +428,7 @@
     availableTopics,
     clone,
     choiceTermMeaning,
+    choiceContextExplanation,
     completedChoiceSentence,
     createSession,
     createChoiceSession,

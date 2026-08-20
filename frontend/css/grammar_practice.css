@@ -211,6 +211,9 @@ dd { margin: 3px 0 0; font-weight: 800; overflow-wrap: anywhere; }
 .term-meanings { margin-top: 14px; padding: 12px; border-left: 4px solid var(--sky); background: #101820; }
 .term-meanings p { margin: 0 0 4px; }
 .term-meanings p:last-child { margin-bottom: 0; }
+.context-explanation { margin-top: 14px; padding: 12px; border-left: 4px solid var(--teal); background: #10251f; }
+.context-explanation p { margin: 0 0 4px; }
+.context-explanation p:last-child { margin-bottom: 0; }
 
 .history-toolbar { display: flex; align-items: center; gap: 14px; padding: 16px; }
 .history-toolbar label { font-weight: 800; }
