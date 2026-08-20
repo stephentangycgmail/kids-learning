@@ -45,6 +45,8 @@ assert.match(script, /"Finish" : "Next →"/);
 const resultScript = fs.readFileSync("frontend/js/grammar_practice_result.js", "utf8");
 assert.match(resultScript, /Complete sentence/);
 assert.match(resultScript, /中文解譯/);
+assert.match(resultScript, /completedSentenceZhElement\.textContent = `中文解譯：\$\{completedSentenceZh\}`/);
+assert.doesNotMatch(resultScript, /const completedSentenceZh = document\.createElement/);
 assert.match(resultScript, /Your choice,/);
 assert.match(resultScript, /Why in this sentence/);
 assert.match(resultScript, /sourceQuestion/);

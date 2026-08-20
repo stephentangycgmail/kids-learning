@@ -101,10 +101,10 @@
           card.appendChild(completedSentence);
         }
         if (completedSentenceZh) {
-          const completedSentenceZh = document.createElement("p");
-          completedSentenceZh.className = "zh-text";
-          completedSentenceZh.textContent = `中文解譯：${completedSentenceZh}`;
-          card.appendChild(completedSentenceZh);
+          const completedSentenceZhElement = document.createElement("p");
+          completedSentenceZhElement.className = "zh-text";
+          completedSentenceZhElement.textContent = `中文解譯：${completedSentenceZh}`;
+          card.appendChild(completedSentenceZhElement);
         }
         const correctMeaning = item.correctAnswerMeaning || core.choiceTermMeaning(item.correctAnswer);
         const selectedMeaning = item.selectedAnswerMeaning || core.choiceTermMeaning(item.selectedAnswer);
