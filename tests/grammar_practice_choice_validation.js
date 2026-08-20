@@ -34,8 +34,11 @@ for (const bank of [questionWords, quantifiers]) for (const count of [12, 10]) {
 const script = fs.readFileSync("frontend/js/grammar_practice_choice.js", "utf8");
 assert.match(script, /const selectedMode = "choice_quiz"/);
 assert.match(script, /const count = 10/);
-assert.match(script, /if \(!quiz && button\.textContent === question\.answer\)/);
-assert.match(script, /if \(quiz\) feedback\.textContent = "Answer saved\. 答案已儲存。"/);
+assert.match(script, /function selectQuizAnswer/);
+assert.match(script, /classList\.toggle\("selected"/);
+assert.match(script, /You can change your choice before continuing/);
+assert.match(script, /quiz \? selectQuizAnswer/);
+assert.doesNotMatch(script, /button\.disabled = true; if \(!quiz/);
 assert.doesNotMatch(script, /prompt_zh/);
 assert.match(script, /submitChoiceSession/);
 assert.match(script, /"Finish" : "Next →"/);

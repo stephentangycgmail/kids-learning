@@ -17,12 +17,23 @@
     el.choiceMeta.textContent = `${quiz ? "Quiz / Challenge" : "Practice"} · ${session.topicLabel}`; el.choicePosition.textContent = `Question ${session.currentQuestionIndex + 1} of ${session.questionSnapshots.length}`; el.choiceProgress.textContent = `${session.currentQuestionIndex + 1} of ${session.questionSnapshots.length}`; el.choiceQuestion.textContent = "";
     const visual = document.createElement("p"); visual.className = "choice-visual"; visual.setAttribute("aria-hidden", "true"); visual.textContent = question.visual || "";
     const prompt = document.createElement("h3"); prompt.className = "question-prompt"; prompt.textContent = question.prompt.replace(new RegExp(`^${question.answer}\\b`, "i"), "___");
-    const choices = document.createElement("div"); choices.className = "choice-options"; core.shuffle(question.options).forEach((option) => { const button = document.createElement("button"); button.type = "button"; button.className = "choice-option"; button.textContent = option; button.addEventListener("click", () => answer(question, option, choices)); choices.appendChild(button); }); el.choiceQuestion.append(visual, prompt, choices);
+    const choices = document.createElement("div"); choices.className = "choice-options"; core.shuffle(question.options).forEach((option) => { const button = document.createElement("button"); button.type = "button"; button.className = "choice-option"; button.textContent = option; button.addEventListener("click", () => quiz ? selectQuizAnswer(question, option, choices) : answer(question, option, choices)); choices.appendChild(button); }); el.choiceQuestion.append(visual, prompt, choices);
+  }
+  function selectQuizAnswer(question, selected, choices) {
+    session.answers[question.id] = { selected };
+    choices.querySelectorAll("button").forEach((button) => button.classList.toggle("selected", button.textContent === selected));
+    let feedback = el.choiceQuestion.querySelector("[data-choice-feedback]");
+    if (!feedback) {
+      feedback = document.createElement("div"); feedback.className = "choice-feedback saved"; feedback.dataset.choiceFeedback = "true";
+      const next = document.createElement("button"); next.type = "button"; next.className = "button button-primary"; next.textContent = session.currentQuestionIndex === session.questionSnapshots.length - 1 ? "Finish" : "Next →"; next.addEventListener("click", nextQuestion);
+      feedback.append("Answer saved. You can change your choice before continuing. ", next); el.choiceQuestion.appendChild(feedback);
+    }
+    queueSave();
   }
   function answer(question, selected, choices) {
-    const quiz = session.mode === "choice_quiz"; const correct = selected === question.answer; session.answers[question.id] = { selected }; choices.querySelectorAll("button").forEach((button) => { button.disabled = true; if (!quiz && button.textContent === question.answer) button.classList.add("correct"); if (!quiz && !correct && button.textContent === selected) button.classList.add("wrong"); });
-    const feedback = document.createElement("div"); feedback.className = `choice-feedback ${quiz ? "saved" : correct ? "correct" : "incorrect"}`;
-    if (quiz) feedback.textContent = "Answer saved. 答案已儲存。"; else feedback.innerHTML = `<strong>${correct ? "Correct! 做得好！" : `Incorrect. 正確答案是「${question.answer}」。`}</strong><br>${question.why}${question.why_zh ? `<br><span class="zh-text">${question.why_zh}</span>` : ""}`;
+    const correct = selected === question.answer; session.answers[question.id] = { selected }; choices.querySelectorAll("button").forEach((button) => { button.disabled = true; if (button.textContent === question.answer) button.classList.add("correct"); if (!correct && button.textContent === selected) button.classList.add("wrong"); });
+    const feedback = document.createElement("div"); feedback.className = `choice-feedback ${correct ? "correct" : "incorrect"}`;
+    feedback.innerHTML = `<strong>${correct ? "Correct! 做得好！" : `Incorrect. 正確答案是「${question.answer}」。`}</strong><br>${question.why}${question.why_zh ? `<br><span class="zh-text">${question.why_zh}</span>` : ""}`;
     const next = document.createElement("button"); next.type = "button"; next.className = "button button-primary"; next.textContent = session.currentQuestionIndex === session.questionSnapshots.length - 1 ? "Finish" : "Next →"; next.addEventListener("click", nextQuestion); feedback.appendChild(next); el.choiceQuestion.appendChild(feedback); queueSave();
   }
   async function nextQuestion() { await saveQueue; if (session.currentQuestionIndex < session.questionSnapshots.length - 1) { session.currentQuestionIndex += 1; await queueSave(); renderQuestion(); return; } const submitted = core.submitChoiceSession(session); await store.save(submitted); window.location.assign(`grammar_practice_result.html?id=${encodeURIComponent(submitted.sessionId)}`); }

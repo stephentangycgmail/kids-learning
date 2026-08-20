@@ -71,7 +71,8 @@ practice history.
 The separate Grammar Topic Quiz / Challenge section lets the learner select
 Question Words or Quantifiers from the production manifest. It selects 10
 unique questions and keeps answers, feedback, hints, and Chinese translations
-hidden until completion. The Result page then shows score, percentage, the
+hidden until completion. A selected answer receives a neutral highlight and
+may be changed before selecting Next. The Result page then shows score, percentage, the
 correct answer, and a full bilingual explanation of each wrong answer.
 Completed topic quizzes use the same Practice History and Result pages as the
 normal 20-question modes.
