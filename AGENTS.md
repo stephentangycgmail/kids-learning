@@ -135,6 +135,12 @@ change is required.
 
 ## Documentation
 
+Before adding a page, changing navigation, changing page structure, moving
+functionality between pages, redesigning a major page, or adding a major
+learning area, read [`docs/WEBSITE_ARCHITECTURE.md`](docs/WEBSITE_ARCHITECTURE.md).
+It is the authoritative reference for product navigation, page sections,
+feature ownership, deep links, storage boundaries, and page placement.
+
 - Documentation authority:
   - this file: durable repository and AI-agent rules
   - `docs/MASTER_TASK.md`: durable product constraints

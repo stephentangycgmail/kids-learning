@@ -32,6 +32,11 @@ instruction.
 
 ## Where to Start
 
+For page, navigation, or major feature-placement work, read
+[`WEBSITE_ARCHITECTURE.md`](WEBSITE_ARCHITECTURE.md) after this handover. It is
+the current product-level source of truth for the sitemap, page relationships,
+page sections, and functional ownership boundaries.
+
 | Need | Current authority |
 | --- | --- |
 | Product constraints | [`MASTER_TASK.md`](MASTER_TASK.md) |

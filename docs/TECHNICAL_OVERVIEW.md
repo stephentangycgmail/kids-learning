@@ -22,6 +22,9 @@ Historical FastAPI, Azure, and backend endpoint context is retained separately
 in [`SYSTEM_ARCHITECTURE_V1.md`](SYSTEM_ARCHITECTURE_V1.md) and
 [`API_DEPENDENCY_AUDIT.md`](API_DEPENDENCY_AUDIT.md).
 
+For product-level page ownership, navigation relationships, and page sections,
+see [`WEBSITE_ARCHITECTURE.md`](WEBSITE_ARCHITECTURE.md).
+
 ## Main Pages
 
 | Area | Entry file | Notes |

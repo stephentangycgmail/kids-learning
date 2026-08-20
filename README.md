@@ -58,6 +58,7 @@ The canonical folder reference is [docs/FOLDER_STRUCTURE.md](docs/FOLDER_STRUCTU
 
 - [Master Task](docs/MASTER_TASK.md)
 - [Technical Overview](docs/TECHNICAL_OVERVIEW.md)
+- [Website Architecture](docs/WEBSITE_ARCHITECTURE.md)
 - [AI Handover](docs/AI_HANDOVER.md)
 - [User Guide](docs/USER_GUIDE.md)
 - [Build and Local Run Guide](docs/BUILD_GUIDE.md)
