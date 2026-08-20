@@ -69,6 +69,8 @@ assert.match(grammarRenderer, /water-glass-fill/);
 assert.match(grammarRenderer, /lesson\.category === category/);
 assert.match(grammarRenderer, /REFRESHABLE_GUIDED_PRACTICE_LESSONS/);
 assert.match(grammarRenderer, /function loadRefreshableGuidedPractice/);
+assert.match(grammarRenderer, /function choicePromptWithBlank/);
+assert.match(grammarRenderer, /question: choicePromptWithBlank\(item\)/);
 assert.match(grammarRenderer, /New Practice 換一組題目/);
 assert.match(grammarRenderer, /const dictationAction = REFRESHABLE_GUIDED_PRACTICE_LESSONS\.has\(lesson\.id\)/);
 

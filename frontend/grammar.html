@@ -669,6 +669,12 @@
         return item.full_sentence || item.question.replace("___", item.answer);
     }
 
+    function choicePromptWithBlank(item) {
+        if (item.prompt.includes("___")) return item.prompt;
+        const escapedAnswer = item.answer.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        return item.prompt.replace(new RegExp(`^${escapedAnswer}\\b`, "i"), "___");
+    }
+
     function chooseGuidedPracticeSet(lessonId, questions) {
         const count = Math.min(8, questions.length);
         let nextSet = shuffleItems(questions).slice(0, count);
@@ -767,12 +773,12 @@
                 const questions = topic && Array.isArray(topic.questionBank)
                     ? topic.questionBank.filter(item => item && item.id && item.prompt && Array.isArray(item.options) && item.options.includes(item.answer)).map(item => ({
                         id: item.id,
-                        question: item.prompt,
+                        question: choicePromptWithBlank(item),
                         options: item.options,
                         answer: item.answer,
                         why: item.why,
                         why_zh: item.why_zh,
-                        full_sentence: item.prompt.replace("___", item.answer),
+                        full_sentence: item.prompt.includes("___") ? item.prompt.replace("___", item.answer) : item.prompt,
                         sentence_zh: item.prompt_zh
                     }))
                     : [];
