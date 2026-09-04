@@ -85,9 +85,9 @@ For production recovery:
 
 ## Current Verified State
 
-- Current release: `v1.3.0`
-- Tagged commit: annotated tag `v1.3.0` on the final `main` release commit
-- Current verified Pages deployment: `v1.3.0` from `main`
-- GitHub Release for `v1.3.0`: published
+- Current release: `v1.3.1`
+- Tagged commit: annotated tag `v1.3.1` on the final `main` release commit
+- Current verified Pages deployment: `v1.3.1` from `main`
+- GitHub Release for `v1.3.1`: published
 
 The immutable `v1.0.0` tag remains the prior release baseline.

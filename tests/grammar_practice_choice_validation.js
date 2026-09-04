@@ -34,6 +34,9 @@ for (const bank of [questionWords, quantifiers]) for (const count of [12, 10]) {
 const script = fs.readFileSync("frontend/js/grammar_practice_choice.js", "utf8");
 assert.match(script, /const selectedMode = "choice_quiz"/);
 assert.match(script, /const count = 10/);
+assert.match(script, /function shouldAutostart/);
+assert.match(script, /topics\.some\(\(topic\) => topic\.id === requested\)/);
+assert.match(script, /if \(shouldAutostart\(\)\) begin\(\)/);
 assert.match(script, /function selectQuizAnswer/);
 assert.match(script, /classList\.toggle\("selected"/);
 assert.match(script, /You can change your choice before continuing/);

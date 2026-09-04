@@ -42,6 +42,9 @@ test("dictation playback preserves pause position and resets only on stop or com
 test("English menu and Grammar Practice preserve the learning-first navigation hierarchy", () => {
   const englishMenu = fs.readFileSync(path.join(root, "frontend", "eng.html"), "utf8");
   assert.ok(englishMenu.indexOf('href="grammar.html"') < englishMenu.indexOf('href="grammar_practice.html"'));
+  assert.match(englishMenu, /默書：句子練習/);
+  assert.match(englishMenu, /默書句子練習/);
+  assert.doesNotMatch(englishMenu, /點書/);
 
   const practicePage = fs.readFileSync(path.join(root, "frontend", "grammar_practice.html"), "utf8");
   const practiceSection = practicePage.slice(
@@ -54,4 +57,7 @@ test("English menu and Grammar Practice preserve the learning-first navigation h
   assert.match(practicePage, /id="grammarTopicSelect"/);
   assert.match(practicePage, /Quiz \/ Challenge/);
   assert.doesNotMatch(practicePage, /Open Practice &amp; Quiz/);
+
+  const practiceScript = fs.readFileSync(path.join(root, "frontend", "js", "grammar_practice.js"), "utf8");
+  assert.match(practiceScript, /grammar_practice_choice\.html\?topic=.*&mode=choice_quiz&autostart=1/);
 });

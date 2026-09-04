@@ -14,8 +14,8 @@ The production site uses committed HTML, CSS, JavaScript, and JSON files. It doe
 - Student-facing content lives mainly in `frontend/` and `frontend/data/`.
 - Backend files are legacy/local-only tooling and are not part of the current production deployment.
 - AI Teacher remains disabled for static production use while live API usage is paused.
-- Current release: `v1.3.0`, with approved Grammar navigation, learning,
-  Quiz / Challenge, and teaching-result improvements.
+- Current release: `v1.3.1`, with corrected Dictation wording and direct
+  Grammar Topic Quiz / Challenge launching.
 - See [Release Manifest](docs/RELEASE_MANIFEST.md) for verified release and
   deployment evidence.
 
