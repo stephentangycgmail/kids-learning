@@ -384,7 +384,7 @@
     elements.topicQuizButton.addEventListener("click", () => {
       const topicId = elements.grammarTopicSelect.value;
       if (!topicId) return;
-      window.location.assign(`grammar_practice_choice.html?topic=${encodeURIComponent(topicId)}&mode=choice_quiz`);
+      window.location.assign(`grammar_practice_choice.html?topic=${encodeURIComponent(topicId)}&mode=choice_quiz&autostart=1`);
     });
     elements.continueButton.addEventListener("click", () => showPractice(activeSession));
     elements.abandonButton.addEventListener("click", abandonActivePractice);
