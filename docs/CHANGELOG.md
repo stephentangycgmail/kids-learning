@@ -3,6 +3,23 @@
 Release identity and deployment evidence are maintained in
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
 
+## v1.3.1 - 2026-09-04
+
+### Fixed
+
+- Corrected all student-facing English menu Dictation wording from `點書` to
+  `默書`.
+- Started the selected Grammar Topic Quiz / Challenge immediately after its
+  launch action, removing the redundant second Start step.
+- Kept direct choice-page links backward compatible and prevented invalid
+  topics from starting a different quiz.
+
+### Validation
+
+- Passed the Grammar Practice Node and Python regression suites, choice-bank
+  validation, 630-question validation, local browser interaction checks, and
+  GitHub Markdown link checks.
+
 ## v1.3.0 - 2026-08-20
 
 ### Added

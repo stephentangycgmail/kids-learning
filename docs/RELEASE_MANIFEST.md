@@ -3,6 +3,17 @@
 This manifest records verified repository and production evidence. It does not
 create or redefine a release.
 
+## v1.3.1 Official Release
+
+| Field | Verified value |
+| --- | --- |
+| Version | `1.3.1` |
+| Production branch | `main` |
+| Production commit | Final `v1.3.1` annotated tag commit on `main` |
+| Scope | Corrected English Dictation wording and direct Grammar Topic Quiz / Challenge launch |
+| Validation | Node and Python regression suites, Grammar and choice-bank validators, local browser interaction checks, Markdown local-link validation, and production Pages smoke |
+| Status | Published, tagged, Pages-deployed, and production-verified |
+
 ## v1.3.0 Official Release
 
 | Field | Verified value |
