@@ -527,7 +527,8 @@ English Hub; Practice History can return to New Practice or Resume.
    Mixed Practice. Start 20 Questions applies only to these three modes and
    uses the existing all-topics 20-question banks.
 4. Separate Grammar Topic Quiz / Challenge section with a manifest-driven
-   Question Words or Quantifiers selector and a Quiz / Challenge action.
+   Question Words or Quantifiers selector and a Quiz / Challenge action that
+   launches the selected 10-question quiz directly.
 5. Active practice panel with mode/topic metadata, question position,
    answered progress, question navigator, answer controls, Previous/Next, save
    status, and Submit for Review.
@@ -575,7 +576,10 @@ current student entry launches `choice_quiz` only.
 1. Header with back-to-Grammar-Practice and History links.
 2. Topic selector populated from manifest topics whose `practiceType` is
    `choice`, plus a learning link to the selected Grammar lesson.
-3. Start action selects 10 unique Quiz / Challenge questions.
+3. The Grammar Practice entry passes the selected topic with `autostart=1`, so
+   the choice page selects 10 unique Quiz / Challenge questions immediately.
+   Opening the choice page without that parameter retains its topic selector
+   and manual Start action for backward-compatible direct links.
 4. Question panel shows visual, English prompt with the answer blanked,
    shuffled answer buttons, position/progress, and save status. Chinese
    translations are hidden during Quiz / Challenge.
