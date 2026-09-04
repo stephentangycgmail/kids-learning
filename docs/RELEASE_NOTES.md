@@ -6,6 +6,17 @@ Verified tag and deployment identities are maintained in
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md). A production deployment is not
 automatically an official release.
 
+## v1.3.1 - 4 September 2026
+
+Corrective maintenance release:
+
+- Corrected the English menu label and supporting copy from `點書` to `默書`.
+- Made the Grammar Topic Quiz / Challenge action launch the selected
+  10-question quiz directly without a second Start step.
+- Preserved the manual topic selector for direct choice-page links and rejected
+  automatic start for missing or invalid topics.
+- Added regression coverage and updated the user and navigation documentation.
+
 ## v1.3.0 - 20 August 2026
 
 Student learning and review release:
