@@ -34,6 +34,33 @@ Durable instructions for future Codex work in the Kids Learning repository.
 - Never discard, stash, apply, or delete user changes without permission.
 - Clearly report modified files, validation performed, skipped checks, and important decisions.
 
+## Fresh Session Context Protocol
+
+When a new AI, Codex, or API session starts without reliable current project
+context, or after context has been reset or compacted:
+
+1. Confirm the repository root and that Kids Learning is the target project.
+2. Inspect live Git state: current branch, `HEAD`, upstream, working tree,
+   divergence, and relevant recent commits.
+3. Follow the task-based reading rules below.
+4. Read only the authoritative documents required for the task.
+5. Inspect enough relevant implementation and tests to verify current reality.
+6. Before substantive editing, output a compact `PROJECT CONTEXT SUMMARY` with:
+   repository; project; Git branch; `HEAD`; working tree; upstream/divergence;
+   lifecycle or release state when relevant; current task; authorized scope;
+   authoritative documents read; relevant architecture and module ownership;
+   important constraints or content rules; target source files; target tests
+   and validation; known discrepancies or uncertainties; and the proposed
+   implementation plan.
+
+Normally keep the summary within approximately 1,200 tokens. It is working
+context for the current session and does not replace inspection of the actual
+target source before editing. Do not regenerate it repeatedly during a stable
+session. Refresh it only when the target project changes, material Git state
+changes, context resets or compacts, a major milestone changes relevant
+context, or the user requests a refresh. Do not scan the complete repository
+merely to produce the summary.
+
 ## Task-Based Reading
 
 Read this file first, then only the authorities needed for the task:
@@ -97,6 +124,24 @@ that do not improve accuracy. A pull request is incomplete when relevant
 documentation is missing unless it clearly records why no documentation
 change is required.
 
+### Documentation Impact Assessment
+
+For every substantive implementation, configuration, workflow, interface,
+content or business-rule, build, deployment, testing, or release change:
+
+1. Use the Authoritative Documentation map below to identify the affected
+   documentation roles.
+2. Update every affected authoritative document in the same task.
+3. Leave unrelated authoritative documents unchanged; do not update them
+   merely for consistency.
+4. Verify affected documentation against the final implementation and tests.
+5. Report documentation updated, documentation reviewed but unchanged, and
+   documentation requiring owner review.
+
+A task is not complete when implementation and authoritative documentation
+materially disagree. This assessment does not require every task to update
+every document; only affected authorities change.
+
 ## Content and Data Rules
 
 - Follow `docs/CONTENT_STANDARD.md`.
@@ -135,20 +180,29 @@ change is required.
 
 ## Documentation
 
+### Authoritative Documentation
+
+| Concern | Authority |
+| --- | --- |
+| Architecture and module ownership | [`docs/TECHNICAL_OVERVIEW.md`](docs/TECHNICAL_OVERVIEW.md) and [`docs/WEBSITE_ARCHITECTURE.md`](docs/WEBSITE_ARCHITECTURE.md) |
+| Product and content requirements | [`docs/MASTER_TASK.md`](docs/MASTER_TASK.md), [`docs/CONTENT_STANDARD.md`](docs/CONTENT_STANDARD.md), and affected feature specifications |
+| Configuration | [`docs/CONFIGURATION.md`](docs/CONFIGURATION.md) |
+| Testing | [`docs/TESTING_GUIDE.md`](docs/TESTING_GUIDE.md) |
+| Build | [`docs/BUILD_GUIDE.md`](docs/BUILD_GUIDE.md) |
+| Deployment | [`docs/DEPLOYMENT_GUIDE.md`](docs/DEPLOYMENT_GUIDE.md) |
+| User workflow | [`docs/USER_GUIDE.md`](docs/USER_GUIDE.md) |
+| Current status | [`docs/PROJECT_DASHBOARD.md`](docs/PROJECT_DASHBOARD.md) |
+| AI handover | [`docs/AI_HANDOVER.md`](docs/AI_HANDOVER.md) |
+| Release and version | [`docs/RELEASE_POLICY.md`](docs/RELEASE_POLICY.md), [`docs/RELEASE_MANIFEST.md`](docs/RELEASE_MANIFEST.md), and [`docs/VERSIONING.md`](docs/VERSIONING.md) |
+
 Before adding a page, changing navigation, changing page structure, moving
 functionality between pages, redesigning a major page, or adding a major
 learning area, read [`docs/WEBSITE_ARCHITECTURE.md`](docs/WEBSITE_ARCHITECTURE.md).
 It is the authoritative reference for product navigation, page sections,
 feature ownership, deep links, storage boundaries, and page placement.
 
-- Documentation authority:
-  - this file: durable repository and AI-agent rules
-  - `docs/MASTER_TASK.md`: durable product constraints
-  - `docs/PROJECT_DASHBOARD.md`: current status
-  - `docs/ROADMAP.md`: future priorities
-  - `docs/TECHNICAL_OVERVIEW.md`: current architecture
-  - `docs/AI_HANDOVER.md`: fresh-agent maintenance and recovery entry point
-  - `docs/SYSTEM_ARCHITECTURE_V1.md`: historical architecture
+- [`docs/ROADMAP.md`](docs/ROADMAP.md) owns future priorities.
+- [`docs/SYSTEM_ARCHITECTURE_V1.md`](docs/SYSTEM_ARCHITECTURE_V1.md) is historical architecture, not a current contract.
 - Keep `README.md` and related docs consistent when behavior, structure, workflow, or deployment changes.
 - Use GitHub Issues or `docs/MASTER_TASK.md` for roadmap and future work. Do not turn this file into a task backlog.
 - If documentation and implementation disagree, report the mismatch before making broad changes.
