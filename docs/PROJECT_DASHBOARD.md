@@ -4,7 +4,8 @@
 
 Current official release: `v1.3.1`
 
-Current Pages state: verified `v1.3.1` deployment. See
+Current Pages state: an approved untagged English Dictation content maintenance
+deployment is pending on the `v1.3.1` baseline. See
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
 
 ## Current Status
