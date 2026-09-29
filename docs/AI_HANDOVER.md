@@ -11,10 +11,10 @@ Kids Learning is a child-friendly static website for English, Chinese, and
 Math learning. It uses committed HTML, CSS, JavaScript, and reviewed JSON;
 students do not need a login, production backend, Azure service, or paid API.
 
-The current official production release is `v1.3.1`. An approved untagged
-English Dictation content maintenance deployment dated 2026-09-29 is pending
-Pages and production verification. `v1.0.0` remains an immutable prior
-baseline. Confirm the live Git state before making release claims.
+The current official production release is `v1.3.1`. A verified untagged
+English Dictation content maintenance deployment dated 2026-09-29 is live on
+the `v1.3.1` baseline. `v1.0.0` remains an immutable prior baseline. Confirm
+the live Git state before making release claims.
 
 ## Branch Model and Deployment
 
