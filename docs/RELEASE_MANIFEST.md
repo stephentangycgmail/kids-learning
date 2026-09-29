@@ -9,10 +9,13 @@ create or redefine a release.
 | --- | --- |
 | Official release baseline | `v1.3.1` |
 | Production branch | `main` |
+| Production content merge commit | `136e37b5008fbe1b80a23b8d2f09433fd7c9403b` |
 | Scope | Replace English Dictation 01 and 02 with approved public-manners sentences and Traditional Chinese translations |
 | Version classification | Untagged backward-compatible content maintenance deployment |
 | Pre-deployment validation | Repository JSON parsing, static-site regression tests, content contract check, and local desktop/mobile browser smoke passed |
-| Status | Approved for deployment; Pages and production verification pending |
+| Pages deployment | GitHub Actions run `36531928628` completed successfully |
+| Production verification | Dictation 01 and 02 loaded the new bilingual content; desktop and 390px mobile smoke passed without horizontal overflow |
+| Status | Pages-deployed and production-verified |
 
 ## v1.3.1 Official Release
 
