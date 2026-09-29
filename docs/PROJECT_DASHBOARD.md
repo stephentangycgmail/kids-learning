@@ -4,7 +4,8 @@
 
 Current official release: `v1.3.1`
 
-Current Pages state: verified `v1.3.1` deployment. See
+Current Pages state: an approved untagged English Dictation content maintenance
+deployment is pending on the `v1.3.1` baseline. See
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
 
 ## Current Status
@@ -34,10 +35,10 @@ P1:
 - Add small, backward-compatible improvements.
 
 Question Words and Quantifiers lessons and choice Practice / Quiz modes are
-released. The `v1.2.2` candidate fixes responsive Grammar lesson navigation:
-tabs wrap naturally, Quiz and Dictation actions remain visible, and desktop
-and 390px mobile smoke tests show no horizontal overflow. Preview/UAT assets
-are retired from the production tree.
+released. The current `v1.3.1` release includes responsive Grammar lesson
+navigation: tabs wrap naturally, Quiz and Dictation actions remain visible,
+and desktop and 390px mobile smoke tests show no horizontal overflow.
+Preview/UAT assets are retired from the production tree.
 
 ## Completed
 

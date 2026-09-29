@@ -1,20 +1,24 @@
 {
   "sentences": [
     {
-      "full": "Grain products give us energy, so they are good for us.",
-      "cn": "穀物製品給我們提供能量，所以對我們有好處。"
+      "full": "We should have good manners in public places.",
+      "cn": "我們在公共場所應該有禮貌。"
     },
     {
-      "full": "Fried food makes us fat, so it is bad for us.",
-      "cn": "炸食物會令我們變胖，所以對我們不好。"
+      "full": "In the restaurant, we should eat quietly.",
+      "cn": "在餐廳裡，我們應該安靜地進食。"
     },
     {
-      "full": "We need to eat enough grain products such as rice and bread.",
-      "cn": "我們需要吃足夠的穀物食品，例如米飯和麵包。"
+      "full": "We shouldn’t make a mess at the table because it is very rude.",
+      "cn": "我們不應該把餐桌弄得一團糟，因為這樣很沒有禮貌。"
     },
     {
-      "full": "Don’t eat too much bacon.",
-      "cn": "不要吃太多煙肉。"
+      "full": "In the cinema, we should wait patiently in the queue for tickets and snacks.",
+      "cn": "在電影院裡，我們應該耐心排隊購買戲票和小食。"
+    },
+    {
+      "full": "We shouldn’t talk loudly during the film. Also, we shouldn’t use our phones because the light will disturb others.",
+      "cn": "我們不應該在電影播放期間大聲說話。此外，我們也不應該使用手機，因為手機的光線會打擾其他人。"
     }
   ]
 }
