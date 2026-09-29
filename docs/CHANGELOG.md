@@ -3,6 +3,16 @@
 Release identity and deployment evidence are maintained in
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
 
+## Untagged Production Maintenance - 2026-09-29
+
+### Changed
+
+- Replaced the English Dictation 01 and Dictation 02 sentence sets with the
+  approved public-manners content and matching Traditional Chinese
+  translations.
+- Preserved the existing Dictation catalog, JSON schema, page behavior, and
+  browser speech controls.
+
 ## v1.3.1 - 2026-09-04
 
 ### Fixed

@@ -3,6 +3,17 @@
 This manifest records verified repository and production evidence. It does not
 create or redefine a release.
 
+## 2026-09-29 Untagged Dictation Content Deployment
+
+| Field | Verified value |
+| --- | --- |
+| Official release baseline | `v1.3.1` |
+| Production branch | `main` |
+| Scope | Replace English Dictation 01 and 02 with approved public-manners sentences and Traditional Chinese translations |
+| Version classification | Untagged backward-compatible content maintenance deployment |
+| Pre-deployment validation | Repository JSON parsing, static-site regression tests, content contract check, and local desktop/mobile browser smoke passed |
+| Status | Approved for deployment; Pages and production verification pending |
+
 ## v1.3.1 Official Release
 
 | Field | Verified value |
