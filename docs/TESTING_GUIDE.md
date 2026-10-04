@@ -21,6 +21,14 @@ coverage, bilingual fields, 12/10 unique selection, and feedback contracts.
 Manually test its rendered Practice feedback, Quiz answer hiding, results, and
 responsive layout when it changes.
 
+The first command above also runs the Dictation vocabulary coverage regression
+test in `tests/static_site.test.js`. It checks that every normalized English
+word extracted from `dictation01.json` and `dictation02.json` has an entry in
+`vocab_ai.json`. If an entry is missing, the test lists the source filename and
+missing word(s) and fails. This is a static data coverage check; it does not
+test browser popup rendering, validate the fields inside each vocabulary
+entry, or cover all Grammar Dictation content.
+
 ## JSON Validation
 
 `.github/workflows/validate-json.yml` parses every repository JSON file on
@@ -50,6 +58,13 @@ Markdown link validation.
 
 The static-site regression test requires every local HTML `src` and `href`
 target to exist and protects the Dictation pause/resume/reset source contract.
+
+It also verifies the normalized vocabulary coverage for `dictation01.json` and
+`dictation02.json`: every extracted English word must have a corresponding
+`vocab_ai.json` entry. Missing entries are reported with their source filename
+and word(s), causing the test to fail. This is a static data coverage
+regression test, not a browser popup behavior test; it does not validate
+vocabulary-entry field completeness or all Grammar Dictation content.
 
 ## Local Static Smoke Test
 
