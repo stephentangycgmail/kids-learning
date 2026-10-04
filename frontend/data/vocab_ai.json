@@ -1118,5 +1118,195 @@
     "cn": "你的（表示所有）",
     "usage": "Is this your book?",
     "tenses": "POS: determiner 限定詞"
+  },
+  "offer": {
+    "cn": "提供；讓給",
+    "usage": "You should offer your seat to an elderly person.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : offer / offers\npast 過去式 : offered\nprogressive 進行式 : offering"
+  },
+  "seats": {
+    "cn": "座位（複數）",
+    "usage": "Please offer your seats to people in need.",
+    "tenses": "POS: noun 名詞\nsingular 單數 : seat\nplural 複數 : seats"
+  },
+  "people": {
+    "cn": "人們；人（person 的複數）",
+    "usage": "Many people are waiting for the bus.",
+    "tenses": "POS: noun 名詞\nsingular 單數 : person\nplural 複數 : people"
+  },
+  "shouldn't": {
+    "cn": "不應該（should not 的縮寫）",
+    "usage": "You shouldn't jump the queue.",
+    "tenses": "POS: auxiliary verb 助動詞\nfull form 完整形式 : should not"
+  },
+  "jump": {
+    "cn": "跳；跳躍",
+    "usage": "You shouldn't jump the queue at the bus stop.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : jump / jumps\npast 過去式 : jumped\nprogressive 進行式 : jumping"
+  },
+  "queue": {
+    "cn": "隊伍；排隊",
+    "usage": "Please wait patiently in the queue.",
+    "tenses": "POS: noun 名詞\nplural 複數 : queues"
+  },
+  "bus": {
+    "cn": "巴士；公共汽車",
+    "usage": "We waited for the bus at the bus stop.",
+    "tenses": "POS: noun 名詞\nplural 複數 : buses"
+  },
+  "stop": {
+    "cn": "車站；停止",
+    "usage": "We waited at the bus stop.",
+    "tenses": "POS: noun 名詞\nplural 複數 : stops"
+  },
+  "study": {
+    "cn": "學習；讀書",
+    "usage": "You should study hard at school.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : study / studies\npast 過去式 : studied\nprogressive 進行式 : studying"
+  },
+  "hard": {
+    "cn": "努力地；努力的",
+    "usage": "You should study hard for the test.",
+    "tenses": "POS: adverb 副詞 / adjective 形容詞"
+  },
+  "behave": {
+    "cn": "守規矩；表現得體",
+    "usage": "Students should behave well at school.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : behave / behaves\npast 過去式 : behaved\nprogressive 進行式 : behaving"
+  },
+  "school": {
+    "cn": "學校",
+    "usage": "We should behave well at school.",
+    "tenses": "POS: noun 名詞\nplural 複數 : schools"
+  },
+  "speak": {
+    "cn": "說話；發言",
+    "usage": "You shouldn't speak rudely to other people.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : speak / speaks\npast 過去式 : spoke\nprogressive 進行式 : speaking\nperfect 完成式 : have spoken / has spoken"
+  },
+  "rudely": {
+    "cn": "無禮地；粗魯地",
+    "usage": "You shouldn't speak rudely to others.",
+    "tenses": "POS: adverb 副詞\nadjective 形容詞 : rude"
+  },
+  "manners": {
+    "cn": "禮貌；禮儀",
+    "usage": "We should have good manners in public places.",
+    "tenses": "POS: noun 名詞\nsingular 單數 : manner\nplural 複數 : manners"
+  },
+  "public": {
+    "cn": "公共的；公眾的",
+    "usage": "We should have good manners in public places.",
+    "tenses": "POS: adjective 形容詞"
+  },
+  "places": {
+    "cn": "地方（複數）",
+    "usage": "We should have good manners in public places.",
+    "tenses": "POS: noun 名詞\nsingular 單數 : place\nplural 複數 : places"
+  },
+  "restaurant": {
+    "cn": "餐廳",
+    "usage": "We should eat quietly in the restaurant.",
+    "tenses": "POS: noun 名詞\nplural 複數 : restaurants"
+  },
+  "quietly": {
+    "cn": "安靜地",
+    "usage": "We should eat quietly in the restaurant.",
+    "tenses": "POS: adverb 副詞\nadjective 形容詞 : quiet"
+  },
+  "mess": {
+    "cn": "混亂；凌亂的地方",
+    "usage": "We shouldn't make a mess at the table.",
+    "tenses": "POS: noun 名詞\nplural 複數 : messes"
+  },
+  "table": {
+    "cn": "餐桌；桌子",
+    "usage": "Please keep the table clean.",
+    "tenses": "POS: noun 名詞\nplural 複數 : tables"
+  },
+  "because": {
+    "cn": "因為",
+    "usage": "We use because to give a reason.",
+    "tenses": "POS: conjunction 連接詞"
+  },
+  "rude": {
+    "cn": "無禮的；粗魯的",
+    "usage": "It is rude to talk loudly during the film.",
+    "tenses": "POS: adjective 形容詞\nadverb 副詞 : rudely"
+  },
+  "cinema": {
+    "cn": "電影院",
+    "usage": "We should wait quietly in the cinema.",
+    "tenses": "POS: noun 名詞\nplural 複數 : cinemas"
+  },
+  "patiently": {
+    "cn": "耐心地",
+    "usage": "We should wait patiently in the queue.",
+    "tenses": "POS: adverb 副詞\nadjective 形容詞 : patient"
+  },
+  "tickets": {
+    "cn": "票；戲票（複數）",
+    "usage": "We waited in the queue for tickets.",
+    "tenses": "POS: noun 名詞\nsingular 單數 : ticket\nplural 複數 : tickets"
+  },
+  "snacks": {
+    "cn": "小食；零食（複數）",
+    "usage": "We bought tickets and snacks at the cinema.",
+    "tenses": "POS: noun 名詞\nsingular 單數 : snack\nplural 複數 : snacks"
+  },
+  "talk": {
+    "cn": "說話；談話",
+    "usage": "We shouldn't talk loudly during the film.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : talk / talks\npast 過去式 : talked\nprogressive 進行式 : talking"
+  },
+  "loudly": {
+    "cn": "大聲地",
+    "usage": "Please do not talk loudly in the cinema.",
+    "tenses": "POS: adverb 副詞\nadjective 形容詞 : loud"
+  },
+  "during": {
+    "cn": "在……期間",
+    "usage": "We shouldn't talk during the film.",
+    "tenses": "POS: preposition 介詞"
+  },
+  "film": {
+    "cn": "電影",
+    "usage": "We watched a film at the cinema.",
+    "tenses": "POS: noun 名詞\nplural 複數 : films"
+  },
+  "also": {
+    "cn": "也；此外",
+    "usage": "Also, we shouldn't use our phones.",
+    "tenses": "POS: adverb 副詞"
+  },
+  "use": {
+    "cn": "使用",
+    "usage": "We shouldn't use our phones during the film.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : use / uses\npast 過去式 : used\nprogressive 進行式 : using"
+  },
+  "our": {
+    "cn": "我們的",
+    "usage": "We should look after our things.",
+    "tenses": "POS: determiner 限定詞"
+  },
+  "phones": {
+    "cn": "電話；手機（複數）",
+    "usage": "We shouldn't use our phones in the cinema.",
+    "tenses": "POS: noun 名詞\nsingular 單數 : phone\nplural 複數 : phones"
+  },
+  "light": {
+    "cn": "光；光線",
+    "usage": "The light from the phone can disturb others.",
+    "tenses": "POS: noun 名詞\nplural 複數 : lights"
+  },
+  "disturb": {
+    "cn": "打擾；干擾",
+    "usage": "The light will disturb other people.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : disturb / disturbs\npast 過去式 : disturbed\nprogressive 進行式 : disturbing"
+  },
+  "others": {
+    "cn": "其他人；其他事物",
+    "usage": "We should be considerate of others.",
+    "tenses": "POS: pronoun 代名詞\nsingular 單數 : other"
   }
 }
