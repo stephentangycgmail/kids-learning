@@ -121,6 +121,24 @@ Compatibility:
 - Add new words as additional root keys.
 - Do not replace the object format with an array unless the consuming page is migrated.
 
+English Dictation vocabulary coverage:
+
+- Every clickable English word in `dictation01.json` and `dictation02.json`
+  must have a corresponding root-key entry in `vocab_ai.json`.
+- Dictation sentence content and vocabulary help are related data. When adding
+  or changing a Dictation sentence, check vocabulary coverage at the same time.
+- Compare keys using the Dictation page's existing `cleanKey()` behavior:
+  lowercase the word, replace the Unicode curly apostrophe (`’`) with an ASCII
+  apostrophe (`'`), and remove leading and trailing characters other than
+  ASCII letters, digits, or apostrophes.
+- Each corresponding `vocab_ai.json` entry must retain the existing `cn`,
+  `usage`, and `tenses` structure.
+- After changing Dictation sentences or vocabulary data, run the existing
+  vocabulary coverage regression test. This documented coverage rule applies
+  specifically to `dictation01.json` and `dictation02.json`; it does not claim
+  coverage for every `dictation*.json` file or for all Grammar Dictation
+  deep-link content.
+
 ## Dictation
 
 ### English Dictation Files
