@@ -61,3 +61,30 @@ test("English menu and Grammar Practice preserve the learning-first navigation h
   const practiceScript = fs.readFileSync(path.join(root, "frontend", "js", "grammar_practice.js"), "utf8");
   assert.match(practiceScript, /grammar_practice_choice\.html\?topic=.*&mode=choice_quiz&autostart=1/);
 });
+
+test("English dictation words have vocabulary help", () => {
+  const vocab = JSON.parse(fs.readFileSync(
+    path.join(root, "frontend", "data", "vocab_ai.json"),
+    "utf8"
+  ));
+  const missing = [];
+  const cleanKey = token => token
+    .toLowerCase()
+    .replace(/\u2019/g, "'")
+    .replace(/^[^a-z0-9']+|[^a-z0-9']+$/g, "");
+
+  for (const file of ["dictation01.json", "dictation02.json"]) {
+    const data = JSON.parse(fs.readFileSync(
+      path.join(root, "frontend", "data", file),
+      "utf8"
+    ));
+    for (const sentence of data.sentences) {
+      for (const token of sentence.full.match(/[A-Za-z’']+/g) || []) {
+        const word = cleanKey(token);
+        if (word && !vocab[word]) missing.push(file + ": " + word);
+      }
+    }
+  }
+
+  assert.deepEqual([...new Set(missing)], []);
+});
