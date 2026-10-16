@@ -1,24 +1,20 @@
 {
   "sentences": [
     {
-      "full": "We should have good manners in public places.",
-      "cn": "我們在公共場所應該有禮貌。"
+      "full": "Friends shouldn’t quarrel with one another.",
+      "cn": "朋友之間不應該互相爭吵。"
     },
     {
-      "full": "In the restaurant, we should eat quietly.",
-      "cn": "在餐廳裡，我們應該安靜地進食。"
+      "full": "We should be nice to each other.",
+      "cn": "我們應該友善地對待彼此。"
     },
     {
-      "full": "We shouldn’t make a mess at the table because it is very rude.",
-      "cn": "我們不應該把餐桌弄得一團糟，因為這樣很沒有禮貌。"
+      "full": "We shouldn’t be jealous of our friends.",
+      "cn": "我們不應該妒忌朋友。"
     },
     {
-      "full": "In the cinema, we should wait patiently in the queue for tickets and snacks.",
-      "cn": "在電影院裡，我們應該耐心排隊購買戲票和小食。"
-    },
-    {
-      "full": "We shouldn’t talk loudly during the film. Also, we shouldn’t use our phones because the light will disturb others.",
-      "cn": "我們不應該在電影播放期間大聲說話。此外，我們也不應該使用手機，因為手機的光線會打擾其他人。"
+      "full": "He helped me with my homework.",
+      "cn": "他在功課方面幫助了我。"
     }
   ]
 }
