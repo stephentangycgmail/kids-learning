@@ -4,8 +4,8 @@
 
 Current official release: `v1.3.1`
 
-Current Pages state: a verified untagged English Dictation content maintenance
-deployment is live on the `v1.3.1` baseline. See
+Current Pages state: a verified untagged friendship Dictation content
+maintenance deployment dated 2026-10-16 is live on the `v1.3.1` baseline. See
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
 
 ## Current Status

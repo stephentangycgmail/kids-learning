@@ -3,6 +3,19 @@
 Release identity and deployment evidence are maintained in
 [`RELEASE_MANIFEST.md`](RELEASE_MANIFEST.md).
 
+## Untagged Production Maintenance - 2026-10-16
+
+### Changed
+
+- Replaced English Dictation 01 and Dictation 02 with the approved friendship
+  content and complete Traditional Chinese sentence translations.
+- Added Chinese meanings, usage examples, and grammar or word-class notes for
+  every word newly introduced by the two Dictation sets, including contextual
+  help for `a few`, `close-up`, `patch things up`, `one another`, and `each
+  other`.
+- Preserved the existing Dictation catalog, JSON schema, page behavior, and
+  browser speech controls.
+
 ## Untagged Production Maintenance - 2026-09-29
 
 ### Changed

@@ -12,9 +12,11 @@ Math learning. It uses committed HTML, CSS, JavaScript, and reviewed JSON;
 students do not need a login, production backend, Azure service, or paid API.
 
 The current official production release is `v1.3.1`. A verified untagged
-English Dictation content maintenance deployment dated 2026-09-29 is live on
-the `v1.3.1` baseline. `v1.0.0` remains an immutable prior baseline. Confirm
-the live Git state before making release claims.
+friendship Dictation content maintenance deployment dated 2026-10-16 is live
+on the `v1.3.1` baseline. It supplies new Dictation 01 and 02 sentence sets,
+Traditional Chinese translations, and vocabulary meanings, examples, and
+grammar notes. `v1.0.0` remains an immutable prior baseline. Confirm the live
+Git state before making release claims.
 
 ## Branch Model and Deployment
 
@@ -126,9 +128,9 @@ removes these local records; no history is sent to a server.
 
 ## Current Resume Point
 
-The English menu Dictation wording correction and direct Grammar Topic Quiz /
-Challenge launch were released as `v1.3.1`. Resume normal maintenance from the
-current `develop` state.
+The friendship Dictation 01 and 02 content maintenance deployment is live on
+the `v1.3.1` baseline. Resume normal maintenance from the current `develop`
+state.
 
 ## Content Rules
 
