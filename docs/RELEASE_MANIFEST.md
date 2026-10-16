@@ -3,6 +3,21 @@
 This manifest records verified repository and production evidence. It does not
 create or redefine a release.
 
+## 2026-10-16 Untagged Friendship Dictation Content Deployment
+
+| Field | Verified value |
+| --- | --- |
+| Official release baseline | `v1.3.1` |
+| Production branch | `main` |
+| Integration content commit | `51c81451b81cf6baf0052841d8afe80bc3b66d49` |
+| Production content merge commit | `63a10d24c796e5c536c838da4794d12d26ea81f0` |
+| Scope | Replace English Dictation 01 and 02 with approved friendship sentences and add Traditional Chinese translations, word meanings, usage examples, and grammar notes |
+| Version classification | Untagged backward-compatible content maintenance deployment |
+| Pre-deployment validation | 24 Node tests, 5 Python tests, Grammar and choice-bank validators, 30 JSON files, 55 Markdown files, and `git diff --check` passed |
+| Pages deployment | GitHub Actions run `38865156405` completed successfully |
+| Production verification | Required static pages and JSON returned HTTP 200; Dictation 01 returned 5 new items, Dictation 02 returned 4 new items, and the new vocabulary help was present |
+| Status | Pages-deployed and production-verified |
+
 ## 2026-09-29 Untagged Dictation Content Deployment
 
 | Field | Verified value |
