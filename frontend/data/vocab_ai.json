@@ -870,9 +870,9 @@
     "tenses": "POS: verb 動詞\npresent 現在式 : eat, eats\npast 過去式 : ate\nprogressive 進行式 : eating\nperfect 完成式 : have/has eaten"
   },
   "few": {
-    "cn": "少量的，幾乎沒有",
-    "usage": "There are few apples left in the basket.",
-    "tenses": "POS: determiner 限定詞"
+    "cn": "很少；a few 表示「幾個、一些」",
+    "usage": "A few days later, Dylan called me.",
+    "tenses": "POS: determiner 限定詞\nphrase 詞組 : a few 幾個；一些"
   },
   "food": {
     "cn": "食物",
@@ -1308,5 +1308,180 @@
     "cn": "其他人；其他事物",
     "usage": "We should be considerate of others.",
     "tenses": "POS: pronoun 代名詞\nsingular 單數 : other"
+  },
+  "dylan": {
+    "cn": "Dylan（男性英文名字）",
+    "usage": "Dylan is my good friend.",
+    "tenses": "POS: proper noun 專有名詞"
+  },
+  "shared": {
+    "cn": "分享了（share 的過去式）",
+    "usage": "Dylan shared a photo in the group chat.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : share / shares\npast 過去式 : shared\nprogressive 進行式 : sharing"
+  },
+  "close": {
+    "cn": "近距離的（在 close-up 中表示「特寫」）",
+    "usage": "Dylan shared a close-up photo of my face.",
+    "tenses": "POS: adjective 形容詞\nphrase 詞組 : close-up 特寫"
+  },
+  "up": {
+    "cn": "向上；與 close 組成 close-up（特寫）",
+    "usage": "This is a close-up photo of a flower.",
+    "tenses": "POS: adverb 副詞\nphrase 詞組 : close-up 特寫"
+  },
+  "photo": {
+    "cn": "照片",
+    "usage": "She showed me a photo of her family.",
+    "tenses": "POS: noun 名詞\nplural 複數 : photos"
+  },
+  "face": {
+    "cn": "臉；面孔",
+    "usage": "She washed her face in the morning.",
+    "tenses": "POS: noun 名詞\nplural 複數 : faces"
+  },
+  "group": {
+    "cn": "群組；小組",
+    "usage": "We shared our ideas in the group.",
+    "tenses": "POS: noun 名詞\nplural 複數 : groups"
+  },
+  "chat": {
+    "cn": "聊天；聊天群組",
+    "usage": "Dylan shared the photo in the group chat.",
+    "tenses": "POS: noun 名詞\nplural 複數 : chats"
+  },
+  "embarrassed": {
+    "cn": "尷尬的；難為情的",
+    "usage": "I felt embarrassed when everyone looked at me.",
+    "tenses": "POS: adjective 形容詞\nverb 動詞原形 : embarrass"
+  },
+  "showed": {
+    "cn": "顯示了；展示了（show 的過去式）",
+    "usage": "The photo showed my acne.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : show / shows\npast 過去式 : showed\nprogressive 進行式 : showing"
+  },
+  "acne": {
+    "cn": "暗瘡；青春痘",
+    "usage": "Some teenagers feel worried about acne.",
+    "tenses": "POS: uncountable noun 不可數名詞"
+  },
+  "puzzled": {
+    "cn": "困惑的；不明白的",
+    "usage": "I was puzzled about why he did that.",
+    "tenses": "POS: adjective 形容詞\nverb 動詞原形 : puzzle"
+  },
+  "about": {
+    "cn": "關於；對於",
+    "usage": "We talked about our school project.",
+    "tenses": "POS: preposition 介詞"
+  },
+  "why": {
+    "cn": "為甚麼（用來詢問原因）",
+    "usage": "Why are you feeling sad?",
+    "tenses": "POS: question word 疑問詞"
+  },
+  "did": {
+    "cn": "做了；助動詞 do 的過去式",
+    "usage": "Why did he share the photo?",
+    "tenses": "POS: verb / auxiliary verb 動詞／助動詞\npresent 現在式 : do / does\npast 過去式 : did"
+  },
+  "ignore": {
+    "cn": "不理會；忽視",
+    "usage": "It is not kind to ignore your friend.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : ignore / ignores\npast 過去式 : ignored\nprogressive 進行式 : ignoring"
+  },
+  "days": {
+    "cn": "日子；天（day 的複數）",
+    "usage": "A few days later, Dylan called me.",
+    "tenses": "POS: noun 名詞\nsingular 單數 : day\nplural 複數 : days"
+  },
+  "called": {
+    "cn": "打電話給；稱呼（call 的過去式）",
+    "usage": "Dylan called me after school.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : call / calls\npast 過去式 : called\nprogressive 進行式 : calling"
+  },
+  "said": {
+    "cn": "說了（say 的過去式）",
+    "usage": "He said he was sorry.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : say / says\npast 過去式 : said\nprogressive 進行式 : saying"
+  },
+  "didn't": {
+    "cn": "沒有；並沒有（did not 的縮寫）",
+    "usage": "He didn't mean to hurt my feelings.",
+    "tenses": "POS: auxiliary verb 助動詞\nfull form 完整形式 : did not"
+  },
+  "mean": {
+    "cn": "有意；打算；意思是",
+    "usage": "I didn't mean to upset you.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : mean / means\npast 過去式 : meant\nprogressive 進行式 : meaning"
+  },
+  "hurt": {
+    "cn": "傷害；使難過",
+    "usage": "Unkind words can hurt other people's feelings.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : hurt / hurts\npast 過去式 : hurt\nprogressive 進行式 : hurting"
+  },
+  "feelings": {
+    "cn": "感受；感情（feeling 的複數）",
+    "usage": "He did not want to hurt my feelings.",
+    "tenses": "POS: noun 名詞\nsingular 單數 : feeling\nplural 複數 : feelings"
+  },
+  "patch": {
+    "cn": "修補；在 patch things up 中表示「和好」",
+    "usage": "It is good to patch things up with a friend.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : patch / patches\npast 過去式 : patched\nprogressive 進行式 : patching\nphrase 詞組 : patch things up 和好"
+  },
+  "friend": {
+    "cn": "朋友",
+    "usage": "Dylan is my good friend.",
+    "tenses": "POS: noun 名詞\nplural 複數 : friends"
+  },
+  "friends": {
+    "cn": "朋友們（friend 的複數）",
+    "usage": "Good friends are kind to one another.",
+    "tenses": "POS: noun 名詞\nsingular 單數 : friend\nplural 複數 : friends"
+  },
+  "quarrel": {
+    "cn": "爭吵；吵架",
+    "usage": "Friends shouldn't quarrel with one another.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : quarrel / quarrels\npast 過去式 : quarrelled\nprogressive 進行式 : quarrelling"
+  },
+  "another": {
+    "cn": "另一個；在 one another 中表示「彼此」",
+    "usage": "We should help one another.",
+    "tenses": "POS: determiner / pronoun 限定詞／代名詞\nphrase 詞組 : one another 彼此"
+  },
+  "be": {
+    "cn": "是；成為（be 動詞原形）",
+    "usage": "We should be nice to each other.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : am / is / are\npast 過去式 : was / were\nprogressive 進行式 : being\nperfect 完成式 : been"
+  },
+  "nice": {
+    "cn": "友善的；好的",
+    "usage": "We should be nice to each other.",
+    "tenses": "POS: adjective 形容詞\ncomparative 比較級 : nicer\nsuperlative 最高級 : nicest"
+  },
+  "each": {
+    "cn": "每一個；在 each other 中表示「彼此」",
+    "usage": "The friends help each other.",
+    "tenses": "POS: determiner / pronoun 限定詞／代名詞\nphrase 詞組 : each other 彼此"
+  },
+  "other": {
+    "cn": "其他的；在 each other 中表示「彼此」",
+    "usage": "We should listen to each other.",
+    "tenses": "POS: adjective / pronoun 形容詞／代名詞\nphrase 詞組 : each other 彼此"
+  },
+  "jealous": {
+    "cn": "妒忌的；嫉妒的",
+    "usage": "We shouldn't be jealous of our friends.",
+    "tenses": "POS: adjective 形容詞\ncommon pattern 常用搭配 : jealous of"
+  },
+  "helped": {
+    "cn": "幫助了（help 的過去式）",
+    "usage": "He helped me with my homework.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : help / helps\npast 過去式 : helped\nprogressive 進行式 : helping"
+  },
+  "homework": {
+    "cn": "家庭作業；功課",
+    "usage": "I finish my homework before dinner.",
+    "tenses": "POS: uncountable noun 不可數名詞"
   }
 }
