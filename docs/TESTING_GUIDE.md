@@ -9,6 +9,7 @@ From the repository root:
 
 ```powershell
 node --test tests/grammar_practice.test.js tests/static_site.test.js
+node --test tests/dictation_tts.test.js
 node tests/grammar_practice_choice_validation.js
 python -m unittest tests/test_grammar_practice_questions.py
 python tools/validate_grammar_practice_questions.py
@@ -91,6 +92,20 @@ Where speech behavior is affected:
 - test word selection and highlighting;
 - test unsupported speech behavior where implemented;
 - record browser, platform, and voice limitations.
+
+`tests/dictation_tts.test.js` executes the Dictation page script with a mocked
+Web Speech API and captures the text passed to `SpeechSynthesisUtterance`. It
+covers Fast and Learning playback, clicked words, isolated `A` and `I`, ordinary
+words, abbreviations, punctuation, unchanged display/token indexes, Natural
+mode sentence input, and pause/resume/stop position behavior. This proves the
+application's speech input and control state; it does not prove how a real
+browser voice sounds.
+
+For changes to token speech input, listen in a supported browser with the voice
+name recorded. At minimum check Fast, Learning, and clicked-word playback for
+`A few days later, Dylan called me.` and `I didn't mean to hurt your feelings.`,
+then check Play, Pause/Resume, and Stop after selecting a word. Do not report
+pronunciation as passed when only mocked speech tests were run.
 
 Use [`TTS_SPECIFICATION.md`](TTS_SPECIFICATION.md) and the detailed Grammar
 Practice checklist in
