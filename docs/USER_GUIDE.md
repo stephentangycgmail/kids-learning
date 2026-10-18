@@ -25,7 +25,7 @@ available meaning and usage information.
 ### Dictation Practice
 
 1. Select a dictation lesson.
-2. Choose Natural, Fast, or Learning mode.
+2. Choose Natural (`1.0x`), Fast (`0.8x`), or Learning (`0.4x`) mode.
 3. Adjust speech speed and word pause when needed.
 4. Use Show All, Hide All, or the control on one sentence.
 5. Select Play to hear a sentence.

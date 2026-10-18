@@ -53,3 +53,11 @@ This document defines the standard browser text-to-speech behavior for the Kids 
 - Browser and operating-system voices vary. Automated tests must verify the
   utterance input, while supported-browser listening checks must separately
   confirm the actual pronunciation for the selected voice.
+
+## 8. Dictation Mode Defaults
+
+- Natural uses `1.0x` speed with no token pause.
+- Fast uses `0.8x` speed with an 80 ms token pause.
+- Learning uses `0.4x` speed with a 250 ms token pause.
+- Selecting a mode applies its defaults. Reloading the page may restore a
+  browser-saved manual speed or pause preference instead.
