@@ -38,3 +38,18 @@ This document defines the standard browser text-to-speech behavior for the Kids 
 - Show a consistent, clear message when speech is unavailable.
 - Keep non-speech content and controls usable where applicable.
 - Never throw JavaScript errors because the Speech API is missing or unavailable.
+
+## 7. Dictation Token Speech Input
+
+- Fast and Learning playback, and a clicked Dictation word, must use the same
+  token-to-speech conversion.
+- When the complete token is uppercase `A` or `I`, send lowercase `a` or `i`
+  respectively to `SpeechSynthesisUtterance`. This avoids voices that announce
+  the isolated uppercase token as “capital A” or “capital I”.
+- Do not lowercase any other token. Ordinary words, abbreviations, punctuation
+  names, and Natural mode sentence input retain their existing speech text.
+- Speech-only conversion must not change displayed sentence text, token order or
+  indexes, highlighting, saved playback position, or vocabulary lookup keys.
+- Browser and operating-system voices vary. Automated tests must verify the
+  utterance input, while supported-browser listening checks must separately
+  confirm the actual pronunciation for the selected voice.
