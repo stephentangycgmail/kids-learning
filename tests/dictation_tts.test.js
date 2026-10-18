@@ -140,6 +140,18 @@ function stopButton(harness) {
   return harness.buttons.find((button) => button.textContent === "Stop");
 }
 
+test("Fast and Learning use the approved default speeds", () => {
+  const harness = createHarness("A few days.");
+  const defaults = vm.runInContext(
+    "JSON.stringify([getModeDefaults('fast'),getModeDefaults('learning')])",
+    harness.context
+  );
+  assert.deepEqual(JSON.parse(defaults), [
+    { rate: 0.8, pause: 80 },
+    { rate: 0.4, pause: 250 },
+  ]);
+});
+
 test("Fast and Learning send isolated A and I without uppercase metadata", () => {
   for (const mode of ["fast", "learning"]) {
     for (const [sentence, expected] of [
