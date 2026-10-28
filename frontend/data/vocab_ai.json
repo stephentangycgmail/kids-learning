@@ -75,9 +75,9 @@
     "tenses": "POS: noun 名詞\nplural 複數 : lives"
   },
   "like": {
-    "cn": "喜歡",
-    "usage": "I like to play outside.",
-    "tenses": "POS: verb 動詞\npresent 現在式 : like / likes\npast 過去式 : liked\nprogressive 進行式 : liking\nperfect 完成式 : have liked / has liked"
+    "cn": "喜歡（動詞）；像、如同（介詞，look like 表示外表像）",
+    "usage": "I like to play outside. He looks like his father.",
+    "tenses": "POS: verb / preposition 動詞／介詞\npresent 現在式 : like / likes\npast 過去式 : liked\nprogressive 進行式 : liking\nperfect 完成式 : have liked / has liked"
   },
   "m": {
     "cn": "米字母",
@@ -1483,5 +1483,235 @@
     "cn": "家庭作業；功課",
     "usage": "I finish my homework before dinner.",
     "tenses": "POS: uncountable noun 不可數名詞"
+  },
+  "dr": {
+    "cn": "博士；醫生（Doctor 的縮寫，這裡是稱銜）",
+    "usage": "Dr Darko wanted to steal the diamond.",
+    "tenses": "POS: title 稱銜\nabbreviation 縮寫 : Doctor"
+  },
+  "darko": {
+    "cn": "Darko（故事中的人名）",
+    "usage": "Power Girl wanted to find Dr Darko.",
+    "tenses": "POS: proper noun 專有名詞"
+  },
+  "gang": {
+    "cn": "一幫人；（這裡指）犯罪團夥",
+    "usage": "The gang ran out of the museum.",
+    "tenses": "POS: noun 名詞\nplural 複數 : gangs"
+  },
+  "wanted": {
+    "cn": "想要；want 的過去式",
+    "usage": "They wanted to destroy the city.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : want / wants\npast 過去式 : wanted\nprogressive 進行式 : wanting\nperfect 完成式 : have wanted / has wanted"
+  },
+  "destroy": {
+    "cn": "摧毀；破壞",
+    "usage": "The fire could destroy the building.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : destroy / destroys\npast 過去式 : destroyed\nprogressive 進行式 : destroying\nperfect 完成式 : have destroyed / has destroyed"
+  },
+  "city": {
+    "cn": "城市",
+    "usage": "Many people live in the city.",
+    "tenses": "POS: noun 名詞\nplural 複數 : cities"
+  },
+  "using": {
+    "cn": "使用；利用；use 的 -ing 形式",
+    "usage": "She opened the door using a key.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : use / uses\npast 過去式 : used\nprogressive 進行式 : using\nperfect 完成式 : have used / has used"
+  },
+  "star": {
+    "cn": "星星；Star Diamond 是故事中的「星之鑽石」",
+    "usage": "The Star Diamond was in the museum.",
+    "tenses": "POS: noun 名詞\nplural 複數 : stars"
+  },
+  "diamond": {
+    "cn": "鑽石",
+    "usage": "The diamond sparkled in the light.",
+    "tenses": "POS: noun 名詞\nplural 複數 : diamonds"
+  },
+  "midnight": {
+    "cn": "午夜；半夜十二時",
+    "usage": "They left the museum at midnight.",
+    "tenses": "POS: noun 名詞\nphrase 詞組 : at midnight 在午夜"
+  },
+  "stole": {
+    "cn": "偷走；steal 的過去式",
+    "usage": "The gang stole the diamond.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : steal / steals\npast 過去式 : stole\nprogressive 進行式 : stealing\nperfect 完成式 : have stolen / has stolen"
+  },
+  "ran": {
+    "cn": "跑；run 的過去式",
+    "usage": "The man ran across the road.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : run / runs\npast 過去式 : ran\nprogressive 進行式 : running\nperfect 完成式 : have run / has run"
+  },
+  "out": {
+    "cn": "向外；出去",
+    "usage": "The children ran out of the classroom.",
+    "tenses": "POS: adverb 副詞\nphrase 詞組 : run out 跑出去"
+  },
+  "man": {
+    "cn": "成年男子；男人",
+    "usage": "The man has a round face.",
+    "tenses": "POS: noun 名詞\nplural 複數 : men"
+  },
+  "long": {
+    "cn": "長的",
+    "usage": "She has long hair.",
+    "tenses": "POS: adjective 形容詞\ncomparative 比較級 : longer\nsuperlative 最高級 : longest"
+  },
+  "straight": {
+    "cn": "直的；筆直的",
+    "usage": "He has long straight hair.",
+    "tenses": "POS: adjective 形容詞"
+  },
+  "hair": {
+    "cn": "頭髮",
+    "usage": "She has curly blonde hair.",
+    "tenses": "POS: noun 名詞\nuncountable 不可數 : hair（指整體頭髮）"
+  },
+  "across": {
+    "cn": "橫過；從一邊到另一邊",
+    "usage": "They walked across the road.",
+    "tenses": "POS: preposition 介詞"
+  },
+  "road": {
+    "cn": "道路；馬路",
+    "usage": "Look both ways before crossing the road.",
+    "tenses": "POS: noun 名詞\nplural 複數 : roads"
+  },
+  "round": {
+    "cn": "圓的",
+    "usage": "The boy has a round face.",
+    "tenses": "POS: adjective 形容詞"
+  },
+  "down": {
+    "cn": "沿著；向下",
+    "usage": "The man ran down the pavement.",
+    "tenses": "POS: preposition / adverb 介詞／副詞"
+  },
+  "pavement": {
+    "cn": "行人路（英式英語）",
+    "usage": "We walked along the pavement.",
+    "tenses": "POS: noun 名詞\nplural 複數 : pavements"
+  },
+  "power": {
+    "cn": "力量；能力；（故事中的）超能力",
+    "usage": "Power Girl used her power to find him.",
+    "tenses": "POS: noun 名詞\nplural 複數 : powers"
+  },
+  "girl": {
+    "cn": "女孩；Power Girl 是故事角色「超能少女」的名字",
+    "usage": "The girl has long straight hair.",
+    "tenses": "POS: noun 名詞\nplural 複數 : girls"
+  },
+  "used": {
+    "cn": "使用了；運用了；use 的過去式",
+    "usage": "She used a map to find the museum.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : use / uses\npast 過去式 : used\nprogressive 進行式 : using\nperfect 完成式 : have used / has used"
+  },
+  "find": {
+    "cn": "找到；尋找",
+    "usage": "Can you find the man in the red vest?",
+    "tenses": "POS: verb 動詞\npresent 現在式 : find / finds\npast 過去式 : found\nprogressive 進行式 : finding\nperfect 完成式 : have found / has found"
+  },
+  "who": {
+    "cn": "誰；（關係代名詞）指前面提到的人",
+    "usage": "He is the man who helped me.",
+    "tenses": "POS: pronoun 代名詞"
+  },
+  "running": {
+    "cn": "跑；run 的 -ing 形式",
+    "usage": "He was running into the subway.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : run / runs\npast 過去式 : ran\nprogressive 進行式 : running\nperfect 完成式 : have run / has run"
+  },
+  "into": {
+    "cn": "進入……裡面",
+    "usage": "The man ran into the museum.",
+    "tenses": "POS: preposition 介詞"
+  },
+  "subway": {
+    "cn": "地下行人隧道（英式英語）；地鐵（美式英語）",
+    "usage": "They used the subway to walk under the busy road.",
+    "tenses": "POS: noun 名詞\nplural 複數 : subways"
+  },
+  "what": {
+    "cn": "甚麼",
+    "usage": "What does he look like?",
+    "tenses": "POS: pronoun / determiner 代名詞／限定詞"
+  },
+  "does": {
+    "cn": "do 的第三人稱單數現在式；用作問句的助動詞",
+    "usage": "What does he look like?",
+    "tenses": "POS: auxiliary verb / verb 助動詞／動詞\npresent 現在式 : do / does\npast 過去式 : did\nprogressive 進行式 : doing\nperfect 完成式 : have done / has done"
+  },
+  "look": {
+    "cn": "看；看起來；look like 表示「外表像；長甚麼樣子」",
+    "usage": "What does he look like?",
+    "tenses": "POS: verb 動詞\npresent 現在式 : look / looks\npast 過去式 : looked\nprogressive 進行式 : looking\nperfect 完成式 : have looked / has looked"
+  },
+  "has": {
+    "cn": "有；have 的第三人稱單數現在式",
+    "usage": "He has short hair and brown eyes.",
+    "tenses": "POS: verb 動詞\npresent 現在式 : have / has\npast 過去式 : had\nprogressive 進行式 : having\nperfect 完成式 : have had / has had"
+  },
+  "short": {
+    "cn": "短的；矮的",
+    "usage": "He has short hair.",
+    "tenses": "POS: adjective 形容詞\ncomparative 比較級 : shorter\nsuperlative 最高級 : shortest"
+  },
+  "big": {
+    "cn": "大的",
+    "usage": "She has big brown eyes.",
+    "tenses": "POS: adjective 形容詞\ncomparative 比較級 : bigger\nsuperlative 最高級 : biggest"
+  },
+  "brown": {
+    "cn": "棕色的；啡色的",
+    "usage": "The boy has brown eyes.",
+    "tenses": "POS: adjective 形容詞"
+  },
+  "eyes": {
+    "cn": "眼睛；eye 的複數",
+    "usage": "Her eyes are brown.",
+    "tenses": "POS: noun 名詞\nsingular 單數 : eye\nplural 複數 : eyes"
+  },
+  "who's": {
+    "cn": "誰是；who is 的縮寫（本課用法）",
+    "usage": "Who’s the lady in the red vest?",
+    "tenses": "POS: contraction 縮寫\nfull form 完整形式 : who is（本課）；也可表示 who has"
+  },
+  "lady": {
+    "cn": "女士",
+    "usage": "The lady is wearing a red vest.",
+    "tenses": "POS: noun 名詞\nplural 複數 : ladies"
+  },
+  "red": {
+    "cn": "紅色的",
+    "usage": "She is wearing a red vest.",
+    "tenses": "POS: adjective 形容詞"
+  },
+  "vest": {
+    "cn": "背心",
+    "usage": "The lady is wearing a red vest.",
+    "tenses": "POS: noun 名詞\nplural 複數 : vests"
+  },
+  "he's": {
+    "cn": "他是；he is 的縮寫（本課用法）",
+    "usage": "He’s the boy with the curly blonde hair.",
+    "tenses": "POS: contraction 縮寫\nfull form 完整形式 : he is（本課）；也可表示 he has"
+  },
+  "boy": {
+    "cn": "男孩",
+    "usage": "The boy has curly hair.",
+    "tenses": "POS: noun 名詞\nplural 複數 : boys"
+  },
+  "curly": {
+    "cn": "鬈曲的；捲曲的",
+    "usage": "She has curly hair.",
+    "tenses": "POS: adjective 形容詞"
+  },
+  "blonde": {
+    "cn": "金色頭髮的；（頭髮）金色的",
+    "usage": "The boy has curly blonde hair.",
+    "tenses": "POS: adjective 形容詞"
   }
 }
