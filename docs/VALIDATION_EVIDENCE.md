@@ -3,6 +3,47 @@
 This file records dated validation evidence. It is not a substitute for
 production acceptance testing and does not retroactively prove release checks.
 
+## 2026-10-28 Untagged Darko and Appearance Dictation Deployment
+
+This is a content maintenance deployment, not a new official release. The
+release baseline remains `v1.3.1`; no version, tag, or GitHub Release was created.
+
+- Content commit: `62be7b26172e2d9a86f6c5fd3930ab87eb1acbbe`.
+- Integration: PR #19, merge `a8b076becd232a7a52f394e79f5f2d71a75b2fd2`.
+- Production: PR #20, merge `79968c86353bc8da6d95e10cabd750184bff4a5d`.
+- Pages run `40672993224`: build and deployment succeeded for that exact
+  production commit; the Pages API also reported that commit as built.
+- Scope: six approved Dr Darko / Star Diamond sentences in Dictation 01 and
+  four appearance sentences in Dictation 02, Traditional Chinese translations,
+  46 additional vocabulary entries, and contextual `look like` help.
+
+| Check | Observed result |
+| --- | --- |
+| `git diff --check` | Passed |
+| `node --test tests/grammar_practice.test.js tests/static_site.test.js tests/dictation_tts.test.js` | 30 passed, including English Dictation vocabulary coverage; rerun on integrated develop |
+| `node tests/grammar_practice_choice_validation.js` | Passed: 50 Question Words and 54 Quantifiers items |
+| `python -m unittest tests/test_grammar_practice_questions.py` | 5 passed |
+| `python tools/validate_grammar_practice_questions.py` | 630 questions; zero errors or warnings |
+| Exact embedded Node validators from the JSON and Markdown-link workflows | 30 JSON and 55 Markdown files passed |
+| Content assertions | All ten English sentences exactly match the approved text; translations are nonempty; all 63 normalized words have nonempty `cn`, `usage`, and `tenses`; existing vocabulary entries are unchanged except the reviewed `like` expansion |
+| GitHub JSON checks | Passed on both content PRs and production merge |
+| Local Dictation browser smoke | Both lessons load; clicked vocabulary help is present |
+| Production HTTP smoke | All 11 static page/catalog URLs required by DEPLOYMENT_GUIDE, plus the shared stylesheet, returned HTTP 200 |
+| Production data identity | Both Dictation JSON files and `vocab_ai.json` match the parsed committed production data exactly |
+| Production Dictation browser smoke | Both lessons and translations load; `diamond`, `subway`, `Who’s`, `He’s`, `like`, and `curly` show meanings, examples, and grammar notes; no Dictation console warnings or errors |
+| Other production page smoke | Root redirects to subject menu; English menu, Vocabulary local word list, catalog-based Grammar lesson, Grammar Practice setup/topic banks, and disabled AI Teacher state load |
+
+Documentation impact: content, testing, TTS, user workflow, build, and deployment
+rules remain accurate; no behavior or schema changed. This dated entry records
+the observed production evidence without redefining the release identity.
+
+Limits: no real-voice listening, physical-device/mobile acceptance, or full
+Grammar session acceptance was rerun. The unchanged Vocabulary page emits its
+existing Tailwind CDN production-use warning. GitHub Pages also reports
+platform Node-runtime/runner migration annotations; its build and deployment
+nevertheless succeeded. No application code or dependency was changed to
+address these unrelated warnings.
+
 ## 2026-07-31 v1.1.0 Release Validation
 
 Baseline:
